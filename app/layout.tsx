@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist_Mono, Instrument_Serif } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { ThemeProvider } from 'next-themes';
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const geistMono = Geist_Mono({
@@ -57,6 +58,7 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
 					{children}
 				</ThemeProvider>
+				<Analytics />
 			</body>
 		</html>
 	);

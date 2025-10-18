@@ -54,6 +54,12 @@ interface InfiniteGalleryProps {
 	className?: string;
 	/** Optional style for outer container */
 	style?: React.CSSProperties;
+	/** Optional callback when an image is clicked */
+	onImageClick?: (imageIndex: number) => void;
+	/** Optional callback when gallery scroll is complete */
+	onScrollComplete?: () => void;
+	/** Reset the gallery to resume animation */
+	resetGallery?: boolean;
 }
 
 interface PlaneData {
@@ -169,11 +175,13 @@ function ImagePlane({
 	position,
 	scale,
 	material,
+	onClick,
 }: {
 	texture: THREE.Texture;
 	position: [number, number, number];
 	scale: [number, number, number];
 	material: THREE.ShaderMaterial;
+	onClick?: () => void;
 }) {
 	const meshRef = useRef<THREE.Mesh>(null);
 	const [isHovered, setIsHovered] = useState(false);
@@ -198,6 +206,8 @@ function ImagePlane({
 			material={material}
 			onPointerEnter={() => setIsHovered(true)}
 			onPointerLeave={() => setIsHovered(false)}
+			onClick={onClick}
+			style={{ cursor: onClick ? 'pointer' : 'default' } as any}
 		>
 			<planeGeometry args={[1, 1, 32, 32]} />
 		</mesh>
@@ -217,10 +227,24 @@ function GalleryScene({
 		blurOut: { start: 0.9, end: 1.0 },
 		maxBlur: 3.0,
 	},
+	onImageClick,
+	onScrollComplete,
+	resetGallery,
 }: Omit<InfiniteGalleryProps, 'className' | 'style'>) {
 	const [scrollVelocity, setScrollVelocity] = useState(0);
 	const [autoPlay, setAutoPlay] = useState(true);
 	const lastInteraction = useRef(Date.now());
+	const [isComplete, setIsComplete] = useState(false);
+	const totalScrollDistance = useRef(0);
+
+	// Reset gallery when resetGallery prop changes
+	useEffect(() => {
+		if (resetGallery) {
+			setIsComplete(false);
+			totalScrollDistance.current = 0;
+			setAutoPlay(true);
+		}
+	}, [resetGallery]);
 
 	// Normalize images to objects
 	const normalizedImages = useMemo(
@@ -295,17 +319,36 @@ function GalleryScene({
 	// Handle scroll input
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
-			event.preventDefault();
-			setScrollVelocity((prev) => prev + event.deltaY * 0.01 * speed);
-			setAutoPlay(false);
-			lastInteraction.current = Date.now();
+			// Calculate scroll threshold: one complete pass through all images
+			const scrollThreshold = (normalizedImages.length * 3.5); // Halved again for faster completion
+
+			if (!isComplete && totalScrollDistance.current < scrollThreshold) {
+				event.preventDefault();
+				const delta = event.deltaY * 0.01 * speed;
+				setScrollVelocity((prev) => prev + delta);
+				totalScrollDistance.current += Math.abs(delta);
+				setAutoPlay(false);
+				lastInteraction.current = Date.now();
+
+				// Check if we've reached the threshold
+				if (totalScrollDistance.current >= scrollThreshold) {
+					setIsComplete(true);
+					setAutoPlay(false);
+					if (onScrollComplete) {
+						onScrollComplete();
+					}
+				}
+			}
+			// If complete, allow natural page scrolling (don't preventDefault)
 		},
-		[speed]
+		[speed, isComplete, normalizedImages.length, onScrollComplete]
 	);
 
 	// Handle keyboard input
 	const handleKeyDown = useCallback(
 		(event: KeyboardEvent) => {
+			if (isComplete) return; // Don't handle keys if gallery is complete
+
 			if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
 				setScrollVelocity((prev) => prev - 2 * speed);
 				setAutoPlay(false);
@@ -316,7 +359,7 @@ function GalleryScene({
 				lastInteraction.current = Date.now();
 			}
 		},
-		[speed]
+		[speed, isComplete]
 	);
 
 	useEffect(() => {
@@ -335,12 +378,12 @@ function GalleryScene({
 	// Auto-play logic
 	useEffect(() => {
 		const interval = setInterval(() => {
-			if (Date.now() - lastInteraction.current > 3000) {
+			if (!isComplete && Date.now() - lastInteraction.current > 3000) {
 				setAutoPlay(true);
 			}
 		}, 1000);
 		return () => clearInterval(interval);
-	}, []);
+	}, [isComplete]);
 
 	useFrame((state, delta) => {
 		// Apply auto-play
@@ -495,6 +538,7 @@ function GalleryScene({
 						position={[plane.x, plane.y, worldZ]} // Position planes relative to camera center
 						scale={scale}
 						material={material}
+						onClick={onImageClick ? () => onImageClick(plane.imageIndex) : undefined}
 					/>
 				);
 			})}
@@ -544,6 +588,9 @@ export default function InfiniteGallery({
 		blurOut: { start: 0.4, end: 0.43 },
 		maxBlur: 8.0,
 	},
+	onImageClick,
+	onScrollComplete,
+	resetGallery,
 }: InfiniteGalleryProps) {
 	const [webglSupported, setWebglSupported] = useState(true);
 
@@ -579,6 +626,9 @@ export default function InfiniteGallery({
 					images={images}
 					fadeSettings={fadeSettings}
 					blurSettings={blurSettings}
+					onImageClick={onImageClick}
+					onScrollComplete={onScrollComplete}
+					resetGallery={resetGallery}
 				/>
 			</Canvas>
 		</div>

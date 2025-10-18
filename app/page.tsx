@@ -110,35 +110,39 @@ export default function Home() {
 	}, []);
 
 	// Skills data
-	const skills = ['Java', 'TypeScript', 'Python', 'Go', 'Solana', 'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'Redis', 'Node.js', 'React', 'Vue.js'];
+	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'Next.js', 'Solana', 'Docker', 'Kubernetes', 'Databases'];
 
 	// Work data
 	const workData = [
 		{
-			year: '2024',
-			role: 'Founding Engineer',
-			company: 'Mira Trading',
-			description: 'Built Solana trading bot in Go, generating $230K profit with 8,000+ trades/month and 92% success rate. Led team of 3 engineers achieving 99.5% uptime.',
-			techStack: ['Go', 'Solana', 'WebSocket', 'Docker', 'Monitoring'],
-		},
-		{
-			year: '2024',
+			year: '2024-2025',
 			role: 'Software Engineer II',
 			company: 'Elevantiq',
+			location: 'Vienna',
 			description: 'Architected order-processing system handling 10M+ orders/month, enabling €130M annual revenue. Boosted performance 45% through async queues and caching.',
 			techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Vendure'],
+		},
+		{
+			year: '2024-2025',
+			role: 'Founding Engineer',
+			company: 'Mira Trading',
+			location: 'London',
+			description: 'Built Solana trading bot in Go, generating $230K profit with 8,000+ trades/month and 92% success rate. Led team of 3 engineers achieving 99.5% uptime.',
+			techStack: ['Go', 'Solana', 'WebSocket', 'Docker', 'Monitoring'],
 		},
 		{
 			year: '2022-2024',
 			role: 'Founding Engineer',
 			company: 'Copile',
+			location: 'Vienna',
 			description: 'Scaled B2B crypto trading platform to 2100+ users and €35K revenue. Built real-time API processing €1.2M monthly volume across 5 exchanges.',
 			techStack: ['Python', 'Node.js', 'PostgreSQL', 'WebSocket', 'Docker'],
 		},
 		{
 			year: '2022',
 			role: 'Software Engineering Intern',
-			company: 'IBM Austria',
+			company: 'IBM iX',
+			location: 'Vienna',
 			description: 'Developed Vue.js headless commerce storefront handling 85,000+ SKUs. Reduced promotion rollout time by 40% for enterprise clients.',
 			techStack: ['Vue.js', 'JavaScript', 'Magento', 'REST APIs'],
 		},
@@ -252,6 +256,15 @@ export default function Home() {
 
 							{/* Sidebar */}
 							<div className="lg:col-span-2 space-y-6">
+								{/* Profile Photo */}
+								<div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-border/50">
+									<img
+										src="/placeholder-user.jpg"
+										alt="Jan Tokic"
+										className="w-full h-full object-cover"
+									/>
+								</div>
+
 								<div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2">
 										Currently
@@ -260,6 +273,16 @@ export default function Home() {
 										Software Engineer II
 									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">Elevantiq</div>
+								</div>
+
+								<div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2">
+										Studying
+									</div>
+									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
+										B.Sc. Information Engineering
+									</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">Technical University of Munich</div>
 								</div>
 
 								<div className="flex items-center gap-2">
@@ -286,32 +309,42 @@ export default function Home() {
 							{workData.map((job, index) => (
 								<div
 									key={index}
-									className="group grid gap-4 border-b border-border/50 hover:border-border transition-colors duration-500 py-8 lg:grid-cols-12"
+									className="group grid gap-4 md:gap-8 border-b border-border/50 hover:border-border transition-colors duration-500 py-8 md:grid-cols-12"
 								>
 									{/* Year Column */}
-									<div className="lg:col-span-2">
-										<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{job.year}</div>
+									<div className="md:col-span-2">
+										<div className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-muted-foreground">{job.year}</div>
 									</div>
 
 									{/* Content Column */}
-									<div className="lg:col-span-10 space-y-3">
+									<div className="md:col-span-7 space-y-3">
 										<div>
 											<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
 												{job.role}
 											</h3>
-											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{job.company}</div>
+											<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">{job.company}</div>
+											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{job.location}</div>
 										</div>
 
 										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">{job.description}</p>
 
-										{/* Tech Stack */}
-										<div className="flex flex-wrap gap-2 pt-2">
+										{/* Tech Stack - Mobile */}
+										<div className="flex flex-wrap gap-2 pt-2 md:hidden">
 											{job.techStack.map((tech) => (
 												<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
 													{tech}
 												</span>
 											))}
 										</div>
+									</div>
+
+									{/* Tech Stack - Desktop (Right Side) */}
+									<div className="hidden md:flex md:col-span-3 flex-wrap gap-2 content-start">
+										{job.techStack.map((tech) => (
+											<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+												{tech}
+											</span>
+										))}
 									</div>
 								</div>
 							))}
@@ -335,9 +368,19 @@ export default function Home() {
 								<Link
 									key={project.slug}
 									href={`/projects/${project.slug}`}
-									className="group border border-border/50 rounded-lg p-6 hover:border-border hover:shadow-lg transition-all duration-300"
+									className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
 								>
-									<div className="space-y-3">
+									{/* Project Image */}
+									<div className="aspect-video w-full overflow-hidden bg-muted">
+										<img
+											src={project.image}
+											alt={project.title}
+											className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+										/>
+									</div>
+
+									{/* Project Content */}
+									<div className="p-6 space-y-3">
 										<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
 											{project.category} • {project.year}
 										</div>

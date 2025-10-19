@@ -116,10 +116,10 @@ export default function Home() {
 	const workData = [
 		{
 			year: '2024-2025',
-			role: 'Software Engineer II',
+			role: 'Software Engineer II (Freelance)',
 			company: 'Elevantiq',
 			location: 'Vienna',
-			description: 'Architected order-processing system handling 10M+ orders/month, enabling €130M annual revenue. Boosted performance 45% through async queues and caching.',
+			description: 'Architected order processing at scale. Improved throughput by about 45% with async queues, smarter caching, and tighter SQL. Systems handle millions of transactions each month.',
 			techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Vendure'],
 		},
 		{
@@ -127,7 +127,7 @@ export default function Home() {
 			role: 'Founding Engineer',
 			company: 'Mira Trading',
 			location: 'London',
-			description: 'Built Solana trading bot in Go, generating $230K profit with 8,000+ trades/month and 92% success rate. Led team of 3 engineers achieving 99.5% uptime.',
+			description: 'Built a high-frequency Solana trading bot in Go. Automated token launches and real-time execution. Reached 8,000+ trades per month and ~$230K profit in five months.',
 			techStack: ['Go', 'Solana', 'WebSocket', 'Docker', 'Monitoring'],
 		},
 		{
@@ -135,7 +135,7 @@ export default function Home() {
 			role: 'Founding Engineer',
 			company: 'Copile',
 			location: 'Vienna',
-			description: 'Scaled B2B crypto trading platform to 2100+ users and €35K revenue. Built real-time API processing €1.2M monthly volume across 5 exchanges.',
+			description: 'B2B crypto trading platform used by 2,100+ clients. Real-time API across five exchanges processing about €1.2M in monthly volume.',
 			techStack: ['Python', 'Node.js', 'PostgreSQL', 'WebSocket', 'Docker'],
 		},
 		{
@@ -143,7 +143,7 @@ export default function Home() {
 			role: 'Software Engineering Intern',
 			company: 'IBM iX',
 			location: 'Vienna',
-			description: 'Developed Vue.js headless commerce storefront handling 85,000+ SKUs. Reduced promotion rollout time by 40% for enterprise clients.',
+			description: 'Vue.js headless commerce storefront with 85,000+ SKUs. Cut promo rollout time for enterprise clients by about 40%.',
 			techStack: ['Vue.js', 'JavaScript', 'Magento', 'REST APIs'],
 		},
 	];
@@ -235,9 +235,7 @@ export default function Home() {
 										Software Engineer
 									</p>
 									<p className="font-mono uppercase text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-2xl tracking-wider font-semibold">
-										Building high-performance systems, blockchain solutions, and scalable infrastructure.
-										Co-founded Mira Trading ($230K profit) and Copile (2100+ users).
-										Currently architecting systems handling €130M annual revenue at Elevantiq.
+										I'm a software engineer from Austria, based in Munich. I build high-performance systems, trading engines, and scalable web platforms. I like small teams, clear ownership, and shipping to production fast. I co-founded Mira Trading, where we built an automated Solana trading bot that generated over $230K profit and handled thousands of trades each month. Before that I helped build Copile, a B2B crypto trading platform used by more than 2,000 clients. I currently work with Elevantiq on large e-commerce systems that process millions of orders each month. My focus is reliability, performance, and clean code.
 									</p>
 								</div>
 
@@ -270,7 +268,7 @@ export default function Home() {
 										Currently
 									</div>
 									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-										Software Engineer II
+										Software Engineer (Freelance)
 									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">Elevantiq</div>
 								</div>

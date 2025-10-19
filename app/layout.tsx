@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 		default: 'Jan Tokic - Software Engineer | Munich, Germany',
 		template: '%s | Jan Tokic'
 	},
-	description: 'Software Engineer based in Munich, Germany. Building high-performance systems, blockchain solutions, and scalable infrastructure. Co-founded Mira Trading ($230K profit) and Copile (2100+ users). Currently at Elevantiq handling €130M revenue.',
+	description: 'Software Engineer based in Munich, Germany.',
 	keywords: ['Jan Tokic', 'Software Engineer', 'Munich', 'Germany', 'Blockchain', 'Solana', 'Trading Bot', 'E-Commerce', 'Go', 'TypeScript', 'Python', 'Docker', 'Kubernetes', 'Freelance Developer'],
 	authors: [{ name: 'Jan Tokic' }],
 	creator: 'Jan Tokic',

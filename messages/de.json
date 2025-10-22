@@ -2,64 +2,64 @@
   "nav": {
     "gallery": "Galerie",
     "intro": "Über mich",
-    "work": "Berufserfahrung",
+    "work": "Erfahrung",
     "projects": "Projekte",
     "connect": "Kontakt"
   },
   "gallery": {
-    "tagline": "Ich erschaffe; also bin ich",
-    "instructions": "Klicke auf Projekte für Details • Nutze Mausrad, Pfeiltasten oder Touch zur Navigation",
-    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
-    "scrollDown": "Weiter scrollen"
+    "tagline": "Ich erschaffe, also bin ich",
+    "instructions": "Klicke auf ein Projekt, um Details zu sehen • Scrolle, nutze die Pfeiltasten oder wische zur Navigation",
+    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität erneut",
+    "scrollDown": "Nach unten scrollen"
   },
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer",
-    "bio": "Ich bin Software Engineer aus Österreich und lebe in München. Ich entwickle hochperformante Systeme, Trading-Engines und skalierbare Webplattformen. Ich mag kleine Teams, klare Verantwortlichkeiten und schnelle Deployments. Ich habe Mira Trading mitgegründet, wo wir einen automatisierten Solana Trading-Bot entwickelt haben, der über $230K Gewinn erwirtschaftet und tausende Trades pro Monat abgewickelt hat. Davor habe ich an Copile mitgearbeitet, einer B2B Krypto-Trading-Plattform mit über 2.000 Nutzern. Aktuell arbeite ich bei Elevantiq an großen E-Commerce-Systemen, die Millionen von Bestellungen pro Monat verarbeiten. Mein Fokus liegt auf Zuverlässigkeit, Performance und sauberem Code.",
-    "currently": "Aktuell",
-    "studying": "Studium",
+    "bio": "Ich bin Software Engineer aus Österreich und lebe in München. Ich entwickle performante Systeme und Webplattformen, die echten Mehrwert schaffen – von Trading-Automatisierung bis zu skalierbaren E-Commerce-Lösungen. Ich habe Mira Trading und Copile mitgegründet und arbeite derzeit bei Elevantiq an scaled Commerce-Systemen, die monatlich Millionen Bestellungen verarbeiten.",
+    "currently": "Aktuell tätig für",
+    "studying": "Studium an der",
     "location": "München, Deutschland",
-    "currentRole": "Software Engineer II",
+    "currentRole": "Software Engineer",
     "currentCompany": "Elevantiq",
     "degree": "B.Sc. Informationstechnik",
     "university": "Technische Universität München"
   },
   "work": {
-    "heading": "Berufserfahrung",
+    "heading": "Erfahrung",
     "elevantiq": {
-      "role": "Software Engineer II",
+      "role": "Software Engineer & Consultant",
       "company": "Elevantiq",
       "location": "Wien",
-      "description": "Architektur für Auftragsverarbeitung im großen Maßstab. Durchsatz um ca. 45% durch asynchrone Warteschlangen, smarteres Caching und optimiertes SQL verbessert. Systeme verarbeiten Millionen Transaktionen monatlich."
+      "description": "Architektur und Optimierung von scaled Order-Processing-Systemen. Performance um rund 45 % verbessert durch async Queues, smarteres Caching und optimierte SQL-Abfragen. Systeme verarbeiten Millionen Transaktionen pro Monat."
     },
     "mira": {
       "role": "Founding Engineer",
       "company": "Mira Trading",
       "location": "London",
-      "description": "Hochfrequenz Solana Trading-Bot in Go entwickelt. Automatisierte Token-Launches und Echtzeit-Ausführung. 8.000+ Trades pro Monat und ~$230K Gewinn in fünf Monaten erreicht."
+      "description": "High-frequency Trading-Bot auf Solana in Go entwickelt. Automatisierte Token-Launches und Echtzeit-Execution mit über 8.000 Trades pro Monat und rund $230K Profit innerhalb von fünf Monaten."
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "Wien",
-      "description": "B2B Krypto-Trading-Plattform mit 2.100+ Kunden. Echtzeit-API über fünf Börsen mit ca. €1,2M monatlichem Volumen."
+      "description": "B2B Crypto-Trading-Plattform mit über 2.100 Kunden. Real-time API über fünf Exchanges mit einem monatlichen Handelsvolumen von rund €1,2 Mio."
     },
     "ibm": {
       "role": "Software Engineering Praktikant",
       "company": "IBM iX",
       "location": "Wien",
-      "description": "Vue.js Headless Commerce Storefront mit 85.000+ Produkten. Promo-Rollout-Zeit für Unternehmenskunden um ca. 40% reduziert."
+      "description": "Vue.js Headless-Commerce-Storefront mit über 85.000 Produkten. Die Einführung neuer Promotions für Enterprise-Kunden wurde um etwa 40 % beschleunigt."
     }
   },
   "projects": {
     "heading": "Ausgewählte Projekte",
     "viewProject": "Projekt ansehen",
-    "backToProjects": "Zurück zu Projekten",
+    "backToProjects": "Zurück zu den Projekten",
     "relatedProjects": "Ähnliche Projekte"
   },
   "connect": {
-    "heading": "Kontakt aufnehmen",
-    "description": "Ich bin verfügbar für Freelance-Projekte und Beratung. Egal ob hochperformante Systeme, Blockchain-Integration oder skalierbare Infrastruktur—lass uns etwas Außergewöhnliches bauen.",
+    "heading": "Kontakt",
+    "description": "Ich bin offen für Freelance-Projekte und Consulting. Ob performante Systeme, Blockchain-Integrationen oder skalierbare Plattformen – lass uns gemeinsam etwas Starkes aufbauen.",
     "email": "jan@jantokic.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",

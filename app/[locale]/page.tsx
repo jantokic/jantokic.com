@@ -232,7 +232,7 @@ export default function Home() {
 								</div>
 
 								{/* Skills Pills */}
-								<div className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-2 lg:pt-8">
 									{skills.map((skill) => (
 										<span
 											key={skill}
@@ -247,11 +247,11 @@ export default function Home() {
 							{/* Sidebar */}
 							<div className="lg:col-span-2 space-y-6">
 								{/* Profile Photo */}
-								<div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-border/50">
+								<div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-border/50">
 									<img
-										src="/placeholder-user.jpg"
+										src="/headshot-user.png"
 										alt="Jan Tokic"
-										className="w-full h-full object-cover"
+										className="w-full h-full object-cover object-[center_20%]"
 									/>
 								</div>
 
@@ -260,9 +260,9 @@ export default function Home() {
 										{t('intro.currently')}
 									</div>
 									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-										{t('intro.currentRole')}
+										{t('intro.currentCompany')}
 									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.currentCompany')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.currentRole')}</div>
 								</div>
 
 								<div>
@@ -270,9 +270,9 @@ export default function Home() {
 										{t('intro.studying')}
 									</div>
 									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-										{t('intro.degree')}
+										{t('intro.university')}
 									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.university')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.degree')}</div>
 								</div>
 
 								<div className="flex items-center gap-2">

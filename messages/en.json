@@ -8,18 +8,18 @@
   },
   "gallery": {
     "tagline": "I create; therefore I am",
-    "instructions": "Click projects to view details • Use mouse wheel, arrow keys, or touch to navigate",
+    "instructions": "Click a project to view details • Use scroll, arrow keys, or touch to explore",
     "autoplay": "Auto-play resumes after 3 seconds of inactivity",
     "scrollDown": "Scroll down to continue"
   },
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer",
-    "bio": "I'm a software engineer from Austria, based in Munich. I build fast, reliable systems from trading engines to large-scale web apps. Co-founded Mira Trading and Copile, and now work with Elevantiq on high-volume e-commerce systems.",
-    "currently": "Currently",
-    "studying": "Studying",
+    "bio": "I'm a software engineer from Austria, based in Munich. I build fast, reliable systems that drive real businesses — from trading automation to large-scale web platforms. I co-founded Mira Trading and Copile, and now work with Elevantiq on high-volume e-commerce infrastructure.",
+    "currently": "Currently working with",
+    "studying": "Studying at",
     "location": "Munich, Germany",
-    "currentRole": "Software Engineer II",
+    "currentRole": "Software Engineer",
     "currentCompany": "Elevantiq",
     "degree": "B.Sc. Information Engineering",
     "university": "Technical University of Munich"
@@ -27,28 +27,28 @@
   "work": {
     "heading": "Selected Work",
     "elevantiq": {
-      "role": "Software Engineer II",
+      "role": "Software Engineer",
       "company": "Elevantiq",
       "location": "Vienna",
-      "description": "Architected order processing at scale. Improved throughput by about 45% with async queues, smarter caching, and tighter SQL. Systems handle millions of transactions each month."
+      "description": "Architected order-processing systems at scale. Improved throughput by 45% through async queues, smarter caching, and optimized SQL. Platforms handle millions of transactions monthly."
     },
     "mira": {
       "role": "Founding Engineer",
       "company": "Mira Trading",
       "location": "London",
-      "description": "Built a high-frequency Solana trading bot in Go. Automated token launches and real-time execution. Reached 8,000+ trades per month and ~$230K profit in five months."
+      "description": "Developed a high-frequency Solana trading bot in Go. Automated token launches and real-time execution, reaching over 8,000 trades per month and generating $230K profit in five months."
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "Vienna",
-      "description": "B2B crypto trading platform used by 2,100+ clients. Real-time API across five exchanges processing about €1.2M in monthly volume."
+      "description": "Built a B2B crypto trading platform used by 2,100+ clients. Designed a real-time API across five exchanges, processing roughly €1.2M in monthly volume."
     },
     "ibm": {
       "role": "Software Engineering Intern",
       "company": "IBM iX",
       "location": "Vienna",
-      "description": "Vue.js headless commerce storefront with 85,000+ SKUs. Cut promo rollout time for enterprise clients by about 40%."
+      "description": "Developed a Vue.js headless commerce storefront managing 85,000+ SKUs. Reduced promotion rollout time for enterprise clients by 40%."
     }
   },
   "projects": {
@@ -59,7 +59,7 @@
   },
   "connect": {
     "heading": "Let's Connect",
-    "description": "I'm available for freelance projects and consulting. Whether you need high-performance systems, blockchain integration, or scalable infrastructure—let's build something exceptional.",
+    "description": "I'm available for freelance projects and consulting. If you're building high-performance systems, blockchain integrations, or scalable web platforms — let's talk about what we can build together.",
     "email": "jan@jantokic.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",

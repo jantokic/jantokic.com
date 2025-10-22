@@ -409,14 +409,24 @@ export default function Home() {
 						</p>
 
 						<div className="space-y-8">
-							{/* Email */}
-							<a
-								href={`mailto:${t('connect.email')}`}
-								className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
-							>
-								{t('connect.email')}
-								<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-							</a>
+							{/* Contact Options */}
+							<div className="flex flex-wrap gap-4">
+								<a
+									href={`mailto:${t('connect.email')}`}
+									className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
+								>
+									{t('connect.email')}
+									<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+								</a>
+								<span className="text-muted-foreground">•</span>
+								<Link
+									href="/contact"
+									className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
+								>
+									Contact Form
+									<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+								</Link>
+							</div>
 
 							{/* Social Grid */}
 							<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl">

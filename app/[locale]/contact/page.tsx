@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -14,7 +14,7 @@ export default function ContactPage() {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		// For now, just open mailto - you can integrate with a backend later
-		const mailtoLink = `mailto:jan.tokic@proton.me?subject=Project Inquiry from ${formState.name}&body=${formState.message}`;
+		const mailtoLink = `mailto:jan@jantokic.com?subject=Project Inquiry from ${formState.name}&body=${formState.message}`;
 		window.location.href = mailtoLink;
 	};
 
@@ -52,11 +52,11 @@ export default function ContactPage() {
 										Email
 									</h3>
 									<a
-										href="mailto:jan.tokic@proton.me"
+										href="mailto:jan@jantokic.com"
 										className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 									>
 										<Mail className="w-4 h-4" />
-										jan.tokic@proton.me
+										jan@jantokic.com
 									</a>
 								</div>
 
@@ -74,7 +74,7 @@ export default function ContactPage() {
 									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
 										Social
 									</h3>
-									<div className="flex gap-4">
+									<div className="flex flex-wrap gap-4">
 										<a
 											href="https://github.com/jantokic"
 											target="_blank"
@@ -92,6 +92,15 @@ export default function ContactPage() {
 										>
 											<Linkedin className="w-4 h-4" />
 											LinkedIn
+										</a>
+										<a
+											href="https://x.com/tokicjan"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+										>
+											<Twitter className="w-4 h-4" />
+											Twitter
 										</a>
 									</div>
 								</div>

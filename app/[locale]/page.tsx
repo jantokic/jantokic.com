@@ -12,6 +12,24 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import BrandIcon from '@/components/BrandIcon';
 
 export default function Home() {
+	// Check if under construction mode is enabled
+	const isUnderConstruction = process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true';
+
+	// Show under construction page if enabled
+	if (isUnderConstruction) {
+		return (
+			<main className="min-h-screen bg-white">
+				<section className="relative h-screen bg-white flex items-center justify-center">
+					<div className="text-center px-3">
+						<h1 className="font-serif text-4xl md:text-7xl tracking-tight text-black">
+							<span className="italic">Under construction</span>
+						</h1>
+					</div>
+				</section>
+			</main>
+		);
+	}
+
 	const router = useRouter();
 	const t = useTranslations();
 	const [galleryComplete, setGalleryComplete] = useState(false);

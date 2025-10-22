@@ -439,7 +439,6 @@ export default function Home() {
 								>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 										<BrandIcon name="siGithub" size={14} className="text-muted-foreground" />
-										{t('connect.github')}
 									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										@jantokic
@@ -455,7 +454,6 @@ export default function Home() {
 								>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 										<Linkedin className="w-3.5 h-3.5" />
-										{t('connect.linkedin')}
 									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										Jan Tokic
@@ -471,7 +469,6 @@ export default function Home() {
 								>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 										<BrandIcon name="siX" size={14} className="text-muted-foreground" />
-										{t('connect.x')}
 									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										@tokicjan

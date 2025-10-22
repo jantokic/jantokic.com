@@ -60,9 +60,10 @@
   "connect": {
     "heading": "Kontakt aufnehmen",
     "description": "Ich bin verfügbar für Freelance-Projekte und Beratung. Egal ob hochperformante Systeme, Blockchain-Integration oder skalierbare Infrastruktur—lass uns etwas Außergewöhnliches bauen.",
-    "email": "jan.tokic@proton.me",
+    "email": "jan@jantokic.com",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter"
   },
   "footer": {
     "copyright": "© {year} Jan Tokic",

@@ -419,7 +419,7 @@ export default function Home() {
 							</a>
 
 							{/* Social Grid */}
-							<div className="grid grid-cols-2 gap-4 max-w-md">
+							<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl">
 								<a
 									href="https://github.com/jantokic"
 									target="_blank"
@@ -442,6 +442,19 @@ export default function Home() {
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.linkedin')}</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										Jan Tokic
+										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+									</div>
+								</a>
+
+								<a
+									href="https://x.com/tokicjan"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
+								>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.twitter')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
+										@tokicjan
 										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
 									</div>
 								</a>

@@ -1,8 +1,9 @@
 'use client';
 
-import { Mail, Github, Linkedin, MapPin, Send, Twitter } from 'lucide-react';
+import { Mail, MapPin, Send, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import BrandIcon from '@/components/BrandIcon';
 
 export default function ContactPage() {
 	const [formState, setFormState] = useState({
@@ -81,8 +82,7 @@ export default function ContactPage() {
 											rel="noopener noreferrer"
 											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 										>
-											<Github className="w-4 h-4" />
-											GitHub
+											<BrandIcon name="siGithub" size={16} />
 										</a>
 										<a
 											href="https://linkedin.com/in/jan-tokic"
@@ -91,7 +91,6 @@ export default function ContactPage() {
 											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 										>
 											<Linkedin className="w-4 h-4" />
-											LinkedIn
 										</a>
 										<a
 											href="https://x.com/tokicjan"
@@ -99,8 +98,7 @@ export default function ContactPage() {
 											rel="noopener noreferrer"
 											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 										>
-											<Twitter className="w-4 h-4" />
-											Twitter
+											<BrandIcon name="siX" size={16} />
 										</a>
 									</div>
 								</div>

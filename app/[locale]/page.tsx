@@ -5,10 +5,11 @@ import InfiniteGallery from '@/components/InfiniteGallery';
 import { projects } from '@/lib/projects';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Github, Linkedin, Mail, MapPin, ChevronDown, Sun, Moon, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Sun, Moon, ArrowUpRight, Linkedin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import BrandIcon from '@/components/BrandIcon';
 
 export default function Home() {
 	const router = useRouter();
@@ -436,7 +437,10 @@ export default function Home() {
 									rel="noopener noreferrer"
 									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
 								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.github')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
+										<BrandIcon name="siGithub" size={14} className="text-muted-foreground" />
+										{t('connect.github')}
+									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										@jantokic
 										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -449,7 +453,10 @@ export default function Home() {
 									rel="noopener noreferrer"
 									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
 								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.linkedin')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
+										<Linkedin className="w-3.5 h-3.5" />
+										{t('connect.linkedin')}
+									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										Jan Tokic
 										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -462,7 +469,10 @@ export default function Home() {
 									rel="noopener noreferrer"
 									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
 								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.X')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
+										<BrandIcon name="siX" size={14} className="text-muted-foreground" />
+										{t('connect.x')}
+									</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										@tokicjan
 										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -15,7 +15,7 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer",
-    "bio": "I'm a software engineer from Austria, based in Munich. I build high-performance systems, trading engines, and scalable web platforms. I like small teams, clear ownership, and shipping to production fast. I co-founded Mira Trading, where we built an automated Solana trading bot that generated over $230K profit and handled thousands of trades each month. Before that I helped build Copile, a B2B crypto trading platform used by more than 2,000 clients. I currently work with Elevantiq on large e-commerce systems that process millions of orders each month. My focus is reliability, performance, and clean code.",
+    "bio": "I'm a software engineer from Austria, based in Munich. I build fast, reliable systems from trading engines to large-scale web apps. Co-founded Mira Trading and Copile, and now work with Elevantiq on high-volume e-commerce systems.",
     "currently": "Currently",
     "studying": "Studying",
     "location": "Munich, Germany",
@@ -63,7 +63,7 @@
     "email": "jan@jantokic.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "X": "X"
+    "x": "X"
   },
   "footer": {
     "copyright": "© {year} Jan Tokic",

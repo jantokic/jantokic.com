@@ -452,7 +452,7 @@ export default function Home() {
 									rel="noopener noreferrer"
 									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
 								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.twitter')}</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-1">{t('connect.X')}</div>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
 										@tokicjan
 										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

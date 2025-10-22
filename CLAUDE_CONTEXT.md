@@ -135,7 +135,7 @@ Updated with:
 - Title template: "Backend Engineer Portfolio | Freelance Developer Germany"
 - Description, keywords for SEO
 - Open Graph tags for social sharing
-- Twitter card metadata
+- X card metadata
 - Proper robots meta
 
 ---

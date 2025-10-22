@@ -4629,7 +4629,7 @@ Lines added: 50, lines removed: undefined
 
 ```diff
 @@ -138,4 +138,54 @@
-  - Twitter card metadata
+  - X card metadata
   - Proper robots meta
 + 
 + ---

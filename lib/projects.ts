@@ -93,8 +93,8 @@ export const projects: Project[] = [
     ],
     duration: '18 months (Sep 2022 - Mar 2024)',
     category: 'Fintech & Trading',
-    image: '/projects/payment-system.webp',
-    images: ['/projects/payment-system.webp', '/projects/payment-system-2.webp'],
+    image: '/projects/copilelanding1.jpeg',
+    images: ['/projects/copilelanding1.jpeg', '/projects/copilelanding1.jpeg'],
     year: '2023'
   },
   {

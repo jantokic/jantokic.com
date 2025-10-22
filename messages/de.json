@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "gallery": "Galerie",
+    "intro": "Über mich",
+    "work": "Berufserfahrung",
+    "projects": "Projekte",
+    "connect": "Kontakt"
+  },
+  "gallery": {
+    "tagline": "Ich erschaffe; also bin ich",
+    "instructions": "Klicke auf Projekte für Details • Nutze Mausrad, Pfeiltasten oder Touch zur Navigation",
+    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
+    "scrollDown": "Weiter scrollen"
+  },
+  "intro": {
+    "name": "Jan Tokic",
+    "title": "Software Engineer",
+    "bio": "Ich bin Software Engineer aus Österreich und lebe in München. Ich entwickle hochperformante Systeme, Trading-Engines und skalierbare Webplattformen. Ich mag kleine Teams, klare Verantwortlichkeiten und schnelle Deployments. Ich habe Mira Trading mitgegründet, wo wir einen automatisierten Solana Trading-Bot entwickelt haben, der über $230K Gewinn erwirtschaftet und tausende Trades pro Monat abgewickelt hat. Davor habe ich an Copile mitgearbeitet, einer B2B Krypto-Trading-Plattform mit über 2.000 Nutzern. Aktuell arbeite ich bei Elevantiq an großen E-Commerce-Systemen, die Millionen von Bestellungen pro Monat verarbeiten. Mein Fokus liegt auf Zuverlässigkeit, Performance und sauberem Code.",
+    "currently": "Aktuell",
+    "studying": "Studium",
+    "location": "München, Deutschland",
+    "currentRole": "Software Engineer II",
+    "currentCompany": "Elevantiq",
+    "degree": "B.Sc. Informationstechnik",
+    "university": "Technische Universität München"
+  },
+  "work": {
+    "heading": "Berufserfahrung",
+    "elevantiq": {
+      "role": "Software Engineer II",
+      "company": "Elevantiq",
+      "location": "Wien",
+      "description": "Architektur für Auftragsverarbeitung im großen Maßstab. Durchsatz um ca. 45% durch asynchrone Warteschlangen, smarteres Caching und optimiertes SQL verbessert. Systeme verarbeiten Millionen Transaktionen monatlich."
+    },
+    "mira": {
+      "role": "Founding Engineer",
+      "company": "Mira Trading",
+      "location": "London",
+      "description": "Hochfrequenz Solana Trading-Bot in Go entwickelt. Automatisierte Token-Launches und Echtzeit-Ausführung. 8.000+ Trades pro Monat und ~$230K Gewinn in fünf Monaten erreicht."
+    },
+    "copile": {
+      "role": "Founding Engineer",
+      "company": "Copile",
+      "location": "Wien",
+      "description": "B2B Krypto-Trading-Plattform mit 2.100+ Kunden. Echtzeit-API über fünf Börsen mit ca. €1,2M monatlichem Volumen."
+    },
+    "ibm": {
+      "role": "Software Engineering Praktikant",
+      "company": "IBM iX",
+      "location": "Wien",
+      "description": "Vue.js Headless Commerce Storefront mit 85.000+ Produkten. Promo-Rollout-Zeit für Unternehmenskunden um ca. 40% reduziert."
+    }
+  },
+  "projects": {
+    "heading": "Ausgewählte Projekte",
+    "viewProject": "Projekt ansehen",
+    "backToProjects": "Zurück zu Projekten",
+    "relatedProjects": "Ähnliche Projekte"
+  },
+  "connect": {
+    "heading": "Kontakt aufnehmen",
+    "description": "Ich bin verfügbar für Freelance-Projekte und Beratung. Egal ob hochperformante Systeme, Blockchain-Integration oder skalierbare Infrastruktur—lass uns etwas Außergewöhnliches bauen.",
+    "email": "jan.tokic@proton.me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© {year} Jan Tokic",
+    "language": "Sprache"
+  }
+}

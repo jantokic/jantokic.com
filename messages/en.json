@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "gallery": "Gallery",
+    "intro": "About",
+    "work": "Work",
+    "projects": "Projects",
+    "connect": "Connect"
+  },
+  "gallery": {
+    "tagline": "I create; therefore I am",
+    "instructions": "Click projects to view details • Use mouse wheel, arrow keys, or touch to navigate",
+    "autoplay": "Auto-play resumes after 3 seconds of inactivity",
+    "scrollDown": "Scroll down to continue"
+  },
+  "intro": {
+    "name": "Jan Tokic",
+    "title": "Software Engineer",
+    "bio": "I'm a software engineer from Austria, based in Munich. I build high-performance systems, trading engines, and scalable web platforms. I like small teams, clear ownership, and shipping to production fast. I co-founded Mira Trading, where we built an automated Solana trading bot that generated over $230K profit and handled thousands of trades each month. Before that I helped build Copile, a B2B crypto trading platform used by more than 2,000 clients. I currently work with Elevantiq on large e-commerce systems that process millions of orders each month. My focus is reliability, performance, and clean code.",
+    "currently": "Currently",
+    "studying": "Studying",
+    "location": "Munich, Germany",
+    "currentRole": "Software Engineer II",
+    "currentCompany": "Elevantiq",
+    "degree": "B.Sc. Information Engineering",
+    "university": "Technical University of Munich"
+  },
+  "work": {
+    "heading": "Selected Work",
+    "elevantiq": {
+      "role": "Software Engineer II",
+      "company": "Elevantiq",
+      "location": "Vienna",
+      "description": "Architected order processing at scale. Improved throughput by about 45% with async queues, smarter caching, and tighter SQL. Systems handle millions of transactions each month."
+    },
+    "mira": {
+      "role": "Founding Engineer",
+      "company": "Mira Trading",
+      "location": "London",
+      "description": "Built a high-frequency Solana trading bot in Go. Automated token launches and real-time execution. Reached 8,000+ trades per month and ~$230K profit in five months."
+    },
+    "copile": {
+      "role": "Founding Engineer",
+      "company": "Copile",
+      "location": "Vienna",
+      "description": "B2B crypto trading platform used by 2,100+ clients. Real-time API across five exchanges processing about €1.2M in monthly volume."
+    },
+    "ibm": {
+      "role": "Software Engineering Intern",
+      "company": "IBM iX",
+      "location": "Vienna",
+      "description": "Vue.js headless commerce storefront with 85,000+ SKUs. Cut promo rollout time for enterprise clients by about 40%."
+    }
+  },
+  "projects": {
+    "heading": "Featured Projects",
+    "viewProject": "View Project",
+    "backToProjects": "Back to Projects",
+    "relatedProjects": "Related Projects"
+  },
+  "connect": {
+    "heading": "Let's Connect",
+    "description": "I'm available for freelance projects and consulting. Whether you need high-performance systems, blockchain integration, or scalable infrastructure—let's build something exceptional.",
+    "email": "jan.tokic@proton.me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© {year} Jan Tokic",
+    "language": "Language"
+  }
+}

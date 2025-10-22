@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Geist_Mono, Instrument_Serif } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { ThemeProvider } from 'next-themes';
@@ -18,41 +17,13 @@ const instrumentSerif = Instrument_Serif({
 	style: ['italic', 'normal'],
 });
 
-export const metadata: Metadata = {
-	title: {
-		default: 'Jan Tokic - Software Engineer | Munich, Germany',
-		template: '%s | Jan Tokic'
-	},
-	description: 'Software Engineer based in Munich, Germany.',
-	keywords: ['Jan Tokic', 'Software Engineer', 'Munich', 'Germany', 'Blockchain', 'Solana', 'Trading Bot', 'E-Commerce', 'Go', 'TypeScript', 'Python', 'Docker', 'Kubernetes', 'Freelance Developer'],
-	authors: [{ name: 'Jan Tokic' }],
-	creator: 'Jan Tokic',
-	openGraph: {
-		type: 'website',
-		locale: 'en_US',
-		url: 'https://jantokic.com',
-		title: 'Jan Tokic - Software Engineer',
-		description: 'Building high-performance systems, blockchain solutions, and scalable infrastructure in Munich, Germany.',
-		siteName: 'Jan Tokic Portfolio',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Jan Tokic - Software Engineer',
-		description: 'Building high-performance systems and blockchain solutions. Co-founded Mira Trading & Copile.',
-	},
-	robots: {
-		index: true,
-		follow: true,
-	},
-};
-
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html suppressHydrationWarning>
 			<body
 				className={`${GeistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} font-sans antialiased`}
 			>

@@ -67,7 +67,7 @@ export const projects: Project[] = [
       'Achieved 99.5% uptime through automated monitoring and CI',
       'Drove $200M+ total market cap for created coins'
     ],
-    duration: '3 months (Oct 2024 - Present)',
+    duration: '5 months (Oct 2024 - Mar 2025)',
     category: 'Blockchain & Trading',
     image: '/projects/curve_banner.jpeg',
     images: ['/projects/curve_logo.jpg', '/projects/curve_cli.png'],
@@ -102,29 +102,32 @@ export const projects: Project[] = [
   },
   {
     id: '4',
-    slug: 'elevantiq-order-processing',
-    title: 'Elevantiq - High-Throughput Order Processing',
-    shortDescription: 'Order-processing system handling 10M+ orders/month, enabling €130M annual revenue',
-    fullDescription: 'At Elevantiq, I architected and launched a distributed order-processing system that powers the core of their e-commerce operations. I boosted performance by 45% through async job queues, database sharding, and in-memory caching—cutting latency by 60%.',
-    role: 'Software Engineer II',
-    techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure'],
+    slug: 'elevantiq-ecommerce-infrastructure',
+    title: 'Elevantiq - Enterprise E-Commerce Infrastructure',
+    shortDescription: 'Multi-tenant e-commerce platform processing millions of orders annually across 3 major enterprise clients',
+    fullDescription: 'At Elevantiq, I worked on large-scale e-commerce infrastructure for major European B2B clients across three flagship projects. I modernized legacy systems by migrating a 7-8 repository architecture into a unified Nx monorepo, upgraded outdated Next.js and Vendure dependencies, and enhanced complex product configurators requiring direct collaboration with client engineers. I implemented Infisical (open-source secrets manager) for secure credential management, contributed to multi-tenant architectures handling millions of orders, and worked on distributed teams of 10+ engineers delivering enterprise e-commerce solutions for leading UK and European industrial companies.',
+    role: 'Software Engineer',
+    techStack: ['Node.js', 'TypeScript', 'Next.js', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure', 'Infisical'],
     challenges: [
-      'Scaling to handle 10 million+ orders per month',
-      'Reducing order-processing latency from 200ms to 80ms',
-      'Implementing centralized secrets management (achieving 0 vulnerabilities)',
-      'Delivering a 4-month project in 2 months with 40+ backlog tickets'
+      'Consolidating 7-8 legacy repositories into unified Nx monorepo architecture',
+      'Upgrading severely outdated Next.js and Vendure dependencies across large codebase',
+      'Building complex configurator with mathematical equations for engineering specifications',
+      'Implementing Infisical secrets manager achieving zero security vulnerabilities',
+      'Collaborating with client engineers on technical product requirements',
+      'Contributing to multi-tenant architecture for 10+ person distributed team'
     ],
     outcomes: [
-      'Enabled €130 million annual revenue through reliable processing',
-      'Boosted performance by 45% via async queues and caching',
-      'Achieved 0 vulnerabilities in 12 months (100% credential-leak prevention)',
-      'Cleared 40+ backlog tickets single-handedly',
-      'Contributed to open-source Vendure (6.5k stars, trusted by IBM, Breitling)'
+      'Enabled millions of orders processed annually for enterprise clients',
+      'Modernized legacy DX by consolidating 7-8 repos into maintainable monorepo',
+      'Delivered advanced chimney configurator with real-time engineering calculations',
+      'Achieved 0 vulnerabilities through centralized secrets management with Infisical',
+      'Successfully upgraded critical dependencies (Next.js, Vendure) on production systems',
+      'Contributed to multi-tenant platforms for leading UK and European industrial companies'
     ],
-    duration: '9 months (Apr 2024 - Present)',
+    duration: '1.5 years (Apr 2024 - Present)',
     category: 'E-Commerce & SaaS',
-    image: '/projects/richard_banner.jpeg',
-    images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],
+    image: '/projects/elevantiq_banner.png',
+    images: ['/projects/elevantiq_banner.png', '/projects/elevantiq_banner.png'],
     year: '2024'
   },
   {

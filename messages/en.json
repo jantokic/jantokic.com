@@ -32,8 +32,8 @@
       "company": "Elevantiq",
       "location": "Vienna",
       "description": "Architected order-processing systems at scale. Improved throughput by 45% through async queues, smarter caching, and optimized SQL. Platforms handle millions of transactions monthly.",
-      "projectLink": "/projects/elevantiq-order-processing",
-      "projectLinkText": "View project details →"
+      "projectLink": "/projects/elevantiq-ecommerce-infrastructure",
+      "projectLinkText": "View details →"
     },
     "mira": {
       "role": "Founding Engineer",

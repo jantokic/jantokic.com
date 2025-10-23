@@ -32,8 +32,8 @@
       "company": "Elevantiq",
       "location": "Wien",
       "description": "Architektur und Optimierung von scaled Order-Processing-Systemen. Performance um rund 45 % verbessert durch async Queues, smarteres Caching und optimierte SQL-Abfragen. Systeme verarbeiten Millionen Transaktionen pro Monat.",
-      "projectLink": "/projects/elevantiq-order-processing",
-      "projectLinkText": "Projektdetails ansehen →"
+      "projectLink": "/projects/elevantiq-ecommerce-infrastructure",
+      "projectLinkText": "Details ansehen →"
     },
     "mira": {
       "role": "Founding Engineer",

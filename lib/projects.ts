@@ -13,6 +13,13 @@ export interface Project {
   image: string;
   images: string[];
   year: string;
+  links?: {
+    github?: string;
+    x?: string;
+    website?: string;
+    demo?: string;
+    youtube?: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -44,7 +51,10 @@ export const projects: Project[] = [
     category: 'AI & Research',
     image: '/projects/richard_banner.jpeg',
     images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],
-    year: '2025'
+    year: '2025',
+    links: {
+      website: 'https://www.richardseye.com/'
+    }
   },
   {
     id: '2',
@@ -71,7 +81,10 @@ export const projects: Project[] = [
     category: 'Blockchain & Trading',
     image: '/projects/curve_banner.jpeg',
     images: ['/projects/curve_logo.jpg', '/projects/curve_cli.png'],
-    year: '2024'
+    year: '2024',
+    links: {
+      x: 'https://x.com/curvetools'
+    }
   },
   {
     id: '3',
@@ -98,7 +111,12 @@ export const projects: Project[] = [
     category: 'Fintech & Trading',
     image: '/projects/copile_banner.png',
     images: ['/projects/copile_banner.png', '/projects/copile_banner.png'],
-    year: '2022'
+    year: '2022',
+    links: {
+      x: 'https://x.com/CopileTrading',
+      website: 'https://www.copile.trade/',
+      github: 'https://github.com/Copile/copile-backend'
+    }
   },
   {
     id: '4',
@@ -210,7 +228,12 @@ export const projects: Project[] = [
     category: 'AI & Enterprise',
     image: '/projects/synapse_banner.jpg',
     images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
-    year: '2025'
+    year: '2025',
+    links: {
+      demo: 'https://synapse.elia.vc/',
+      github: 'https://github.com/synapsedotai/synapse',
+      youtube: 'https://www.youtube.com/watch?v=H_io8qfVFmg'
+    }
   },
   {
     id: '8',
@@ -240,7 +263,10 @@ export const projects: Project[] = [
     category: 'E-Commerce & Community',
     image: '/projects/dreamcook_banner.jpeg',
     images: ['/projects/dreamcook_banner.jpeg', '/projects/dreamcook_banner.jpeg'],
-    year: '2020'
+    year: '2020',
+    links: {
+      x: 'https://x.com/DreamCook'
+    }
   },
   {
     id: '9',

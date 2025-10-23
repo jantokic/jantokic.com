@@ -152,7 +152,7 @@ tsconfig.json                        # TypeScript config
 - Uses `simple-icons` v15.17.0 for brand logos
 - `BrandIcon` component wraps simple-icons for easy use
 - **GitHub**: `<BrandIcon name="siGithub" />` (simple-icons)
-- **X (Twitter)**: `<BrandIcon name="siX" />` (simple-icons)
+- **X**: `<BrandIcon name="siX" />` (simple-icons)
 - **LinkedIn**: `<Linkedin />` from Lucide (deprecated but works - Microsoft didn't give simple-icons rights)
 
 **Note**: Lucide brand icons are deprecated but LinkedIn still works and is necessary since it's not in simple-icons.
@@ -163,7 +163,7 @@ tsconfig.json                        # TypeScript config
 - Email: jan@jantokic.com
 - GitHub: https://github.com/jantokic
 - LinkedIn: https://linkedin.com/in/jan-tokic
-- X (Twitter): https://x.com/tokicjan
+- X: https://x.com/tokicjan
 
 **Work Experience** (displayed in order):
 1. **Software Engineer II** at Elevantiq (2024-2025, Vienna)
@@ -178,95 +178,87 @@ tsconfig.json                        # TypeScript config
 
 ### 7. **Project Data** (`lib/projects.ts`)
 
-**7 Backend-Focused Projects**:
-1. Distributed Payment Processing System (Go, PostgreSQL, Kafka)
-2. E-Commerce Microservices Migration (Node.js, TypeScript, MongoDB)
-3. Real-Time Analytics Pipeline (Python, Spark, Airflow)
-4. Multi-Tenant Authentication Service (Java, Spring Boot, OAuth2)
-5. Warehouse Inventory API (Python, FastAPI, Elasticsearch)
-6. Multi-Channel Notification System (Node.js, RabbitMQ)
-7. API Gateway & Rate Limiter (Go, Redis, Kong)
+**9 Real Projects** (actual work from Jan's career):
+1. **Richard** - Autonomous AI Research Engine (Mar-Jun 2025)
+2. **Mira Trading** - Solana Trading Bot (Oct 2024 - Mar 2025)
+3. **Copile** - B2B Crypto Trading Platform (Sep 2022 - Mar 2024)
+4. **Elevantiq** - Enterprise E-Commerce Infrastructure (Apr 2024 - Present)
+5. **IBM Austria** - Headless Commerce Storefront (Jul-Sep 2022)
+6. **Vendure** - Open-Source Headless Commerce Contributions (2024)
+7. **Synapse** - AI Knowledge System (Oct 2025 Hackathon - 2nd place)
+8. **DreamCook** - E-Commerce Community Platform (Jul 2020 - Jun 2022)
+9. **Acid Node** - Solana Validator Infrastructure (Sep 2022 - Jan 2023)
+
+**Project Links** (optional per project):
+- GitHub repositories
+- X/Twitter accounts
+- Live websites
+- Demo links
+- YouTube videos (for hackathon projects)
 
 ---
 
-## Recent Updates (Latest Session)
+## Recent Updates (Latest Session - October 2025)
 
-### 1. Vercel Analytics & Speed Insights
-- ✅ Added `@vercel/analytics` and `@vercel/speed-insights`
-- ✅ Integrated into root layout
-- ✅ Tracks page views and Web Vitals automatically
+### 1. Real Project Data Integration
+- ✅ Replaced all placeholder projects with real projects from Jan's career
+- ✅ Updated all 9 projects with accurate descriptions, tech stacks, and outcomes
+- ✅ Added proper timelines and durations for each project
+- ✅ Included specific metrics and achievements (revenue, users, performance gains)
 
-### 2. Internationalization (i18n)
-- ✅ Installed and configured `next-intl` v4.3.12
-- ✅ Created English and German translation files
-- ✅ Restructured app to use `[locale]` routing
-- ✅ Added language switcher component in footer
-- ✅ Translated all sections (intro, work, projects, connect)
-- ✅ Middleware for automatic locale detection
-- ✅ URLs: `/en` (English) and `/de` (German)
+### 2. Elevantiq Project Updates
+- ✅ Changed slug from `elevantiq-order-processing` to `elevantiq-ecommerce-infrastructure`
+- ✅ Updated description to focus on 3 major projects (Stocker, FlowTech, Feddersen)
+- ✅ Removed specific revenue numbers, now says "millions of orders annually"
+- ✅ Highlighted monorepo migration (7-8 repos → Nx monorepo)
+- ✅ Added Infisical (secrets manager) to tech stack
+- ✅ Updated duration to 1.5 years (Apr 2024 - Present)
+- ✅ Changed year to '2024' to reflect start year
 
-### 3. Personal Information Updates
-- ✅ Updated email from `jan.tokic@proton.me` to `jan@jantokic.com`
-- ✅ Added Twitter/X link: https://x.com/tokicjan
-- ✅ Changed "Twitter" to "X" throughout the site
-- ✅ Updated both homepage and contact page
+### 3. Project Links System
+- ✅ Added optional `links` object to Project interface
+- ✅ Supports: `github`, `x`, `website`, `demo`, `youtube`
+- ✅ Links section appears in project detail page sidebar
+- ✅ Only displays if at least one link is provided
+- ✅ Added links to 5 projects:
+  - **Copile**: X, Website, GitHub
+  - **Mira**: X
+  - **DreamCook**: X
+  - **Richard**: Website (with "Private - Internal Use Only" note)
+  - **Synapse**: Demo, GitHub, YouTube
 
-### 4. Profile Photo
-- ✅ Added circular profile photo to intro section sidebar
-- ✅ Location: Top of sidebar, above "Currently" section
-- ✅ Size: 128px mobile, 160px desktop
-- ✅ Placeholder: `/placeholder-user.jpg`
+### 4. Gallery Improvements
+- ✅ Removed Elevantiq, IBM, and Vendure from 3D gallery (still accessible via Featured Projects)
+- ✅ Reordered gallery so Richard appears first/most prominently
+- ✅ Swapped Richard and Synapse positions for optimal initial visibility
+- ✅ Gallery now shows 6 projects instead of 9
 
-### 5. Education Section
-- ✅ Added education info to intro sidebar
-- ✅ Shows "Studying" (not completed yet)
-- ✅ B.Sc. Information Engineering
-- ✅ Technical University of Munich
+### 5. Mobile Fixes
+- ✅ Fixed Featured Projects section visibility on mobile
+- ✅ Reduced IntersectionObserver threshold from 0.3 to 0.1
+- ✅ Explicitly remove `opacity-0` class when section becomes visible
+- ✅ Adjusted rootMargin from -20% to -10% for earlier trigger
 
-### 6. Featured Projects Enhancement
-- ✅ Added project preview images to cards
-- ✅ Images have hover zoom effect (scale-105)
-- ✅ Aspect ratio: 16:9 (aspect-video)
-- ✅ Uses same images from 3D gallery
+### 6. Project Detail Page Enhancements
+- ✅ Added `object-contain` for Elevantiq hero image (prevents text cutoff)
+- ✅ Other projects still use `object-cover` for full coverage
+- ✅ Added Links section in sidebar with social/project links
+- ✅ Integrated brand icons (GitHub, X) and external link indicators
+- ✅ Added Video icon for YouTube links
 
-### 7. Social Links Grid
-- ✅ Changed from 2 columns to 3 columns (2 mobile, 3 desktop)
-- ✅ Added X (Twitter) as third social link
-- ✅ All social cards have consistent hover effects
-- ✅ Icons shown next to labels
+### 7. Metadata & Favicon
+- ✅ Added metadata to root layout with title and description
+- ✅ Configured favicon path explicitly (`/favicon.ico`)
+- ✅ Updated page metadata for SEO
 
-### 8. Contact Page Access
-- ✅ Added "Contact Form" link on homepage
-- ✅ Located in Connect section next to email
-- ✅ Separator: bullet (•) between email and contact form link
+### 8. Selected Work Updates
+- ✅ Updated Elevantiq link to point to new slug
+- ✅ Changed button text from "View project details" to "View details"
+- ✅ Updated translations in both English and German
 
-### 9. Brand Icons Migration
-- ✅ Installed `simple-icons` v15.17.0
-- ✅ Created `BrandIcon` component wrapper
-- ✅ Migrated GitHub to simple-icons (`siGithub`)
-- ✅ Migrated X/Twitter to simple-icons (`siX`)
-- ✅ LinkedIn stays on Lucide (deprecated but works - not in simple-icons)
-- ✅ Removed all deprecated Lucide brand icon imports except LinkedIn
-
-### 10. Work Experience Updates
-- ✅ Reordered: Elevantiq first, then Mira Trading
-- ✅ Updated years: Both 2024-2025 (not just 2024)
-- ✅ Made company names bigger and more prominent
-- ✅ Added locations: Vienna (Elevantiq, Copile, IBM iX), London (Mira Trading)
-- ✅ Changed IBM Austria to IBM iX
-- ✅ Updated all job descriptions with new copy
-
-### 11. Layout Improvements
-- ✅ Work section: Bigger years, skills on right side (desktop)
-- ✅ Skills wrap below on mobile
-- ✅ 3-column grid: Year (2 cols) | Content (7 cols) | Skills (3 cols)
-
-### 12. Updated README
-- ✅ Removed all V0 references
-- ✅ Updated with proper project description
-- ✅ Added installation instructions
-- ✅ Listed all features (i18n, analytics, dark mode, etc.)
-- ✅ Professional deployment instructions
+### 9. Richard Project Updates
+- ✅ Changed duration from "8 weeks (2024)" to "3 months (Mar 2025 - Jun 2025)"
+- ✅ Updated timeline to reflect actual project dates
 
 ---
 
@@ -328,13 +320,14 @@ tsconfig.json                        # TypeScript config
 ## What Needs Customization
 
 ### Images
-- [ ] Replace `/placeholder-user.jpg` with actual profile photo
-- [ ] Replace project images in `/public/projects/` with real screenshots
-- [ ] All should be `.webp` format for optimization
+- [x] Replace `/placeholder-user.jpg` with actual profile photo (now `/headshot-user.png`)
+- [ ] Replace project images in `/public/projects/` with real screenshots (partially done)
+- [ ] Optimize images to `.webp` format where needed
 
 ### Project Data
-- [ ] Update `lib/projects.ts` with actual project details if needed
-- [ ] Verify all descriptions, tech stacks, and outcomes are accurate
+- [x] Updated `lib/projects.ts` with all real project details
+- [x] Verified all descriptions, tech stacks, and outcomes are accurate
+- [x] Added project links (GitHub, X, websites, demos, YouTube)
 
 ---
 
@@ -358,6 +351,13 @@ tsconfig.json                        # TypeScript config
 - Once threshold reached, releases scroll control
 - IntersectionObserver (threshold: 0.5) watches gallery section
 - Resets when gallery comes back into view
+
+### Gallery Filtering
+- Not all projects appear in the 3D gallery
+- Excluded projects: Elevantiq, IBM, Vendure (still in Featured Projects section)
+- Gallery shows 6 projects: Richard, Mira, Copile, Synapse, DreamCook, Acid Node
+- Richard and Synapse positions swapped so Richard appears first/most prominently
+- Filtered array used for both display and click handling
 
 ### Dark Mode
 - Uses `next-themes` with `attribute="class"` mode
@@ -460,4 +460,4 @@ Potential features to add:
 
 ---
 
-*Last Updated: Current session - Full i18n implementation, analytics integration, brand icons migration, profile photo, education section, and contact updates*
+*Last Updated: October 2025 - Real project data integration, Elevantiq updates, project links system, gallery filtering, mobile fixes, and metadata improvements*

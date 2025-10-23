@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, projects } from '@/lib/projects';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Video } from 'lucide-react';
 import Image from 'next/image';
+import BrandIcon from '@/components/BrandIcon';
 
 export async function generateStaticParams() {
 	return projects.map((project) => ({
@@ -167,6 +168,77 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								))}
 							</div>
 						</div>
+
+						{/* Links */}
+						{project.links && (project.links.github || project.links.x || project.links.website || project.links.demo || project.links.youtube) && (
+							<div>
+								<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+									Links
+								</h3>
+								<div className="space-y-2">
+									{project.links.github && (
+										<a
+											href={project.links.github}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+										>
+											<BrandIcon name="siGithub" size={14} className="text-foreground group-hover:text-muted-foreground" />
+											GitHub
+											<ExternalLink className="w-3 h-3 ml-auto" />
+										</a>
+									)}
+									{project.links.x && (
+										<a
+											href={project.links.x}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+										>
+											<BrandIcon name="siX" size={14} className="text-foreground group-hover:text-muted-foreground" />
+											X
+											<ExternalLink className="w-3 h-3 ml-auto" />
+										</a>
+									)}
+									{project.links.website && (
+										<a
+											href={project.links.website}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+										>
+											<ExternalLink className="w-3.5 h-3.5" />
+											Website {project.slug === 'richard-ai-research' && <span className="text-[10px] opacity-60">(Private - Internal Use Only)</span>}
+											<ExternalLink className="w-3 h-3 ml-auto" />
+										</a>
+									)}
+									{project.links.demo && (
+										<a
+											href={project.links.demo}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+										>
+											<ExternalLink className="w-3.5 h-3.5" />
+											Demo
+											<ExternalLink className="w-3 h-3 ml-auto" />
+										</a>
+									)}
+									{project.links.youtube && (
+										<a
+											href={project.links.youtube}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+										>
+											<Video className="w-3.5 h-3.5" />
+											YouTube
+											<ExternalLink className="w-3 h-3 ml-auto" />
+										</a>
+									)}
+								</div>
+							</div>
+						)}
 					</div>
 				</div>
 			</section>

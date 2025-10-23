@@ -42,17 +42,27 @@ export default function Home() {
 	const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
 	// Map projects to gallery images (excluding certain projects)
+	// Reorder so Richard appears first in the 3D gallery
 	const excludedSlugs = ['elevantiq-ecommerce-infrastructure', 'ibm-headless-commerce', 'vendure-open-source'];
-	const projectImages = projects
-		.filter((project) => !excludedSlugs.includes(project.slug))
-		.map((project) => ({
-			src: project.image,
-			alt: project.title,
-		}));
+	const filteredProjects = projects.filter((project) => !excludedSlugs.includes(project.slug));
+
+	// Move Synapse to where Richard is, and Richard to where Synapse was
+	// This swaps their positions so Richard appears where Synapse currently shows
+	const richardIndex = filteredProjects.findIndex(p => p.slug === 'richard-ai-research');
+	const synapseIndex = filteredProjects.findIndex(p => p.slug === 'synapse-knowledge-system');
+
+	if (richardIndex !== -1 && synapseIndex !== -1) {
+		[filteredProjects[richardIndex], filteredProjects[synapseIndex]] =
+		[filteredProjects[synapseIndex], filteredProjects[richardIndex]];
+	}
+
+	const projectImages = filteredProjects.map((project) => ({
+		src: project.image,
+		alt: project.title,
+	}));
 
 	// Handle project click - navigate to project detail page
 	const handleProjectClick = (imageIndex: number) => {
-		const filteredProjects = projects.filter((project) => !excludedSlugs.includes(project.slug));
 		const project = filteredProjects[imageIndex];
 		if (project) {
 			router.push(`/projects/${project.slug}`);

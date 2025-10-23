@@ -57,7 +57,7 @@ export default function Home() {
 	}
 
 	const projectImages = filteredProjects.map((project) => ({
-		src: project.image,
+		src: project.galleryImage,
 		alt: project.title,
 	}));
 
@@ -286,7 +286,7 @@ export default function Home() {
 								{/* Profile Photo */}
 								<div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-border/50">
 									<img
-										src="/headshot-user.png"
+										src="/headshot-user.webp"
 										alt="Jan Tokic"
 										className="w-full h-full object-cover object-[center_20%]"
 									/>

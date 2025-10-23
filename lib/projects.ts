@@ -10,8 +10,9 @@ export interface Project {
   outcomes: string[];
   duration: string;
   category: string;
-  image: string;
-  images: string[];
+  image: string; // Banner image for hero and featured projects cards
+  galleryImage: string; // Smaller image for 3D gallery
+  images: string[]; // Additional images for detail view
   year: string;
   links?: {
     github?: string;
@@ -49,8 +50,9 @@ export const projects: Project[] = [
     ],
     duration: '3 months (Mar 2025 - Jun 2025)',
     category: 'AI & Research',
-    image: '/projects/richard_banner.jpeg',
-    images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],
+    image: '/projects/banners/richard_banner.webp',
+    galleryImage: '/projects/gallery/richard_gallery.webp',
+    images: ['/projects/views/richard_view1.webp', '/projects/views/richard_view2.webp'],
     year: '2025',
     links: {
       website: 'https://www.richardseye.com/'
@@ -79,8 +81,9 @@ export const projects: Project[] = [
     ],
     duration: '5 months (Oct 2024 - Mar 2025)',
     category: 'Blockchain & Trading',
-    image: '/projects/curve_banner.jpeg',
-    images: ['/projects/curve_logo.jpg', '/projects/curve_cli.png'],
+    image: '/projects/banners/curve_banner.webp',
+    galleryImage: '/projects/gallery/mira_gallery.webp',
+    images: ['/projects/views/curve_logo.webp', '/projects/views/curve_cli.webp'],
     year: '2024',
     links: {
       x: 'https://x.com/curvetools'
@@ -109,8 +112,9 @@ export const projects: Project[] = [
     ],
     duration: '18 months (Sep 2022 - Mar 2024)',
     category: 'Fintech & Trading',
-    image: '/projects/copile_banner.png',
-    images: ['/projects/copile_banner.png', '/projects/copile_banner.png'],
+    image: '/projects/banners/copile_banner.webp',
+    galleryImage: '/projects/gallery/copile_gallery.webp',
+    images: ['/projects/views/copile_view1.webp', '/projects/views/copile_view2.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/CopileTrading',
@@ -144,8 +148,9 @@ export const projects: Project[] = [
     ],
     duration: '1.5 years (Apr 2024 - Present)',
     category: 'E-Commerce & SaaS',
-    image: '/projects/elevantiq_banner.png',
-    images: ['/projects/elevantiq_banner.png', '/projects/elevantiq_banner.png'],
+    image: '/projects/banners/elevantiq_banner.webp',
+    galleryImage: '/projects/gallery/elevantiq_gallery.webp',
+    images: ['/projects/views/elevantiq_view1.webp', '/projects/views/elevantiq_view2.webp'],
     year: '2024'
   },
   {
@@ -170,8 +175,9 @@ export const projects: Project[] = [
     ],
     duration: '3 months (Jul 2022 - Sep 2022)',
     category: 'E-Commerce',
-    image: '/projects/copile_banner.png',
-    images: ['/projects/copile_banner.png', '/projects/copile_banner.png'],
+    image: '/projects/banners/ibm_banner.webp',
+    galleryImage: '/projects/gallery/ibm_gallery.webp',
+    images: ['/projects/views/ibm_view1.webp', '/projects/views/ibm_view2.webp'],
     year: '2022'
   },
   {
@@ -196,8 +202,9 @@ export const projects: Project[] = [
     ],
     duration: 'Ongoing contributions (2024)',
     category: 'Open Source',
-    image: '/projects/synapse_banner.jpg',
-    images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
+    image: '/projects/banners/vendure_banner.webp',
+    galleryImage: '/projects/gallery/vendure_gallery.webp',
+    images: ['/projects/views/vendure_view1.webp', '/projects/views/vendure_view2.webp'],
     year: '2024'
   },
   {
@@ -226,8 +233,9 @@ export const projects: Project[] = [
     ],
     duration: '36 hours (Oct 2025)',
     category: 'AI & Enterprise',
-    image: '/projects/synapse_banner.jpg',
-    images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
+    image: '/projects/banners/synapse_banner.webp',
+    galleryImage: '/projects/gallery/synapse_gallery.webp',
+    images: ['/projects/views/synapse_view1.webp', '/projects/views/synapse_view2.webp'],
     year: '2025',
     links: {
       demo: 'https://synapse.elia.vc/',
@@ -261,8 +269,9 @@ export const projects: Project[] = [
     ],
     duration: '2 years (Jul 2020 - Jun 2022)',
     category: 'E-Commerce & Community',
-    image: '/projects/dreamcook_banner.jpeg',
-    images: ['/projects/dreamcook_banner.jpeg', '/projects/dreamcook_banner.jpeg'],
+    image: '/projects/banners/dreamcook_banner.webp',
+    galleryImage: '/projects/gallery/dreamcook_gallery.webp',
+    images: ['/projects/views/dreamcook_view1.webp', '/projects/views/dreamcook_view2.webp'],
     year: '2020',
     links: {
       x: 'https://x.com/DreamCook'
@@ -294,9 +303,45 @@ export const projects: Project[] = [
     ],
     duration: '5 months (Sep 2022 - Jan 2023)',
     category: 'Blockchain & Infrastructure',
-    image: '/projects/acidnode_banner.jpeg',
-    images: ['/projects/acidnode_banner.jpeg', '/projects/acidnode_banner.jpeg'],
+    image: '/projects/banners/acidnode_banner.webp',
+    galleryImage: '/projects/gallery/acidnode_gallery.webp',
+    images: ['/projects/views/acidnode_view1.webp', '/projects/views/acidnode_view2.webp'],
     year: '2022'
+  },
+  {
+    id: '10',
+    slug: 'neura-nft-sniping',
+    title: 'Neura - Solana NFT Sniping Bot',
+    shortDescription: 'B2C NFT automation software providing real-time NFT sniping on Solana network with successful exit',
+    fullDescription: 'At Neura, I developed a B2C software that automated the minting of NFTs using Python and Solidity for Smart Contracts. The platform provided customers with real-time NFT automation on the Solana network, enabling them to snipe valuable NFT drops with millisecond precision. Built as a subscription-based service, Neura helped collectors secure limited-edition NFTs from popular Solana collections. The project achieved a successful exit after establishing a strong user base and proven track record in the competitive NFT tooling space.',
+    role: 'Software Engineer',
+    techStack: ['Python', 'Solidity', 'Solana', 'Smart Contracts', 'NFT Automation', 'Real-time Systems'],
+    challenges: [
+      'Developing B2C software that automates NFT minting with millisecond precision',
+      'Implementing smart contract integration for automated transactions',
+      'Building real-time monitoring system for Solana NFT drops',
+      'Creating reliable automation that operates during high-traffic mint events',
+      'Designing user-friendly interface for non-technical NFT collectors',
+      'Optimizing transaction speed to compete in high-demand NFT launches'
+    ],
+    outcomes: [
+      'Successfully launched B2C NFT automation platform on Solana',
+      'Enabled customers to secure limited-edition NFTs through automated sniping',
+      'Built real-time monitoring and automation system for NFT drops',
+      'Achieved successful exit with established user base',
+      'Delivered proven smart contract integration for automated minting',
+      'Created competitive advantage through millisecond-precision automation'
+    ],
+    duration: '6 months (Jan 2022 - Aug 2022)',
+    category: 'Blockchain & NFT',
+    image: '/projects/banners/neura_banner.webp',
+    galleryImage: '/projects/gallery/neura_gallery.webp',
+    images: ['/projects/views/neura_view1.webp', '/projects/views/neura_view2.webp'],
+    year: '2022',
+    links: {
+      x: 'https://x.com/txNeura',
+      website: 'https://magiceden.io/marketplace/txneura'
+    }
   }
 ];
 

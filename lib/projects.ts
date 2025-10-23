@@ -236,7 +236,7 @@ export const projects: Project[] = [
     duration: '2 years (Jul 2020 - Jun 2022)',
     category: 'E-Commerce & Community',
     image: '/projects/dreamcook_banner.jpeg',
-    images: ['/projects/dreamcook_banner.jpg', '/projects/dreamcook_banner.jpg'],
+    images: ['/projects/dreamcook_banner.jpeg', '/projects/dreamcook_banner.jpeg'],
     year: '2020'
   },
   {

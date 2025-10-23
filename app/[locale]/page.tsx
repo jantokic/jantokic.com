@@ -132,29 +132,29 @@ export default function Home() {
 	}, []);
 
 	// Skills data
-	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'Next.js', 'Solana', 'Docker', 'Kubernetes', 'Databases'];
+	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'React', 'Solana', 'DevOps', 'Databases', 'CMS', 'PIM'];
 
 	// Work data
 	const workData = [
 		{
-			year: '2024-2025',
+			year: '2024 - Present',
 			key: 'elevantiq',
-			techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Vendure'],
+			techStack: ['TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Vendure', 'DevOps'],
 		},
 		{
-			year: '2024-2025',
+			year: '2024 - 2025',
 			key: 'mira',
-			techStack: ['Go', 'Solana', 'WebSocket', 'Docker', 'Monitoring'],
+			techStack: ['Go', 'Solana', 'GCP', 'WebSockets', 'Observability'],
 		},
 		{
 			year: '2022-2024',
 			key: 'copile',
-			techStack: ['Python', 'Node.js', 'PostgreSQL', 'WebSocket', 'Docker'],
+			techStack: ['Python', 'Node.js', 'NoSQL', 'GCP'],
 		},
 		{
 			year: '2022',
 			key: 'ibm',
-			techStack: ['Vue.js', 'JavaScript', 'Magento', 'REST APIs'],
+			techStack: ['Vue.js', 'JavaScript', 'Magento', 'Headless Commerce'],
 		},
 	];
 
@@ -177,7 +177,7 @@ export default function Home() {
 						<button
 							key={section}
 							onClick={() => scrollToSection(section)}
-							className={`h-2 w-2 rounded-full transition-all duration-300 ${
+							className={`h-3 w-3 rounded-full transition-all duration-300 ${
 								activeSection === section
 									? 'bg-foreground scale-150'
 									: 'bg-border hover:bg-muted-foreground'
@@ -208,19 +208,19 @@ export default function Home() {
 					/>
 					<div className="h-screen inset-0 pointer-events-none absolute flex items-center justify-center text-center px-3 mix-blend-exclusion text-white">
 						<h1 className="font-serif text-4xl md:text-7xl tracking-tight">
-							<span className="italic">I create;</span> therefore I am
+							<span className="italic">{t('gallery.tagline1')};</span> {t('gallery.tagline2')}
 						</h1>
 					</div>
 
 					<div className="text-center absolute bottom-10 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none mix-blend-exclusion text-white">
 						{!galleryComplete ? (
 							<>
-								<p>Click projects to view details • Use mouse wheel, arrow keys, or touch to navigate</p>
-								<p className="opacity-60">Auto-play resumes after 3 seconds of inactivity</p>
+								<p>{t('gallery.instructions')}</p>
+								<p className="opacity-60">{t('gallery.autoplay')}</p>
 							</>
 						) : (
 							<div className="flex flex-col items-center gap-2 animate-pulse">
-								<p className="text-sm">Scroll down to continue</p>
+								<p className="text-sm">{t('gallery.scrollDown')}</p>
 								<ChevronDown className="w-6 h-6" />
 							</div>
 						)}
@@ -230,8 +230,12 @@ export default function Home() {
 				{/* Intro Section */}
 				<section
 					id="intro"
-					ref={(el) => (sectionsRef.current[0] = el)}
-					className="min-h-screen py-20 sm:py-32 opacity-0"
+					ref={(el) => {
+						if (el) {
+							sectionsRef.current[0] = el;
+						}
+					}}
+					className="min-h-[80vh] flex items-center opacity-0"
 				>
 					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 						<div className="grid gap-12 lg:grid-cols-5">
@@ -305,8 +309,12 @@ export default function Home() {
 				{/* Selected Work Section */}
 				<section
 					id="work"
-					ref={(el) => (sectionsRef.current[1] = el)}
-					className="min-h-screen py-20 sm:py-32 opacity-0"
+					ref={(el) => {
+						if (el) {
+							sectionsRef.current[1] = el;
+						}
+					}}
+					className="py-16 sm:py-20 opacity-0"
 				>
 					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
@@ -363,8 +371,12 @@ export default function Home() {
 				{/* Featured Projects Section */}
 				<section
 					id="projects"
-					ref={(el) => (sectionsRef.current[2] = el)}
-					className="min-h-screen py-20 sm:py-32 opacity-0"
+					ref={(el) => {
+						if (el) {
+							sectionsRef.current[2] = el;
+						}
+					}}
+					className="py-16 sm:py-20 opacity-0"
 				>
 					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
@@ -372,42 +384,47 @@ export default function Home() {
 						</h2>
 
 						<div className="grid gap-6 sm:grid-cols-2">
-							{projects.map((project) => (
-								<Link
-									key={project.slug}
-									href={`/projects/${project.slug}`}
-									className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
-								>
-									{/* Project Image */}
-									<div className="aspect-video w-full overflow-hidden bg-muted">
-										<img
-											src={project.image}
-											alt={project.title}
-											className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-										/>
-									</div>
+							{Object.entries(t.raw('projects.items') as Record<string, any>).map(([slug, projectData]) => {
+								const project = projects.find(p => p.slug === slug);
+								if (!project) return null;
 
-									{/* Project Content */}
-									<div className="p-6 space-y-3">
-										<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-											{project.category} • {project.year}
+								return (
+									<Link
+										key={slug}
+										href={`/projects/${slug}`}
+										className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
+									>
+										{/* Project Image */}
+										<div className="aspect-video w-full overflow-hidden bg-muted">
+											<img
+												src={project.image}
+												alt={projectData.title}
+												className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+											/>
 										</div>
 
-										<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
-											{project.title}
-										</h3>
+										{/* Project Content */}
+										<div className="p-6 space-y-3">
+											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+												{projectData.category} • {project.year}
+											</div>
 
-										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3">
-											{project.shortDescription}
-										</p>
+											<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
+												{projectData.title}
+											</h3>
 
-										<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all">
-											{t('projects.viewProject')}
-											<ArrowUpRight className="w-4 h-4" />
+											<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3">
+												{projectData.shortDescription}
+											</p>
+
+											<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all">
+												{t('projects.viewProject')}
+												<ArrowUpRight className="w-4 h-4" />
+											</div>
 										</div>
-									</div>
-								</Link>
-							))}
+									</Link>
+								);
+							})}
 						</div>
 					</div>
 				</section>
@@ -415,8 +432,12 @@ export default function Home() {
 				{/* Connect Section */}
 				<section
 					id="connect"
-					ref={(el) => (sectionsRef.current[3] = el)}
-					className="min-h-screen py-20 sm:py-32 opacity-0"
+					ref={(el) => {
+						if (el) {
+							sectionsRef.current[3] = el;
+						}
+					}}
+					className="py-32 sm:py-40 opacity-0"
 				>
 					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-8 text-foreground">

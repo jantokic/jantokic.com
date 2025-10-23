@@ -7,8 +7,9 @@
     "connect": "Kontakt"
   },
   "gallery": {
-    "tagline": "Ich erschaffe, also bin ich",
-    "instructions": "Klicke auf ein Projekt, um Details zu sehen • Scrolle, nutze die Pfeiltasten oder wische zur Navigation",
+    "tagline1": "Ich denke",
+    "tagline2": "also bin ich",
+    "instructions": "Klicke auf ein Projekt, um Details zu sehen • Scrolle oder nutze die Pfeiltasten zur Navigation",
     "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität erneut",
     "scrollDown": "Nach unten scrollen"
   },
@@ -55,7 +56,39 @@
     "heading": "Ausgewählte Projekte",
     "viewProject": "Projekt ansehen",
     "backToProjects": "Zurück zu den Projekten",
-    "relatedProjects": "Ähnliche Projekte"
+    "relatedProjects": "Ähnliche Projekte",
+    "items": {
+      "mira-trading-bot": {
+        "title": "Mira Trading - Solana Trading Bot",
+        "shortDescription": "Ultra-niedrige-Latenz Solana Trading Bot mit $230K Gewinn und 8.000+ Trades/Monat",
+        "category": "Blockchain & Trading"
+      },
+      "copile-trading-platform": {
+        "title": "Copile - B2B Crypto Trading Plattform",
+        "shortDescription": "Crypto SaaS-Plattform auf 2.100+ Nutzer skaliert mit €35K Umsatz",
+        "category": "Fintech & Trading"
+      },
+      "ibm-headless-commerce": {
+        "title": "IBM Österreich - Headless Commerce Storefront",
+        "shortDescription": "Vue.js E-Commerce-Plattform mit 85.000+ SKUs und dynamischen Promotions",
+        "category": "E-Commerce"
+      },
+      "vendure-open-source": {
+        "title": "Vendure - Open-Source Headless Commerce",
+        "shortDescription": "Beiträge zu Vendure (6.5k Stars), genutzt von IBM, Breitling, Swile, QVC",
+        "category": "Open Source"
+      },
+      "secrets-management": {
+        "title": "Zentralisierte Secrets Management Lösung",
+        "shortDescription": "Sicherheitsinfrastruktur mit 0 Schwachstellen in 12 Monaten",
+        "category": "Security & DevOps"
+      },
+      "docker-swarm-deployment": {
+        "title": "Docker Swarm Deployment Pipeline",
+        "shortDescription": "Deployment-Infrastruktur ermöglichte 2-Monats-Lieferung eines 4-Monats-Projekts",
+        "category": "DevOps & Infrastruktur"
+      }
+    }
   },
   "connect": {
     "heading": "Kontakt",
@@ -64,6 +97,40 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "x": "X"
+  },
+  "contact": {
+    "backToPortfolio": "← Zurück zum Portfolio",
+    "heading": "Lassen Sie uns zusammenarbeiten",
+    "description": "Ich bin offen für Freelance-Projekte und Consulting. Ob performante Systeme, Blockchain-Integration oder skalierbare Infrastruktur – lassen Sie uns gemeinsam etwas Außergewöhnliches aufbauen.",
+    "email": "E-Mail",
+    "location": "Standort",
+    "locationValue": "München, Deutschland",
+    "social": "Social Media",
+    "servicesHeading": "Meine Dienstleistungen",
+    "services": [
+      "High-Performance Backend-Systeme",
+      "Blockchain & Trading-Plattform-Entwicklung",
+      "E-Commerce & Headless Commerce-Lösungen",
+      "DevOps & Infrastruktur-Setup",
+      "Real-Time APIs & WebSocket-Integration",
+      "Security & Secrets Management",
+      "Team Leadership & Technical Consulting"
+    ],
+    "formHeading": "Schreiben Sie mir eine Nachricht",
+    "nameLabel": "Ihr Name",
+    "emailLabel": "Ihre E-Mail",
+    "messageLabel": "Projektdetails",
+    "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt, Zeitrahmen und Budget...",
+    "sendButton": "Nachricht senden",
+    "responseTime": "Ich antworte in der Regel innerhalb von 24 Stunden",
+    "stats": {
+      "responseTime": "24h",
+      "responseTimeLabel": "Antwortzeit",
+      "projects": "7+",
+      "projectsLabel": "Projekte abgeschlossen",
+      "uptime": "99,5%",
+      "uptimeLabel": "Uptime erreicht"
+    }
   },
   "footer": {
     "copyright": "© {year} Jan Tokic",

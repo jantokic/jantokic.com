@@ -1,16 +1,26 @@
 'use client';
 
-import { Mail, MapPin, Send, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Linkedin, Sun, Moon } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
 import BrandIcon from '@/components/BrandIcon';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function ContactPage() {
+	const t = useTranslations();
 	const [formState, setFormState] = useState({
 		name: '',
 		email: '',
 		message: '',
 	});
+	const [mounted, setMounted] = useState(false);
+	const { theme, setTheme } = useTheme();
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
@@ -20,7 +30,7 @@ export default function ContactPage() {
 	};
 
 	return (
-		<main className="min-h-screen bg-background">
+		<main className="min-h-screen bg-background flex flex-col">
 			{/* Header */}
 			<nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -28,52 +38,52 @@ export default function ContactPage() {
 						href="/"
 						className="font-mono uppercase text-xs font-semibold text-foreground hover:text-muted-foreground transition-colors tracking-wider"
 					>
-						← Back to Portfolio
+						{t('contact.backToPortfolio')}
 					</Link>
 				</div>
 			</nav>
 
 			{/* Contact Section */}
-			<section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
+			<section className="flex-grow pt-32 pb-24 px-4 sm:px-6 lg:px-8">
 				<div className="max-w-6xl mx-auto">
 					<div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 						{/* Left Column - Contact Info */}
 						<div className="lg:col-span-2">
 							<h1 className="font-mono uppercase text-2xl font-semibold text-foreground mb-4 tracking-wider">
-								Let's Work Together
+								{t('contact.heading')}
 							</h1>
 							<p className="font-mono text-sm text-muted-foreground mb-8 leading-relaxed opacity-70">
-								I'm available for freelance projects and consulting. Whether you need high-performance systems, blockchain integration, or scalable infrastructure—let's build something exceptional.
+								{t('contact.description')}
 							</p>
 
 							{/* Contact Details */}
 							<div className="space-y-6 mb-12">
 								<div>
 									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
-										Email
+										{t('contact.email')}
 									</h3>
 									<a
-										href="mailto:jan@jantokic.com"
+										href={`mailto:${t('connect.email')}`}
 										className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 									>
 										<Mail className="w-4 h-4" />
-										jan@jantokic.com
+										{t('connect.email')}
 									</a>
 								</div>
 
 								<div>
 									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
-										Location
+										{t('contact.location')}
 									</h3>
 									<p className="font-mono text-sm text-muted-foreground flex items-center gap-2 opacity-80">
 										<MapPin className="w-4 h-4" />
-										Munich, Germany
+										{t('contact.locationValue')}
 									</p>
 								</div>
 
 								<div>
 									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
-										Social
+										{t('contact.social')}
 									</h3>
 									<div className="flex flex-wrap gap-4">
 										<a
@@ -107,16 +117,12 @@ export default function ContactPage() {
 							{/* Services */}
 							<div>
 								<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-4 tracking-wider">
-									Services I Offer
+									{t('contact.servicesHeading')}
 								</h3>
 								<ul className="space-y-2 font-mono text-xs text-muted-foreground opacity-80">
-									<li>• High-Performance Backend Systems</li>
-									<li>• Blockchain & Trading Platform Development</li>
-									<li>• E-Commerce & Headless Commerce Solutions</li>
-									<li>• DevOps & Infrastructure Setup</li>
-									<li>• Real-Time APIs & WebSocket Integration</li>
-									<li>• Security & Secrets Management</li>
-									<li>• Team Leadership & Technical Consulting</li>
+									{(t.raw('contact.services') as string[]).map((service, index) => (
+										<li key={index}>• {service}</li>
+									))}
 								</ul>
 							</div>
 						</div>
@@ -125,7 +131,7 @@ export default function ContactPage() {
 						<div className="lg:col-span-3">
 							<div className="bg-muted p-8 rounded-2xl border border-border">
 								<h2 className="font-mono uppercase text-sm font-semibold text-foreground mb-6 tracking-wider">
-									Send Me a Message
+									{t('contact.formHeading')}
 								</h2>
 								<form onSubmit={handleSubmit} className="space-y-6">
 									<div>
@@ -133,7 +139,7 @@ export default function ContactPage() {
 											htmlFor="name"
 											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
 										>
-											Your Name
+											{t('contact.nameLabel')}
 										</label>
 										<input
 											type="text"
@@ -152,7 +158,7 @@ export default function ContactPage() {
 											htmlFor="email"
 											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
 										>
-											Your Email
+											{t('contact.emailLabel')}
 										</label>
 										<input
 											type="email"
@@ -171,7 +177,7 @@ export default function ContactPage() {
 											htmlFor="message"
 											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
 										>
-											Project Details
+											{t('contact.messageLabel')}
 										</label>
 										<textarea
 											id="message"
@@ -182,7 +188,7 @@ export default function ContactPage() {
 											onChange={(e) =>
 												setFormState({ ...formState, message: e.target.value })
 											}
-											placeholder="Tell me about your project, timeline, and budget..."
+											placeholder={t('contact.messagePlaceholder')}
 										/>
 									</div>
 
@@ -191,11 +197,11 @@ export default function ContactPage() {
 										className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:opacity-90 transition-opacity"
 									>
 										<Send className="w-4 h-4" />
-										Send Message
+										{t('contact.sendButton')}
 									</button>
 
 									<p className="font-mono text-xs text-muted-foreground text-center opacity-70">
-										I typically respond within 24 hours
+										{t('contact.responseTime')}
 									</p>
 								</form>
 							</div>
@@ -203,21 +209,21 @@ export default function ContactPage() {
 							{/* Quick Stats */}
 							<div className="mt-8 grid grid-cols-3 gap-4">
 								<div className="bg-background p-4 rounded-xl border border-border text-center">
-									<div className="font-mono text-2xl font-bold text-foreground">24h</div>
+									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.responseTime')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										Response Time
+										{t('contact.stats.responseTimeLabel')}
 									</div>
 								</div>
 								<div className="bg-background p-4 rounded-xl border border-border text-center">
-									<div className="font-mono text-2xl font-bold text-foreground">7+</div>
+									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.projects')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										Projects Delivered
+										{t('contact.stats.projectsLabel')}
 									</div>
 								</div>
 								<div className="bg-background p-4 rounded-xl border border-border text-center">
-									<div className="font-mono text-2xl font-bold text-foreground">99.5%</div>
+									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.uptime')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										Uptime Achieved
+										{t('contact.stats.uptimeLabel')}
 									</div>
 								</div>
 							</div>
@@ -227,9 +233,31 @@ export default function ContactPage() {
 			</section>
 
 			{/* Footer */}
-			<footer className="py-8 px-4 sm:px-6 lg:px-8 bg-muted border-t border-border">
-				<div className="max-w-7xl mx-auto text-center font-mono text-muted-foreground text-xs opacity-60">
-					<p>© {new Date().getFullYear()} Jan Tokic. Built with Next.js & Three.js</p>
+			<footer className="py-12 px-6 sm:px-8 lg:px-16 border-t border-border/30">
+				<div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
+					<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+						© {new Date().getFullYear()} Jan Tokic
+					</p>
+
+					<div className="flex items-center gap-4">
+						{/* Language Switcher */}
+						{mounted && <LanguageSwitcher />}
+
+						{/* Theme Toggle Button */}
+						{mounted && (
+							<button
+								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+								className="p-2 rounded-lg hover:bg-muted transition-colors"
+								aria-label="Toggle theme"
+							>
+								{theme === 'dark' ? (
+									<Sun className="w-5 h-5 text-foreground" />
+								) : (
+									<Moon className="w-5 h-5 text-foreground" />
+								)}
+							</button>
+						)}
+					</div>
 				</div>
 			</footer>
 		</main>

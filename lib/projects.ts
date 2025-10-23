@@ -39,8 +39,8 @@ export const projects: Project[] = [
     ],
     duration: '3 months (Oct 2024 - Present)',
     category: 'Blockchain & Trading',
-    image: '/projects/analytics-pipeline.webp',
-    images: ['/projects/analytics-pipeline.webp', '/projects/analytics-pipeline-2.webp'],
+    image: '/projects/curve_banner.jpeg',
+    images: ['/projects/curve_logo.jpg', '/projects/curve_cli.png'],
     year: '2024'
   },
   {

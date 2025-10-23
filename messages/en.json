@@ -7,8 +7,9 @@
     "connect": "Connect"
   },
   "gallery": {
-    "tagline": "I create; therefore I am",
-    "instructions": "Click a project to view details • Use scroll, arrow keys, or touch to explore",
+    "tagline1": "I think",
+    "tagline2": "therefore I am",
+    "instructions": "Click a project to view details • Scroll or use arrow keys to navigate",
     "autoplay": "Auto-play resumes after 3 seconds of inactivity",
     "scrollDown": "Scroll down to continue"
   },
@@ -34,28 +35,60 @@
     },
     "mira": {
       "role": "Founding Engineer",
-      "company": "Mira Trading",
+      "company": "Mira",
       "location": "London",
-      "description": "Developed a high-frequency Solana trading bot in Go. Automated token launches and real-time execution, reaching over 8,000 trades per month and generating $230K profit in five months."
+      "description": "Developed a high-frequency Solana trading bot. Automated token launches and real-time execution, reaching over 8,000 trades per month and generating $230K profit in five months."
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
-      "location": "Vienna",
-      "description": "Built a B2B crypto trading platform used by 2,100+ clients. Designed a real-time API across five exchanges, processing roughly €1.2M in monthly volume."
+      "location": "London",
+      "description": "Built a B2B crypto trading platform with 2,100+ monthly active users. Designed a real-time API across the top centralized exchanges, processing €1.2M+ in monthly volume."
     },
     "ibm": {
       "role": "Software Engineering Intern",
       "company": "IBM iX",
       "location": "Vienna",
-      "description": "Developed a Vue.js headless commerce storefront managing 85,000+ SKUs. Reduced promotion rollout time for enterprise clients by 40%."
+      "description": "Developed a headless commerce storefront managing 85,000+ products. Reduced promotion rollout time for enterprise clients by 40%."
     }
   },
   "projects": {
     "heading": "Featured Projects",
     "viewProject": "View Project",
     "backToProjects": "Back to Projects",
-    "relatedProjects": "Related Projects"
+    "relatedProjects": "Related Projects",
+    "items": {
+      "mira-trading-bot": {
+        "title": "Mira - Solana Trading Bot",
+        "shortDescription": "Ultra-low-latency Solana trading bot generating $230K profit with 8,000+ trades/month",
+        "category": "Blockchain & Trading"
+      },
+      "copile-trading-platform": {
+        "title": "Copile - B2B Crypto Trading Platform",
+        "shortDescription": "Scaled crypto SaaS platform to 2100+ users, generating €35K revenue",
+        "category": "Fintech & Trading"
+      },
+      "ibm-headless-commerce": {
+        "title": "IBM Austria - Headless Commerce Storefront",
+        "shortDescription": "Vue.js e-commerce platform handling 85,000+ SKUs with dynamic promotions",
+        "category": "E-Commerce"
+      },
+      "vendure-open-source": {
+        "title": "Vendure - Open-Source Headless Commerce",
+        "shortDescription": "Contributed to Vendure (6.5k stars), trusted by IBM, Breitling, Swile, QVC",
+        "category": "Open Source"
+      },
+      "secrets-management": {
+        "title": "Centralized Secrets Management Solution",
+        "shortDescription": "Security infrastructure achieving 0 vulnerabilities in 12 months",
+        "category": "Security & DevOps"
+      },
+      "docker-swarm-deployment": {
+        "title": "Docker Swarm Deployment Pipeline",
+        "shortDescription": "Built deployment infrastructure enabling 2-month delivery of 4-month project",
+        "category": "DevOps & Infrastructure"
+      }
+    }
   },
   "connect": {
     "heading": "Let's Connect",
@@ -64,6 +97,40 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "x": "X"
+  },
+  "contact": {
+    "backToPortfolio": "← Back to Portfolio",
+    "heading": "Let's Work Together",
+    "description": "I'm available for freelance projects and consulting. Whether you need high-performance systems, blockchain integration, or scalable infrastructure—let's build something exceptional.",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Munich, Germany",
+    "social": "Social",
+    "servicesHeading": "Services I Offer",
+    "services": [
+      "High-Performance Backend Systems",
+      "Blockchain & Trading Platform Development",
+      "E-Commerce & Headless Commerce Solutions",
+      "DevOps & Infrastructure Setup",
+      "Real-Time APIs & WebSocket Integration",
+      "Security & Secrets Management",
+      "Team Leadership & Technical Consulting"
+    ],
+    "formHeading": "Send Me a Message",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Project Details",
+    "messagePlaceholder": "Tell me about your project, timeline, and budget...",
+    "sendButton": "Send Message",
+    "responseTime": "I typically respond within 24 hours",
+    "stats": {
+      "responseTime": "24h",
+      "responseTimeLabel": "Response Time",
+      "projects": "7+",
+      "projectsLabel": "Projects Delivered",
+      "uptime": "99.5%",
+      "uptimeLabel": "Uptime Achieved"
+    }
   },
   "footer": {
     "copyright": "© {year} Jan Tokic",

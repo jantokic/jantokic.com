@@ -79,6 +79,16 @@
         "title": "Copile - B2B Crypto Trading Plattform",
         "shortDescription": "Crypto SaaS-Plattform auf 2.100+ Nutzer skaliert mit €35K Umsatz",
         "category": "Fintech & Trading"
+      },
+      "acidnode-validator": {
+        "title": "Acid Node - Solana Validator-Infrastruktur",
+        "shortDescription": "B2C Blockchain-Validator im Solana-Netzwerk mit Fokus auf Skalierbarkeit, Fehlertoleranz und Cloud-Infrastruktur",
+        "category": "Blockchain & Infrastruktur"
+      },
+      "dreamcook-community": {
+        "title": "DreamCook - E-Commerce Community-Plattform",
+        "shortDescription": "Discord-basierte Community-Plattform mit 5.000+ Mitgliedern, Real-Time Drop-Monitoren und Trading-Signalen",
+        "category": "E-Commerce & Community"
       }
     }
   },

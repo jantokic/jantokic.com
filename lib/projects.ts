@@ -96,9 +96,9 @@ export const projects: Project[] = [
     ],
     duration: '18 months (Sep 2022 - Mar 2024)',
     category: 'Fintech & Trading',
-    image: '/projects/copilelanding1.jpeg',
-    images: ['/projects/copilelanding1.jpeg', '/projects/copilelanding1.jpeg'],
-    year: '2023'
+    image: '/projects/copile_banner.png',
+    images: ['/projects/copile_banner.png', '/projects/copile_banner.png'],
+    year: '2022'
   },
   {
     id: '4',
@@ -123,8 +123,8 @@ export const projects: Project[] = [
     ],
     duration: '9 months (Apr 2024 - Present)',
     category: 'E-Commerce & SaaS',
-    image: '/projects/microservices.webp',
-    images: ['/projects/microservices.webp', '/projects/microservices-2.webp'],
+    image: '/projects/richard_banner.jpeg',
+    images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],
     year: '2024'
   },
   {
@@ -149,8 +149,8 @@ export const projects: Project[] = [
     ],
     duration: '3 months (Jul 2022 - Sep 2022)',
     category: 'E-Commerce',
-    image: '/projects/api-gateway.webp',
-    images: ['/projects/api-gateway.webp', '/projects/api-gateway-2.webp'],
+    image: '/projects/copile_banner.png',
+    images: ['/projects/copile_banner.png', '/projects/copile_banner.png'],
     year: '2022'
   },
   {
@@ -175,64 +175,12 @@ export const projects: Project[] = [
     ],
     duration: 'Ongoing contributions (2024)',
     category: 'Open Source',
-    image: '/projects/auth-service.webp',
-    images: ['/projects/auth-service.webp', '/projects/auth-service-2.webp'],
+    image: '/projects/synapse_banner.jpg',
+    images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
     year: '2024'
   },
   {
     id: '7',
-    slug: 'secrets-management',
-    title: 'Centralized Secrets Management Solution',
-    shortDescription: 'Security infrastructure achieving 0 vulnerabilities in 12 months',
-    fullDescription: 'At Elevantiq, I rolled out a centralized secrets-management solution that hardened security across all services. The implementation achieved 0 vulnerabilities over 12 months and reduced credential-leak risk by 100%.',
-    role: 'Software Engineer II',
-    techStack: ['Docker Secrets', 'Vault', 'Kubernetes', 'CI/CD', 'Security Auditing'],
-    challenges: [
-      'Migrating existing credentials without service downtime',
-      'Implementing automated secret rotation',
-      'Ensuring compliance with security best practices',
-      'Training team on secure credential management'
-    ],
-    outcomes: [
-      'Achieved 0 vulnerabilities in 12 months of operation',
-      'Reduced credential-leak risk by 100%',
-      'Automated secret rotation across all services',
-      'Passed security audits with zero findings'
-    ],
-    duration: '2 months (2024)',
-    category: 'Security & DevOps',
-    image: '/projects/notification-system.webp',
-    images: ['/projects/notification-system.webp', '/projects/notification-system-2.webp'],
-    year: '2024'
-  },
-  {
-    id: '8',
-    slug: 'docker-swarm-deployment',
-    title: 'Docker Swarm Deployment Pipeline',
-    shortDescription: 'Built deployment infrastructure enabling 2-month delivery of 4-month project',
-    fullDescription: 'I introduced an Nx monorepo setup and built out Docker Swarm deployments at Elevantiq, dramatically improving developer experience and deployment speed. This infrastructure enabled delivery of a 4-month project in just 2 months.',
-    role: 'Software Engineer II',
-    techStack: ['Docker Swarm', 'Nx Monorepo', 'CI/CD', 'Bash', 'Node.js', 'TypeScript'],
-    challenges: [
-      'Setting up monorepo for multiple interconnected services',
-      'Configuring Docker Swarm for production deployments',
-      'Implementing efficient caching and build optimization',
-      'Creating developer-friendly deployment workflows'
-    ],
-    outcomes: [
-      'Delivered 4-month project in 2 months through improved DX',
-      'Streamlined deployment process across all services',
-      'Reduced build times with Nx caching',
-      'Enabled parallel development across teams'
-    ],
-    duration: '1 month (2024)',
-    category: 'DevOps & Infrastructure',
-    image: '/projects/inventory-api.webp',
-    images: ['/projects/inventory-api.webp', '/projects/inventory-api-2.webp'],
-    year: '2024'
-  },
-  {
-    id: '9',
     slug: 'synapse-knowledge-system',
     title: 'Synapse - AI Knowledge System',
     shortDescription: 'Self-learning knowledge system connecting employees with internal experts using vector search and semantic retrieval',
@@ -260,6 +208,66 @@ export const projects: Project[] = [
     image: '/projects/synapse_banner.jpg',
     images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
     year: '2025'
+  },
+  {
+    id: '8',
+    slug: 'dreamcook-community',
+    title: 'DreamCook - E-Commerce Community Platform',
+    shortDescription: 'Discord-based community platform serving 5,000+ members with real-time drop monitors and trading signals',
+    fullDescription: 'At DreamCook, a B2C e-commerce consulting service, I contributed to the development of a Discord-based community platform serving 5,000+ members. The platform provided real-time product drop monitoring, automated inventory tracking, and trading signals for sneaker releases and limited-edition products. I worked on integrating various monitoring tools, bot services, and building internal dashboards to manage community features and member access. The platform evolved from sneaker monitoring to broader trading signals before shutting down in 2022.',
+    role: 'Full Stack Engineer',
+    techStack: ['JavaScript', 'Python', 'Discord.js', 'Web Scraping', 'Business Intelligence', 'Content Management Systems'],
+    challenges: [
+      'Integrating multiple third-party monitoring and bot services into unified platform',
+      'Building real-time notification system for product drops across multiple retailers',
+      'Managing access control and subscription tiers for 5,000+ community members',
+      'Creating internal dashboards for community management and analytics',
+      'Handling high-throughput real-time data feeds from various e-commerce sources',
+      'Collaborating with product and design teams to translate business requirements into features'
+    ],
+    outcomes: [
+      'Supported community growth to 5,000+ active members',
+      'Delivered real-time monitoring system tracking product drops across multiple retailers',
+      'Built subscription management system handling tiered member access',
+      'Created analytics dashboard providing business intelligence on community engagement',
+      'Enabled platform evolution from sneaker monitoring to broader trading signals',
+      'Contributed to 2-year platform operation (2020-2022) before strategic shutdown'
+    ],
+    duration: '2 years (Jul 2020 - Jun 2022)',
+    category: 'E-Commerce & Community',
+    image: '/projects/dreamcook_banner.jpeg',
+    images: ['/projects/dreamcook_banner.jpg', '/projects/dreamcook_banner.jpg'],
+    year: '2020'
+  },
+  {
+    id: '9',
+    slug: 'acidnode-validator',
+    title: 'Acid Node - Solana Validator Infrastructure',
+    shortDescription: 'B2C blockchain validator on Solana network focusing on scalability, fault tolerance, and cloud infrastructure',
+    fullDescription: 'At Acid Node, I worked on the deployment and infrastructure of a B2C blockchain validator operating on the Solana network. I contributed to designing cloud solutions and microservices to enhance the financial delivery and reliability of the validator infrastructure. The role involved orchestrating deployments on AWS, implementing fault-tolerant architectures, and optimizing cloud infrastructure for high-throughput blockchain operations.',
+    role: 'Backend Engineer',
+    techStack: ['Python', 'Amazon Web Services (AWS)', 'Blockchain', 'Cloud Automation', 'Cloud-Native Architecture', 'Cloud Infrastructure'],
+    challenges: [
+      'Deploying and maintaining high-availability Solana validator infrastructure',
+      'Architecting cloud solutions for blockchain operations requiring 99.9%+ uptime',
+      'Implementing automated deployment pipelines for cloud-native validator services',
+      'Optimizing infrastructure costs while maintaining performance and reliability',
+      'Orchestrating microservices architecture for financial transaction processing',
+      'Ensuring fault tolerance and disaster recovery for blockchain validator operations'
+    ],
+    outcomes: [
+      'Deployed production-ready Solana validator infrastructure on AWS',
+      'Implemented cloud automation reducing deployment time and operational overhead',
+      'Architected fault-tolerant microservices for enhanced financial delivery',
+      'Contributed to validator uptime and reliability in Solana network operations',
+      'Built scalable cloud infrastructure supporting blockchain transaction processing',
+      'Delivered cloud-native architecture enabling rapid iteration and deployment'
+    ],
+    duration: '5 months (Sep 2022 - Jan 2023)',
+    category: 'Blockchain & Infrastructure',
+    image: '/projects/acidnode_banner.jpeg',
+    images: ['/projects/acidnode_banner.jpeg', '/projects/acidnode_banner.jpeg'],
+    year: '2022'
   }
 ];
 

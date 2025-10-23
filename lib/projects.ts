@@ -18,6 +18,36 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: '1',
+    slug: 'richard-ai-research',
+    title: 'Richard - Autonomous AI Research Engine',
+    shortDescription: 'Self-evolving multi-agent system that autonomously detects trends, simulates scenarios, and generates strategic insights',
+    fullDescription: 'Richard is a proactive AI research engine that solves a critical knowledge work problem: strategic blind spots. Traditional tools are reactive—they only answer what you ask. Richard autonomously monitors diverse data sources, detects weak signals, and generates predictive hypotheses before users even know what questions to ask. I architected a modular multi-agent system using LangGraph orchestration, vectorized memory with Pinecone, and custom DAG-based simulation for scenario modeling. The system reduced typical research workflows from 5-8 hours to under 30 minutes while generating original strategic insights with full traceability.',
+    role: 'Founding Engineer & System Architect',
+    techStack: ['Python', 'GPT-4o', 'LangGraph', 'LangChain', 'Pinecone', 'LlamaIndex', 'Streamlit', 'Custom DAG Engine'],
+    challenges: [
+      'Architecting autonomous agents that proactively surface insights without prompting',
+      'Building recursive feedback loops enabling emergent intelligence over time',
+      'Implementing DAG-based scenario simulation with probabilistic confidence modeling',
+      'Designing modular system architecture for independent agent iteration',
+      'Creating vectorized memory layer for persistent signal correlation across domains',
+      'Orchestrating stateful multi-agent chains with real-time reasoning explainability'
+    ],
+    outcomes: [
+      'Reduced strategic research time from 5-8 hours to <30 minutes (94% efficiency gain)',
+      'Generated 400+ unique insights across 8 weeks with <5% redundancy',
+      'Built modular architecture enabling rapid agent swapping without system breakage',
+      'Detected cross-domain pattern correlations (crypto trends + geopolitical sentiment)',
+      'Delivered explainable AI with full decision tree traceability for compliance',
+      'Demonstrated ROI through early detection of contrarian investment opportunities'
+    ],
+    duration: '8 weeks (2024)',
+    category: 'AI & Research',
+    image: '/projects/richard_banner.jpeg',
+    images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],
+    year: '2025'
+  },
+  {
+    id: '2',
     slug: 'mira-trading-bot',
     title: 'Mira Trading - Solana Trading Bot',
     shortDescription: 'Ultra-low-latency Solana trading bot generating $230K profit with 8,000+ trades/month',
@@ -41,33 +71,6 @@ export const projects: Project[] = [
     category: 'Blockchain & Trading',
     image: '/projects/curve_banner.jpeg',
     images: ['/projects/curve_logo.jpg', '/projects/curve_cli.png'],
-    year: '2024'
-  },
-  {
-    id: '2',
-    slug: 'elevantiq-order-processing',
-    title: 'Elevantiq - High-Throughput Order Processing',
-    shortDescription: 'Order-processing system handling 10M+ orders/month, enabling €130M annual revenue',
-    fullDescription: 'At Elevantiq, I architected and launched a distributed order-processing system that powers the core of their e-commerce operations. I boosted performance by 45% through async job queues, database sharding, and in-memory caching—cutting latency by 60%.',
-    role: 'Software Engineer II',
-    techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure'],
-    challenges: [
-      'Scaling to handle 10 million+ orders per month',
-      'Reducing order-processing latency from 200ms to 80ms',
-      'Implementing centralized secrets management (achieving 0 vulnerabilities)',
-      'Delivering a 4-month project in 2 months with 40+ backlog tickets'
-    ],
-    outcomes: [
-      'Enabled €130 million annual revenue through reliable processing',
-      'Boosted performance by 45% via async queues and caching',
-      'Achieved 0 vulnerabilities in 12 months (100% credential-leak prevention)',
-      'Cleared 40+ backlog tickets single-handedly',
-      'Contributed to open-source Vendure (6.5k stars, trusted by IBM, Breitling)'
-    ],
-    duration: '9 months (Apr 2024 - Present)',
-    category: 'E-Commerce & SaaS',
-    image: '/projects/microservices.webp',
-    images: ['/projects/microservices.webp', '/projects/microservices-2.webp'],
     year: '2024'
   },
   {
@@ -99,6 +102,33 @@ export const projects: Project[] = [
   },
   {
     id: '4',
+    slug: 'elevantiq-order-processing',
+    title: 'Elevantiq - High-Throughput Order Processing',
+    shortDescription: 'Order-processing system handling 10M+ orders/month, enabling €130M annual revenue',
+    fullDescription: 'At Elevantiq, I architected and launched a distributed order-processing system that powers the core of their e-commerce operations. I boosted performance by 45% through async job queues, database sharding, and in-memory caching—cutting latency by 60%.',
+    role: 'Software Engineer II',
+    techStack: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure'],
+    challenges: [
+      'Scaling to handle 10 million+ orders per month',
+      'Reducing order-processing latency from 200ms to 80ms',
+      'Implementing centralized secrets management (achieving 0 vulnerabilities)',
+      'Delivering a 4-month project in 2 months with 40+ backlog tickets'
+    ],
+    outcomes: [
+      'Enabled €130 million annual revenue through reliable processing',
+      'Boosted performance by 45% via async queues and caching',
+      'Achieved 0 vulnerabilities in 12 months (100% credential-leak prevention)',
+      'Cleared 40+ backlog tickets single-handedly',
+      'Contributed to open-source Vendure (6.5k stars, trusted by IBM, Breitling)'
+    ],
+    duration: '9 months (Apr 2024 - Present)',
+    category: 'E-Commerce & SaaS',
+    image: '/projects/microservices.webp',
+    images: ['/projects/microservices.webp', '/projects/microservices-2.webp'],
+    year: '2024'
+  },
+  {
+    id: '5',
     slug: 'ibm-headless-commerce',
     title: 'IBM Austria - Headless Commerce Storefront',
     shortDescription: 'Vue.js e-commerce platform handling 85,000+ SKUs with dynamic promotions',
@@ -124,7 +154,7 @@ export const projects: Project[] = [
     year: '2022'
   },
   {
-    id: '5',
+    id: '6',
     slug: 'vendure-open-source',
     title: 'Vendure - Open-Source Headless Commerce',
     shortDescription: 'Contributed to Vendure (6.5k stars), trusted by IBM, Breitling, Swile, QVC',
@@ -150,7 +180,7 @@ export const projects: Project[] = [
     year: '2024'
   },
   {
-    id: '6',
+    id: '7',
     slug: 'secrets-management',
     title: 'Centralized Secrets Management Solution',
     shortDescription: 'Security infrastructure achieving 0 vulnerabilities in 12 months',
@@ -176,7 +206,7 @@ export const projects: Project[] = [
     year: '2024'
   },
   {
-    id: '7',
+    id: '8',
     slug: 'docker-swarm-deployment',
     title: 'Docker Swarm Deployment Pipeline',
     shortDescription: 'Built deployment infrastructure enabling 2-month delivery of 4-month project',

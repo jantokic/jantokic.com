@@ -31,7 +31,9 @@
       "role": "Software Engineer",
       "company": "Elevantiq",
       "location": "Vienna",
-      "description": "Architected order-processing systems at scale. Improved throughput by 45% through async queues, smarter caching, and optimized SQL. Platforms handle millions of transactions monthly."
+      "description": "Architected order-processing systems at scale. Improved throughput by 45% through async queues, smarter caching, and optimized SQL. Platforms handle millions of transactions monthly.",
+      "projectLink": "/projects/elevantiq-order-processing",
+      "projectLinkText": "View project details →"
     },
     "mira": {
       "role": "Founding Engineer",
@@ -58,6 +60,11 @@
     "backToProjects": "Back to Projects",
     "relatedProjects": "Related Projects",
     "items": {
+      "richard-ai-research": {
+        "title": "Richard - Autonomous AI Research Engine",
+        "shortDescription": "Self-evolving multi-agent system that autonomously detects trends and generates strategic insights",
+        "category": "AI & Research"
+      },
       "mira-trading-bot": {
         "title": "Mira - Solana Trading Bot",
         "shortDescription": "Ultra-low-latency Solana trading bot generating $230K profit with 8,000+ trades/month",
@@ -67,26 +74,6 @@
         "title": "Copile - B2B Crypto Trading Platform",
         "shortDescription": "Scaled crypto SaaS platform to 2100+ users, generating €35K revenue",
         "category": "Fintech & Trading"
-      },
-      "ibm-headless-commerce": {
-        "title": "IBM Austria - Headless Commerce Storefront",
-        "shortDescription": "Vue.js e-commerce platform handling 85,000+ SKUs with dynamic promotions",
-        "category": "E-Commerce"
-      },
-      "vendure-open-source": {
-        "title": "Vendure - Open-Source Headless Commerce",
-        "shortDescription": "Contributed to Vendure (6.5k stars), trusted by IBM, Breitling, Swile, QVC",
-        "category": "Open Source"
-      },
-      "secrets-management": {
-        "title": "Centralized Secrets Management Solution",
-        "shortDescription": "Security infrastructure achieving 0 vulnerabilities in 12 months",
-        "category": "Security & DevOps"
-      },
-      "docker-swarm-deployment": {
-        "title": "Docker Swarm Deployment Pipeline",
-        "shortDescription": "Built deployment infrastructure enabling 2-month delivery of 4-month project",
-        "category": "DevOps & Infrastructure"
       }
     }
   },

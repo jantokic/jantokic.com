@@ -22,7 +22,7 @@
     "location": "München, Deutschland",
     "currentRole": "Software Engineer",
     "currentCompany": "Elevantiq",
-    "degree": "B.Sc. Informationstechnik",
+    "degree": "B.Sc. Wirtschaftsinformatik",
     "university": "Technische Universität München"
   },
   "work": {
@@ -31,7 +31,9 @@
       "role": "Software Engineer & Consultant",
       "company": "Elevantiq",
       "location": "Wien",
-      "description": "Architektur und Optimierung von scaled Order-Processing-Systemen. Performance um rund 45 % verbessert durch async Queues, smarteres Caching und optimierte SQL-Abfragen. Systeme verarbeiten Millionen Transaktionen pro Monat."
+      "description": "Architektur und Optimierung von scaled Order-Processing-Systemen. Performance um rund 45 % verbessert durch async Queues, smarteres Caching und optimierte SQL-Abfragen. Systeme verarbeiten Millionen Transaktionen pro Monat.",
+      "projectLink": "/projects/elevantiq-order-processing",
+      "projectLinkText": "Projektdetails ansehen →"
     },
     "mira": {
       "role": "Founding Engineer",
@@ -58,6 +60,11 @@
     "backToProjects": "Zurück zu den Projekten",
     "relatedProjects": "Ähnliche Projekte",
     "items": {
+      "richard-ai-research": {
+        "title": "Richard - Autonome KI-Research-Engine",
+        "shortDescription": "Selbst-entwickelndes Multi-Agenten-System zur autonomen Trend-Erkennung, Szenario-Simulation und strategischen Insights",
+        "category": "KI & Research"
+      },
       "mira-trading-bot": {
         "title": "Mira Trading - Solana Trading Bot",
         "shortDescription": "Ultra-niedrige-Latenz Solana Trading Bot mit $230K Gewinn und 8.000+ Trades/Monat",
@@ -67,26 +74,6 @@
         "title": "Copile - B2B Crypto Trading Plattform",
         "shortDescription": "Crypto SaaS-Plattform auf 2.100+ Nutzer skaliert mit €35K Umsatz",
         "category": "Fintech & Trading"
-      },
-      "ibm-headless-commerce": {
-        "title": "IBM Österreich - Headless Commerce Storefront",
-        "shortDescription": "Vue.js E-Commerce-Plattform mit 85.000+ SKUs und dynamischen Promotions",
-        "category": "E-Commerce"
-      },
-      "vendure-open-source": {
-        "title": "Vendure - Open-Source Headless Commerce",
-        "shortDescription": "Beiträge zu Vendure (6.5k Stars), genutzt von IBM, Breitling, Swile, QVC",
-        "category": "Open Source"
-      },
-      "secrets-management": {
-        "title": "Zentralisierte Secrets Management Lösung",
-        "shortDescription": "Sicherheitsinfrastruktur mit 0 Schwachstellen in 12 Monaten",
-        "category": "Security & DevOps"
-      },
-      "docker-swarm-deployment": {
-        "title": "Docker Swarm Deployment Pipeline",
-        "shortDescription": "Deployment-Infrastruktur ermöglichte 2-Monats-Lieferung eines 4-Monats-Projekts",
-        "category": "DevOps & Infrastruktur"
       }
     }
   },

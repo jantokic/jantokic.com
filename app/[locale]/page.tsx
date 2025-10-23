@@ -344,6 +344,16 @@ export default function Home() {
 
 										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">{t(`work.${job.key}.description`)}</p>
 
+										{/* Project Link */}
+										{t.has(`work.${job.key}.projectLink`) && (
+											<Link
+												href={t(`work.${job.key}.projectLink`)}
+												className="inline-flex items-center gap-1 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors"
+											>
+												{t(`work.${job.key}.projectLinkText`)}
+											</Link>
+										)}
+
 										{/* Tech Stack - Mobile */}
 										<div className="flex flex-wrap gap-2 pt-2 md:hidden">
 											{job.techStack.map((tech) => (

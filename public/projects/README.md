@@ -43,3 +43,34 @@ Example for "richard-ai-research":
 - `/gallery/richard_gallery.jpeg`
 - `/views/richard_view1.jpeg`
 - `/views/richard_view2.jpeg`
+
+## Standardized Image Sizes
+
+All project images follow these standard dimensions:
+
+### Banner Images (1200x675px - 16:9 ratio)
+- **Purpose**: Hero sections on project detail pages, Featured Projects cards
+- **Aspect Ratio**: 16:9 (widescreen)
+- **Format**: WebP, Quality 85
+- **Example**: richard_banner.webp
+
+### Gallery Images (400x400px - 1:1 square)
+- **Purpose**: 3D flying gallery on homepage
+- **Aspect Ratio**: 1:1 (square format for logos)
+- **Format**: WebP, Quality 85
+- **Example**: richard_gallery.webp
+
+### View Images (800x600px - 4:3 ratio)
+- **Purpose**: Additional detail images on project pages
+- **Aspect Ratio**: 4:3 (traditional photo ratio)
+- **Format**: WebP, Quality 85
+- **Example**: richard_view1.webp, richard_view2.webp
+
+## Conversion Scripts
+
+Two helper scripts are available in the project root:
+
+1. **convert-to-webp.sh** - Converts PNG/JPEG to WebP format
+2. **resize-images.sh** - Resizes all images to standard dimensions
+
+Run these scripts whenever you add new project images to ensure consistency.

@@ -52,7 +52,7 @@ export const projects: Project[] = [
     category: 'AI & Research',
     image: '/projects/banners/richard_banner.webp',
     galleryImage: '/projects/gallery/richard_gallery.webp',
-    images: ['/projects/views/richard_view1.webp', '/projects/views/richard_view2.webp'],
+    images: ['/projects/views/richard_view1.webp'],
     year: '2025',
     links: {
       website: 'https://www.richardseye.com/'
@@ -82,8 +82,8 @@ export const projects: Project[] = [
     duration: '5 months (Oct 2024 - Mar 2025)',
     category: 'Blockchain & Trading',
     image: '/projects/banners/curve_banner.webp',
-    galleryImage: '/projects/gallery/mira_gallery.webp',
-    images: ['/projects/views/curve_logo.webp', '/projects/views/curve_cli.webp'],
+    galleryImage: '/projects/gallery/curve_gallery.webp',
+    images: ['/projects/views/curve_view1.webp'],
     year: '2024',
     links: {
       x: 'https://x.com/curvetools'
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     category: 'Fintech & Trading',
     image: '/projects/banners/copile_banner.webp',
     galleryImage: '/projects/gallery/copile_gallery.webp',
-    images: ['/projects/views/copile_view1.webp', '/projects/views/copile_view2.webp'],
+    images: ['/projects/views/copile_view1.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/CopileTrading',
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     category: 'E-Commerce & SaaS',
     image: '/projects/banners/elevantiq_banner.webp',
     galleryImage: '/projects/gallery/elevantiq_gallery.webp',
-    images: ['/projects/views/elevantiq_view1.webp', '/projects/views/elevantiq_view2.webp'],
+    images: ['/projects/views/elevantiq_view1.webp'],
     year: '2024'
   },
   {
@@ -177,7 +177,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     image: '/projects/banners/ibm_banner.webp',
     galleryImage: '/projects/gallery/ibm_gallery.webp',
-    images: ['/projects/views/ibm_view1.webp', '/projects/views/ibm_view2.webp'],
+    images: ['/projects/views/ibm_view1.webp'],
     year: '2022'
   },
   {
@@ -204,7 +204,7 @@ export const projects: Project[] = [
     category: 'Open Source',
     image: '/projects/banners/vendure_banner.webp',
     galleryImage: '/projects/gallery/vendure_gallery.webp',
-    images: ['/projects/views/vendure_view1.webp', '/projects/views/vendure_view2.webp'],
+    images: ['/projects/views/vendure_view1.webp'],
     year: '2024'
   },
   {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     category: 'AI & Enterprise',
     image: '/projects/banners/synapse_banner.webp',
     galleryImage: '/projects/gallery/synapse_gallery.webp',
-    images: ['/projects/views/synapse_view1.webp', '/projects/views/synapse_view2.webp'],
+    images: ['/projects/views/synapse_view1.webp'],
     year: '2025',
     links: {
       demo: 'https://synapse.elia.vc/',
@@ -271,7 +271,7 @@ export const projects: Project[] = [
     category: 'E-Commerce & Community',
     image: '/projects/banners/dreamcook_banner.webp',
     galleryImage: '/projects/gallery/dreamcook_gallery.webp',
-    images: ['/projects/views/dreamcook_view1.webp', '/projects/views/dreamcook_view2.webp'],
+    images: ['/projects/views/dreamcook_view1.webp'],
     year: '2020',
     links: {
       x: 'https://x.com/DreamCook'
@@ -305,7 +305,7 @@ export const projects: Project[] = [
     category: 'Blockchain & Infrastructure',
     image: '/projects/banners/acidnode_banner.webp',
     galleryImage: '/projects/gallery/acidnode_gallery.webp',
-    images: ['/projects/views/acidnode_view1.webp', '/projects/views/acidnode_view2.webp'],
+    images: ['/projects/views/acidnode_view1.webp'],
     year: '2022'
   },
   {
@@ -336,7 +336,7 @@ export const projects: Project[] = [
     category: 'Blockchain & NFT',
     image: '/projects/banners/neura_banner.webp',
     galleryImage: '/projects/gallery/neura_gallery.webp',
-    images: ['/projects/views/neura_view1.webp', '/projects/views/neura_view2.webp'],
+    images: ['/projects/views/neura_view1.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/txNeura',

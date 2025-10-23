@@ -85,15 +85,15 @@
         "shortDescription": "B2C Blockchain-Validator im Solana-Netzwerk mit Fokus auf Skalierbarkeit, Fehlertoleranz und Cloud-Infrastruktur",
         "category": "Blockchain & Infrastruktur"
       },
-      "dreamcook-community": {
-        "title": "DreamCook - E-Commerce Community-Plattform",
-        "shortDescription": "Discord-basierte Community-Plattform mit 5.000+ Mitgliedern, Real-Time Drop-Monitoren und Trading-Signalen",
-        "category": "E-Commerce & Community"
-      },
       "neura-nft-sniping": {
         "title": "Neura - Solana NFT Sniping Bot",
         "shortDescription": "B2C NFT-Automatisierungssoftware mit Echtzeit-NFT-Sniping im Solana-Netzwerk und erfolgreichem Exit",
         "category": "Blockchain & NFT"
+      },
+      "dreamcook-community": {
+        "title": "DreamCook - E-Commerce Community-Plattform",
+        "shortDescription": "Discord-basierte Community-Plattform mit 5.000+ Mitgliedern, Real-Time Drop-Monitoren und Trading-Signalen",
+        "category": "E-Commerce & Community"
       }
     }
   },

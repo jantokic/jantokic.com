@@ -12,7 +12,7 @@ export interface Project {
   category: string;
   image: string; // Banner image for hero and featured projects cards
   galleryImage: string; // Smaller image for 3D gallery
-  images: string[]; // Additional images for detail view
+  images: string[]; // "More Views" section - up to 3 images (first = logo, rest = screenshots)
   year: string;
   links?: {
     github?: string;
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     category: 'AI & Research',
     image: '/projects/banners/richard_banner.webp',
     galleryImage: '/projects/gallery/richard_gallery.webp',
-    images: ['/projects/views/richard_view1.webp'],
+    images: ['/projects/logos/richard_logo.webp'],
     year: '2025',
     links: {
       website: 'https://www.richardseye.com/'
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     category: 'Blockchain & Trading',
     image: '/projects/banners/curve_banner.webp',
     galleryImage: '/projects/gallery/curve_gallery.webp',
-    images: ['/projects/views/curve_view1.webp'],
+    images: ['/projects/logos/curve_logo.webp'],
     year: '2024',
     links: {
       x: 'https://x.com/curvetools'
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     category: 'Fintech & Trading',
     image: '/projects/banners/copile_banner.webp',
     galleryImage: '/projects/gallery/copile_gallery.webp',
-    images: ['/projects/views/copile_view1.webp'],
+    images: ['/projects/logos/copile_logo.webp', '/projects/views/copile_view1.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/CopileTrading',
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     category: 'E-Commerce & SaaS',
     image: '/projects/banners/elevantiq_banner.webp',
     galleryImage: '/projects/gallery/elevantiq_gallery.webp',
-    images: ['/projects/views/elevantiq_view1.webp'],
+    images: ['/projects/logos/elevantiq_logo.webp'],
     year: '2024'
   },
   {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     category: 'AI & Enterprise',
     image: '/projects/banners/synapse_banner.webp',
     galleryImage: '/projects/gallery/synapse_gallery.webp',
-    images: ['/projects/views/synapse_view1.webp'],
+    images: ['/projects/logos/synapse_logo.webp'],
     year: '2025',
     links: {
       demo: 'https://synapse.elia.vc/',
@@ -271,7 +271,7 @@ export const projects: Project[] = [
     category: 'E-Commerce & Community',
     image: '/projects/banners/dreamcook_banner.webp',
     galleryImage: '/projects/gallery/dreamcook_gallery.webp',
-    images: ['/projects/views/dreamcook_view1.webp'],
+    images: ['/projects/logos/dreamcook_logo.webp'],
     year: '2020',
     links: {
       x: 'https://x.com/DreamCook'
@@ -305,7 +305,7 @@ export const projects: Project[] = [
     category: 'Blockchain & Infrastructure',
     image: '/projects/banners/acidnode_banner.webp',
     galleryImage: '/projects/gallery/acidnode_gallery.webp',
-    images: ['/projects/views/acidnode_view1.webp'],
+    images: ['/projects/logos/acidnode_logo.webp', '/projects/views/acidnode_view1.webp'],
     year: '2022'
   },
   {
@@ -336,7 +336,7 @@ export const projects: Project[] = [
     category: 'Blockchain & NFT',
     image: '/projects/banners/neura_banner.webp',
     galleryImage: '/projects/gallery/neura_gallery.webp',
-    images: ['/projects/views/neura_view1.webp'],
+    images: ['/projects/logos/neura_logo.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/txNeura',

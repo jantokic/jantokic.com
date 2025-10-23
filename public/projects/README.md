@@ -74,3 +74,30 @@ Two helper scripts are available in the project root:
 2. **resize-images.sh** - Resizes all images to standard dimensions
 
 Run these scripts whenever you add new project images to ensure consistency.
+
+## "More Views" Section
+
+The "More Views" section on project detail pages displays up to 3 images from the `images` array:
+
+- **First image (required)**: Project logo - should use `object-contain` to show full logo
+- **Second image (optional)**: Product screenshot 1
+- **Third image (optional)**: Product screenshot 2
+
+### Layout:
+- **Mobile**: Single column (stacked)
+- **Tablet (md)**: 2 columns
+- **Desktop (lg)**: 3 columns (when all 3 images present)
+
+### Example:
+```typescript
+images: [
+  '/projects/views/richard_view1.webp',  // Logo (always shown)
+  '/projects/views/richard_view2.webp',  // Screenshot 1 (optional)
+  '/projects/views/richard_view3.webp',  // Screenshot 2 (optional)
+]
+```
+
+If you only have a logo, just provide one image:
+```typescript
+images: ['/projects/views/project_view1.webp']
+```

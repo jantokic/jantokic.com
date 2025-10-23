@@ -243,22 +243,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				</div>
 			</section>
 
-			{/* Additional Images */}
-			{project.images.length > 1 && (
+			{/* More Views - Show up to 3 images, first is required (logo), rest optional */}
+			{project.images.length > 0 && (
 				<section className="px-4 sm:px-6 lg:px-8 mb-16">
 					<div className="max-w-7xl mx-auto">
 						<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-8">More Views</h2>
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-							{project.images.slice(1).map((img, index) => (
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{project.images.slice(0, 3).map((img, index) => (
 								<div
 									key={index}
 									className="relative w-full h-[300px] rounded-lg overflow-hidden bg-muted"
 								>
 									<Image
 										src={img}
-										alt={`${project.title} - view ${index + 2}`}
+										alt={`${project.title} - ${index === 0 ? 'logo' : `view ${index + 1}`}`}
 										fill
-										className="object-cover"
+										className="object-contain"
 										unoptimized
 									/>
 								</div>

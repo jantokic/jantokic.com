@@ -65,6 +65,11 @@
         "shortDescription": "Selbst-entwickelndes Multi-Agenten-System zur autonomen Trend-Erkennung, Szenario-Simulation und strategischen Insights",
         "category": "KI & Research"
       },
+      "synapse-knowledge-system": {
+        "title": "Synapse - KI-Wissens-System",
+        "shortDescription": "Selbstlernendes Wissenssystem zur Verbindung von Mitarbeitern mit internen Experten durch Vector-Search und semantische Suche",
+        "category": "KI & Enterprise"
+      },
       "mira-trading-bot": {
         "title": "Mira Trading - Solana Trading Bot",
         "shortDescription": "Ultra-niedrige-Latenz Solana Trading Bot mit $230K Gewinn und 8.000+ Trades/Monat",

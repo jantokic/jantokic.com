@@ -230,6 +230,36 @@ export const projects: Project[] = [
     image: '/projects/inventory-api.webp',
     images: ['/projects/inventory-api.webp', '/projects/inventory-api-2.webp'],
     year: '2024'
+  },
+  {
+    id: '9',
+    slug: 'synapse-knowledge-system',
+    title: 'Synapse - AI Knowledge System',
+    shortDescription: 'Self-learning knowledge system connecting employees with internal experts using vector search and semantic retrieval',
+    fullDescription: 'At TUM.ai Hackathon, I architected the backend for Synapse—a self-learning organizational knowledge system that transforms hidden company expertise into actionable solutions. Built in 36 hours with a 5-person team, I implemented a vector embeddings pipeline using OpenAI and pgvector for semantic search, an expert ranking algorithm with relevance and freshness scoring, and integrated Claude Sonnet for tool-calling chat functionality. The system enables employees to find internal experts who previously solved identical problems through natural language queries. We placed 2nd out of all teams, delivering a fully functional MVP with live demo.',
+    role: 'Backend Engineer',
+    techStack: ['Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Prisma', 'OpenAI Embeddings', 'pgvector', 'Claude Sonnet', 'Next.js'],
+    challenges: [
+      'Building vector embeddings pipeline for semantic knowledge search in 36 hours',
+      'Implementing expert ranking algorithm balancing relevance and freshness scores',
+      'Designing semantic chunking strategy for optimal knowledge retrieval',
+      'Integrating Claude Sonnet for natural language tool-calling interface',
+      'Creating real-time expert matching system with PostgreSQL and pgvector',
+      'Coordinating backend/frontend integration across 5-person team under time pressure'
+    ],
+    outcomes: [
+      'Placed 2nd in TUM.ai Hackathon with fully functional MVP (not just prototype)',
+      'Built working semantic search engine connecting employees with internal experts',
+      'Delivered live demo with chat, voice, and video interview capabilities',
+      'Implemented scalable vector search architecture using pgvector and OpenAI',
+      'Created expert ranking system with relevance and temporal decay scoring',
+      'Shipped production-ready API with Prisma ORM and Express in 36 hours'
+    ],
+    duration: '36 hours (Oct 2025)',
+    category: 'AI & Enterprise',
+    image: '/projects/synapse_banner.jpg',
+    images: ['/projects/synapse_banner.jpg', '/projects/synapse_banner.jpg'],
+    year: '2025'
   }
 ];
 

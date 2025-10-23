@@ -65,6 +65,11 @@
         "shortDescription": "Self-evolving multi-agent system that autonomously detects trends and generates strategic insights",
         "category": "AI & Research"
       },
+      "synapse-knowledge-system": {
+        "title": "Synapse - AI Knowledge System",
+        "shortDescription": "Self-learning knowledge system connecting employees with internal experts using vector search and semantic retrieval",
+        "category": "AI & Enterprise"
+      },
       "mira-trading-bot": {
         "title": "Mira - Solana Trading Bot",
         "shortDescription": "Ultra-low-latency Solana trading bot generating $230K profit with 8,000+ trades/month",

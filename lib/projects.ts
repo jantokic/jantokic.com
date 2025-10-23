@@ -40,7 +40,7 @@ export const projects: Project[] = [
       'Delivered explainable AI with full decision tree traceability for compliance',
       'Demonstrated ROI through early detection of contrarian investment opportunities'
     ],
-    duration: '8 weeks (2024)',
+    duration: '3 months (Mar 2025 - Jun 2025)',
     category: 'AI & Research',
     image: '/projects/richard_banner.jpeg',
     images: ['/projects/richard_banner.jpeg', '/projects/richard_banner.jpeg'],

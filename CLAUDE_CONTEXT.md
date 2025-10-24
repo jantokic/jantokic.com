@@ -48,19 +48,29 @@ This is a **professional portfolio website for Jan Tokic, a freelance backend de
 /components
 ├── InfiniteGallery.tsx              # 3D gallery component (clickable with scroll completion)
 ├── LanguageSwitcher.tsx             # Language toggle (EN/DE)
-└── BrandIcon.tsx                    # Wrapper for simple-icons brand logos
+├── BrandIcon.tsx                    # Wrapper for simple-icons brand logos
+└── /sections                        # Page section components
+    ├── AboutSection.tsx             # Profile, bio, skills, education
+    ├── SelectedWorkSection.tsx      # Work experience timeline
+    ├── FeaturedProjectsSection.tsx  # Projects grid
+    └── ConnectSection.tsx           # Contact and social links
 
 /lib
-├── projects.ts                      # Project data structure (7 backend projects)
+├── projects.ts                      # Minimal project data (id, slug, techStack, duration, images, year, links)
+├── projects.ts.backup               # Original file with text content (backup)
 └── utils.ts                         # Utility functions
 
 /messages
-├── en.json                          # English translations
-└── de.json                          # German translations
+├── en.json                          # English translations (includes projectDetails section)
+└── de.json                          # German translations (includes projectDetails section)
 
 /public
-├── /projects                        # Project screenshot images
-└── placeholder-user.jpg             # Profile photo placeholder
+├── /projects                        # Project images (WebP format)
+│   ├── /banners                     # 1200x675px banner images
+│   ├── /gallery                     # Gallery images (uses banners)
+│   ├── /views                       # 800x600px "More Views" images
+│   └── /logos                       # Project logos
+└── headshot-user.png                # Profile photo
 
 i18n.ts                              # i18n configuration
 routing.ts                           # next-intl routing configuration
@@ -231,7 +241,7 @@ tsconfig.json                        # TypeScript config
 - ✅ Removed Elevantiq, IBM, and Vendure from 3D gallery (still accessible via Featured Projects)
 - ✅ Reordered gallery so Richard appears first/most prominently
 - ✅ Swapped Richard and Synapse positions for optimal initial visibility
-- ✅ Gallery now shows 6 projects instead of 9
+- ✅ Gallery now shows 7 projects (Richard, Mira, Copile, Synapse, DreamCook, Acid Node, Neura)
 
 ### 5. Mobile Fixes
 - ✅ Fixed Featured Projects section visibility on mobile
@@ -257,8 +267,46 @@ tsconfig.json                        # TypeScript config
 - ✅ Updated translations in both English and German
 
 ### 9. Richard Project Updates
-- ✅ Changed duration from "8 weeks (2024)" to "3 months (Mar 2025 - Jun 2025)"
+- ✅ Changed duration from "8 weeks (2024)" to "Mar 2025 - Present"
+- ✅ Updated tech stack from Python/GPT-4o to TypeScript/Next.js/LangChain/Supabase/RAG/Tool Calling
 - ✅ Updated timeline to reflect actual project dates
+
+### 10. Image Organization & Optimization (October 2025)
+- ✅ Created organized folder structure: `/public/projects/banners/`, `/public/projects/gallery/`, `/public/projects/views/`
+- ✅ Converted all project images to WebP format (95% file size reduction)
+- ✅ Standardized image dimensions:
+  - Banners: 1200x675px (hero images and featured project cards)
+  - Gallery: Uses banner images (originally separate 400x400px logos, then switched to banners)
+  - Views: 800x600px ("More Views" section - up to 3 images per project)
+- ✅ Updated "More Views" section to support up to 3 images (first = logo, rest = screenshots)
+- ✅ Changed logo display from `object-cover` to `object-contain` for better visibility
+
+### 11. Main Page Refactoring (October 2025)
+- ✅ Extracted main page sections into reusable components:
+  - `components/sections/AboutSection.tsx` - Profile, bio, skills, education
+  - `components/sections/SelectedWorkSection.tsx` - Work experience timeline
+  - `components/sections/FeaturedProjectsSection.tsx` - Projects grid
+  - `components/sections/ConnectSection.tsx` - Contact and social links
+- ✅ Reduced main page.tsx from 500+ lines to clean component usage
+- ✅ All sections use forwardRef for scroll animations and IntersectionObserver
+
+### 12. Text Migration to JSON Translation Files (October 2025)
+- ✅ **MAJOR REFACTOR**: Moved all project text content from `lib/projects.ts` to translation files
+- ✅ Created `projectDetails` section in `messages/en.json` and `messages/de.json`
+- ✅ Each project includes: title, shortDescription, fullDescription, role, category, challenges[], outcomes[]
+- ✅ Updated `lib/projects.ts` to contain ONLY minimal data:
+  - id, slug, techStack, duration, image paths, year, links
+  - NO text content - all text is in JSON files
+- ✅ Backup created at `lib/projects.ts.backup` with original data
+- ✅ Updated `app/[locale]/projects/[slug]/page.tsx` to use `getTranslations()` from next-intl
+- ✅ All project text now properly internationalized and separated from code
+- ✅ Build successful with no TypeScript errors
+
+### 13. Repository Rename (October 2025)
+- ✅ Renamed local directory from `personal-page` to `jantokic.com`
+- ✅ Updated git remote URL from `https://github.com/jantokic/personal-page.git` to `https://github.com/jantokic/jantokic.com.git`
+- ✅ GitHub repository renamed to `jantokic.com`
+- ⚠️ Vercel deployment needs verification (should auto-update via GitHub integration)
 
 ---
 
@@ -460,4 +508,4 @@ Potential features to add:
 
 ---
 
-*Last Updated: October 2025 - Real project data integration, Elevantiq updates, project links system, gallery filtering, mobile fixes, and metadata improvements*
+*Last Updated: October 24, 2025 - Text migration to JSON translation files, repository rename to jantokic.com, image optimization, main page refactoring into section components*

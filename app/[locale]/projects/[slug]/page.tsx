@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Video } from 'lucide-react';
 import Image from 'next/image';
 import BrandIcon from '@/components/BrandIcon';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
 	return projects.map((project) => ({
@@ -11,8 +12,8 @@ export async function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-	const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+	const { slug, locale } = await params;
 	const project = getProjectBySlug(slug);
 
 	if (!project) {
@@ -21,19 +22,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 		};
 	}
 
+	const t = await getTranslations({ locale, namespace: 'projectDetails' });
+
 	return {
-		title: `${project.title} | Portfolio`,
-		description: project.shortDescription,
+		title: `${t(`${slug}.title`)} | Portfolio`,
+		description: t(`${slug}.shortDescription`),
 	};
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-	const { slug } = await params;
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+	const { slug, locale } = await params;
 	const project = getProjectBySlug(slug);
 
 	if (!project) {
 		notFound();
 	}
+
+	const t = await getTranslations({ locale, namespace: 'projectDetails' });
 
 	return (
 		<main className="min-h-screen bg-background">
@@ -55,14 +60,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				<div className="max-w-7xl mx-auto">
 					<div className="mb-6">
 						<span className="inline-block px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider bg-muted text-muted-foreground rounded-full">
-							{project.category} • {project.year}
+							{t(`${slug}.category`)} • {project.year}
 						</span>
 					</div>
 					<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground mb-6 leading-tight">
-						{project.title}
+						{t(`${slug}.title`)}
 					</h1>
 					<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed">
-						{project.shortDescription}
+						{t(`${slug}.shortDescription`)}
 					</p>
 				</div>
 			</section>
@@ -73,7 +78,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 					<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
 						<Image
 							src={project.image}
-							alt={project.title}
+							alt={t(`${slug}.title`)}
 							fill
 							className="object-cover"
 							unoptimized
@@ -91,7 +96,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						<div>
 							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">Overview</h2>
 							<p className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground leading-relaxed">
-								{project.fullDescription}
+								{t(`${slug}.fullDescription`)}
 							</p>
 						</div>
 
@@ -101,7 +106,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								Challenges & Solutions
 							</h2>
 							<ul className="space-y-4">
-								{project.challenges.map((challenge, index) => (
+								{(t.raw(`${slug}.challenges`) as string[]).map((challenge, index) => (
 									<li key={index} className="flex gap-3">
 										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-sm flex items-center justify-center font-mono font-semibold mt-0.5">
 											{index + 1}
@@ -120,7 +125,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								Results & Impact
 							</h2>
 							<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-								{project.outcomes.map((outcome, index) => (
+								{(t.raw(`${slug}.outcomes`) as string[]).map((outcome, index) => (
 									<div
 										key={index}
 										className="p-4 bg-muted rounded-lg border border-border"
@@ -141,7 +146,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
 								Role
 							</h3>
-							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{project.role}</p>
+							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{t(`${slug}.role`)}</p>
 						</div>
 
 						{/* Duration */}
@@ -256,7 +261,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								>
 									<Image
 										src={img}
-										alt={`${project.title} - ${index === 0 ? 'logo' : `view ${index + 1}`}`}
+										alt={`${t(`${slug}.title`)} - ${index === 0 ? 'logo' : `view ${index + 1}`}`}
 										fill
 										className="object-contain"
 										unoptimized
@@ -287,17 +292,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 									<div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-border mb-3">
 										<Image
 											src={relatedProject.image}
-											alt={relatedProject.title}
+											alt={t(`${relatedProject.slug}.title`)}
 											fill
 											className="object-cover group-hover:scale-105 transition-transform duration-300"
 											unoptimized
 										/>
 									</div>
 									<h3 className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground group-hover:text-muted-foreground transition-colors">
-										{relatedProject.title}
+										{t(`${relatedProject.slug}.title`)}
 									</h3>
 									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mt-1">
-										{relatedProject.category}
+										{t(`${relatedProject.slug}.category`)}
 									</p>
 								</Link>
 							))}

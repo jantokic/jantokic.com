@@ -142,5 +142,223 @@
   "footer": {
     "copyright": "© {year} Jan Tokic",
     "language": "Sprache"
+  },
+  "projectDetails": {
+    "richard-ai-research": {
+      "title": "Richard - Autonome KI-Research-Engine",
+      "shortDescription": "Selbst-entwickelndes Multi-Agenten-System zur autonomen Trend-Erkennung, Szenario-Simulation und strategischen Insights",
+      "fullDescription": "Richard ist eine proaktive KI-Research-Engine, die ein kritisches Problem der Wissensarbeit löst: strategische blinde Flecken. Traditionelle Tools sind reaktiv – sie beantworten nur, was man fragt. Richard überwacht autonom verschiedene Datenquellen, erkennt schwache Signale und generiert prädiktive Hypothesen, bevor Nutzer überhaupt wissen, welche Fragen sie stellen sollten. Ich habe ein modulares Multi-Agenten-System mit LangGraph-Orchestrierung, vektorisiertem Speicher mit Pinecone und benutzerdefinierter DAG-basierter Simulation für Szenario-Modellierung entwickelt. Das System reduzierte typische Research-Workflows von 5-8 Stunden auf unter 30 Minuten, während es originelle strategische Erkenntnisse mit vollständiger Rückverfolgbarkeit generierte.",
+      "role": "Founding Engineer & System Architect",
+      "category": "KI & Research",
+      "challenges": [
+        "Architektur autonomer Agenten, die proaktiv Erkenntnisse ohne Aufforderung liefern",
+        "Aufbau rekursiver Feedback-Schleifen für emergente Intelligenz über Zeit",
+        "Implementierung DAG-basierter Szenario-Simulation mit probabilistischer Konfidenzmodellierung",
+        "Design modularer Systemarchitektur für unabhängige Agenten-Iteration",
+        "Erstellung vektorisierter Memory-Schicht für persistente Signal-Korrelation über Domänen",
+        "Orchestrierung zustandsbehafteter Multi-Agenten-Ketten mit Echtzeit-Reasoning-Erklärbarkeit"
+      ],
+      "outcomes": [
+        "Reduktion strategischer Research-Zeit von 5-8 Stunden auf <30 Minuten (94% Effizienzgewinn)",
+        "Generierung von 400+ einzigartigen Insights über 8 Wochen mit <5% Redundanz",
+        "Aufbau modularer Architektur für schnellen Agenten-Austausch ohne System-Bruch",
+        "Erkennung domänenübergreifender Muster-Korrelationen (Krypto-Trends + geopolitisches Sentiment)",
+        "Bereitstellung erklärbarer KI mit vollständiger Entscheidungsbaum-Rückverfolgbarkeit für Compliance",
+        "ROI-Nachweis durch Früherkennung konträrer Investment-Chancen"
+      ]
+    },
+    "mira-trading-bot": {
+      "title": "Mira Trading - Solana Trading Bot",
+      "shortDescription": "Ultra-niedrige-Latenz Solana Trading Bot mit $230K Gewinn und 8.000+ Trades/Monat",
+      "fullDescription": "Als Founding Engineer habe ich Mira Trading mitgegründet und entwickelt – einen Hochfrequenz-Solana-Trading-Bot in Go. Das System verarbeitet Echtzeit-Social-Sentiment-Feeds, führt Trades in unter 300ms aus und hat eine Gesamtmarktkapitalisierung von über $200M für erstellte Coins generiert.",
+      "role": "Founding Engineer & Co-Founder",
+      "category": "Blockchain & Trading",
+      "challenges": [
+        "Erreichen ultra-niedriger Latenz-Ausführung (300ms Token-Deployment)",
+        "Aufbau Echtzeit-Signal-Prozessor für Social-Sentiment-Feeds",
+        "Optimierung von Concurrency und Networking für Hochfrequenz-Trading",
+        "Leitung eines Remote-Teams von 3 Engineers mit strikten Uptime-Anforderungen"
+      ],
+      "outcomes": [
+        "Generierung von $230.000 Profit mit 92% Trade-Erfolgsrate",
+        "Verarbeitung von 8.000+ Coin-Trades pro Monat automatisch",
+        "Schnellste Deployment-Lösung im Solana-Ökosystem (<300ms)",
+        "Erreichen von 99,5% Uptime durch automatisiertes Monitoring und CI",
+        "Generierung von $200M+ Gesamtmarktkapitalisierung für erstellte Coins"
+      ]
+    },
+    "copile-trading-platform": {
+      "title": "Copile - B2B Crypto Trading Plattform",
+      "shortDescription": "Crypto SaaS-Plattform auf 2.100+ Nutzer skaliert mit €35K Umsatz",
+      "fullDescription": "Als Founding Engineer bei Copile habe ich eine B2B-Crypto-Trading-Plattform mitgegründet und skaliert. Ich entwickelte eine Echtzeit-Trading-API in Python und Node.js, integrierte 5 große Exchanges und verarbeitete €1,2M+ monatliches Handelsvolumen mit 70%+ Nutzer-Retention.",
+      "role": "Founding Engineer & Co-Founder",
+      "category": "Fintech & Trading",
+      "challenges": [
+        "Integration von 5 verschiedenen Crypto-Exchange-APIs zuverlässig",
+        "Aufbau von Echtzeit-Charting-Tools und benutzerdefinierten Order-Typen",
+        "Leitung eines funktionsübergreifenden Teams von 4 Engineers und 2 Designern",
+        "Aufbau von Partnerschaften mit institutionellen Trading-Desks"
+      ],
+      "outcomes": [
+        "Skalierung auf 2.100+ aktive Nutzer mit €35.000 Umsatz",
+        "Verarbeitung von €1,2M+ monatlichem Handelsvolumen",
+        "Erreichen von 70%+ Nutzer-Retention durch zweiwöchentliche Feature-Releases",
+        "Leitung eines Teams von 6 (4 Engineers, 2 Designer) mit erfolgreichen Sprints",
+        "Sicherung von Partnerschaften mit 2 institutionellen Trading-Desks"
+      ]
+    },
+    "elevantiq-ecommerce-infrastructure": {
+      "title": "Elevantiq - Enterprise E-Commerce Infrastruktur",
+      "shortDescription": "Multi-Tenant E-Commerce-Plattform mit Millionen Bestellungen jährlich über 3 große Enterprise-Kunden",
+      "fullDescription": "Bei Elevantiq arbeitete ich an großskaliger E-Commerce-Infrastruktur für große europäische B2B-Kunden über drei Flagship-Projekte. Ich modernisierte Legacy-Systeme durch Migration einer 7-8 Repository-Architektur in ein einheitliches Nx-Monorepo, aktualisierte veraltete Next.js- und Vendure-Dependencies und erweiterte komplexe Produkt-Konfiguratoren mit direkter Zusammenarbeit mit Client-Engineers. Ich implementierte Infisical (Open-Source-Secrets-Manager) für sichere Credential-Verwaltung, trug zu Multi-Tenant-Architekturen bei, die Millionen Bestellungen verarbeiten, und arbeitete in verteilten Teams von 10+ Engineers an Enterprise-E-Commerce-Lösungen für führende UK- und europäische Industrieunternehmen.",
+      "role": "Software Engineer",
+      "category": "E-Commerce & SaaS",
+      "challenges": [
+        "Konsolidierung von 7-8 Legacy-Repositories in einheitliche Nx-Monorepo-Architektur",
+        "Aktualisierung stark veralteter Next.js- und Vendure-Dependencies über große Codebase",
+        "Aufbau komplexer Konfiguratoren mit mathematischen Gleichungen für Engineering-Spezifikationen",
+        "Implementierung Infisical-Secrets-Manager mit null Sicherheitslücken",
+        "Zusammenarbeit mit Client-Engineers an technischen Produktanforderungen",
+        "Beitrag zu Multi-Tenant-Architektur für 10+ Personen verteiltes Team"
+      ],
+      "outcomes": [
+        "Ermöglichung von Millionen Bestellungen jährlich für Enterprise-Kunden",
+        "Modernisierung Legacy-DX durch Konsolidierung von 7-8 Repos in wartbares Monorepo",
+        "Lieferung fortschrittlicher Schornstein-Konfigurator mit Echtzeit-Engineering-Berechnungen",
+        "Erreichen von 0 Schwachstellen durch zentralisiertes Secrets-Management mit Infisical",
+        "Erfolgreiche Aktualisierung kritischer Dependencies (Next.js, Vendure) auf Produktionssystemen",
+        "Beitrag zu Multi-Tenant-Plattformen für führende UK- und europäische Industrieunternehmen"
+      ]
+    },
+    "ibm-headless-commerce": {
+      "title": "IBM Austria - Headless Commerce Storefront",
+      "shortDescription": "Vue.js E-Commerce-Plattform mit 85.000+ SKUs und dynamischen Promotions",
+      "fullDescription": "Während meines Praktikums bei IBM Austria entwickelte ich eine Vue.js Headless-Commerce-Storefront mit Magento-Backend. Das System verwaltete 85.000+ SKUs und ermöglichte dynamische Promotions und personalisierte Anzeigen für Enterprise-Kunden.",
+      "role": "Software Engineering Praktikant",
+      "category": "E-Commerce",
+      "challenges": [
+        "Verwaltung von 85.000+ SKUs mit performantem UI-Rendering",
+        "Aufbau wiederverwendbarer UI-Komponenten für Marketing-Agilität",
+        "Optimierung von API-Endpoints für schnellere Promotion-Rollouts",
+        "Integration mit Magento-Backend für Enterprise-Skalierung"
+      ],
+      "outcomes": [
+        "Reduktion der Promotion-Rollout-Zeit um 40% durch wiederverwendbare Komponenten",
+        "Ermöglichung dynamischer Promotions und personalisierter Anzeigen in großem Maßstab",
+        "Erfolgreiche Verwaltung von 85.000+ Produkt-SKUs",
+        "Erhöhung der Marketing-Agilität für Enterprise-Kunden"
+      ]
+    },
+    "vendure-open-source": {
+      "title": "Vendure - Open-Source Headless Commerce",
+      "shortDescription": "Beiträge zu Vendure (6,5k Stars), verwendet von IBM, Breitling, Swile, QVC",
+      "fullDescription": "Ich trug zu Vendure bei, einer Open-Source Headless-Commerce-Plattform mit 6,5k GitHub-Stars, und arbeitete dabei mit den Gründern zusammen. Vendure wird von großen Marken wie IBM, Breitling, Swile und QVC für Enterprise-E-Commerce-Lösungen verwendet.",
+      "role": "Open-Source Contributor",
+      "category": "Open Source",
+      "challenges": [
+        "Beiträge zu einer großskaligen Open-Source-Codebase",
+        "Arbeit mit Enterprise-Grade-Architektur-Patterns",
+        "Zusammenarbeit mit Core-Team und Community",
+        "Aufrechterhaltung der Rückwärtskompatibilität über Versionen hinweg"
+      ],
+      "outcomes": [
+        "Beiträge zu Plattform verwendet von IBM, Breitling, Swile, QVC",
+        "Arbeit mit Gründern an Core-Features",
+        "Unterstützung bei Wartung eines 6,5k-Star-Repositories",
+        "Tiefe Expertise in Headless-Commerce-Architektur gewonnen"
+      ]
+    },
+    "synapse-knowledge-system": {
+      "title": "Synapse - KI-Wissens-System",
+      "shortDescription": "Selbstlernendes Wissenssystem zur Verbindung von Mitarbeitern mit internen Experten durch Vector-Search und semantische Suche",
+      "fullDescription": "Beim TUM.ai Hackathon entwickelte ich das Backend für Synapse – ein selbstlernendes organisatorisches Wissenssystem, das verstecktes Firmen-Expertise in umsetzbare Lösungen transformiert. In 36 Stunden mit einem 5-Personen-Team implementierte ich eine Vektor-Embeddings-Pipeline mit OpenAI und pgvector für semantische Suche, einen Experten-Ranking-Algorithmus mit Relevanz- und Aktualitäts-Scoring und integrierte Claude Sonnet für Tool-Calling-Chat-Funktionalität. Das System ermöglicht es Mitarbeitern, interne Experten zu finden, die identische Probleme zuvor gelöst haben, durch natürlichsprachige Abfragen. Wir erreichten Platz 2 von allen Teams und lieferten ein vollständig funktionales MVP mit Live-Demo.",
+      "role": "Backend Engineer",
+      "category": "KI & Enterprise",
+      "challenges": [
+        "Aufbau Vektor-Embeddings-Pipeline für semantische Wissenssuche in 36 Stunden",
+        "Implementierung Experten-Ranking-Algorithmus mit Balance von Relevanz- und Aktualitäts-Scores",
+        "Design semantischer Chunking-Strategie für optimale Wissens-Retrieval",
+        "Integration Claude Sonnet für natürlichsprachiges Tool-Calling-Interface",
+        "Erstellung Echtzeit-Experten-Matching-System mit PostgreSQL und pgvector",
+        "Koordination Backend/Frontend-Integration über 5-Personen-Team unter Zeitdruck"
+      ],
+      "outcomes": [
+        "Platz 2 beim TUM.ai Hackathon mit vollständig funktionalem MVP (nicht nur Prototyp)",
+        "Aufbau funktionierender semantischer Suchmaschine zur Verbindung von Mitarbeitern mit internen Experten",
+        "Lieferung Live-Demo mit Chat-, Sprach- und Video-Interview-Funktionen",
+        "Implementierung skalierbarer Vektor-Such-Architektur mit pgvector und OpenAI",
+        "Erstellung Experten-Ranking-System mit Relevanz- und temporalem Decay-Scoring",
+        "Auslieferung produktionsfertiger API mit Prisma ORM und Express in 36 Stunden"
+      ]
+    },
+    "dreamcook-community": {
+      "title": "DreamCook - E-Commerce Community-Plattform",
+      "shortDescription": "Discord-basierte Community-Plattform mit 5.000+ Mitgliedern, Real-Time Drop-Monitoren und Trading-Signalen",
+      "fullDescription": "Bei DreamCook, einem B2C E-Commerce-Beratungsdienst, trug ich zur Entwicklung einer Discord-basierten Community-Plattform bei, die 5.000+ Mitglieder bediente. Die Plattform bot Echtzeit-Produkt-Drop-Monitoring, automatisierte Bestandsverfolgung und Trading-Signale für Sneaker-Releases und limitierte Produkte. Ich arbeitete an der Integration verschiedener Monitoring-Tools, Bot-Services und dem Aufbau interner Dashboards zur Verwaltung von Community-Features und Mitgliederzugriff. Die Plattform entwickelte sich vom Sneaker-Monitoring zu breiteren Trading-Signalen, bevor sie 2022 eingestellt wurde.",
+      "role": "Full Stack Engineer",
+      "category": "E-Commerce & Community",
+      "challenges": [
+        "Integration mehrerer Drittanbieter-Monitoring- und Bot-Services in einheitliche Plattform",
+        "Aufbau Echtzeit-Benachrichtigungssystem für Produkt-Drops über mehrere Einzelhändler",
+        "Verwaltung Zugriffskontrolle und Abonnement-Stufen für 5.000+ Community-Mitglieder",
+        "Erstellung interner Dashboards für Community-Management und Analytics",
+        "Verwaltung hochvolumiger Echtzeit-Datenfeeds von verschiedenen E-Commerce-Quellen",
+        "Zusammenarbeit mit Produkt- und Design-Teams zur Übersetzung von Geschäftsanforderungen in Features"
+      ],
+      "outcomes": [
+        "Unterstützung Community-Wachstum auf 5.000+ aktive Mitglieder",
+        "Lieferung Echtzeit-Monitoring-System zur Verfolgung von Produkt-Drops über mehrere Einzelhändler",
+        "Aufbau Abonnement-Management-System für gestaffelte Mitgliederzugriffe",
+        "Erstellung Analytics-Dashboard für Business Intelligence zu Community-Engagement",
+        "Ermöglichung Plattform-Evolution vom Sneaker-Monitoring zu breiteren Trading-Signalen",
+        "Beitrag zu 2-jährigem Plattformbetrieb (2020-2022) vor strategischer Einstellung"
+      ]
+    },
+    "acidnode-validator": {
+      "title": "Acid Node - Solana Validator-Infrastruktur",
+      "shortDescription": "B2C Blockchain-Validator im Solana-Netzwerk mit Fokus auf Skalierbarkeit, Fehlertoleranz und Cloud-Infrastruktur",
+      "fullDescription": "Bei Acid Node arbeitete ich am Deployment und der Infrastruktur eines B2C-Blockchain-Validators im Solana-Netzwerk. Ich trug zum Design von Cloud-Lösungen und Microservices bei, um die finanzielle Lieferung und Zuverlässigkeit der Validator-Infrastruktur zu verbessern. Die Rolle umfasste Orchestrierung von Deployments auf AWS, Implementierung fehlertoleranter Architekturen und Optimierung der Cloud-Infrastruktur für hochvolumige Blockchain-Operationen.",
+      "role": "Backend Engineer",
+      "category": "Blockchain & Infrastruktur",
+      "challenges": [
+        "Deployment und Wartung hochverfügbarer Solana-Validator-Infrastruktur",
+        "Architektur Cloud-Lösungen für Blockchain-Operationen mit 99,9%+ Uptime",
+        "Implementierung automatisierter Deployment-Pipelines für cloud-native Validator-Services",
+        "Optimierung Infrastrukturkosten bei Aufrechterhaltung von Performance und Zuverlässigkeit",
+        "Orchestrierung Microservices-Architektur für finanzielle Transaktionsverarbeitung",
+        "Sicherstellung Fehlertoleranz und Disaster Recovery für Blockchain-Validator-Operationen"
+      ],
+      "outcomes": [
+        "Deployment produktionsfertiger Solana-Validator-Infrastruktur auf AWS",
+        "Implementierung Cloud-Automatisierung zur Reduzierung von Deployment-Zeit und operativem Overhead",
+        "Architektur fehlertoleranter Microservices für verbesserte finanzielle Lieferung",
+        "Beitrag zu Validator-Uptime und Zuverlässigkeit in Solana-Netzwerk-Operationen",
+        "Aufbau skalierbarer Cloud-Infrastruktur zur Unterstützung von Blockchain-Transaktionsverarbeitung",
+        "Lieferung cloud-nativer Architektur für schnelle Iteration und Deployment"
+      ]
+    },
+    "neura-nft-sniping": {
+      "title": "Neura - Solana NFT Sniping Bot",
+      "shortDescription": "B2C NFT-Automatisierungssoftware mit Echtzeit-NFT-Sniping im Solana-Netzwerk und erfolgreichem Exit",
+      "fullDescription": "Bei Neura entwickelte ich eine B2C-Software, die das Minting von NFTs mit Python und Solidity für Smart Contracts automatisierte. Die Plattform bot Kunden Echtzeit-NFT-Automatisierung im Solana-Netzwerk und ermöglichte es ihnen, wertvolle NFT-Drops mit Millisekunden-Präzision zu snipen. Als abonnementbasierter Service half Neura Sammlern, limitierte NFTs aus populären Solana-Kollektionen zu sichern. Das Projekt erreichte einen erfolgreichen Exit nach Etablierung einer starken Nutzerbasis und nachweislicher Erfolgsbilanz im kompetitiven NFT-Tooling-Bereich.",
+      "role": "Software Engineer",
+      "category": "Blockchain & NFT",
+      "challenges": [
+        "Entwicklung B2C-Software zur Automatisierung von NFT-Minting mit Millisekunden-Präzision",
+        "Implementierung Smart-Contract-Integration für automatisierte Transaktionen",
+        "Aufbau Echtzeit-Monitoring-System für Solana-NFT-Drops",
+        "Erstellung zuverlässiger Automatisierung für High-Traffic-Mint-Events",
+        "Design benutzerfreundlicher Oberfläche für nicht-technische NFT-Sammler",
+        "Optimierung Transaktionsgeschwindigkeit für Wettbewerb bei hochnachgefragten NFT-Launches"
+      ],
+      "outcomes": [
+        "Erfolgreicher Launch B2C-NFT-Automatisierungsplattform auf Solana",
+        "Ermöglichung für Kunden, limitierte NFTs durch automatisiertes Sniping zu sichern",
+        "Aufbau Echtzeit-Monitoring- und Automatisierungssystem für NFT-Drops",
+        "Erreichen erfolgreichen Exits mit etablierter Nutzerbasis",
+        "Lieferung nachweislicher Smart-Contract-Integration für automatisiertes Minting",
+        "Erstellung Wettbewerbsvorteil durch Millisekunden-Präzisions-Automatisierung"
+      ]
+    }
   }
 }

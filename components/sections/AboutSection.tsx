@@ -20,11 +20,11 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 				<div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-16">
 					<div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
 						{/* Main Content */}
-						<div className="lg:col-span-3 space-y-6">
+						<div className="lg:col-span-3 space-y-4">
 							<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground">
 								{t('intro.name')}
 							</h1>
-							<div className="space-y-4">
+							<div className="space-y-3">
 								<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground">
 									{t('intro.title')}
 								</p>
@@ -33,8 +33,26 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 								</p>
 							</div>
 
+							{/* Capabilities */}
+							<div className="space-y-2 lg:pt-2">
+								<h3 className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
+									{t('intro.capabilitiesHeading')}
+								</h3>
+								<ul className="space-y-1.5">
+									{(t.raw('intro.capabilities') as string[]).map((capability: string, index: number) => (
+										<li
+											key={index}
+											className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground flex items-start gap-2"
+										>
+											<span className="text-foreground mt-0.5">→</span>
+											<span>{capability}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+
 							{/* Skills Pills */}
-							<div className="flex flex-wrap gap-2 lg:pt-8">
+							<div className="flex flex-wrap gap-2 lg:pt-2">
 								{skills.map((skill) => (
 									<span
 										key={skill}
@@ -47,9 +65,9 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 						</div>
 
 						{/* Sidebar */}
-						<div className="lg:col-span-2 space-y-6">
+						<div className="lg:col-span-2 space-y-5">
 							{/* Profile Photo */}
-							<div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-border/50">
+							<div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-border/50">
 								<img
 									src="/headshot-user.webp"
 									alt="Jan Tokic"

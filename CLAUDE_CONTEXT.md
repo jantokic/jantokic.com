@@ -308,6 +308,33 @@ tsconfig.json                        # TypeScript config
 - ✅ GitHub repository renamed to `jantokic.com`
 - ⚠️ Vercel deployment needs verification (should auto-update via GitHub integration)
 
+### 14. Capabilities Section (October 2025)
+- ✅ Added "How I help you" capabilities section to About/Intro
+- ✅ Created `capabilitiesHeading` and `capabilities` array in translation files
+- ✅ Added 6 capability items ordered by demand/genericness:
+  - High-performance backends & APIs
+  - Scalable cloud & microservice architecture
+  - DevOps, CI/CD & infrastructure automation (explicit, not just implied)
+  - Real-time data pipelines & WebSockets
+  - Low-latency trading systems (Solana, DeFi)
+  - Performance audits & cost optimization
+- ✅ Updated `AboutSection.tsx` to display capabilities with arrow bullets
+- ✅ Fully translated in both English and German
+- ✅ Positioned between bio and skills pills for optimal visibility
+- ✅ Adjusted layout spacing for better visual alignment:
+  - Increased profile photo size from 224px (56) to 256px (64) on desktop
+  - Reduced spacing between sections (space-y-6 → space-y-4 on left, space-y-6 → space-y-5 on right)
+  - Tightened capabilities and bio spacing for better vertical alignment with sidebar
+- ✅ Removed e-commerce to avoid non-compete issues with Elevantiq
+
+### 15. Featured Projects Card Alignment (October 2025)
+- ✅ Fixed "View Project" button alignment across all project cards
+- ✅ Converted cards to flexbox layout with `flex flex-col`
+- ✅ Added `flex-grow` to content container
+- ✅ Used `mt-auto` on button to push it to bottom of card
+- ✅ Buttons now align perfectly regardless of text length
+- ✅ Replaced `space-y-3` with explicit `mb-` margins for better control
+
 ---
 
 ## Current Behavior
@@ -508,4 +535,4 @@ Potential features to add:
 
 ---
 
-*Last Updated: October 24, 2025 - Text migration to JSON translation files, repository rename to jantokic.com, image optimization, main page refactoring into section components*
+*Last Updated: October 24, 2025 - Fixed project card button alignment, added capabilities section to About/Intro, text migration to JSON translation files, repository rename to jantokic.com, image optimization, main page refactoring into section components*

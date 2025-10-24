@@ -34,15 +34,15 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 							</div>
 
 							{/* Capabilities */}
-							<div className="space-y-2 lg:pt-2">
-								<h3 className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
+							<div className="space-y-3 lg:pt-3">
+								<h3 className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-foreground">
 									{t('intro.capabilitiesHeading')}
 								</h3>
-								<ul className="space-y-1.5">
+								<ul className="space-y-2.5">
 									{(t.raw('intro.capabilities') as string[]).map((capability: string, index: number) => (
 										<li
 											key={index}
-											className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground flex items-start gap-2"
+											className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground flex items-start gap-2.5"
 										>
 											<span className="text-foreground mt-0.5">→</span>
 											<span>{capability}</span>

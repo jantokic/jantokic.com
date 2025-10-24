@@ -149,7 +149,7 @@ export default function Home() {
 	}, []);
 
 	// Skills data
-	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'React', 'Solana', 'DevOps', 'Databases', 'CMS', 'PIM'];
+	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'Next.js', 'Solana', 'DevOps', 'Databases', 'CMS', 'PIM'];
 
 	// Work data
 	const workData = [

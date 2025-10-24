@@ -53,7 +53,16 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 
 							{/* Skills Pills */}
 							<div className="flex flex-wrap gap-2 lg:pt-2">
-								{skills.map((skill) => (
+								{skills.slice(0, 5).map((skill) => (
+									<span
+										key={skill}
+										className="px-3 py-1.5 font-mono uppercase text-xs tracking-wider font-semibold border border-border/50 rounded-full text-muted-foreground hover:border-border hover:text-foreground transition-colors"
+									>
+										{skill}
+									</span>
+								))}
+								<div className="basis-full h-0"></div>
+								{skills.slice(5).map((skill) => (
 									<span
 										key={skill}
 										className="px-3 py-1.5 font-mono uppercase text-xs tracking-wider font-semibold border border-border/50 rounded-full text-muted-foreground hover:border-border hover:text-foreground transition-colors"

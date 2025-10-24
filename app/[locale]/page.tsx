@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import InfiniteGallery from '@/components/InfiniteGallery';
 import { projects } from '@/lib/projects';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { ChevronDown, Sun, Moon, ArrowUpRight, Linkedin } from 'lucide-react';
+import { ChevronDown, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import BrandIcon from '@/components/BrandIcon';
+import AboutSection from '@/components/sections/AboutSection';
+import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
+import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
+import ConnectSection from '@/components/sections/ConnectSection';
 
 export default function Home() {
 	// Check if under construction mode is enabled
@@ -243,306 +245,42 @@ export default function Home() {
 				</section>
 
 				{/* Intro Section */}
-				<section
-					id="intro"
+				<AboutSection
 					ref={(el) => {
 						if (el) {
 							sectionsRef.current[0] = el;
 						}
 					}}
-					className="min-h-[80vh] flex items-center opacity-0"
-				>
-					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
-						<div className="grid gap-12 lg:grid-cols-5">
-							{/* Main Content */}
-							<div className="lg:col-span-3 space-y-6 sm:space-y-8">
-								<h1 className="font-mono uppercase text-4xl sm:text-5xl lg:text-6xl tracking-wider font-semibold text-foreground">
-									{t('intro.name')}
-								</h1>
-								<div className="space-y-4">
-									<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground">
-										{t('intro.title')}
-									</p>
-									<p className="font-mono uppercase text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-2xl tracking-wider font-semibold">
-										{t('intro.bio')}
-									</p>
-								</div>
-
-								{/* Skills Pills */}
-								<div className="flex flex-wrap gap-2 lg:pt-8">
-									{skills.map((skill) => (
-										<span
-											key={skill}
-											className="px-3 py-1.5 font-mono uppercase text-xs tracking-wider font-semibold border border-border/50 rounded-full text-muted-foreground hover:border-border hover:text-foreground transition-colors"
-										>
-											{skill}
-										</span>
-									))}
-								</div>
-							</div>
-
-							{/* Sidebar */}
-							<div className="lg:col-span-2 space-y-6">
-								{/* Profile Photo */}
-								<div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-border/50">
-									<img
-										src="/headshot-user.webp"
-										alt="Jan Tokic"
-										className="w-full h-full object-cover object-[center_20%]"
-									/>
-								</div>
-
-								<div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2">
-										{t('intro.currently')}
-									</div>
-									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-										{t('intro.currentCompany')}
-									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.currentRole')}</div>
-								</div>
-
-								<div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2">
-										{t('intro.studying')}
-									</div>
-									<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-										{t('intro.university')}
-									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.degree')}</div>
-								</div>
-
-								<div className="flex items-center gap-2">
-									<div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
-									<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.location')}</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+					skills={skills}
+				/>
 
 				{/* Selected Work Section */}
-				<section
-					id="work"
+				<SelectedWorkSection
 					ref={(el) => {
 						if (el) {
 							sectionsRef.current[1] = el;
 						}
 					}}
-					className="py-16 sm:py-20 opacity-0"
-				>
-					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
-						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
-							{t('work.heading')}
-						</h2>
-
-						<div className="space-y-0">
-							{workData.map((job, index) => (
-								<div
-									key={index}
-									className="group grid gap-4 md:gap-8 border-b border-border/50 hover:border-border transition-colors duration-500 py-8 md:grid-cols-12"
-								>
-									{/* Year Column */}
-									<div className="md:col-span-2">
-										<div className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-muted-foreground">{job.year}</div>
-									</div>
-
-									{/* Content Column */}
-									<div className="md:col-span-7 space-y-3">
-										<div>
-											<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
-												{t(`work.${job.key}.role`)}
-											</h3>
-											<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">{t(`work.${job.key}.company`)}</div>
-											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t(`work.${job.key}.location`)}</div>
-										</div>
-
-										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">{t(`work.${job.key}.description`)}</p>
-
-										{/* Project Link */}
-										{t.has(`work.${job.key}.projectLink`) && (
-											<Link
-												href={t(`work.${job.key}.projectLink`)}
-												className="inline-flex items-center gap-1 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors"
-											>
-												{t(`work.${job.key}.projectLinkText`)}
-											</Link>
-										)}
-
-										{/* Tech Stack - Mobile */}
-										<div className="flex flex-wrap gap-2 pt-2 md:hidden">
-											{job.techStack.map((tech) => (
-												<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-													{tech}
-												</span>
-											))}
-										</div>
-									</div>
-
-									{/* Tech Stack - Desktop (Right Side) */}
-									<div className="hidden md:flex md:col-span-3 flex-wrap gap-2 content-start">
-										{job.techStack.map((tech) => (
-											<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-												{tech}
-											</span>
-										))}
-									</div>
-								</div>
-							))}
-						</div>
-					</div>
-				</section>
+					workData={workData}
+				/>
 
 				{/* Featured Projects Section */}
-				<section
-					id="projects"
+				<FeaturedProjectsSection
 					ref={(el) => {
 						if (el) {
 							sectionsRef.current[2] = el;
 						}
 					}}
-					className="py-16 sm:py-20 opacity-0"
-				>
-					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
-						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
-							{t('projects.heading')}
-						</h2>
-
-						<div className="grid gap-6 sm:grid-cols-2">
-							{Object.entries(t.raw('projects.items') as Record<string, any>).map(([slug, projectData]) => {
-								const project = projects.find(p => p.slug === slug);
-								if (!project) return null;
-
-								return (
-									<Link
-										key={slug}
-										href={`/projects/${slug}`}
-										className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
-									>
-										{/* Project Image */}
-										<div className="aspect-video w-full overflow-hidden bg-muted">
-											<img
-												src={project.image}
-												alt={projectData.title}
-												className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-											/>
-										</div>
-
-										{/* Project Content */}
-										<div className="p-6 space-y-3">
-											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-												{projectData.category} • {project.year}
-											</div>
-
-											<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
-												{projectData.title}
-											</h3>
-
-											<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3">
-												{projectData.shortDescription}
-											</p>
-
-											<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all">
-												{t('projects.viewProject')}
-												<ArrowUpRight className="w-4 h-4" />
-											</div>
-										</div>
-									</Link>
-								);
-							})}
-						</div>
-					</div>
-				</section>
+				/>
 
 				{/* Connect Section */}
-				<section
-					id="connect"
+				<ConnectSection
 					ref={(el) => {
 						if (el) {
 							sectionsRef.current[3] = el;
 						}
 					}}
-					className="py-32 sm:py-40 opacity-0"
-				>
-					<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
-						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-8 text-foreground">
-							{t('connect.heading')}
-						</h2>
-
-						<p className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground leading-relaxed mb-12 max-w-2xl">
-							{t('connect.description')}
-						</p>
-
-						<div className="space-y-8">
-							{/* Contact Options */}
-							<div className="flex flex-wrap gap-4">
-								<a
-									href={`mailto:${t('connect.email')}`}
-									className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
-								>
-									{t('connect.email')}
-									<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-								</a>
-								<span className="text-muted-foreground">•</span>
-								<Link
-									href="/contact"
-									className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
-								>
-									Contact Form
-									<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-								</Link>
-							</div>
-
-							{/* Social Grid */}
-							<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl">
-								<a
-									href="https://github.com/jantokic"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
-								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-										<BrandIcon name="siGithub" size={14} className="text-muted-foreground" />
-									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-										@jantokic
-										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-									</div>
-								</a>
-
-								<a
-									href="https://linkedin.com/in/jan-tokic"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
-								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-										<Linkedin className="w-3.5 h-3.5" />
-									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-										Jan Tokic
-										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-									</div>
-								</a>
-
-								<a
-									href="https://x.com/tokicjan"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
-								>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-										<BrandIcon name="siX" size={14} className="text-muted-foreground" />
-									</div>
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-										@tokicjan
-										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</section>
+				/>
 
 				{/* Footer */}
 				<footer className="py-12 px-6 sm:px-8 lg:px-16 border-t border-border/30">

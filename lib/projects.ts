@@ -31,7 +31,7 @@ export const projects: Project[] = [
     shortDescription: 'Self-evolving multi-agent system that autonomously detects trends, simulates scenarios, and generates strategic insights',
     fullDescription: 'Richard is a proactive AI research engine that solves a critical knowledge work problem: strategic blind spots. Traditional tools are reactive—they only answer what you ask. Richard autonomously monitors diverse data sources, detects weak signals, and generates predictive hypotheses before users even know what questions to ask. I architected a modular multi-agent system using LangGraph orchestration, vectorized memory with Pinecone, and custom DAG-based simulation for scenario modeling. The system reduced typical research workflows from 5-8 hours to under 30 minutes while generating original strategic insights with full traceability.',
     role: 'Founding Engineer & System Architect',
-    techStack: ['Python', 'GPT-4o', 'LangGraph', 'LangChain', 'Pinecone', 'LlamaIndex', 'Streamlit', 'Custom DAG Engine'],
+    techStack: ['TypeScript', 'Next.js', 'LangChain', 'Supabase', 'RAG', 'Tool Calling'],
     challenges: [
       'Architecting autonomous agents that proactively surface insights without prompting',
       'Building recursive feedback loops enabling emergent intelligence over time',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
       'Delivered explainable AI with full decision tree traceability for compliance',
       'Demonstrated ROI through early detection of contrarian investment opportunities'
     ],
-    duration: '3 months (Mar 2025 - Jun 2025)',
+    duration: 'Mar 2025 - Present',
     category: 'AI & Research',
     image: '/projects/banners/richard_banner.webp',
     galleryImage: '/projects/gallery/richard_gallery.webp',

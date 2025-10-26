@@ -29,7 +29,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 							<Link
 								key={slug}
 								href={`/projects/${slug}`}
-								className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
+								className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300 flex flex-col"
 							>
 								{/* Project Image */}
 								<div className="aspect-video w-full overflow-hidden bg-muted">
@@ -41,20 +41,20 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 								</div>
 
 								{/* Project Content */}
-								<div className="p-6 space-y-3">
-									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+								<div className="p-6 flex flex-col flex-grow">
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-3">
 										{projectData.category} • {project.year}
 									</div>
 
-									<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors">
+									<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors mb-3">
 										{projectData.title}
 									</h3>
 
-									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3">
+									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3 mb-4">
 										{projectData.shortDescription}
 									</p>
 
-									<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all">
+									<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all mt-auto">
 										{t('projects.viewProject')}
 										<ArrowUpRight className="w-4 h-4" />
 									</div>

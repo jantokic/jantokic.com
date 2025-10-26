@@ -184,7 +184,10 @@ tsconfig.json                        # TypeScript config
 **Education**:
 - Currently studying B.Sc. Information Engineering at Technical University of Munich
 
-**Skills**: TypeScript, Java, Python, Go, Next.js, Solana, Docker, Kubernetes, Databases
+**Skills** (displayed as pills, 5+5 layout):
+- **Row 1 (Languages/Frameworks)**: Java, Python, Go, TypeScript, Next.js
+- **Row 2 (Domain/Platform)**: Solana, DevOps, Databases, CMS, PIM
+- Note: Shorter words placed first to ensure proper 5-5 wrapping behavior
 
 ### 7. **Project Data** (`lib/projects.ts`)
 
@@ -307,6 +310,49 @@ tsconfig.json                        # TypeScript config
 - ✅ Updated git remote URL from `https://github.com/jantokic/personal-page.git` to `https://github.com/jantokic/jantokic.com.git`
 - ✅ GitHub repository renamed to `jantokic.com`
 - ⚠️ Vercel deployment needs verification (should auto-update via GitHub integration)
+
+### 14. Capabilities Section (October 2025)
+- ✅ Added "How I help you" capabilities section to About/Intro
+- ✅ Created `capabilitiesHeading` and `capabilities` array in translation files
+- ✅ Added 6 capability items ordered by demand/genericness:
+  - High-performance backends & APIs
+  - Scalable cloud & microservice architecture
+  - DevOps, CI/CD & infrastructure automation (explicit, not just implied)
+  - Real-time data pipelines & WebSockets
+  - Low-latency trading systems (Solana, DeFi)
+  - Performance audits & cost optimization
+- ✅ Updated `AboutSection.tsx` to display capabilities with arrow bullets
+- ✅ Fully translated in both English and German
+- ✅ Positioned between bio and skills pills for optimal visibility
+- ✅ Adjusted layout spacing for better visual alignment:
+  - Increased profile photo size from 224px (56) to 256px (64) on desktop
+  - Reduced spacing between sections (space-y-6 → space-y-4 on left, space-y-6 → space-y-5 on right)
+  - Tightened capabilities and bio spacing for better vertical alignment with sidebar
+- ✅ Removed e-commerce to avoid non-compete issues with Elevantiq
+
+### 15. Featured Projects Card Alignment (October 2025)
+- ✅ Fixed "View Project" button alignment across all project cards
+- ✅ Converted cards to flexbox layout with `flex flex-col`
+- ✅ Added `flex-grow` to content container
+- ✅ Used `mt-auto` on button to push it to bottom of card
+- ✅ Buttons now align perfectly regardless of text length
+- ✅ Replaced `space-y-3` with explicit `mb-` margins for better control
+
+### 16. Capabilities List Visual Prominence (October 2025)
+- ✅ Increased "How I help you" heading size from `text-sm` to `text-base sm:text-lg`
+- ✅ Increased capability items font size from `text-xs` to `text-xs sm:text-sm`
+- ✅ Increased spacing between items from `space-y-1.5` to `space-y-2.5`
+- ✅ Increased section spacing from `space-y-2` to `space-y-3`
+- ✅ Increased arrow gap from `gap-2` to `gap-2.5`
+- ✅ Made capabilities more prominent as key value proposition
+
+### 17. Skills Pills Reordering (October 2025)
+- ✅ Reordered skills array to separate languages/frameworks from domain expertise
+- ✅ First row (5 items): Java, Python, Go, TypeScript, Next.js (actual languages/frameworks)
+- ✅ Second row (5 items): Solana, DevOps, Databases, CMS, PIM (domain/platform skills)
+- ✅ Changed "React" to "Next.js" for more accurate representation
+- ✅ Reordered to place shorter words first (Java, Python, Go) to ensure proper 5-5 wrapping
+- ✅ Creates cleaner visual hierarchy with 5-5 split across two rows
 
 ---
 
@@ -508,4 +554,4 @@ Potential features to add:
 
 ---
 
-*Last Updated: October 24, 2025 - Text migration to JSON translation files, repository rename to jantokic.com, image optimization, main page refactoring into section components*
+*Last Updated: October 24, 2025 - Reordered skills pills (languages first, then domain expertise), increased capabilities visual prominence, fixed project card button alignment, added capabilities section to About/Intro, text migration to JSON translation files, repository rename to jantokic.com, image optimization, main page refactoring into section components*

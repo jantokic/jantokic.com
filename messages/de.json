@@ -17,6 +17,15 @@
     "name": "Jan Tokic",
     "title": "Software Engineer",
     "bio": "Ich bin Software Engineer aus Österreich und lebe in München. Ich entwickle performante Systeme und Webplattformen, die echten Mehrwert schaffen – von Trading-Automatisierung bis zu skalierbaren E-Commerce-Lösungen. Ich habe Mira Trading und Copile mitgegründet und arbeite derzeit bei Elevantiq an scaled Commerce-Systemen, die monatlich Millionen Bestellungen verarbeiten.",
+    "capabilitiesHeading": "Womit ich Ihnen helfe",
+    "capabilities": [
+      "Hochperformante Backends & APIs",
+      "Skalierbare Cloud- & Microservice-Architektur",
+      "DevOps, CI/CD & Infrastruktur-Automatisierung",
+      "Echtzeit-Datenpipelines & WebSockets",
+      "Low-Latency Trading-Systeme (Solana, DeFi)",
+      "Performance-Audits & Kostenoptimierung"
+    ],
     "currently": "Aktuell tätig für",
     "studying": "Studium an der",
     "location": "München, Deutschland",

@@ -1,7 +1,17 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import InfiniteGallery from '@/components/InfiniteGallery';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the 3D gallery to avoid blocking FCP (Three.js is ~2MB)
+const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
+	ssr: false,
+	loading: () => (
+		<div className="h-screen w-full bg-white flex items-center justify-center">
+			<div className="animate-pulse text-gray-400 font-mono text-sm">Loading gallery...</div>
+		</div>
+	),
+});
 import { projects } from '@/lib/projects';
 import { useRouter } from 'next/navigation';
 import { ChevronDown, Sun, Moon } from 'lucide-react';
@@ -153,6 +163,11 @@ export default function Home() {
 
 	// Work data
 	const workData = [
+		{
+			year: '2025 - Present',
+			key: 'klarity',
+			techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
+		},
 		{
 			year: '2024 - Present',
 			key: 'elevantiq',

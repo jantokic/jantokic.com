@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from 'next';
+import MaintenanceGate from '@/components/MaintenanceGate';
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -37,7 +38,7 @@ export default function RootLayout({
 				className={`${GeistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} font-sans antialiased`}
 			>
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-					{children}
+					<MaintenanceGate>{children}</MaintenanceGate>
 				</ThemeProvider>
 				<Analytics />
 				<SpeedInsights />

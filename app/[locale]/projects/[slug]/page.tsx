@@ -249,6 +249,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 			</section>
 
 			{/* More Views - Show up to 3 images, first is required (logo), rest optional */}
+			{/* TODO: Uncomment when more views are available
 			{project.images.length > 0 && (
 				<section className="px-4 sm:px-6 lg:px-8 mb-16">
 					<div className="max-w-7xl mx-auto">
@@ -272,6 +273,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 					</div>
 				</section>
 			)}
+			*/}
 
 			{/* Navigation to other projects */}
 			<section className="px-4 sm:px-6 lg:px-8 py-16 bg-muted">

@@ -11,7 +11,7 @@ interface MaintenanceGateProps {
 }
 
 export default function MaintenanceGate({ children }: MaintenanceGateProps) {
-	const isUnderConstruction = process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true';
+	const isUnderConstruction = true;
 	const [pinInput, setPinInput] = useState('');
 	const [isUnlocked, setIsUnlocked] = useState(false);
 	const [pinError, setPinError] = useState(false);

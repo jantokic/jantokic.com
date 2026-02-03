@@ -40,7 +40,9 @@
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Heute",
-      "description": "Prediction-Market-Terminal."
+      "description": "Prediction-Market-Terminal.",
+      "projectLink": "/projects/klarity-prediction-market",
+      "projectLinkText": "Details ansehen →"
     },
     "elevantiq": {
       "role": "Software Engineer & Consultant",
@@ -55,13 +57,17 @@
       "role": "Founding Engineer",
       "company": "Mira Trading",
       "location": "London",
-      "description": "$230K Profit in 5 Monaten. 8.000+ Trades/Monat, 92% Erfolgsrate. Schnellstes Solana-Deployment (<300ms)."
+      "description": "$230K Profit in 5 Monaten. 8.000+ Trades/Monat, 92% Erfolgsrate. Schnellstes Solana-Deployment (<300ms).",
+      "projectLink": "/projects/mira-trading-bot",
+      "projectLinkText": "Details ansehen →"
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "Wien",
-      "description": "2.100+ Nutzer, €35K Umsatz. €1,2 Mio. monatliches Volumen über 5 Exchanges. 70% Retention."
+      "description": "2.100+ Nutzer, €35K Umsatz. €1,2 Mio. monatliches Volumen über 5 Exchanges. 70% Retention.",
+      "projectLink": "/projects/copile-trading-platform",
+      "projectLinkText": "Details ansehen →"
     },
     "ibm": {
       "role": "Software Engineering Praktikant",
@@ -76,6 +82,11 @@
     "backToProjects": "Zurück zu den Projekten",
     "relatedProjects": "Ähnliche Projekte",
     "items": {
+      "klarity-prediction-market": {
+        "title": "Klarity - Prediction Market Terminal",
+        "shortDescription": "Echtzeit Prediction-Market-Daten. Semantische Suche über Millionen Events.",
+        "category": "Fintech & KI"
+      },
       "richard-ai-research": {
         "title": "Richard - Autonome KI-Research-Engine",
         "shortDescription": "KI, die Marktforschung macht, während du schläfst. 8h → 30min.",
@@ -160,6 +171,23 @@
     "language": "Sprache"
   },
   "projectDetails": {
+    "klarity-prediction-market": {
+      "title": "Klarity - Prediction Market Terminal",
+      "shortDescription": "Echtzeit Prediction-Market-Daten. Semantische Suche über Millionen Events.",
+      "fullDescription": "Professionelles Terminal für Prediction-Market-Trader. Aggregiert Daten von Polymarket und anderen Quellen, embeddet Events für semantische Suche und bietet Echtzeit-Analytics.",
+      "role": "Founding Engineer",
+      "category": "Fintech & KI",
+      "challenges": [
+        "Millionen Market-Events in Echtzeit verarbeiten",
+        "Semantische Suche über unstrukturierte Prediction-Daten",
+        "Sub-Sekunden Query-Latenz bei Scale"
+      ],
+      "outcomes": [
+        "Echtzeit-Datenpipeline mit Kafka + Clickhouse",
+        "Vector-Search über Millionen Events",
+        "Professionelles Terminal für Marktanalyse"
+      ]
+    },
     "richard-ai-research": {
       "title": "Richard - Autonome KI-Research-Engine",
       "shortDescription": "KI, die Marktforschung macht, während du schläfst. 8h → 30min.",

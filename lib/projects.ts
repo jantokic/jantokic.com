@@ -18,6 +18,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: '0',
+    slug: 'klarity-prediction-market',
+    techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
+    duration: 'Jan 2025 - Present',
+    image: '/projects/banners/klarity_banner.webp',
+    galleryImage: '/projects/gallery/klarity_gallery.webp',
+    images: [],
+    year: '2025',
+    links: {
+      website: 'https://klarity.io'
+    }
+  },
+  {
     id: '1',
     slug: 'richard-ai-research',
     techStack: ['TypeScript', 'Next.js', 'LangChain', 'Supabase', 'RAG', 'Tool Calling'],

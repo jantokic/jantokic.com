@@ -40,7 +40,9 @@
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Present",
-      "description": "Prediction market terminal."
+      "description": "Prediction market terminal.",
+      "projectLink": "/projects/klarity-prediction-market",
+      "projectLinkText": "View details →"
     },
     "elevantiq": {
       "role": "Software Engineer",
@@ -55,13 +57,17 @@
       "role": "Founding Engineer",
       "company": "Mira",
       "location": "London",
-      "description": "$230K profit in 5 months. 8,000+ trades/month, 92% success rate. Fastest Solana deployment (<300ms)."
+      "description": "$230K profit in 5 months. 8,000+ trades/month, 92% success rate. Fastest Solana deployment (<300ms).",
+      "projectLink": "/projects/mira-trading-bot",
+      "projectLinkText": "View details →"
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "London",
-      "description": "2,100+ users, €35K revenue. €1.2M monthly volume across 5 exchanges. 70% retention."
+      "description": "2,100+ users, €35K revenue. €1.2M monthly volume across 5 exchanges. 70% retention.",
+      "projectLink": "/projects/copile-trading-platform",
+      "projectLinkText": "View details →"
     },
     "ibm": {
       "role": "Software Engineering Intern",
@@ -76,6 +82,11 @@
     "backToProjects": "Back to Projects",
     "relatedProjects": "Related Projects",
     "items": {
+      "klarity-prediction-market": {
+        "title": "Klarity - Prediction Market Terminal",
+        "shortDescription": "Real-time prediction market data. Semantic search across millions of events.",
+        "category": "Fintech & AI"
+      },
       "richard-ai-research": {
         "title": "Richard - Autonomous AI Research Engine",
         "shortDescription": "AI that does your market research while you sleep. 8h → 30min.",
@@ -160,6 +171,23 @@
     "language": "Language"
   },
   "projectDetails": {
+    "klarity-prediction-market": {
+      "title": "Klarity - Prediction Market Terminal",
+      "shortDescription": "Real-time prediction market data. Semantic search across millions of events.",
+      "fullDescription": "Professional-grade terminal for prediction market traders. Aggregates data from Polymarket and other sources, embeds events for semantic search, and provides real-time analytics.",
+      "role": "Founding Engineer",
+      "category": "Fintech & AI",
+      "challenges": [
+        "Ingesting millions of market events in real-time",
+        "Semantic search across unstructured prediction data",
+        "Sub-second query latency at scale"
+      ],
+      "outcomes": [
+        "Real-time data pipeline with Kafka + Clickhouse",
+        "Vector search across millions of events",
+        "Professional terminal for market analysis"
+      ]
+    },
     "richard-ai-research": {
       "title": "Richard - Autonomous AI Research Engine",
       "shortDescription": "AI that does your market research while you sleep. 8h → 30min.",

@@ -33,7 +33,7 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 						{workData.map((job, index) => (
 							<div
 								key={index}
-								className="group grid gap-4 md:gap-8 border-b border-border/50 hover:border-border transition-colors duration-500 py-8 md:grid-cols-12"
+								className="group grid gap-4 md:gap-8 py-8 md:grid-cols-12 -mx-4 px-4 rounded-lg border border-transparent hover:border-border hover:shadow-lg transition-all duration-300"
 							>
 								{/* Year Column */}
 								<div className="md:col-span-2">
@@ -52,16 +52,6 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 
 									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">{t(`work.${job.key}.description`)}</p>
 
-									{/* Project Link */}
-									{t.has(`work.${job.key}.projectLink`) && (
-										<Link
-											href={t(`work.${job.key}.projectLink`)}
-											className="inline-flex items-center gap-1 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors"
-										>
-											{t(`work.${job.key}.projectLinkText`)}
-										</Link>
-									)}
-
 									{/* Tech Stack - Mobile */}
 									<div className="flex flex-wrap gap-2 pt-2 md:hidden">
 										{job.techStack.map((tech) => (
@@ -70,15 +60,35 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 											</span>
 										))}
 									</div>
+
+									{/* Project Link - Mobile */}
+									{t.has(`work.${job.key}.projectLink`) && (
+										<Link
+											href={t(`work.${job.key}.projectLink`)}
+											className="inline-flex items-center gap-1 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors md:hidden"
+										>
+											Details →
+										</Link>
+									)}
 								</div>
 
-								{/* Tech Stack - Desktop (Right Side) */}
-								<div className="hidden md:flex md:col-span-3 flex-wrap gap-2 content-start">
-									{job.techStack.map((tech) => (
-										<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-											{tech}
-										</span>
-									))}
+								{/* Tech Stack + Link - Desktop (Right Side) */}
+								<div className="hidden md:flex md:col-span-3 flex-col gap-3 content-start">
+									<div className="flex flex-wrap gap-2">
+										{job.techStack.map((tech) => (
+											<span key={tech} className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+												{tech}
+											</span>
+										))}
+									</div>
+									{t.has(`work.${job.key}.projectLink`) && (
+										<Link
+											href={t(`work.${job.key}.projectLink`)}
+											className="inline-flex items-center gap-1 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors"
+										>
+											Details →
+										</Link>
+									)}
 								</div>
 							</div>
 						))}

@@ -21,7 +21,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 				</h2>
 
 				<div className="grid gap-6 sm:grid-cols-2">
-					{Object.entries(t.raw('projects.items') as Record<string, any>).map(([slug, projectData]) => {
+					{Object.entries(t.raw('projects.items') as Record<string, any>).map(([slug, projectData], index) => {
 						const project = allProjects.find(p => p.slug === slug);
 						if (!project) return null;
 
@@ -29,7 +29,8 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 							<Link
 								key={slug}
 								href={`/projects/${slug}`}
-								className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300 flex flex-col"
+								className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg active:scale-[0.98] transition-all duration-300 flex flex-col opacity-0 animate-fade-in-up"
+								style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
 							>
 								{/* Project Image */}
 								<div className="aspect-video w-full overflow-hidden bg-muted">

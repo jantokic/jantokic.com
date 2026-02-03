@@ -60,7 +60,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 								href="https://github.com/jantokic"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
+								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
 							>
 								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 									<BrandIcon name="siGithub" size={14} className="text-muted-foreground" />
@@ -75,7 +75,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 								href="https://linkedin.com/in/jan-tokic"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
+								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
 							>
 								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 									<Linkedin className="w-3.5 h-3.5" />
@@ -90,7 +90,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 								href="https://x.com/tokicjan"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border transition-colors group"
+								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
 							>
 								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 									<BrandIcon name="siX" size={14} className="text-muted-foreground" />
@@ -118,14 +118,16 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 						{mounted && (
 							<button
 								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-								className="p-2 rounded-lg hover:bg-muted transition-colors"
+								className="p-2 rounded-lg hover:bg-muted active:scale-[0.95] transition-all"
 								aria-label={t('footer.toggleTheme')}
 							>
-								{theme === 'dark' ? (
-									<Sun className="w-5 h-5 text-foreground" />
-								) : (
-									<Moon className="w-5 h-5 text-foreground" />
-								)}
+								<span className="block transition-transform duration-300 hover:rotate-12">
+									{theme === 'dark' ? (
+										<Sun className="w-5 h-5 text-foreground" />
+									) : (
+										<Moon className="w-5 h-5 text-foreground" />
+									)}
+								</span>
 							</button>
 						)}
 					</div>

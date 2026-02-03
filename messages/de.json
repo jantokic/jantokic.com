@@ -191,7 +191,7 @@
     "messageLabel": "Projektdetails",
     "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt, Zeitplan und Budget...",
     "sendButton": "Nachricht senden",
-    "responseTime": "Ich antworte meist innerhalb von 24 Stunden",
+    "responseTime": "Ich antworte meist innerhalb von 3 Stunden",
     "mailtoSubject": "Projektanfrage von {name}",
     "stats": {
       "responseTime": "3h",

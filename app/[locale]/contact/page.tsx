@@ -90,7 +90,7 @@ export default function ContactPage() {
 											href="https://github.com/jantokic"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
 										>
 											<BrandIcon name="siGithub" size={16} />
 										</a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
 											href="https://linkedin.com/in/jan-tokic"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
 										>
 											<Linkedin className="w-4 h-4" />
 										</a>
@@ -106,7 +106,7 @@ export default function ContactPage() {
 											href="https://x.com/tokicjan"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
 										>
 											<BrandIcon name="siX" size={16} />
 										</a>
@@ -145,7 +145,7 @@ export default function ContactPage() {
 											type="text"
 											id="name"
 											required
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground focus:border-transparent text-foreground"
+											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
 											value={formState.name}
 											onChange={(e) =>
 												setFormState({ ...formState, name: e.target.value })
@@ -164,7 +164,7 @@ export default function ContactPage() {
 											type="email"
 											id="email"
 											required
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground focus:border-transparent text-foreground"
+											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
 											value={formState.email}
 											onChange={(e) =>
 												setFormState({ ...formState, email: e.target.value })
@@ -183,7 +183,7 @@ export default function ContactPage() {
 											id="message"
 											required
 											rows={6}
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground focus:border-transparent resize-none text-foreground placeholder:text-muted-foreground"
+											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow resize-none text-foreground placeholder:text-muted-foreground"
 											value={formState.message}
 											onChange={(e) =>
 												setFormState({ ...formState, message: e.target.value })
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
 									<button
 										type="submit"
-										className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:opacity-90 transition-opacity"
+										className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:opacity-90 active:scale-[0.98] transition-all"
 									>
 										<Send className="w-4 h-4" />
 										{t('contact.sendButton')}
@@ -241,14 +241,16 @@ export default function ContactPage() {
 						{mounted && (
 							<button
 								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-								className="p-2 rounded-lg hover:bg-muted transition-colors"
+								className="p-2 rounded-lg hover:bg-muted active:scale-[0.95] transition-all"
 								aria-label={t('footer.toggleTheme')}
 							>
-								{theme === 'dark' ? (
-									<Sun className="w-5 h-5 text-foreground" />
-								) : (
-									<Moon className="w-5 h-5 text-foreground" />
-								)}
+								<span className="block transition-transform duration-300 hover:rotate-12">
+									{theme === 'dark' ? (
+										<Sun className="w-5 h-5 text-foreground" />
+									) : (
+										<Moon className="w-5 h-5 text-foreground" />
+									)}
+								</span>
 							</button>
 						)}
 					</div>

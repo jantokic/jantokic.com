@@ -239,6 +239,11 @@ function GalleryScene({
 	const [isComplete, setIsComplete] = useState(false);
 	const totalScrollDistance = useRef(0);
 
+	// Touch handling state
+	const touchStartY = useRef<number | null>(null);
+	const touchStartTime = useRef<number>(0);
+	const lastTouchY = useRef<number | null>(null);
+
 	// Reset gallery when resetGallery prop changes
 	useEffect(() => {
 		if (resetGallery) {
@@ -364,18 +369,74 @@ function GalleryScene({
 		[speed, isComplete]
 	);
 
+	// Handle touch start
+	const handleTouchStart = useCallback((event: TouchEvent) => {
+		if (isComplete) return;
+		const touch = event.touches[0];
+		touchStartY.current = touch.clientY;
+		lastTouchY.current = touch.clientY;
+		touchStartTime.current = Date.now();
+		setAutoPlay(false);
+		lastInteraction.current = Date.now();
+	}, [isComplete]);
+
+	// Handle touch move
+	const handleTouchMove = useCallback(
+		(event: TouchEvent) => {
+			if (isComplete || touchStartY.current === null) return;
+
+			const scrollThreshold = normalizedImages.length * 3.5;
+			if (totalScrollDistance.current >= scrollThreshold) return;
+
+			event.preventDefault();
+			const touch = event.touches[0];
+			const currentY = touch.clientY;
+			const deltaY = (lastTouchY.current ?? currentY) - currentY;
+
+			// Convert touch delta to scroll velocity (similar sensitivity to wheel)
+			const delta = deltaY * 0.03 * speed;
+			setScrollVelocity((prev) => prev + delta);
+			totalScrollDistance.current += Math.abs(delta);
+
+			lastTouchY.current = currentY;
+			lastInteraction.current = Date.now();
+
+			// Check completion
+			if (totalScrollDistance.current >= scrollThreshold) {
+				setIsComplete(true);
+				setAutoPlay(false);
+				if (onScrollComplete) {
+					onScrollComplete();
+				}
+			}
+		},
+		[speed, isComplete, normalizedImages.length, onScrollComplete]
+	);
+
+	// Handle touch end
+	const handleTouchEnd = useCallback(() => {
+		touchStartY.current = null;
+		lastTouchY.current = null;
+	}, []);
+
 	useEffect(() => {
 		const canvas = document.querySelector('canvas');
 		if (canvas) {
 			canvas.addEventListener('wheel', handleWheel, { passive: false });
+			canvas.addEventListener('touchstart', handleTouchStart, { passive: true });
+			canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+			canvas.addEventListener('touchend', handleTouchEnd, { passive: true });
 			document.addEventListener('keydown', handleKeyDown);
 
 			return () => {
 				canvas.removeEventListener('wheel', handleWheel);
+				canvas.removeEventListener('touchstart', handleTouchStart);
+				canvas.removeEventListener('touchmove', handleTouchMove);
+				canvas.removeEventListener('touchend', handleTouchEnd);
 				document.removeEventListener('keydown', handleKeyDown);
 			};
 		}
-	}, [handleWheel, handleKeyDown]);
+	}, [handleWheel, handleKeyDown, handleTouchStart, handleTouchMove, handleTouchEnd]);
 
 	// Auto-play logic
 	useEffect(() => {

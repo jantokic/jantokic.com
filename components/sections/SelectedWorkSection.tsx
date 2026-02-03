@@ -33,7 +33,8 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 						{workData.map((job, index) => (
 							<div
 								key={index}
-								className="group grid gap-4 md:gap-8 py-8 md:grid-cols-12 -mx-4 px-4 rounded-lg border border-transparent hover:border-border hover:shadow-lg transition-all duration-300"
+								className="group grid gap-4 md:gap-8 py-8 md:grid-cols-12 -mx-4 px-4 rounded-lg border border-transparent hover:border-border hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in-up"
+								style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
 							>
 								{/* Year Column */}
 								<div className="md:col-span-2">

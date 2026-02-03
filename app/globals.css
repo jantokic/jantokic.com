@@ -75,3 +75,35 @@
     transform: translateY(0);
   }
 }
+
+/* Stagger animation delays */
+@layer utilities {
+  .delay-50 {
+    animation-delay: 50ms;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-250 {
+    animation-delay: 250ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

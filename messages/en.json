@@ -191,7 +191,7 @@
     "messageLabel": "Project Details",
     "messagePlaceholder": "Tell me about your project, timeline, and budget...",
     "sendButton": "Send Message",
-    "responseTime": "I usually respond within 24 hours",
+    "responseTime": "I usually respond within 3 hours",
     "mailtoSubject": "Project Inquiry from {name}",
     "stats": {
       "responseTime": "3h",

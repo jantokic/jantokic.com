@@ -42,7 +42,8 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 									{(t.raw('intro.capabilities') as string[]).map((capability: string, index: number) => (
 										<li
 											key={index}
-											className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground flex items-start gap-2.5"
+											className={`font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground flex items-start gap-2.5 opacity-0 animate-fade-in-up delay-${(index + 1) * 50}`}
+											style={{ animationDelay: `${(index + 1) * 75}ms`, animationFillMode: 'forwards' }}
 										>
 											<span className="text-foreground mt-0.5">→</span>
 											<span>{capability}</span>

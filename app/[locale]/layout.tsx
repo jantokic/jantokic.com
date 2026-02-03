@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
+import MaintenanceGate from '@/components/MaintenanceGate';
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
@@ -26,7 +27,7 @@ export default async function LocaleLayout({
 
 	return (
 		<NextIntlClientProvider messages={messages} locale={locale}>
-			{children}
+			<MaintenanceGate>{children}</MaintenanceGate>
 		</NextIntlClientProvider>
 	);
 }

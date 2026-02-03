@@ -6,11 +6,7 @@ import dynamic from 'next/dynamic';
 // Dynamically import the 3D gallery to avoid blocking FCP (Three.js is ~2MB)
 const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
 	ssr: false,
-	loading: () => (
-		<div className="h-screen w-full bg-white flex items-center justify-center">
-			<div className="animate-pulse text-gray-400 font-mono text-sm">Loading gallery...</div>
-		</div>
-	),
+	loading: () => <GalleryLoading />,
 });
 import { projects } from '@/lib/projects';
 import { useRouter } from 'next/navigation';
@@ -20,6 +16,16 @@ import AboutSection from '@/components/sections/AboutSection';
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
 import ConnectSection from '@/components/sections/ConnectSection';
+
+function GalleryLoading() {
+	const t = useTranslations();
+
+	return (
+		<div className="h-screen w-full bg-white flex items-center justify-center">
+			<div className="animate-pulse text-gray-400 font-mono text-sm">{t('gallery.loading')}</div>
+		</div>
+	);
+}
 
 export default function Home() {
 	const router = useRouter();
@@ -216,7 +222,7 @@ export default function Home() {
 									? 'bg-foreground scale-150'
 									: 'bg-border hover:bg-muted-foreground'
 							}`}
-							aria-label={`Scroll to ${section}`}
+							aria-label={t('nav.scrollToSection', { section: t(`nav.${section}`) })}
 						/>
 					))}
 				</nav>
@@ -231,6 +237,7 @@ export default function Home() {
 				>
 					<InfiniteGallery
 						images={projectImages}
+						fallbackText={t('gallery.webglFallback')}
 						speed={1.2}
 						zSpacing={3}
 						visibleCount={12}

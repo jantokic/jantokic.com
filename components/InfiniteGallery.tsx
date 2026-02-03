@@ -54,6 +54,8 @@ interface InfiniteGalleryProps {
 	className?: string;
 	/** Optional style for outer container */
 	style?: React.CSSProperties;
+	/** Text shown when WebGL is unavailable */
+	fallbackText: string;
 	/** Optional callback when an image is clicked */
 	onImageClick?: (imageIndex: number) => void;
 	/** Optional callback when gallery scroll is complete */
@@ -230,7 +232,7 @@ function GalleryScene({
 	onImageClick,
 	onScrollComplete,
 	resetGallery,
-}: Omit<InfiniteGalleryProps, 'className' | 'style'>) {
+}: Omit<InfiniteGalleryProps, 'className' | 'style' | 'fallbackText'>) {
 	const [scrollVelocity, setScrollVelocity] = useState(0);
 	const [autoPlay, setAutoPlay] = useState(true);
 	const lastInteraction = useRef(Date.now());
@@ -547,7 +549,7 @@ function GalleryScene({
 }
 
 // Fallback component for when WebGL is not available
-function FallbackGallery({ images }: { images: ImageItem[] }) {
+function FallbackGallery({ images, fallbackText }: { images: ImageItem[]; fallbackText: string }) {
 	const normalizedImages = useMemo(
 		() =>
 			images.map((img) =>
@@ -558,9 +560,7 @@ function FallbackGallery({ images }: { images: ImageItem[] }) {
 
 	return (
 		<div className="flex flex-col items-center justify-center h-full bg-gray-100 p-4">
-			<p className="text-gray-600 mb-4">
-				WebGL not supported. Showing image list:
-			</p>
+			<p className="text-gray-600 mb-4">{fallbackText}</p>
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
 				{normalizedImages.map((img, i) => (
 					<img
@@ -579,6 +579,7 @@ export default function InfiniteGallery({
 	images,
 	className = 'h-96 w-full',
 	style,
+	fallbackText,
 	fadeSettings = {
 		fadeIn: { start: 0.05, end: 0.25 },
 		fadeOut: { start: 0.4, end: 0.43 },
@@ -611,7 +612,7 @@ export default function InfiniteGallery({
 	if (!webglSupported) {
 		return (
 			<div className={className} style={style}>
-				<FallbackGallery images={images} />
+				<FallbackGallery images={images} fallbackText={fallbackText} />
 			</div>
 		);
 	}

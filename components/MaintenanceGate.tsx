@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 
 const MAINTENANCE_PIN = '482669';
 const MAX_ATTEMPTS = 3;
@@ -11,6 +12,7 @@ interface MaintenanceGateProps {
 }
 
 export default function MaintenanceGate({ children }: MaintenanceGateProps) {
+	const t = useTranslations('maintenance');
 	const isUnderConstruction = process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true';
 	const [pinInput, setPinInput] = useState('');
 	const [isUnlocked, setIsUnlocked] = useState(false);
@@ -107,7 +109,7 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 		return (
 			<main className="min-h-screen bg-white">
 				<section className="relative h-screen bg-white flex items-center justify-center">
-					<div className="animate-pulse text-gray-400 font-mono text-sm">Loading...</div>
+					<div className="animate-pulse text-gray-400 font-mono text-sm">{t('loading')}</div>
 				</section>
 			</main>
 		);
@@ -120,13 +122,15 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 				<section className="relative h-screen bg-white flex items-center justify-center">
 					<div className="text-center px-6">
 						<h1 className="font-serif text-4xl md:text-7xl tracking-tight text-black mb-8">
-							<span className="italic">Under maintenance</span>
+							<span className="italic">{t('title')}</span>
 						</h1>
-						<p className="font-mono text-sm text-gray-500 mb-8">This site is temporarily unavailable.</p>
+						<p className="font-mono text-sm text-gray-500 mb-8">{t('description')}</p>
 						{isLockedOut ? (
 							<div className="flex flex-col items-center gap-4">
-								<p className="text-red-500 text-sm font-mono">Too many attempts</p>
-								<p className="text-gray-500 text-sm font-mono">Try again in {formatTime(remainingTime)}</p>
+								<p className="text-red-500 text-sm font-mono">{t('tooManyAttempts')}</p>
+								<p className="text-gray-500 text-sm font-mono">
+									{t('retryIn', { time: formatTime(remainingTime) })}
+								</p>
 							</div>
 						) : (
 							<form onSubmit={handlePinSubmit} className="flex flex-col items-center gap-4">
@@ -134,16 +138,20 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 									type="password"
 									value={pinInput}
 									onChange={(e) => setPinInput(e.target.value)}
-									placeholder="Enter PIN"
+									placeholder={t('pinPlaceholder')}
 									className={`px-4 py-2 border ${pinError ? 'border-red-500' : 'border-gray-300'} rounded-md font-mono text-center text-lg tracking-widest w-40 focus:outline-none focus:border-black`}
 									maxLength={6}
 								/>
-								{pinError && <p className="text-red-500 text-sm font-mono">Incorrect PIN ({MAX_ATTEMPTS - attempts} attempts left)</p>}
+								{pinError && (
+									<p className="text-red-500 text-sm font-mono">
+										{t('incorrectPin', { remaining: MAX_ATTEMPTS - attempts })}
+									</p>
+								)}
 								<button
 									type="submit"
 									className="px-6 py-2 bg-black text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-gray-800 transition-colors"
 								>
-									Enter
+									{t('enter')}
 								</button>
 							</form>
 						)}

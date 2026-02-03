@@ -22,8 +22,8 @@ export const projects: Project[] = [
     slug: 'klarity-prediction-market',
     techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
     duration: 'Jan 2025 - Present',
-    image: '/projects/banners/klarity_banner.webp',
-    galleryImage: '/projects/gallery/klarity_gallery.webp',
+    image: '/projects/klarity/banner.webp',
+    galleryImage: '/projects/klarity/gallery.webp',
     images: [],
     year: '2025',
     links: {
@@ -35,9 +35,9 @@ export const projects: Project[] = [
     slug: 'richard-ai-research',
     techStack: ['TypeScript', 'Next.js', 'LangChain', 'Supabase', 'RAG', 'Tool Calling'],
     duration: 'Mar 2025 - Present',
-    image: '/projects/banners/richard_banner.webp',
-    galleryImage: '/projects/gallery/richard_gallery.webp',
-    images: ['/projects/views/richard_view1.webp', '/projects/views/richard_view2.webp'],
+    image: '/projects/richard/banner.webp',
+    galleryImage: '/projects/richard/gallery.webp',
+    images: ['/projects/richard/logo.webp'],
     year: '2025',
     links: {
       website: 'https://www.richardseye.com/'
@@ -48,9 +48,9 @@ export const projects: Project[] = [
     slug: 'mira-trading-bot',
     techStack: ['Go', 'Solana', 'WebSocket', 'Real-time APIs', 'Docker', 'Monitoring Dashboards'],
     duration: '5 months (Oct 2024 - Mar 2025)',
-    image: '/projects/banners/curve_banner.webp',
-    galleryImage: '/projects/gallery/curve_gallery.webp',
-    images: ['/projects/views/curve_logo.webp', '/projects/views/curve_cli.webp'],
+    image: '/projects/mira/banner.webp',
+    galleryImage: '/projects/mira/gallery.webp',
+    images: ['/projects/mira/logo.webp'],
     year: '2024',
     links: {
       x: 'https://x.com/curvetools'
@@ -61,9 +61,9 @@ export const projects: Project[] = [
     slug: 'copile-trading-platform',
     techStack: ['Python', 'Node.js', 'TypeScript', 'PostgreSQL', 'WebSocket', 'Trading APIs', 'Docker'],
     duration: '18 months (Sep 2022 - Mar 2024)',
-    image: '/projects/banners/copile_banner.webp',
-    galleryImage: '/projects/gallery/copile_gallery.webp',
-    images: ['/projects/views/copile_view1.webp', '/projects/views/copile_view2.webp'],
+    image: '/projects/copile/banner.webp',
+    galleryImage: '/projects/copile/gallery.webp',
+    images: ['/projects/copile/logo.webp', '/projects/copile/view1.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/CopileTrading',
@@ -76,9 +76,9 @@ export const projects: Project[] = [
     slug: 'elevantiq-ecommerce-infrastructure',
     techStack: ['Node.js', 'TypeScript', 'Next.js', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure', 'Infisical'],
     duration: '1.5 years (Apr 2024 - Present)',
-    image: '/projects/banners/elevantiq_banner.webp',
-    galleryImage: '/projects/gallery/elevantiq_gallery.webp',
-    images: ['/projects/views/elevantiq_view1.webp', '/projects/views/elevantiq_view2.webp'],
+    image: '/projects/elevantiq/banner.webp',
+    galleryImage: '/projects/elevantiq/banner.webp',
+    images: ['/projects/elevantiq/logo.webp'],
     year: '2024'
   },
   {
@@ -86,9 +86,9 @@ export const projects: Project[] = [
     slug: 'ibm-headless-commerce',
     techStack: ['TypeScript', 'Next.js', 'Headless CMS', 'GraphQL', 'REST APIs', 'Agile'],
     duration: '3 months (Jul 2022 - Sep 2022)',
-    image: '/projects/banners/ibm_banner.webp',
-    galleryImage: '/projects/gallery/ibm_gallery.webp',
-    images: ['/projects/views/ibm_view1.webp', '/projects/views/ibm_view2.webp'],
+    image: '/projects/ibm/banner.webp',
+    galleryImage: '/projects/ibm/gallery.webp',
+    images: [],
     year: '2022'
   },
   {
@@ -96,9 +96,9 @@ export const projects: Project[] = [
     slug: 'vendure-open-source',
     techStack: ['TypeScript', 'Node.js', 'Nest.js', 'GraphQL', 'E-Commerce', 'Open Source'],
     duration: 'Ongoing contributions (2024)',
-    image: '/projects/banners/vendure_banner.webp',
-    galleryImage: '/projects/gallery/vendure_gallery.webp',
-    images: ['/projects/views/vendure_view1.webp', '/projects/views/vendure_view2.webp'],
+    image: '/projects/vendure/banner.webp',
+    galleryImage: '/projects/vendure/gallery.webp',
+    images: [],
     year: '2024'
   },
   {
@@ -106,9 +106,9 @@ export const projects: Project[] = [
     slug: 'synapse-knowledge-system',
     techStack: ['Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Prisma', 'OpenAI Embeddings', 'pgvector', 'Claude Sonnet', 'Next.js'],
     duration: '36 hours (Oct 2025)',
-    image: '/projects/banners/synapse_banner.webp',
-    galleryImage: '/projects/gallery/synapse_gallery.webp',
-    images: ['/projects/views/synapse_view1.webp', '/projects/views/synapse_view2.webp'],
+    image: '/projects/synapse/banner.webp',
+    galleryImage: '/projects/synapse/gallery.webp',
+    images: ['/projects/synapse/logo.webp'],
     year: '2025',
     links: {
       demo: 'https://synapse.elia.vc/',
@@ -121,9 +121,9 @@ export const projects: Project[] = [
     slug: 'dreamcook-community',
     techStack: ['JavaScript', 'Python', 'Discord.js', 'Web Scraping', 'Business Intelligence', 'Content Management Systems'],
     duration: '2 years (Jul 2020 - Jun 2022)',
-    image: '/projects/banners/dreamcook_banner.webp',
-    galleryImage: '/projects/gallery/dreamcook_gallery.webp',
-    images: ['/projects/views/dreamcook_view1.webp', '/projects/views/dreamcook_view2.webp'],
+    image: '/projects/dreamcook/banner.webp',
+    galleryImage: '/projects/dreamcook/gallery.webp',
+    images: ['/projects/dreamcook/logo.webp'],
     year: '2020',
     links: {
       x: 'https://x.com/DreamCook'
@@ -134,9 +134,9 @@ export const projects: Project[] = [
     slug: 'acidnode-validator',
     techStack: ['Python', 'Amazon Web Services (AWS)', 'Blockchain', 'Cloud Automation', 'Cloud-Native Architecture', 'Cloud Infrastructure'],
     duration: '5 months (Sep 2022 - Jan 2023)',
-    image: '/projects/banners/acidnode_banner.webp',
-    galleryImage: '/projects/gallery/acidnode_gallery.webp',
-    images: ['/projects/views/acidnode_view1.webp', '/projects/views/acidnode_view2.webp'],
+    image: '/projects/acidnode/banner.webp',
+    galleryImage: '/projects/acidnode/gallery.webp',
+    images: ['/projects/acidnode/logo.webp', '/projects/acidnode/view1.webp'],
     year: '2022'
   },
   {
@@ -144,9 +144,9 @@ export const projects: Project[] = [
     slug: 'neura-nft-sniping',
     techStack: ['Python', 'Solidity', 'Solana', 'Smart Contracts', 'NFT Automation', 'Real-time Systems'],
     duration: '6 months (Jan 2022 - Aug 2022)',
-    image: '/projects/banners/neura_banner.webp',
-    galleryImage: '/projects/gallery/neura_gallery.webp',
-    images: ['/projects/views/neura_view1.webp', '/projects/views/neura_view2.webp'],
+    image: '/projects/neura/banner.webp',
+    galleryImage: '/projects/neura/gallery.webp',
+    images: ['/projects/neura/logo.webp'],
     year: '2022',
     links: {
       x: 'https://x.com/txNeura',

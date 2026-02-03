@@ -29,175 +29,175 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer & Consultant",
-    "bio": "Ich baue Systeme, bei denen Ausfälle direkt Umsatz kosten: Trading, E-Commerce und Cloud-Infrastruktur. Zwei Startups mitgegründet. Verfügbar für ausgewählte Freelance- und Consulting-Projekte.",
-    "capabilitiesHeading": "So unterstütze ich",
+    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet: Trading, E-Commerce, Cloud. Zwei Startups co-founded. Offen für ausgewählte Freelance- und Consulting-Projekte.",
+    "capabilitiesHeading": "Wie ich helfe",
     "capabilities": [
-      "Backend-Systeme & Echtzeit-APIs",
-      "Cloud-Architektur, DevOps & Betrieb",
-      "Trading-, Fintech- & Web3-Plattformen"
+      "Backend & Realtime APIs",
+      "Cloud, DevOps & Reliability",
+      "Trading, Fintech & Web3"
     ],
     "currently": "Aktuell bei",
     "studying": "Ausbildung",
-    "location": "München, Deutschland",
+    "location": "München",
     "currentRoles": [
       { "company": "Klarity", "role": "Founding Engineer" },
       { "company": "Elevantiq", "role": "Freelance Engineer" }
     ],
-    "degree": "B.Sc. Wirtschaftsinformatik",
-    "university": "Technische Universität München"
+    "degree": "B.Sc. Information Engineering",
+    "university": "TU München"
   },
   "work": {
-    "heading": "Ausgewählte Stationen",
+    "heading": "Work",
     "klarity": {
       "role": "Founding Engineer",
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Heute",
-      "description": "Prediction-Market-Terminal.",
+      "description": "Bloomberg Terminal für Prediction Markets.",
       "projectLink": "/projects/klarity-prediction-market",
-      "projectLinkText": "Details ansehen →"
+      "projectLinkText": "Details →"
     },
     "elevantiq": {
       "role": "Software Engineer",
       "company": "Elevantiq",
       "location": "Wien",
       "period": "2024 - Heute",
-      "description": "45 % schnellere Bestellverarbeitung. Millionen Transaktionen/Monat. 7 Repos zu einem Monorepo konsolidiert.",
+      "description": "Order Processing 45% schneller. Millionen Orders/Monat. 7 Legacy-Repos zu einem Monorepo.",
       "projectLink": "/projects/elevantiq-ecommerce-infrastructure",
-      "projectLinkText": "Details ansehen →"
+      "projectLinkText": "Details →"
     },
     "mira": {
       "role": "Founding Engineer",
       "company": "Mira Trading",
       "location": "London",
-      "description": "$230K Profit in 5 Monaten. 8.000+ Trades/Monat. Solana-Deployment unter 300 ms.",
+      "description": "$230K Profit in 5 Monaten. 8.000+ automatisierte Trades/Monat. Tokens bis $200M+ Market Cap.",
       "projectLink": "/projects/mira-trading-bot",
-      "projectLinkText": "Details ansehen →"
+      "projectLinkText": "Details →"
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "Wien",
-      "description": "2.100+ Nutzer. €35K Umsatz. €1,2 Mio. Monatsvolumen über 5 Exchanges. 70 % Retention.",
+      "description": "2.100 User. €1,2M Volume/Monat. 70% Retention. Tools gebaut, Team geleitet.",
       "projectLink": "/projects/copile-trading-platform",
-      "projectLinkText": "Details ansehen →"
+      "projectLinkText": "Details →"
     },
     "ibm": {
       "role": "Software Engineering Praktikant",
       "company": "IBM iX",
       "location": "Wien",
-      "description": "Headless Commerce mit Vue.js + Magento. 85.000 SKUs. 40 % schnellere Promotion-Rollouts."
+      "description": "Storefront für 85.000 Produkte. Promotions 40% schneller live."
     }
   },
   "projects": {
-    "heading": "Ausgewählte Projekte",
-    "viewProject": "Projekt ansehen",
-    "backToProjects": "Zurück zu den Projekten",
-    "relatedProjects": "Ähnliche Projekte",
+    "heading": "Projects",
+    "viewProject": "View",
+    "backToProjects": "← Projects",
+    "relatedProjects": "Related",
     "items": {
       "klarity-prediction-market": {
         "title": "Klarity",
-        "shortDescription": "Prediction-Market-Terminal. Bald verfügbar.",
+        "shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
         "category": "Fintech"
       },
       "richard-ai-research": {
-        "title": "Richard - KI-Research-Engine",
-        "shortDescription": "Autonome Marktforschung.",
-        "category": "KI & Forschung"
+        "title": "Richard",
+        "shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",
+        "category": "AI & Research"
       },
       "synapse-knowledge-system": {
-        "title": "Synapse - KI-Wissens-System",
-        "shortDescription": "Finden Sie in Sekunden die richtigen Experten. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-        "category": "KI & Enterprise"
+        "title": "Synapse",
+        "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
+        "category": "AI & Enterprise"
       },
       "mira-trading-bot": {
-        "title": "Mira Trading - Solana Trading Bot",
-        "shortDescription": "$230K Profit. 8.000+ Trades/Monat.",
+        "title": "Mira",
+        "shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
         "category": "Blockchain & Trading"
       },
       "copile-trading-platform": {
-        "title": "Copile - B2B Crypto Trading Plattform",
-        "shortDescription": "2.100 Nutzer. €1,2 Mio. Monatsvolumen. €35K Umsatz.",
+        "title": "Copile",
+        "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
         "category": "Fintech & Trading"
       },
       "acidnode-validator": {
-        "title": "Acid Node - Solana Validator-Infrastruktur",
-        "shortDescription": "Solana-Validator in Produktion auf AWS. 99,9 % Uptime-Ziel.",
-        "category": "Blockchain & Infrastruktur"
+        "title": "Acid Node",
+        "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
+        "category": "Blockchain & Infra"
       },
       "neura-nft-sniping": {
-        "title": "Neura - Solana NFT Sniping Bot",
-        "shortDescription": "NFT-Sniping im Millisekundenbereich. Abo-Produkt. Erfolgreicher Exit.",
+        "title": "Neura",
+        "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
         "category": "Blockchain & NFT"
       },
       "dreamcook-community": {
-        "title": "DreamCook - E-Commerce Community-Plattform",
-        "shortDescription": "5.000+ Mitglieder. Drop-Alerts in Echtzeit. 2 Jahre profitabel.",
+        "title": "DreamCook",
+        "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
         "category": "E-Commerce & Community"
       }
     }
   },
   "projectPage": {
-    "notFoundTitle": "Projekt nicht gefunden",
+    "notFoundTitle": "Not Found",
     "portfolioSuffix": "Portfolio",
-    "backToProjects": "Zurück zu den Projekten",
-    "backToAllProjects": "Zurück zu allen Projekten",
-    "overview": "Überblick",
-    "challenges": "Herausforderungen & Lösungen",
-    "outcomes": "Ergebnisse & Wirkung",
-    "role": "Rolle",
-    "duration": "Zeitraum",
-    "techStack": "Tech-Stack",
+    "backToProjects": "← Projects",
+    "backToAllProjects": "← All Projects",
+    "overview": "Overview",
+    "challenges": "Challenges",
+    "outcomes": "Results",
+    "role": "Role",
+    "duration": "Duration",
+    "techStack": "Stack",
     "links": "Links",
     "github": "GitHub",
     "x": "X",
     "website": "Website",
-    "websitePrivateNote": "(Privat - nur intern)",
+    "websitePrivateNote": "(Private)",
     "demo": "Demo",
     "youtube": "YouTube",
-    "moreProjects": "Weitere Projekte",
-    "comingSoon": "Weitere Details folgen in Kürze."
+    "moreProjects": "More Projects",
+    "comingSoon": "Details coming soon."
   },
   "connect": {
-    "heading": "Lassen Sie uns sprechen",
-    "description": "Verfügbar für ausgewählte Freelance- und Consulting-Projekte. Backend-Systeme, Trading-Plattformen und E-Commerce in großem Maßstab.",
-    "contactForm": "Kontaktformular",
+    "heading": "Let's Talk",
+    "description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
+    "contactForm": "Kontakt",
     "email": "jan@jantokic.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "x": "X"
   },
   "contact": {
-    "backToPortfolio": "← Zurück zum Portfolio",
-    "heading": "Lassen Sie uns zusammenarbeiten",
-    "description": "Verfügbar für ausgewählte Freelance- und Consulting-Projekte. Backend-Systeme, Trading-Plattformen und skalierbares E-Commerce.",
+    "backToPortfolio": "← Zurück",
+    "heading": "Let's Work Together",
+    "description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
     "email": "E-Mail",
-    "location": "Standort",
-    "locationValue": "München, Deutschland",
-    "social": "Social Media",
-    "servicesHeading": "Leistungen",
+    "location": "Location",
+    "locationValue": "München",
+    "social": "Social",
+    "servicesHeading": "Services",
     "services": [
-      "High-Performance-Backend-Systeme",
-      "Blockchain- & Trading-Plattformen",
+      "High-Performance Backend",
+      "Blockchain & Trading Platforms",
       "E-Commerce & Headless Commerce",
-      "Cloud-Architektur, DevOps & Infrastruktur",
-      "Echtzeit-APIs & WebSocket-Integration",
-      "Security & Secrets-Management",
-      "Tech-Leadership & Consulting"
+      "Cloud, DevOps & Infra",
+      "Realtime APIs & WebSockets",
+      "Security & Secrets Management",
+      "Tech Leadership & Consulting"
     ],
-    "formHeading": "Schreiben Sie mir eine Nachricht",
-    "nameLabel": "Ihr Name",
-    "emailLabel": "Ihre E-Mail",
-    "messageLabel": "Projektdetails",
-    "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt, Zeitplan und Budget...",
-    "sendButton": "Nachricht senden",
-    "responseTime": "Ich antworte meist innerhalb von 3 Stunden",
+    "formHeading": "Schreib mir",
+    "nameLabel": "Name",
+    "emailLabel": "E-Mail",
+    "messageLabel": "Projekt",
+    "messagePlaceholder": "Erzähl mir von deinem Projekt...",
+    "sendButton": "Senden",
+    "responseTime": "Antwort meist innerhalb 3h",
     "mailtoSubject": "Projektanfrage von {name}",
     "stats": {
       "responseTime": "3h",
-      "responseTimeLabel": "Antwortzeit",
+      "responseTimeLabel": "Response Time",
       "projects": "15+",
-      "projectsLabel": "Projekte umgesetzt"
+      "projectsLabel": "Projects Shipped"
     }
   },
   "footer": {
@@ -208,7 +208,7 @@
   "projectDetails": {
     "klarity-prediction-market": {
       "title": "Klarity",
-      "shortDescription": "Prediction-Market-Terminal.",
+      "shortDescription": "Das Bloomberg Terminal für Prediction Markets.",
       "fullDescription": "Bald verfügbar.",
       "role": "Founding Engineer",
       "duration": "Jan 2025 - Heute",
@@ -217,183 +217,183 @@
       "outcomes": []
     },
     "richard-ai-research": {
-      "title": "Richard - KI-Research-Engine",
-      "shortDescription": "Autonome Marktforschung.",
-      "fullDescription": "Multi-Agenten-Research-System, das Datenquellen kontinuierlich beobachtet, schwache Signale erkennt und Insights liefert, bevor Sie die erste Frage stellen. Gebaut mit LangGraph, Pinecone und einer DAG-basierten Szenario-Simulation.",
-      "role": "Founding Engineer & System Architect",
+      "title": "Richard",
+      "shortDescription": "AI-Agenten erledigen 8h Research in 30 Minuten.",
+      "fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
+      "role": "Founding Engineer",
       "duration": "Mär 2025 - Heute",
-      "category": "KI & Forschung",
+      "category": "AI & Research",
       "challenges": [
-        "Agenten so bauen, dass sie Insights ohne Prompt liefern",
-        "Feedback-Loops für emergente Intelligenz entwerfen",
-        "Szenario-Simulation mit Konfidenz-Scoring"
+        "Insights ohne Prompts",
+        "Lernt automatisch dazu",
+        "Confidence Scores für Vorhersagen"
       ],
       "outcomes": [
-        "94 % Zeitersparnis: 8 Stunden → 30 Minuten",
-        "400+ einzigartige Insights in 8 Wochen",
-        "Volle Rückverfolgbarkeit für Compliance"
+        "8h → 30 Min",
+        "400+ Insights in 8 Wochen",
+        "Audit-ready"
       ]
     },
     "mira-trading-bot": {
-      "title": "Mira Trading - Solana Trading Bot",
-      "shortDescription": "$230K Profit. 8.000+ Trades/Monat.",
-      "fullDescription": "Hochfrequenter Solana-Trading-Bot in Go. Verarbeitet Social-Signale und führt Trades in unter 300 ms aus. Mitentwickelt für Token-Launches mit $200M+ Marktkapitalisierung.",
+      "title": "Mira",
+      "shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
+      "fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-Pipeline. Tokens bis $200M+ Market Cap gelauncht.",
       "role": "Founding Engineer & Co-Founder",
-      "duration": "5 Monate (Okt 2024 - Mär 2025)",
+      "duration": "5 Monate",
       "category": "Blockchain & Trading",
       "challenges": [
-        "Token-Deployment unter 300 ms",
-        "Echtzeit-Verarbeitung von Social-Signalen",
-        "99,5 % Uptime mit einem 3-Personen-Remote-Team"
+        "Schneller traden als alle anderen",
+        "Social Signals in Realtime parsen",
+        "99,5% Uptime mit 3-Mann-Team"
       ],
       "outcomes": [
         "$230K Profit in 5 Monaten",
-        "8.000+ Trades/Monat automatisiert",
-        "Solana-Deployment unter 300 ms"
+        "8.000+ Trades/Monat",
+        "Tokens bis $200M+ Market Cap"
       ]
     },
     "copile-trading-platform": {
-      "title": "Copile - B2B Crypto Trading Plattform",
-      "shortDescription": "2.100 Nutzer. €1,2 Mio. Monatsvolumen. €35K Umsatz.",
-      "fullDescription": "B2B-Krypto-Trading-Plattform mit Echtzeit-APIs über fünf Exchanges. Gebaut in Python und Node.js mit eigenen Order-Typen und Charting. 70 %+ Retention.",
+      "title": "Copile",
+      "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
+      "fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
       "role": "Founding Engineer & Co-Founder",
-      "duration": "18 Monate (Sep 2022 - Mär 2024)",
+      "duration": "18 Monate",
       "category": "Fintech & Trading",
       "challenges": [
-        "Zuverlässige Integration von 5 Exchange-APIs",
-        "Echtzeit-Charting und eigene Order-Typen",
-        "Teamführung von 6 Personen (4 Engineers, 2 Designer)"
+        "Ein Interface für 5 Exchanges",
+        "Institutional-Grade Tools",
+        "6er-Team geleitet"
       ],
       "outcomes": [
-        "2.100+ Nutzer, €35K Umsatz",
-        "€1,2 Mio.+ Monatsvolumen",
-        "70 % Retention, 2 institutionelle Partnerschaften"
+        "2.100 User",
+        "€1,2M/Monat Volume",
+        "70% Retention"
       ]
     },
     "elevantiq-ecommerce-infrastructure": {
-      "title": "Elevantiq - Enterprise E-Commerce Infrastruktur",
-      "shortDescription": "Millionen Bestellungen. 45 % schnellere Verarbeitung. 7 Repos → 1 Monorepo.",
-      "fullDescription": "Enterprise-E-Commerce für große europäische B2B-Kunden. 7-8 Repos in ein Nx-Monorepo konsolidiert, Legacy-Dependencies aktualisiert und komplexe Produkt-Konfiguratoren gebaut. Verteiltes Team mit 10+ Engineers.",
+      "title": "Elevantiq",
+      "shortDescription": "Millionen Orders. 45% schneller. 7 Repos → 1 Monorepo.",
+      "fullDescription": "E-Commerce-Infrastruktur für Enterprise B2B mit Millionen Orders. Legacy aufgeräumt, Konfiguratoren gebaut, Security gefixt.",
       "role": "Software Engineer",
-      "duration": "1,5 Jahre (Apr 2024 - Heute)",
+      "duration": "Apr 2024 - Heute",
       "category": "E-Commerce & SaaS",
       "challenges": [
-        "7-8 Repos in ein Monorepo konsolidieren",
-        "Stark veraltete Next.js- und Vendure-Stacks aktualisieren",
-        "Konfiguratoren mit technischen Berechnungen bauen"
+        "7 Legacy-Repos → 1 Monorepo",
+        "Major Upgrades ohne Downtime",
+        "Komplexe Konfiguratoren"
       ],
       "outcomes": [
-        "Millionen Bestellungen pro Jahr verarbeitet",
-        "45 % Durchsatzsteigerung",
-        "Keine Sicherheitslücken (Infisical)"
+        "Millionen Orders/Jahr",
+        "45% schneller",
+        "Zero Vulnerabilities"
       ]
     },
     "ibm-headless-commerce": {
-      "title": "IBM Austria - Headless Commerce Storefront",
-      "shortDescription": "85.000 SKUs. 40 % schnellere Promotions. Vue.js + Magento.",
-      "fullDescription": "Headless-Commerce-Storefront in Vue.js mit Magento-Backend. 85.000+ SKUs, dynamische Promotions und personalisierte Anzeigen für Enterprise-Kunden.",
+      "title": "IBM iX",
+      "shortDescription": "85.000 SKUs. 40% schnellere Promotions. Vue.js + Magento.",
+      "fullDescription": "Storefront für 85.000 Produkte mit Dynamic Promotions. Schnell und flexibel fürs Marketing.",
       "role": "Software Engineering Praktikant",
-      "duration": "3 Monate (Jul 2022 - Sep 2022)",
+      "duration": "3 Monate",
       "category": "E-Commerce",
       "challenges": [
-        "Performantes Rendering mit 85.000+ SKUs",
-        "Wiederverwendbare Komponenten für Marketing-Agilität",
-        "Magento-Integration im Enterprise-Maßstab"
+        "85.000 Produkte, schnelle Loads",
+        "Marketing kann selbst ändern",
+        "Enterprise Magento Integration"
       ],
       "outcomes": [
-        "40 % schnellere Promotion-Rollouts",
-        "85.000+ SKUs verwaltet",
-        "Dynamische Promotions im großen Maßstab"
+        "40% schnellere Promotions",
+        "Shipped to Production",
+        "Marketing unabhängig"
       ]
     },
     "vendure-open-source": {
-      "title": "Vendure - Open-Source Headless Commerce",
-      "shortDescription": "Beiträge zu einem 6,5k-Star-Projekt. Genutzt von IBM, Breitling, QVC.",
-      "fullDescription": "Open-Source Headless-Commerce-Plattform (6,5k GitHub-Stars). Mit den Gründern an Core-Features gearbeitet. Genutzt von IBM, Breitling, Swile und QVC.",
+      "title": "Vendure",
+      "shortDescription": "Contributions zu 6,5k-Star-Projekt. Nutzer: IBM, Breitling, QVC.",
+      "fullDescription": "Open-Source Headless Commerce (6,5k GitHub Stars). Core Features mit den Gründern gebaut. Läuft bei IBM, Breitling, Swile, QVC.",
       "role": "Open-Source Contributor",
-      "duration": "Laufende Beiträge (2024)",
+      "duration": "2024 - Heute",
       "category": "Open Source",
       "challenges": [
-        "Große Open-Source-Codebase",
-        "Enterprise-taugliche Architektur-Patterns",
-        "Rückwärtskompatibilität über Versionen"
+        "6,5k-Star Codebase",
+        "Enterprise-Grade Patterns",
+        "Keine Breaking Changes"
       ],
       "outcomes": [
-        "Plattform im Einsatz bei IBM, Breitling, Swile, QVC",
-        "Core-Feature-Beiträge mit den Gründern",
-        "6,5k-Star-Repository gepflegt"
+        "Läuft bei IBM, Breitling, QVC",
+        "Features mit Gründern shipped",
+        "Ongoing Contributions"
       ]
     },
     "synapse-knowledge-system": {
-      "title": "Synapse - KI-Wissens-System",
-      "shortDescription": "Finden Sie in Sekunden die richtigen Experten. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-      "fullDescription": "Semantischer Experten-Finder in 36 Stunden gebaut. Vector-Search mit pgvector + OpenAI, Ranking nach Relevanz und Claude Sonnet für den Chat. 2. Platz beim TUM.AI x Anthropic Hackathon.",
+      "title": "Synapse",
+      "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
+      "fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
       "role": "Backend Engineer",
-      "duration": "36 Stunden (Okt 2025)",
-      "category": "KI & Enterprise",
+      "duration": "36 Stunden",
+      "category": "AI & Enterprise",
       "challenges": [
-        "Embeddings-Pipeline in 36 Stunden",
-        "Experten-Ranking nach Relevanz und Aktualität",
-        "Echtzeit-Matching mit pgvector"
+        "Full Stack in 36h",
+        "Smart Ranking",
+        "Instant Semantic Search"
       ],
       "outcomes": [
-        "2. Platz beim TUM.AI x Anthropic Hackathon",
-        "Funktionierende semantische Suche für interne Experten",
-        "Produktionsreife API in 36 Stunden"
+        "2. Platz",
+        "Jeden Experten instant finden",
+        "Production-ready in 36h"
       ]
     },
     "dreamcook-community": {
-      "title": "DreamCook - E-Commerce Community-Plattform",
-      "shortDescription": "5.000+ Mitglieder. Drop-Alerts in Echtzeit. 2 Jahre profitabel.",
-      "fullDescription": "Discord-Community-Plattform mit Echtzeit-Drop-Monitoring, automatisierter Bestandsverfolgung und Trading-Signalen. 5.000+ Mitglieder; profitabel 2020-2022.",
+      "title": "DreamCook",
+      "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
+      "fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
       "role": "Full Stack Engineer",
-      "duration": "2 Jahre (Jul 2020 - Jun 2022)",
+      "duration": "2 Jahre",
       "category": "E-Commerce & Community",
       "challenges": [
-        "Mehrere Monitoring- und Bot-Services integrieren",
-        "Echtzeit-Benachrichtigungen über verschiedene Händler",
-        "Abo-Stufen für 5.000+ Mitglieder"
+        "Multi-Retailer Monitoring",
+        "Instant Drop-Alerts",
+        "Skaliert auf 5.000+ zahlende Member"
       ],
       "outcomes": [
-        "5.000+ aktive Mitglieder",
-        "Echtzeit-Drop-Monitoring live",
-        "2 Jahre profitabler Betrieb (2020-2022)"
+        "5.000+ Member",
+        "Schneller als die Konkurrenz",
+        "2 Jahre profitabel"
       ]
     },
     "acidnode-validator": {
-      "title": "Acid Node - Solana Validator-Infrastruktur",
-      "shortDescription": "Solana-Validator in Produktion auf AWS. 99,9 % Uptime-Ziel.",
-      "fullDescription": "Solana-Validator-Infrastruktur auf AWS. Cloud-Automatisierung, fehlertolerante Services und Optimierungen für hohe Durchsatzraten.",
+      "title": "Acid Node",
+      "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
+      "fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
       "role": "Backend Engineer",
-      "duration": "5 Monate (Sep 2022 - Jan 2023)",
-      "category": "Blockchain & Infrastruktur",
+      "duration": "5 Monate",
+      "category": "Blockchain & Infra",
       "challenges": [
-        "Hochverfügbare Validator-Infrastruktur",
-        "99,9 %+ Uptime-Anforderung",
-        "Automatisierte Deployment-Pipelines"
+        "High Availability",
+        "99,9% Uptime Target",
+        "One-Click Deploys"
       ],
       "outcomes": [
-        "Solana-Validator produktiv auf AWS",
-        "Cloud-Automatisierung reduziert Deployment-Aufwand",
-        "Fehlertolerante Architektur geliefert"
+        "Live auf Mainnet",
+        "Fully Automated",
+        "Zero Downtime"
       ]
     },
     "neura-nft-sniping": {
-      "title": "Neura - Solana NFT Sniping Bot",
-      "shortDescription": "NFT-Sniping im Millisekundenbereich. Abo-Produkt. Erfolgreicher Exit.",
-      "fullDescription": "B2C-NFT-Automatisierung auf Solana. Python-Services + Solidity-Smart-Contracts. Sniping mit Millisekunden-Präzision für limitierte Drops. Abo-Modell mit erfolgreichem Exit.",
+      "title": "Neura",
+      "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
+      "fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
       "role": "Software Engineer",
-      "duration": "6 Monate (Jan 2022 - Aug 2022)",
+      "duration": "6 Monate",
       "category": "Blockchain & NFT",
       "challenges": [
-        "Minting mit Millisekunden-Präzision",
-        "Smart-Contract-Integration",
-        "Zuverlässigkeit bei High-Traffic-Mints"
+        "Millisekunden-Timing",
+        "On-chain Transactions",
+        "Stabil unter Last"
       ],
       "outcomes": [
-        "Erfolgreicher Exit mit etablierter Nutzerbasis",
-        "Echtzeit-Monitoring-System live",
-        "Wettbewerbsvorteil durch Millisekunden-Präzision"
+        "Exit",
+        "Recurring Revenue",
+        "Schneller als alle anderen"
       ]
     }
   }

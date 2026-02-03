@@ -40,6 +40,80 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
 	const t = await getTranslations({ locale, namespace: 'projectDetails' });
 
+	// Minimal "coming soon" view for Klarity
+	const isSecret = slug === 'klarity-prediction-market';
+
+	if (isSecret) {
+		return (
+			<main className="min-h-screen bg-background">
+				{/* Header with back button */}
+				<header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+						<Link
+							href="/#projects"
+							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+						>
+							<ArrowLeft className="w-4 h-4" />
+							Back to Projects
+						</Link>
+					</div>
+				</header>
+
+				{/* Hero Section */}
+				<section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+					<div className="max-w-7xl mx-auto">
+						<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground mb-6 leading-tight">
+							Klarity
+						</h1>
+						<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed">
+							Prediction market terminal.
+						</p>
+					</div>
+				</section>
+
+				{/* Hero Image */}
+				<section className="px-4 sm:px-6 lg:px-8 mb-16">
+					<div className="max-w-7xl mx-auto">
+						<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
+							<Image
+								src={project.image}
+								alt="Klarity"
+								fill
+								className="object-cover"
+								unoptimized
+							/>
+						</div>
+					</div>
+				</section>
+
+				{/* Secret message */}
+				<section className="px-4 sm:px-6 lg:px-8 mb-16">
+					<div className="max-w-7xl mx-auto text-center py-16">
+						<p className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold text-muted-foreground/50">
+							🤫
+						</p>
+						<p className="font-mono uppercase text-sm tracking-wider font-semibold text-muted-foreground/50 mt-4">
+							More details coming soon.
+						</p>
+					</div>
+				</section>
+
+				{/* Footer */}
+				<footer className="px-4 sm:px-6 lg:px-8 py-12 border-t border-border">
+					<div className="max-w-7xl mx-auto text-center">
+						<Link
+							href="/#projects"
+							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+						>
+							<ArrowLeft className="w-4 h-4" />
+							Back to all projects
+						</Link>
+					</div>
+				</footer>
+			</main>
+		);
+	}
+
 	return (
 		<main className="min-h-screen bg-background">
 			{/* Header with back button */}

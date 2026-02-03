@@ -14,10 +14,8 @@ const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
 });
 import { projects } from '@/lib/projects';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, Sun, Moon } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import AboutSection from '@/components/sections/AboutSection';
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
@@ -29,8 +27,6 @@ export default function Home() {
 	const [galleryComplete, setGalleryComplete] = useState(false);
 	const [resetGallery, setResetGallery] = useState(false);
 	const [activeSection, setActiveSection] = useState('gallery');
-	const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
 
 	const galleryRef = useRef<HTMLElement>(null);
 	const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -100,7 +96,7 @@ export default function Home() {
 		};
 	}, [galleryComplete]);
 
-	// IntersectionObserver for section animations and active tracking
+	// IntersectionObserver for section animations (fade-in on enter)
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -108,19 +104,16 @@ export default function Home() {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('animate-fade-in-up');
 						entry.target.classList.remove('opacity-0');
-						setActiveSection(entry.target.id);
 					}
 				});
 			},
 			{ threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
 		);
 
-		// Observe gallery section
 		if (galleryRef.current) {
 			observer.observe(galleryRef.current);
 		}
 
-		// Observe other sections
 		sectionsRef.current.forEach((section) => {
 			if (section) observer.observe(section);
 		});
@@ -135,9 +128,36 @@ export default function Home() {
 		};
 	}, []);
 
-	// Handle mounting for theme
+	// Scroll-based active section tracking (works reliably across all viewports)
 	useEffect(() => {
-		setMounted(true);
+		const sectionIds = ['gallery', 'intro', 'work', 'projects', 'connect'];
+
+		const updateActiveSection = () => {
+			const viewportCenter = window.scrollY + window.innerHeight / 2;
+
+			// Find section whose center is closest to viewport center
+			let closestSection = sectionIds[0];
+			let closestDistance = Infinity;
+
+			for (const id of sectionIds) {
+				const section = document.getElementById(id);
+				if (section) {
+					const sectionCenter = section.offsetTop + section.offsetHeight / 2;
+					const distance = Math.abs(viewportCenter - sectionCenter);
+					if (distance < closestDistance) {
+						closestDistance = distance;
+						closestSection = id;
+					}
+				}
+			}
+
+			setActiveSection(closestSection);
+		};
+
+		window.addEventListener('scroll', updateActiveSection, { passive: true });
+		updateActiveSection();
+
+		return () => window.removeEventListener('scroll', updateActiveSection);
 	}, []);
 
 	// Skills data
@@ -270,7 +290,7 @@ export default function Home() {
 					}}
 				/>
 
-				{/* Connect Section */}
+				{/* Connect Section (includes footer) */}
 				<ConnectSection
 					ref={(el) => {
 						if (el) {
@@ -278,35 +298,6 @@ export default function Home() {
 						}
 					}}
 				/>
-
-				{/* Footer */}
-				<footer className="py-12 px-6 sm:px-8 lg:px-16 border-t border-border/30">
-					<div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
-						<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-							© {new Date().getFullYear()} Jan Tokic
-						</p>
-
-						<div className="flex items-center gap-4">
-							{/* Language Switcher */}
-							{mounted && <LanguageSwitcher />}
-
-							{/* Theme Toggle Button */}
-							{mounted && (
-								<button
-									onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-									className="p-2 rounded-lg hover:bg-muted transition-colors"
-									aria-label="Toggle theme"
-								>
-									{theme === 'dark' ? (
-										<Sun className="w-5 h-5 text-foreground" />
-									) : (
-										<Moon className="w-5 h-5 text-foreground" />
-									)}
-								</button>
-							)}
-						</div>
-					</div>
-				</footer>
 			</main>
 		</>
 	);

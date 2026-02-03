@@ -40,7 +40,9 @@
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Heute",
-      "description": "Prediction-Market-Terminal."
+      "description": "Prediction-Market-Terminal.",
+      "projectLink": "/projects/klarity-prediction-market",
+      "projectLinkText": "Details ansehen →"
     },
     "elevantiq": {
       "role": "Software Engineer & Consultant",
@@ -55,13 +57,17 @@
       "role": "Founding Engineer",
       "company": "Mira Trading",
       "location": "London",
-      "description": "$230K Profit in 5 Monaten. 8.000+ Trades/Monat, 92% Erfolgsrate. Schnellstes Solana-Deployment (<300ms)."
+      "description": "$230K Profit in 5 Monaten. 8.000+ Trades/Monat, 92% Erfolgsrate. Schnellstes Solana-Deployment (<300ms).",
+      "projectLink": "/projects/mira-trading-bot",
+      "projectLinkText": "Details ansehen →"
     },
     "copile": {
       "role": "Founding Engineer",
       "company": "Copile",
       "location": "Wien",
-      "description": "2.100+ Nutzer, €35K Umsatz. €1,2 Mio. monatliches Volumen über 5 Exchanges. 70% Retention."
+      "description": "2.100+ Nutzer, €35K Umsatz. €1,2 Mio. monatliches Volumen über 5 Exchanges. 70% Retention.",
+      "projectLink": "/projects/copile-trading-platform",
+      "projectLinkText": "Details ansehen →"
     },
     "ibm": {
       "role": "Software Engineering Praktikant",
@@ -76,6 +82,11 @@
     "backToProjects": "Zurück zu den Projekten",
     "relatedProjects": "Ähnliche Projekte",
     "items": {
+      "klarity-prediction-market": {
+        "title": "Klarity",
+        "shortDescription": "Prediction Market Terminal. Bald verfügbar.",
+        "category": "Fintech"
+      },
       "richard-ai-research": {
         "title": "Richard - Autonome KI-Research-Engine",
         "shortDescription": "KI, die Marktforschung macht, während du schläfst. 8h → 30min.",
@@ -160,6 +171,15 @@
     "language": "Sprache"
   },
   "projectDetails": {
+    "klarity-prediction-market": {
+      "title": "Klarity",
+      "shortDescription": "Prediction Market Terminal.",
+      "fullDescription": "Bald verfügbar.",
+      "role": "Founding Engineer",
+      "category": "Fintech",
+      "challenges": [],
+      "outcomes": []
+    },
     "richard-ai-research": {
       "title": "Richard - Autonome KI-Research-Engine",
       "shortDescription": "KI, die Marktforschung macht, während du schläfst. 8h → 30min.",

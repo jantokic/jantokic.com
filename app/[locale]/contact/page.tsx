@@ -25,7 +25,7 @@ export default function ContactPage() {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		// For now, just open mailto - you can integrate with a backend later
-		const mailtoLink = `mailto:jan@jantokic.com?subject=Project Inquiry from ${formState.name}&body=${formState.message}`;
+		const mailtoLink = `mailto:${t('connect.email')}?subject=${encodeURIComponent(t('contact.mailtoSubject', { name: formState.name }))}&body=${encodeURIComponent(formState.message)}`;
 		window.location.href = mailtoLink;
 	};
 
@@ -207,7 +207,7 @@ export default function ContactPage() {
 							</div>
 
 							{/* Quick Stats */}
-							<div className="mt-8 grid grid-cols-3 gap-4">
+							<div className="mt-8 grid grid-cols-2 gap-4">
 								<div className="bg-background p-4 rounded-xl border border-border text-center">
 									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.responseTime')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
@@ -220,12 +220,6 @@ export default function ContactPage() {
 										{t('contact.stats.projectsLabel')}
 									</div>
 								</div>
-								<div className="bg-background p-4 rounded-xl border border-border text-center">
-									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.uptime')}</div>
-									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										{t('contact.stats.uptimeLabel')}
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -236,7 +230,7 @@ export default function ContactPage() {
 			<footer className="py-12 px-6 sm:px-8 lg:px-16 border-t border-border/30">
 				<div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
 					<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-						© {new Date().getFullYear()} Jan Tokic
+						{t('footer.copyright', { year: new Date().getFullYear() })}
 					</p>
 
 					<div className="flex items-center gap-4">
@@ -248,7 +242,7 @@ export default function ContactPage() {
 							<button
 								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 								className="p-2 rounded-lg hover:bg-muted transition-colors"
-								aria-label="Toggle theme"
+								aria-label={t('footer.toggleTheme')}
 							>
 								{theme === 'dark' ? (
 									<Sun className="w-5 h-5 text-foreground" />

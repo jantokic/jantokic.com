@@ -49,7 +49,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 								href="/contact"
 								className="group inline-flex items-center gap-2 font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground hover:text-foreground/80 transition-colors"
 							>
-								Contact Form
+								{t('connect.contactForm')}
 								<ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
 							</Link>
 						</div>
@@ -109,7 +109,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 			<footer className="py-8 px-6 sm:px-8 lg:px-16 border-t border-border/30">
 				<div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
 					<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-						© {new Date().getFullYear()} Jan Tokic
+						{t('footer.copyright', { year: new Date().getFullYear() })}
 					</p>
 
 					<div className="flex items-center gap-4">
@@ -119,7 +119,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 							<button
 								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 								className="p-2 rounded-lg hover:bg-muted transition-colors"
-								aria-label="Toggle theme"
+								aria-label={t('footer.toggleTheme')}
 							>
 								{theme === 'dark' ? (
 									<Sun className="w-5 h-5 text-foreground" />

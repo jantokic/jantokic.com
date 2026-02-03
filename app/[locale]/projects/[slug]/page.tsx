@@ -17,15 +17,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 	const project = getProjectBySlug(slug);
 
 	if (!project) {
+		const ui = await getTranslations({ locale, namespace: 'projectPage' });
 		return {
-			title: 'Project Not Found',
+			title: ui('notFoundTitle'),
 		};
 	}
 
 	const t = await getTranslations({ locale, namespace: 'projectDetails' });
+	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
 	return {
-		title: `${t(`${slug}.title`)} | Portfolio`,
+		title: `${t(`${slug}.title`)} | ${ui('portfolioSuffix')}`,
 		description: t(`${slug}.shortDescription`),
 	};
 }
@@ -39,6 +41,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 	}
 
 	const t = await getTranslations({ locale, namespace: 'projectDetails' });
+	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
 	// Minimal "coming soon" view for Klarity
 	const isSecret = slug === 'klarity-prediction-market';
@@ -54,7 +57,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 						>
 							<ArrowLeft className="w-4 h-4" />
-							Back to Projects
+							{ui('backToProjects')}
 						</Link>
 					</div>
 				</header>
@@ -63,10 +66,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				<section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
 					<div className="max-w-7xl mx-auto">
 						<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground mb-6 leading-tight">
-							Klarity
+							{t(`${slug}.title`)}
 						</h1>
 						<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed">
-							Prediction market terminal.
+							{t(`${slug}.shortDescription`)}
 						</p>
 					</div>
 				</section>
@@ -77,7 +80,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
 							<Image
 								src={project.image}
-								alt="Klarity"
+								alt={t(`${slug}.title`)}
 								fill
 								className="object-cover"
 								unoptimized
@@ -93,7 +96,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							🤫
 						</p>
 						<p className="font-mono uppercase text-sm tracking-wider font-semibold text-muted-foreground/50 mt-4">
-							More details coming soon.
+							{ui('comingSoon')}
 						</p>
 					</div>
 				</section>
@@ -106,7 +109,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 						>
 							<ArrowLeft className="w-4 h-4" />
-							Back to all projects
+							{ui('backToAllProjects')}
 						</Link>
 					</div>
 				</footer>
@@ -124,7 +127,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
 						<ArrowLeft className="w-4 h-4" />
-						Back to Projects
+						{ui('backToProjects')}
 					</Link>
 				</div>
 			</header>
@@ -168,7 +171,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 					<div className="lg:col-span-2 space-y-12">
 						{/* Overview */}
 						<div>
-							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">Overview</h2>
+							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
+								{ui('overview')}
+							</h2>
 							<p className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground leading-relaxed">
 								{t(`${slug}.fullDescription`)}
 							</p>
@@ -177,7 +182,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{/* Challenges */}
 						<div>
 							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								Challenges & Solutions
+								{ui('challenges')}
 							</h2>
 							<ul className="space-y-4">
 								{(t.raw(`${slug}.challenges`) as string[]).map((challenge, index) => (
@@ -196,7 +201,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{/* Outcomes */}
 						<div>
 							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								Results & Impact
+								{ui('outcomes')}
 							</h2>
 							<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 								{(t.raw(`${slug}.outcomes`) as string[]).map((outcome, index) => (
@@ -218,7 +223,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{/* Role */}
 						<div>
 							<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-								Role
+								{ui('role')}
 							</h3>
 							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{t(`${slug}.role`)}</p>
 						</div>
@@ -226,15 +231,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{/* Duration */}
 						<div>
 							<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-								Duration
+								{ui('duration')}
 							</h3>
-							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{project.duration}</p>
+							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">
+								{t(`${slug}.duration`)}
+							</p>
 						</div>
 
 						{/* Tech Stack */}
 						<div>
 							<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-								Tech Stack
+								{ui('techStack')}
 							</h3>
 							<div className="flex flex-wrap gap-2">
 								{project.techStack.map((tech, index) => (
@@ -252,7 +259,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{project.links && (project.links.github || project.links.x || project.links.website || project.links.demo || project.links.youtube) && (
 							<div>
 								<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-									Links
+									{ui('links')}
 								</h3>
 								<div className="space-y-2">
 									{project.links.github && (
@@ -263,7 +270,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
 										>
 											<BrandIcon name="siGithub" size={14} className="text-foreground group-hover:text-muted-foreground" />
-											GitHub
+											{ui('github')}
 											<ExternalLink className="w-3 h-3 ml-auto" />
 										</a>
 									)}
@@ -275,7 +282,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
 										>
 											<BrandIcon name="siX" size={14} className="text-foreground group-hover:text-muted-foreground" />
-											X
+											{ui('x')}
 											<ExternalLink className="w-3 h-3 ml-auto" />
 										</a>
 									)}
@@ -287,7 +294,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
 										>
 											<ExternalLink className="w-3.5 h-3.5" />
-											Website {project.slug === 'richard-ai-research' && <span className="text-[10px] opacity-60">(Private - Internal Use Only)</span>}
+											{ui('website')}{' '}
+											{project.slug === 'richard-ai-research' && (
+												<span className="text-[10px] opacity-60">{ui('websitePrivateNote')}</span>
+											)}
 											<ExternalLink className="w-3 h-3 ml-auto" />
 										</a>
 									)}
@@ -299,7 +309,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
 										>
 											<ExternalLink className="w-3.5 h-3.5" />
-											Demo
+											{ui('demo')}
 											<ExternalLink className="w-3 h-3 ml-auto" />
 										</a>
 									)}
@@ -311,7 +321,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
 										>
 											<Video className="w-3.5 h-3.5" />
-											YouTube
+											{ui('youtube')}
 											<ExternalLink className="w-3 h-3 ml-auto" />
 										</a>
 									)}
@@ -353,7 +363,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 			<section className="px-4 sm:px-6 lg:px-8 py-16 bg-muted">
 				<div className="max-w-7xl mx-auto">
 					<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-8">
-						More Projects
+						{ui('moreProjects')}
 					</h2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 						{projects
@@ -394,7 +404,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 					>
 						<ArrowLeft className="w-4 h-4" />
-						Back to all projects
+						{ui('backToAllProjects')}
 					</Link>
 				</div>
 			</footer>

@@ -25,7 +25,7 @@ export default function ContactPage() {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		// For now, just open mailto - you can integrate with a backend later
-		const mailtoLink = `mailto:jan@jantokic.com?subject=Project Inquiry from ${formState.name}&body=${formState.message}`;
+		const mailtoLink = `mailto:${t('connect.email')}?subject=${encodeURIComponent(t('contact.mailtoSubject', { name: formState.name }))}&body=${encodeURIComponent(formState.message)}`;
 		window.location.href = mailtoLink;
 	};
 
@@ -207,7 +207,7 @@ export default function ContactPage() {
 							</div>
 
 							{/* Quick Stats */}
-							<div className="mt-8 grid grid-cols-3 gap-4">
+							<div className="mt-8 grid grid-cols-2 gap-4">
 								<div className="bg-background p-4 rounded-xl border border-border text-center">
 									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.responseTime')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
@@ -218,12 +218,6 @@ export default function ContactPage() {
 									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.projects')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
 										{t('contact.stats.projectsLabel')}
-									</div>
-								</div>
-								<div className="bg-background p-4 rounded-xl border border-border text-center">
-									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.uptime')}</div>
-									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										{t('contact.stats.uptimeLabel')}
 									</div>
 								</div>
 							</div>

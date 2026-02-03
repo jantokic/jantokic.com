@@ -53,7 +53,7 @@
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Present",
-      "description": "Prediction market terminal for real-time pricing.",
+      "description": "Prediction market terminal.",
       "projectLink": "/projects/klarity-prediction-market",
       "projectLinkText": "View details →"
     },
@@ -192,13 +192,12 @@
     "messagePlaceholder": "Tell me about your project, timeline, and budget...",
     "sendButton": "Send Message",
     "responseTime": "I usually respond within 24 hours",
+    "mailtoSubject": "Project Inquiry from {name}",
     "stats": {
-      "responseTime": "24h",
+      "responseTime": "3h",
       "responseTimeLabel": "Response Time",
-      "projects": "7+",
-      "projectsLabel": "Projects Delivered",
-      "uptime": "99.5%",
-      "uptimeLabel": "Uptime Achieved"
+      "projects": "15+",
+      "projectsLabel": "Projects Delivered"
     }
   },
   "footer": {

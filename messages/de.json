@@ -53,7 +53,7 @@
       "company": "Klarity",
       "location": "Delaware",
       "period": "2025 - Heute",
-      "description": "Prediction-Market-Terminal für Echtzeit-Preise.",
+      "description": "Prediction-Market-Terminal.",
       "projectLink": "/projects/klarity-prediction-market",
       "projectLinkText": "Details ansehen →"
     },
@@ -192,13 +192,12 @@
     "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt, Zeitplan und Budget...",
     "sendButton": "Nachricht senden",
     "responseTime": "Ich antworte meist innerhalb von 24 Stunden",
+    "mailtoSubject": "Projektanfrage von {name}",
     "stats": {
-      "responseTime": "24h",
+      "responseTime": "3h",
       "responseTimeLabel": "Antwortzeit",
-      "projects": "7+",
-      "projectsLabel": "Projekte umgesetzt",
-      "uptime": "99,5%",
-      "uptimeLabel": "Erreichte Uptime"
+      "projects": "15+",
+      "projectsLabel": "Projekte umgesetzt"
     }
   },
   "footer": {

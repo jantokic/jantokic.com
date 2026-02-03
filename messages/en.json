@@ -83,9 +83,9 @@
     "relatedProjects": "Related Projects",
     "items": {
       "klarity-prediction-market": {
-        "title": "Klarity - Prediction Market Terminal",
-        "shortDescription": "Real-time prediction market data. Semantic search across millions of events.",
-        "category": "Fintech & AI"
+        "title": "Klarity",
+        "shortDescription": "Prediction market terminal. Coming soon.",
+        "category": "Fintech"
       },
       "richard-ai-research": {
         "title": "Richard - Autonomous AI Research Engine",
@@ -172,21 +172,13 @@
   },
   "projectDetails": {
     "klarity-prediction-market": {
-      "title": "Klarity - Prediction Market Terminal",
-      "shortDescription": "Real-time prediction market data. Semantic search across millions of events.",
-      "fullDescription": "Professional-grade terminal for prediction market traders. Aggregates data from Polymarket and other sources, embeds events for semantic search, and provides real-time analytics.",
+      "title": "Klarity",
+      "shortDescription": "Prediction market terminal.",
+      "fullDescription": "Coming soon.",
       "role": "Founding Engineer",
-      "category": "Fintech & AI",
-      "challenges": [
-        "Ingesting millions of market events in real-time",
-        "Semantic search across unstructured prediction data",
-        "Sub-second query latency at scale"
-      ],
-      "outcomes": [
-        "Real-time data pipeline with Kafka + Clickhouse",
-        "Vector search across millions of events",
-        "Professional terminal for market analysis"
-      ]
+      "category": "Fintech",
+      "challenges": [],
+      "outcomes": []
     },
     "richard-ai-research": {
       "title": "Richard - Autonomous AI Research Engine",

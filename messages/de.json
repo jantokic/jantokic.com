@@ -41,7 +41,7 @@
     "location": "München",
     "currentRoles": [
       { "company": "Klarity", "role": "Founding Engineer" },
-      { "company": "Elevantiq", "role": "Freelance Engineer" }
+      { "company": "Vendure", "role": "Software Engineer" }
     ],
     "degree": "B.Sc. Information Engineering",
     "university": "TU München"
@@ -57,11 +57,18 @@
       "projectLink": "/projects/klarity-prediction-market",
       "projectLinkText": "Details →"
     },
+    "vendure": {
+      "role": "Software Engineer",
+      "company": "Vendure",
+      "location": "Wien",
+      "period": "Feb 2026 - Heute",
+      "description": "Open-Source Headless Commerce Plattform. 6,5k GitHub Stars. Läuft bei IBM, Breitling, QVC."
+    },
     "elevantiq": {
       "role": "Software Engineer",
       "company": "Elevantiq",
       "location": "Wien",
-      "period": "2024 - Heute",
+      "period": "2024 - Feb 2026",
       "description": "Order Processing 45% schneller. Millionen Orders/Monat. 7 Legacy-Repos zu einem Monorepo.",
       "projectLink": "/projects/elevantiq-ecommerce-infrastructure",
       "projectLinkText": "Details →"

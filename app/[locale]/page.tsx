@@ -177,7 +177,12 @@ export default function Home() {
 			techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
 		},
 		{
-			year: '2024 - Present',
+			year: 'Feb 2026 - Present',
+			key: 'vendure',
+			techStack: ['TypeScript', 'Nest.js', 'GraphQL', 'PostgreSQL', 'Open Source'],
+		},
+		{
+			year: '2024 - Feb 2026',
 			key: 'elevantiq',
 			techStack: ['TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Vendure', 'DevOps'],
 		},

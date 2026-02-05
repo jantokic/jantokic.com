@@ -47,7 +47,7 @@
     "university": "TU München"
   },
   "work": {
-    "heading": "Work",
+    "heading": "Erfahrung",
     "klarity": {
       "role": "Founding Engineer",
       "company": "Klarity",
@@ -97,8 +97,8 @@
     }
   },
   "projects": {
-    "heading": "Projects",
-    "viewProject": "View",
+    "heading": "Projekte",
+    "viewProject": "Details",
     "backToProjects": "← Projects",
     "relatedProjects": "Related",
     "items": {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/routing';
 import { ArrowUpRight, Linkedin, Sun, Moon } from 'lucide-react';
 import BrandIcon from '@/components/BrandIcon';
 import { ForwardedRef, forwardRef, useState, useEffect } from 'react';

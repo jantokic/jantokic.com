@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, projects } from '@/lib/projects';
-import Link from 'next/link';
+import { Link } from '@/routing';
 import { ArrowLeft, ExternalLink, Video } from 'lucide-react';
 import Image from 'next/image';
 import BrandIcon from '@/components/BrandIcon';

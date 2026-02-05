@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, MapPin, Send, Linkedin, Sun, Moon } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/routing';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';

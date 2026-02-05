@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/routing';
 import { ArrowUpRight } from 'lucide-react';
 import { projects as allProjects } from '@/lib/projects';
 import { ForwardedRef, forwardRef } from 'react';

@@ -29,13 +29,14 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer & Consultant",
-    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet: Trading, E-Commerce, Cloud. Zwei Startups co-founded. Offen für ausgewählte Freelance- und Consulting-Projekte.",
+    "bio": "Ich baue die Systeme, wo Downtime direkt Geld kostet — Trading Bots, E-Commerce at Scale, Cloud Infra. Zwei Startups co-founded, eins acquired. Offen für ausgewähltes Consulting.",
     "capabilitiesHeading": "Wie ich helfe",
     "capabilities": [
       "Backend & Realtime APIs",
       "Cloud, DevOps & Reliability",
       "Trading, Fintech & Web3"
     ],
+    "resumeButton": "Lebenslauf herunterladen",
     "currently": "Aktuell bei",
     "studying": "Ausbildung",
     "location": "München",
@@ -216,7 +217,7 @@
     "klarity-prediction-market": {
       "title": "Klarity",
       "shortDescription": "Das Bloomberg Terminal für Prediction Markets.",
-      "fullDescription": "Bald verfügbar.",
+      "fullDescription": "Realtime-Analytics und Dateninfrastruktur für Prediction Markets. Wie ein Bloomberg Terminal, aber für Polymarket und Kalshi.",
       "role": "Founding Engineer",
       "duration": "Jan 2025 - Heute",
       "category": "Fintech",
@@ -226,181 +227,181 @@
     "richard-ai-research": {
       "title": "Richard",
       "shortDescription": "AI-Agenten erledigen 8h Research in 30 Minuten.",
-      "fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
+      "fullDescription": "Die meisten Research-Tools warten, bis du die richtige Frage stellst. Richard nicht. Crawlt Quellen kontinuierlich, erkennt Muster über Datensätze hinweg und liefert Insights mit Confidence Scores — bevor du überhaupt weißt, wonach du suchen solltest.",
       "role": "Founding Engineer",
       "duration": "Mär 2025 - Heute",
       "category": "AI & Research",
       "challenges": [
-        "Insights ohne Prompts",
-        "Lernt automatisch dazu",
-        "Confidence Scores für Vorhersagen"
+        "Proaktive Pipeline gebaut — Agenten liefern Insights ohne Prompts, nicht nur Antworten auf Fragen",
+        "Feedback-Loop designed, bei dem die Output-Qualität sich mit jedem Research-Zyklus automatisch verbessert",
+        "Jedes Insight verlinkt zurück zu seinen Quellen mit Confidence Scoring — keine Black Box"
       ],
       "outcomes": [
-        "8h → 30 Min",
-        "400+ Insights in 8 Wochen",
-        "Audit-ready"
+        "16x schneller — 8 Stunden manuelle Recherche auf 30 Minuten komprimiert",
+        "400+ actionable Insights in den ersten 8 Wochen generiert",
+        "Vollständiger Audit Trail auf jedem Finding"
       ]
     },
     "mira-trading-bot": {
       "title": "Mira",
       "shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
-      "fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-Pipeline. Tokens bis $200M+ Market Cap gelauncht.",
+      "fullDescription": "In Crypto gewinnt Geschwindigkeit. Mira überwacht Social Feeds und On-Chain Signals und executed Solana-Trades in unter 300ms — bevor der Markt reagiert. Komplettes Go-Backend und Realtime-Pipeline mit einem 3er-Team gebaut.",
       "role": "Founding Engineer & Co-Founder",
       "duration": "5 Monate",
       "category": "Blockchain & Trading",
       "challenges": [
-        "Schneller traden als alle anderen",
-        "Social Signals in Realtime parsen",
-        "99,5% Uptime mit 3-Mann-Team"
+        "Go-Pipeline gebaut, die Social Signals verarbeitet und in <300ms end-to-end auf der Chain ist",
+        "Unstrukturierte Daten von Twitter, Telegram und Discord in Realtime zu handelbaren Signalen geparst",
+        "99,5% Uptime über 8.000+ monatliche Trades mit nur 3 Engineers gehalten"
       ],
       "outcomes": [
-        "$230K Profit in 5 Monaten",
-        "8.000+ Trades/Monat",
-        "Tokens bis $200M+ Market Cap"
+        "$230K Netto-Profit in 5 Monaten Betrieb",
+        "Mehrere Tokens gelauncht, die $200M+ Market Cap erreicht haben",
+        "8.000+ vollautomatisierte Trades pro Monat"
       ]
     },
     "copile-trading-platform": {
       "title": "Copile",
       "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
-      "fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
+      "fullDescription": "Crypto-Trader haben mit 5 verschiedenen Exchange-UIs jongliert. Copile hat alles in ein Interface gepackt — Custom Order Types, Realtime-Charts und eine API für institutionelle Workflows. Co-founded und ein 6er-Team geleitet.",
       "role": "Founding Engineer & Co-Founder",
       "duration": "18 Monate",
       "category": "Fintech & Trading",
       "challenges": [
-        "Ein Interface für 5 Exchanges",
-        "Institutional-Grade Tools",
-        "6er-Team geleitet"
+        "Order Books und WebSocket-Feeds über 5 Exchanges mit unterschiedlichen APIs und Rate Limits normalisiert",
+        "Custom Order Types (Trailing Stops, OCO, Iceberg) gebaut, die cross-exchange funktionieren",
+        "6er-Team rekrutiert, gemanagt und ausgeliefert — Backend, Frontend und Design"
       ],
       "outcomes": [
-        "2.100 User",
-        "€1,2M/Monat Volume",
-        "70% Retention"
+        "70% Retention — die meisten User blieben nach dem ersten Monat",
+        "€1,2M monatliches Trading-Volumen innerhalb eines Jahres",
+        "2.100 User ohne Marketing-Budget"
       ]
     },
     "elevantiq-ecommerce-infrastructure": {
       "title": "Elevantiq",
       "shortDescription": "Millionen Orders. 45% schneller. 7 Repos → 1 Monorepo.",
-      "fullDescription": "E-Commerce-Infrastruktur für Enterprise B2B mit Millionen Orders. Legacy aufgeräumt, Konfiguratoren gebaut, Security gefixt.",
+      "fullDescription": "Enterprise B2B E-Commerce mit Millionen Orders pro Monat. 7 verwickelte Legacy-Repos übernommen und in ein einziges Nx-Monorepo konsolidiert, während Production weiterlief. Komplexe Produkt-Konfiguratoren für Kunden mit tausenden SKU-Varianten gebaut.",
       "role": "Software Engineer",
-      "duration": "Apr 2024 - Heute",
+      "duration": "Apr 2024 - Feb 2026",
       "category": "E-Commerce & SaaS",
       "challenges": [
-        "7 Legacy-Repos → 1 Monorepo",
-        "Major Upgrades ohne Downtime",
-        "Komplexe Konfiguratoren"
+        "7 voneinander abhängige Legacy-Repos in ein Nx-Monorepo migriert — ohne Production-Downtime",
+        "Major Framework-Upgrades (Vendure, Nest.js) auf Live-Systemen mit Millionen Orders durchgeführt",
+        "Produkt-Konfiguratoren gebaut, die tausende Varianten-Kombinationen pro SKU verarbeiten"
       ],
       "outcomes": [
-        "Millionen Orders/Jahr",
-        "45% schneller",
-        "Zero Vulnerabilities"
+        "Order Processing 45% schneller nach der Monorepo-Migration",
+        "Null Security-Incidents über das gesamte Engagement",
+        "Kunden verarbeiten Millionen Orders/Monat auf dem neuen Stack"
       ]
     },
     "ibm-headless-commerce": {
       "title": "IBM iX",
       "shortDescription": "85.000 SKUs. 40% schnellere Promotions. Vue.js + Magento.",
-      "fullDescription": "Storefront für 85.000 Produkte mit Dynamic Promotions. Schnell und flexibel fürs Marketing.",
+      "fullDescription": "Headless Vue.js-Storefront auf Magento für einen Retail-Kunden mit 85.000 Produkten gebaut. Das Marketing-Team musste Promotions ohne Engineering-Tickets launchen können — also hab ich ein Self-Serve Promotion-System gebaut.",
       "role": "Software Engineering Praktikant",
       "duration": "3 Monate",
       "category": "E-Commerce",
       "challenges": [
-        "85.000 Produkte, schnelle Loads",
-        "Marketing kann selbst ändern",
-        "Enterprise Magento Integration"
+        "Page Loads schnell gehalten trotz 85.000 Produkt-SKUs und starkem dynamischen Filtering",
+        "Self-Serve Promotion-Editor gebaut, damit Marketing Kampagnen ohne Dev-Tickets shippen kann",
+        "Vue.js-Frontend mit Enterprise-Magento-Backend via GraphQL integriert"
       ],
       "outcomes": [
-        "40% schnellere Promotions",
-        "Shipped to Production",
-        "Marketing unabhängig"
+        "Promotions 40% schneller live — Marketing nicht mehr von Engineering blockiert",
+        "Innerhalb des 3-Monats-Praktikums in Production geschippt",
+        "Frontend-Architektur als Template für Folgeprojekte übernommen"
       ]
     },
     "vendure-open-source": {
       "title": "Vendure",
       "shortDescription": "Contributions zu 6,5k-Star-Projekt. Nutzer: IBM, Breitling, QVC.",
-      "fullDescription": "Open-Source Headless Commerce (6,5k GitHub Stars). Core Features mit den Gründern gebaut. Läuft bei IBM, Breitling, Swile, QVC.",
+      "fullDescription": "Vendure ist das führende Open-Source Headless Commerce Framework (6,5k GitHub Stars). Direkt mit den Core Maintainern an Features und Verbesserungen gearbeitet. Die Plattform wird von IBM, Breitling, Swile und QVC eingesetzt.",
       "role": "Open-Source Contributor",
       "duration": "2024 - Heute",
       "category": "Open Source",
       "challenges": [
-        "6,5k-Star Codebase",
-        "Enterprise-Grade Patterns",
-        "Keine Breaking Changes"
+        "Contributions zu einer reifen 6,5k-Star-Codebase mit strikten Backwards-Compatibility-Anforderungen",
+        "Enterprise-Grade Patterns (Event Sourcing, Plugin-Architektur) über eine große Oberfläche navigiert",
+        "Null Breaking Changes auf einem Framework, das bei großen Marken in Production läuft"
       ],
       "outcomes": [
-        "Läuft bei IBM, Breitling, QVC",
-        "Features mit Gründern shipped",
-        "Ongoing Contributions"
+        "Features zusammen mit den Core Maintainern ausgeliefert",
+        "Expertise in Headless Commerce Architektur at Scale vertieft",
+        "Laufende Contributions zum Ecosystem"
       ]
     },
     "synapse-knowledge-system": {
       "title": "Synapse",
       "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-      "fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
+      "fullDescription": "Große Unternehmen verschwenden Zeit damit herauszufinden, wer intern was weiß. Synapse löst das — Semantic Search über Mitarbeiterprofile, Projekthistorien und Skill-Graphen. In 36 Stunden beim TUM.AI x Anthropic Hackathon end-to-end gebaut.",
       "role": "Backend Engineer",
       "duration": "36 Stunden",
       "category": "AI & Enterprise",
       "challenges": [
-        "Full Stack in 36h",
-        "Smart Ranking",
-        "Instant Semantic Search"
+        "Komplettes Backend, Embedding-Pipeline und Search-API von Grund auf in 36 Stunden designed",
+        "Ranking-Algorithmus gebaut, der Aktualität, Expertise-Tiefe und Kollaborations-Historie gewichtet",
+        "pgvector + OpenAI Embeddings für Sub-Second Semantic Search über tausende Profile genutzt"
       ],
       "outcomes": [
-        "2. Platz",
-        "Jeden Experten instant finden",
-        "Production-ready in 36h"
+        "2. Platz von 30+ Teams beim TUM.AI x Anthropic Hackathon",
+        "Funktionierendes Demo: jeder Mitarbeiter in unter 2 Sekunden gefunden",
+        "Production-Grade Architektur trotz 36-Stunden-Constraint"
       ]
     },
     "dreamcook-community": {
       "title": "DreamCook",
       "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
-      "fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
+      "fullDescription": "Sneaker- und Streetwear-Reseller müssen wissen, wenn ein Produkt droppt — ein paar Sekunden zu spät und es ist ausverkauft. DreamCook hat Retailer in Realtime überwacht und Alerts schneller gepusht als jeder Mitbewerber. Solo gebaut, auf 5.000+ zahlende Member gewachsen.",
       "role": "Full Stack Engineer",
       "duration": "2 Jahre",
       "category": "E-Commerce & Community",
       "challenges": [
-        "Multi-Retailer Monitoring",
-        "Instant Drop-Alerts",
-        "Skaliert auf 5.000+ zahlende Member"
+        "Scraper gebaut, die dutzende Retailer-Seiten überwachen und Stock-Änderungen in Realtime erkennen",
+        "Notification-Pipeline engineered, die Alerts in unter 500ms via Discord und Webhooks liefert",
+        "Von 0 auf 5.000+ zahlende Member skaliert mit Community-driven Growth, ohne bezahltes Marketing"
       ],
       "outcomes": [
-        "5.000+ Member",
-        "Schneller als die Konkurrenz",
-        "2 Jahre profitabel"
+        "Konstant schnellere Alerts als konkurrierende Services",
+        "Ab Monat 3 profitabel, durchgehend für 2 volle Jahre",
+        "Kompletten technischen und geschäftlichen Betrieb solo geführt"
       ]
     },
     "acidnode-validator": {
       "title": "Acid Node",
       "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
-      "fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
+      "fullDescription": "Einen Solana Validator zu betreiben heißt, die Infrastruktur muss mit der Chain mithalten — hoher Throughput, niedrige Latenz, keine Ausreden. Automatisiertes AWS-Deployment und Monitoring für einen Production-Mainnet-Validator gebaut.",
       "role": "Backend Engineer",
       "duration": "5 Monate",
       "category": "Blockchain & Infra",
       "challenges": [
-        "High Availability",
-        "99,9% Uptime Target",
-        "One-Click Deploys"
+        "Fault-Tolerant AWS-Architektur designed, die Solanas Throughput-Anforderungen standhält",
+        "One-Click Deployment-Scripts mit automatischem Failover und Health Monitoring gebaut",
+        "Validator-Performance optimiert, um Skip Rate zu minimieren und Block Production zu maximieren"
       ],
       "outcomes": [
-        "Live auf Mainnet",
-        "Fully Automated",
-        "Zero Downtime"
+        "99,9% Uptime auf Solana Mainnet",
+        "Vollautomatisiertes Deployment — neuer Validator in Minuten",
+        "Null ungeplante Downtime über den gesamten Betrieb"
       ]
     },
     "neura-nft-sniping": {
       "title": "Neura",
       "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
-      "fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
+      "fullDescription": "Wenn eine NFT-Collection droppt, ist das Zeitfenster zum Kaufen in Millisekunden gemessen. Neura hat auf Mints gewartet und Käufe schneller executed als manuelle Buyer klicken können. Als Subscription-Produkt gebaut, skaliert und dann acquired.",
       "role": "Software Engineer",
       "duration": "6 Monate",
       "category": "Blockchain & NFT",
       "challenges": [
-        "Millisekunden-Timing",
-        "On-chain Transactions",
-        "Stabil unter Last"
+        "Sub-100ms Execution von Mint-Detection bis On-Chain Transaction Submission erreicht",
+        "Robustes Transaction Handling gebaut, das sich an Netzwerk-Congestion und Gas Spikes anpasst",
+        "System stabil gehalten während High-Traffic Mint Events mit tausenden gleichzeitigen Usern"
       ],
       "outcomes": [
-        "Exit",
-        "Recurring Revenue",
-        "Schneller als alle anderen"
+        "Nach 6 Monaten Betrieb acquired",
+        "Recurring Subscription Revenue vom ersten Tag an",
+        "Konstant schneller als manuelle Buyer und konkurrierende Bots"
       ]
     }
   }

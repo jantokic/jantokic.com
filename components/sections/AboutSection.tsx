@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Download } from 'lucide-react';
 import { ForwardedRef, forwardRef } from 'react';
 
 interface AboutSectionProps {
@@ -102,6 +103,15 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 									))}
 								</div>
 							</div>
+
+							<a
+								href="/resume.pdf"
+								download
+								className="inline-flex items-center gap-2 px-4 py-2 font-mono uppercase text-xs tracking-wider font-semibold border border-border/50 rounded-lg text-muted-foreground hover:border-border hover:text-foreground hover:bg-muted active:scale-[0.98] transition-all"
+							>
+								<Download className="w-3.5 h-3.5" />
+								{t('intro.resumeButton')}
+							</a>
 
 							<div>
 								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2">

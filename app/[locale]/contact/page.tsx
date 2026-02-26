@@ -7,6 +7,7 @@ import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 import BrandIcon from '@/components/BrandIcon';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { socialLinks } from '@/content/social';
 
 export default function ContactPage() {
 	const t = useTranslations();
@@ -86,30 +87,21 @@ export default function ContactPage() {
 										{t('contact.social')}
 									</h3>
 									<div className="flex flex-wrap gap-4">
-										<a
-											href="https://github.com/jantokic"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
-										>
-											<BrandIcon name="siGithub" size={16} />
-										</a>
-										<a
-											href="https://linkedin.com/in/jan-tokic"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
-										>
-											<Linkedin className="w-4 h-4" />
-										</a>
-										<a
-											href="https://x.com/tokicjan"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
-										>
-											<BrandIcon name="siX" size={16} />
-										</a>
+										{socialLinks.map((link) => (
+											<a
+												key={link.platform}
+												href={link.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
+											>
+												{link.icon === 'linkedin' ? (
+													<Linkedin className="w-4 h-4" />
+												) : (
+													<BrandIcon name={link.icon} size={16} />
+												)}
+											</a>
+										))}
 									</div>
 								</div>
 							</div>

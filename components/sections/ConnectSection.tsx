@@ -7,6 +7,7 @@ import BrandIcon from '@/components/BrandIcon';
 import { ForwardedRef, forwardRef, useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { socialLinks } from '@/content/social';
 
 const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
@@ -56,50 +57,27 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 
 						{/* Social Grid */}
 						<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl">
-							<a
-								href="https://github.com/jantokic"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
-							>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-									<BrandIcon name="siGithub" size={14} className="text-muted-foreground" />
-								</div>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-									@jantokic
-									<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-								</div>
-							</a>
-
-							<a
-								href="https://linkedin.com/in/jan-tokic"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
-							>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-									<Linkedin className="w-3.5 h-3.5" />
-								</div>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-									Jan Tokic
-									<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-								</div>
-							</a>
-
-							<a
-								href="https://x.com/tokicjan"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
-							>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
-									<BrandIcon name="siX" size={14} className="text-muted-foreground" />
-								</div>
-								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
-									@tokicjan
-									<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-								</div>
-							</a>
+							{socialLinks.map((link) => (
+								<a
+									key={link.platform}
+									href={link.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
+								>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
+										{link.icon === 'linkedin' ? (
+											<Linkedin className="w-3.5 h-3.5" />
+										) : (
+											<BrandIcon name={link.icon} size={14} className="text-muted-foreground" />
+										)}
+									</div>
+									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1">
+										{link.handle}
+										<ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+									</div>
+								</a>
+							))}
 						</div>
 					</div>
 				</div>

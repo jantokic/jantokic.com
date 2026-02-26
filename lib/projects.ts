@@ -77,24 +77,6 @@ export const projects: Project[] = [
   },
   {
     id: '5',
-    slug: 'ibm-headless-commerce',
-    techStack: ['TypeScript', 'Next.js', 'Headless CMS', 'GraphQL', 'REST APIs', 'Agile'],
-    image: '/projects/ibm/banner.webp',
-    galleryImage: '/projects/ibm/gallery.webp',
-    images: [],
-    year: '2022'
-  },
-  {
-    id: '6',
-    slug: 'vendure-open-source',
-    techStack: ['TypeScript', 'Node.js', 'Nest.js', 'GraphQL', 'E-Commerce', 'Open Source'],
-    image: '/projects/vendure/banner.webp',
-    galleryImage: '/projects/vendure/gallery.webp',
-    images: [],
-    year: '2024'
-  },
-  {
-    id: '7',
     slug: 'synapse-knowledge-system',
     techStack: ['Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Prisma', 'OpenAI Embeddings', 'pgvector', 'Claude Sonnet', 'Next.js'],
     image: '/projects/synapse/banner.webp',

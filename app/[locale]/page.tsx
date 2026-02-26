@@ -16,6 +16,8 @@ import AboutSection from '@/components/sections/AboutSection';
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
 import ConnectSection from '@/components/sections/ConnectSection';
+import { skills } from '@/content/skills';
+import { workData } from '@/content/work';
 
 function GalleryLoading() {
 	const t = useTranslations();
@@ -39,7 +41,7 @@ export default function Home() {
 
 	// Map projects to gallery images (excluding certain projects)
 	// Reorder so Richard appears first in the 3D gallery
-	const excludedSlugs = ['elevantiq-ecommerce-infrastructure', 'ibm-headless-commerce', 'vendure-open-source'];
+	const excludedSlugs = ['elevantiq-ecommerce-infrastructure'];
 	const filteredProjects = projects.filter((project) => !excludedSlugs.includes(project.slug));
 
 	// Move Synapse to where Richard is, and Richard to where Synapse was
@@ -165,43 +167,6 @@ export default function Home() {
 
 		return () => window.removeEventListener('scroll', updateActiveSection);
 	}, []);
-
-	// Skills data
-	const skills = ['TypeScript', 'Java', 'Python', 'Go', 'Next.js', 'Solana', 'DevOps', 'Databases', 'CMS', 'PIM'];
-
-	// Work data
-	const workData = [
-		{
-			year: '2025 - Present',
-			key: 'klarity',
-			techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
-		},
-		{
-			year: 'Feb 2026 - Present',
-			key: 'vendure',
-			techStack: ['TypeScript', 'Nest.js', 'GraphQL', 'PostgreSQL', 'Open Source'],
-		},
-		{
-			year: '2024 - Feb 2026',
-			key: 'elevantiq',
-			techStack: ['TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Vendure', 'DevOps'],
-		},
-		{
-			year: '2024 - 2025',
-			key: 'mira',
-			techStack: ['Go', 'Solana', 'GCP', 'WebSockets', 'Observability'],
-		},
-		{
-			year: '2022-2024',
-			key: 'copile',
-			techStack: ['Python', 'Node.js', 'NoSQL', 'GCP'],
-		},
-		{
-			year: '2022',
-			key: 'ibm',
-			techStack: ['Vue.js', 'JavaScript', 'Magento', 'Headless Commerce'],
-		},
-	];
 
 	const scrollToSection = (sectionId: string) => {
 		if (sectionId === 'gallery') {

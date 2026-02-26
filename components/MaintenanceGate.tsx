@@ -3,7 +3,7 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 
-const MAINTENANCE_PIN = '482669';
+const MAINTENANCE_PIN = process.env.NEXT_PUBLIC_MAINTENANCE_PIN || '';
 const MAX_ATTEMPTS = 3;
 const LOCKOUT_DURATION = 5 * 60 * 1000; // 5 minutes in ms
 

@@ -44,7 +44,8 @@
       { "company": "Vendure", "role": "Software Engineer" }
     ],
     "degree": "B.Sc. Information Engineering",
-    "university": "TU München"
+    "university": "TU München",
+    "viewCv": "Lebenslauf ansehen"
   },
   "work": {
     "heading": "Erfahrung",
@@ -61,16 +62,9 @@
       "role": "Software Engineer",
       "company": "Vendure",
       "location": "Wien",
-      "period": "Feb 2026 - Heute",
-      "description": "Open-Source Headless Commerce Plattform. 6,5k GitHub Stars. Läuft bei IBM, Breitling, QVC."
-    },
-    "elevantiq": {
-      "role": "Software Engineer",
-      "company": "Elevantiq",
-      "location": "Wien",
-      "period": "2024 - Feb 2026",
-      "description": "Order Processing 45% schneller. Millionen Orders/Monat. 7 Legacy-Repos zu einem Monorepo.",
-      "projectLink": "/projects/elevantiq-ecommerce-infrastructure",
+      "period": "2024 - Heute",
+      "description": "Open-Source Headless Commerce (8k GitHub Stars). Order Processing 45% schneller. Millionen Orders/Monat. 7 Repos → 1 Monorepo. Läuft bei IBM, Breitling, QVC.",
+      "projectLink": "/projects/vendure-ecommerce",
       "projectLinkText": "Details →"
     },
     "mira": {
@@ -277,22 +271,22 @@
         "70% Retention"
       ]
     },
-    "elevantiq-ecommerce-infrastructure": {
-      "title": "Elevantiq",
-      "shortDescription": "Millionen Orders. 45% schneller. 7 Repos → 1 Monorepo.",
-      "fullDescription": "E-Commerce-Infrastruktur für Enterprise B2B mit Millionen Orders. Legacy aufgeräumt, Konfiguratoren gebaut, Security gefixt.",
+    "vendure-ecommerce": {
+      "title": "Vendure",
+      "shortDescription": "Open-Source Headless Commerce. 8k GitHub Stars. Millionen Orders. 45% schneller.",
+      "fullDescription": "Core Contributor bei Vendure, einer Open-Source Headless Commerce Plattform (8k GitHub Stars), genutzt von IBM, Breitling, Swile und QVC. Enterprise E-Commerce-Infrastruktur mit Millionen Orders aufgebaut. 7 Legacy-Repos in ein Monorepo konsolidiert, Order Processing um 45% beschleunigt, Features mit den Gründern shipped.",
       "role": "Software Engineer",
       "duration": "Apr 2024 - Heute",
-      "category": "E-Commerce & SaaS",
+      "category": "E-Commerce & Open Source",
       "challenges": [
-        "7 Legacy-Repos → 1 Monorepo",
+        "7 Legacy-Repos → 1 sauberes Monorepo",
         "Major Upgrades ohne Downtime",
-        "Komplexe Konfiguratoren"
+        "Enterprise-Grade Patterns in 8k-Star Codebase"
       ],
       "outcomes": [
-        "Millionen Orders/Jahr",
-        "45% schneller",
-        "Zero Vulnerabilities"
+        "Millionen Orders/Jahr verarbeitet",
+        "45% schnelleres Order Processing",
+        "Läuft bei IBM, Breitling, QVC"
       ]
     },
     "ibm-headless-commerce": {
@@ -311,24 +305,6 @@
         "40% schnellere Promotions",
         "Shipped to Production",
         "Marketing unabhängig"
-      ]
-    },
-    "vendure-open-source": {
-      "title": "Vendure",
-      "shortDescription": "Contributions zu 6,5k-Star-Projekt. Nutzer: IBM, Breitling, QVC.",
-      "fullDescription": "Open-Source Headless Commerce (6,5k GitHub Stars). Core Features mit den Gründern gebaut. Läuft bei IBM, Breitling, Swile, QVC.",
-      "role": "Open-Source Contributor",
-      "duration": "2024 - Heute",
-      "category": "Open Source",
-      "challenges": [
-        "6,5k-Star Codebase",
-        "Enterprise-Grade Patterns",
-        "Keine Breaking Changes"
-      ],
-      "outcomes": [
-        "Läuft bei IBM, Breitling, QVC",
-        "Features mit Gründern shipped",
-        "Ongoing Contributions"
       ]
     },
     "synapse-knowledge-system": {

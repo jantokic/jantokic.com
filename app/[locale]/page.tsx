@@ -39,7 +39,7 @@ export default function Home() {
 
 	// Map projects to gallery images (excluding certain projects)
 	// Reorder so Richard appears first in the 3D gallery
-	const excludedSlugs = ['elevantiq-ecommerce-infrastructure', 'ibm-headless-commerce', 'vendure-open-source'];
+	const excludedSlugs = ['vendure-ecommerce', 'ibm-headless-commerce'];
 	const filteredProjects = projects.filter((project) => !excludedSlugs.includes(project.slug));
 
 	// Move Synapse to where Richard is, and Richard to where Synapse was
@@ -177,14 +177,9 @@ export default function Home() {
 			techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
 		},
 		{
-			year: 'Feb 2026 - Present',
+			year: '2024 - Present',
 			key: 'vendure',
-			techStack: ['TypeScript', 'Nest.js', 'GraphQL', 'PostgreSQL', 'Open Source'],
-		},
-		{
-			year: '2024 - Feb 2026',
-			key: 'elevantiq',
-			techStack: ['TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Vendure', 'DevOps'],
+			techStack: ['TypeScript', 'Nest.js', 'Next.js', 'PostgreSQL', 'GraphQL', 'Docker Swarm'],
 		},
 		{
 			year: '2024 - 2025',

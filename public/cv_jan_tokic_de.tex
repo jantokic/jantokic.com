@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=0.55in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% Tight lists
+\setlist[itemize]{leftmargin=14pt, itemsep=0pt, parsep=0pt, topsep=1pt}
+
+% Commands
+\newcommand{\entry}[4]{%
+  \textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-2pt}
+  {\small #4}%
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\LARGE\bfseries Jan Tokic} \\[3pt]
+  M\"unchen, Deutschland \enspace$\vert$\enspace +436641373256 \enspace$\vert$\enspace jan.tokic@proton.me
+\end{center}
+
+\vspace{-2pt}
+
+% Profil
+\section{Profil}
+Founding Engineer und Software-Berater mit Fokus auf umsatzkritische Systeme in Fintech, KI und E-Commerce. Mitgr\"under von Unternehmen mit \$230K+ Gewinn und 50k+ Nutzern. Aktuell verantwortlich f\"ur Prediction-Market-Infrastruktur bei Klarity und im Core-Engineering-Team von Vendure (8k GitHub Stars).
+
+% Berufserfahrung
+\section{Berufserfahrung}
+
+\entry{Founding Engineer \& Mitgr\"under}{Klarity}{Delaware}{Nov 2025 --- Heute}
+\begin{itemize}
+  \item Prediction-Market-Analyseplattform von Grund auf entwickelt --- Blockchain-Indexierung und Streaming-Pipeline mit 180M+ On-Chain-Datens\"atzen in ClickHouse
+  \item Wallet-Clustering und plattform\"ubergreifende Arbitrage-Erkennung f\"ur Polymarket und Kalshi entwickelt
+  \item 1.2k Commits in 3 Monaten; Codebase f\"ur KI-gest\"utzte agentische Workflows mit Claude Code optimiert und Solo-Entwicklungsgeschwindigkeit beschleunigt
+\end{itemize}
+
+\vspace{6pt}
+\entry{Software Engineer}{Vendure}{Wien}{Apr 2024 --- Heute}
+\begin{itemize}
+  \item Auftragsverarbeitungssystem f\"ur 10M+ Bestellungen/Monat konzipiert ({\raise.17ex\hbox{$\scriptstyle\sim$}}130M EUR Jahresumsatz)
+  \item Performance um 45\% gesteigert durch asynchrone Job-Queues, DB-Sharding und Caching; Latenz um 60\% reduziert
+  \item 4-Monats-Projekt in 1,5 Monaten abgeschlossen --- Nx-Monorepo, Docker Swarm, 40+ Tickets solo
+  \item Core-Contributor der Open-Source Headless-Commerce-Plattform, genutzt von IBM, Breitling, Swile und QVC
+\end{itemize}
+
+\vspace{6pt}
+\entry{Founding Engineer \& Mitgr\"under}{Mira}{London}{Nov 2024 --- Aug 2025}
+\begin{itemize}
+  \item Solana-Trading-Bot in Go mitgegr\"undet, \$230K Gewinn in 5 Monaten
+  \item Echtzeit-Signalprozessor entwickelt: 8.000+ Trades/Monat, 92\% Erfolgsrate, sub-300ms Ausf\"uhrung
+  \item Remote-Team von 3 Ingenieuren geleitet mit 99,5\% Uptime
+  \item Token-Launch-Pipeline automatisiert --- neue Coins in unter 300ms deployed, schnellste im Solana-\"Okosystem
+  \item Token-Launches mit \$200M+ Gesamtmarktkapitalisierung unterst\"utzt
+\end{itemize}
+
+\vspace{6pt}
+\entry{Founding Engineer \& Mitgr\"under}{Copile}{London}{Sept 2022 --- M\"ar 2024}
+\begin{itemize}
+  \item B2B-Krypto-Handelsplattform auf 2.100 Nutzer und 1,2M EUR monatliches Volumen skaliert
+  \item Cross-funktionales Team von 6 Personen geleitet (4 Entwickler, 2 Designer)
+\end{itemize}
+
+% Ausbildung
+\section{Ausbildung}
+
+\textbf{B.Sc.\ Informationstechnik}, \textit{Technische Universit\"at M\"unchen} \hfill M\"unchen \\
+{\small Okt 2024 --- Heute} \\
+{\small Schwerpunkte: KI-basierte Systeme, Blockchain, algorithmischer Handel und quantitative Analyse}
+
+\vspace{4pt}
+\textbf{Matura Informatik}, \textit{H\"ohere Technische Lehranstalt} \hfill Wels \\
+{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Note: 4,0 GPA (Klassenbester)}
+
+% Kenntnisse
+\section{Kenntnisse}
+Java \enspace$\cdot$\enspace TypeScript \enspace$\cdot$\enspace Python \enspace$\cdot$\enspace Go \enspace$\cdot$\enspace Docker \enspace$\cdot$\enspace Blockchain/Web3 \enspace$\cdot$\enspace Kubernetes \enspace$\cdot$\enspace GCP \& AWS \enspace$\cdot$\enspace KI/LLM-Integration \enspace$\cdot$\enspace F\"uhrung
+
+% Projekte
+\section{Projekte}
+\textbf{Synapse} --- Semantische Suchplattform zur sofortigen Experten-Zuordnung. Full Stack in 36 Stunden beim TUM.AI x Anthropic Hackathon entwickelt. 2. Platz \\[2pt]
+\textbf{Richard} --- KI-Recherchesystem, das proaktiv Erkenntnisse liefert. Verfolgt Quellen, erkennt Muster, erstellt Berichte. Reduziert 8h manuelle Recherche auf 30 Min. 400+ Erkenntnisse in 8 Wochen \\[2pt]
+\textbf{Neura} --- Solana-NFT-Sniping-Bot mit Millisekunden-Pr\"azision und On-Chain-Transaktionsverarbeitung. Abo-Produkt. Akquiriert \\[2pt]
+\textbf{DreamCook} --- Community-Plattform mit Echtzeit-Drop-Benachrichtigungen und Multi-Retailer-Bestandsverfolgung. 5.000+ zahlende Mitglieder. 2 Jahre profitabel
+
+\end{document}

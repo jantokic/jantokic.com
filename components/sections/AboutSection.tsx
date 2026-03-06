@@ -1,7 +1,8 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { ForwardedRef, forwardRef } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface AboutSectionProps {
 	skills: string[];
@@ -10,6 +11,7 @@ interface AboutSectionProps {
 const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 	({ skills }, ref: ForwardedRef<HTMLElement>) => {
 		const t = useTranslations();
+		const locale = useLocale();
 
 		return (
 			<section
@@ -117,6 +119,16 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(
 								<div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
 								<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">{t('intro.location')}</span>
 							</div>
+
+							<a
+								href={`/cv_jan_tokic_${locale}.pdf`}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono uppercase text-xs tracking-wider font-semibold border border-border/50 rounded-full text-muted-foreground hover:border-border hover:text-foreground transition-colors"
+							>
+								{t('intro.viewCv')}
+								<ArrowUpRight className="w-3 h-3" />
+							</a>
 						</div>
 					</div>
 				</div>

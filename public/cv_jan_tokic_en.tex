@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=0.55in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% Tight lists
+\setlist[itemize]{leftmargin=14pt, itemsep=0pt, parsep=0pt, topsep=1pt}
+
+% Commands
+\newcommand{\entry}[4]{%
+  \textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-2pt}
+  {\small #4}%
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\LARGE\bfseries Jan Tokic} \\[3pt]
+  Munich, Germany \enspace$\vert$\enspace +436641373256 \enspace$\vert$\enspace jan.tokic@proton.me
+\end{center}
+
+\vspace{-2pt}
+
+% Profile
+\section{Profile}
+Founding engineer and software consultant building revenue-critical systems across fintech, AI, and e-commerce. Co-founded ventures generating \$230K+ profit and reaching 50k+ users. Currently building prediction market infrastructure at Klarity and on the core engineering team at Vendure (8k GitHub stars).
+
+% Experience
+\section{Professional Experience}
+
+\entry{Founding Engineer \& Co-Founder}{Klarity}{Delaware}{Nov 2025 --- Present}
+\begin{itemize}
+  \item Built prediction market analytics platform from zero --- blockchain indexing and streaming pipeline processing 180M+ on-chain records into ClickHouse
+  \item Built wallet clustering and cross-platform arbitrage detection across Polymarket and Kalshi
+  \item 1.2k commits in 3 months; optimized codebase for AI-assisted agentic workflows with Claude Code, accelerating solo development velocity
+\end{itemize}
+
+\vspace{6pt}
+\entry{Software Engineer}{Vendure}{Vienna}{Apr 2024 --- Present}
+\begin{itemize}
+  \item Architected order-processing system handling 10M+ orders/month ({\raise.17ex\hbox{$\scriptstyle\sim$}}EUR\,130M annual revenue)
+  \item Boosted performance 45\% via async job queues, DB sharding, and caching; cut latency 60\%
+  \item Delivered 4-month project in 1.5 months --- Nx monorepo, Docker Swarm, 40+ tickets solo
+  \item Core contributor to open-source headless commerce platform trusted by IBM, Breitling, Swile, and QVC
+\end{itemize}
+
+\vspace{6pt}
+\entry{Founding Engineer \& Co-Founder}{Mira}{London}{Nov 2024 --- Aug 2025}
+\begin{itemize}
+  \item Co-founded Solana trading bot in Go, netting \$230K profit in 5 months
+  \item Built real-time signal processor: 8,000+ trades/month, 92\% success rate, sub-300ms execution
+  \item Led remote team of 3 engineers with 99.5\% uptime
+  \item Automated token-launch pipeline deploying new coins in under 300ms --- fastest in the Solana ecosystem
+  \item Helped launch tokens to \$200M+ total market cap
+\end{itemize}
+
+\vspace{6pt}
+\entry{Founding Engineer \& Co-Founder}{Copile}{London}{Sept 2022 --- Mar 2024}
+\begin{itemize}
+  \item Scaled B2B crypto trading platform to 2,100 users and EUR\,1.2M monthly volume
+  \item Led cross-functional team of 6 (4 engineers, 2 designers)
+\end{itemize}
+
+% Education
+\section{Education}
+
+\textbf{B.Sc.\ Information Engineering}, \textit{Technical University of Munich} \hfill Munich \\
+{\small Oct 2024 --- Present} \\
+{\small Specializing in AI-driven systems, Blockchain, algorithmic trading and quantitative analysis}
+
+\vspace{4pt}
+\textbf{Matura in Computer Science}, \textit{Higher Technical College} \hfill Wels \\
+{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Grade: 4.0 GPA (best-in-class)}
+
+% Skills
+\section{Skills}
+Java \enspace$\cdot$\enspace TypeScript \enspace$\cdot$\enspace Python \enspace$\cdot$\enspace Go \enspace$\cdot$\enspace Docker \enspace$\cdot$\enspace Blockchain/Web3 \enspace$\cdot$\enspace Kubernetes \enspace$\cdot$\enspace GCP \& AWS \enspace$\cdot$\enspace AI/LLM Integration \enspace$\cdot$\enspace Leadership
+
+% Projects
+\section{Projects}
+\textbf{Synapse} --- Semantic search platform that finds the right internal expert instantly. Built full stack in 36 hours at the TUM.AI x Anthropic Hackathon. 2nd place \\[2pt]
+\textbf{Richard} --- AI research system that finds insights before you ask. Tracks sources, spots patterns, drafts reports. Cuts 8h of manual research to 30 min. 400+ insights in 8 weeks \\[2pt]
+\textbf{Neura} --- Solana NFT sniping bot with millisecond precision and on-chain transaction handling. Subscription product. Acquired \\[2pt]
+\textbf{DreamCook} --- Community platform with real-time drop alerts and multi-retailer inventory tracking. 5,000+ paying members. Profitable for 2 years
+
+\end{document}

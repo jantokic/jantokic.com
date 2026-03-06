@@ -68,12 +68,16 @@ export const projects: Project[] = [
   },
   {
     id: '4',
-    slug: 'elevantiq-ecommerce-infrastructure',
-    techStack: ['Node.js', 'TypeScript', 'Next.js', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'Vendure', 'Infisical'],
-    image: '/projects/elevantiq/banner.webp',
-    galleryImage: '/projects/elevantiq/banner.webp',
-    images: ['/projects/elevantiq/logo.webp'],
-    year: '2024'
+    slug: 'vendure-ecommerce',
+    techStack: ['Node.js', 'TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Redis', 'Docker Swarm', 'Nx Monorepo', 'GraphQL', 'Open Source'],
+    image: '/projects/vendure/banner.webp',
+    galleryImage: '/projects/vendure/gallery.webp',
+    images: ['/projects/vendure/banner.webp'],
+    year: '2024',
+    links: {
+      github: 'https://github.com/vendure-ecommerce/vendure',
+      website: 'https://www.vendure.io/'
+    }
   },
   {
     id: '5',

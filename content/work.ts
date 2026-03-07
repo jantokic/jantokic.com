@@ -11,14 +11,9 @@ export const workData: WorkEntry[] = [
     techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
   },
   {
-    year: 'Feb 2026 - Present',
+    year: '2024 - Present',
     key: 'vendure',
-    techStack: ['TypeScript', 'Nest.js', 'GraphQL', 'PostgreSQL', 'Open Source'],
-  },
-  {
-    year: '2024 - Feb 2026',
-    key: 'elevantiq',
-    techStack: ['TypeScript', 'Next.js', 'Nest.js', 'PostgreSQL', 'Vendure', 'DevOps'],
+    techStack: ['TypeScript', 'Nest.js', 'Next.js', 'PostgreSQL', 'GraphQL', 'Docker Swarm'],
   },
   {
     year: '2024 - 2025',

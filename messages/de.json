@@ -29,12 +29,13 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer & Consultant",
-    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet: Trading, E-Commerce, Cloud. Zwei Startups co-founded. Offen für ausgewählte Freelance- und Consulting-Projekte.",
+    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet: Trading, E-Commerce, Cloud. Drei Startups co-founded. Offen für ausgewählte Freelance- und Consulting-Projekte.",
     "capabilitiesHeading": "Wie ich helfe",
     "capabilities": [
       "Backend & Realtime APIs",
       "Cloud, DevOps & Reliability",
-      "Trading, Fintech & Web3"
+      "Trading, Fintech & Web3",
+      "AI Engineering & agentische Systeme"
     ],
     "currently": "Aktuell bei",
     "studying": "Ausbildung",
@@ -43,7 +44,7 @@
       { "company": "Klarity", "role": "Founding Engineer" },
       { "company": "Vendure", "role": "Software Engineer" }
     ],
-    "degree": "B.Sc. Information Engineering",
+    "degree": "B.Sc. Wirtschaftsinformatik",
     "university": "TU München",
     "viewCv": "Lebenslauf ansehen"
   },

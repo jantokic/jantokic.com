@@ -29,12 +29,13 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer & Consultant",
-    "bio": "I build revenue-critical systems: trading, e-commerce, and cloud infrastructure. Co-founded two startups. I take on a small number of consulting projects.",
+    "bio": "I build revenue-critical systems: trading, e-commerce, and cloud infrastructure. Co-founded three startups. I take on a small number of consulting projects.",
     "capabilitiesHeading": "How I can help",
     "capabilities": [
       "Backend systems & real-time APIs",
       "Cloud architecture, DevOps & reliability",
-      "Trading, fintech & Web3 platforms"
+      "Trading, fintech & Web3 platforms",
+      "AI engineering & agentic systems"
     ],
     "currently": "Currently at",
     "studying": "Education",
@@ -43,7 +44,7 @@
       { "company": "Klarity", "role": "Founding Engineer" },
       { "company": "Vendure", "role": "Software Engineer" }
     ],
-    "degree": "B.Sc. Information Engineering",
+    "degree": "B.Sc. Information Systems",
     "university": "Technical University of Munich",
     "viewCv": "View CV"
   },

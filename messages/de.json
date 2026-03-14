@@ -10,8 +10,8 @@
   "gallery": {
     "tagline1": "Ich denke",
     "tagline2": "also bin ich",
-    "instructions": "Klicken Sie auf ein Projekt, um Details zu sehen • Scrollen Sie oder nutzen Sie die Pfeiltasten zur Navigation",
-    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität erneut",
+    "instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
+    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
     "scrollDown": "Nach unten scrollen",
     "loading": "Galerie wird geladen...",
     "webglFallback": "WebGL wird nicht unterstützt. Bildliste wird angezeigt:"
@@ -21,7 +21,7 @@
     "title": "Wartungsarbeiten",
     "description": "Diese Seite ist vorübergehend nicht verfügbar.",
     "tooManyAttempts": "Zu viele Versuche",
-    "retryIn": "Bitte versuchen Sie es in {time} erneut",
+    "retryIn": "Bitte in {time} erneut versuchen",
     "pinPlaceholder": "PIN eingeben",
     "incorrectPin": "Falsche PIN ({remaining} Versuche übrig)",
     "enter": "Bestätigen"
@@ -29,7 +29,7 @@
   "intro": {
     "name": "Jan Tokic",
     "title": "Software Engineer & Consultant",
-    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet: Trading, E-Commerce, Cloud. Drei Startups co-founded. Offen für ausgewählte Freelance- und Consulting-Projekte.",
+    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet. Von 5-Mann-Startups bis zu Konzernen mit Milliarden Umsatz. Offen für ausgewählte Freelance- und Consulting-Projekte.",
     "capabilitiesHeading": "Wie ich helfe",
     "capabilities": [
       "Backend & Realtime APIs",
@@ -41,8 +41,14 @@
     "studying": "Ausbildung",
     "location": "München",
     "currentRoles": [
-      { "company": "Klarity", "role": "Founding Engineer" },
-      { "company": "Vendure", "role": "Software Engineer" }
+      {
+        "company": "Klarity",
+        "role": "Founding Engineer"
+      },
+      {
+        "company": "Vendure",
+        "role": "Software Engineer"
+      }
     ],
     "degree": "B.Sc. Wirtschaftsinformatik",
     "university": "TU München",
@@ -94,8 +100,8 @@
   "projects": {
     "heading": "Projekte",
     "viewProject": "Details",
-    "backToProjects": "← Projects",
-    "relatedProjects": "Related",
+    "backToProjects": "← Projekte",
+    "relatedProjects": "Weitere",
     "items": {
       "klarity-prediction-market": {
         "title": "Klarity",
@@ -140,25 +146,25 @@
     }
   },
   "projectPage": {
-    "notFoundTitle": "Not Found",
+    "notFoundTitle": "Nicht gefunden",
     "portfolioSuffix": "Portfolio",
-    "backToProjects": "← Projects",
-    "backToAllProjects": "← All Projects",
-    "overview": "Overview",
-    "challenges": "Challenges",
-    "outcomes": "Results",
-    "role": "Role",
-    "duration": "Duration",
+    "backToProjects": "← Projekte",
+    "backToAllProjects": "← Alle Projekte",
+    "overview": "Überblick",
+    "challenges": "Herausforderungen",
+    "outcomes": "Ergebnisse",
+    "role": "Rolle",
+    "duration": "Zeitraum",
     "techStack": "Stack",
     "links": "Links",
     "github": "GitHub",
     "x": "X",
     "website": "Website",
-    "websitePrivateNote": "(Private)",
+    "websitePrivateNote": "(Privat)",
     "demo": "Demo",
     "youtube": "YouTube",
-    "moreProjects": "More Projects",
-    "comingSoon": "Details coming soon."
+    "moreProjects": "Weitere Projekte",
+    "comingSoon": "Details folgen."
   },
   "connect": {
     "heading": "Let's Talk",
@@ -174,7 +180,7 @@
     "heading": "Let's Work Together",
     "description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
     "email": "E-Mail",
-    "location": "Location",
+    "location": "Standort",
     "locationValue": "München",
     "social": "Social",
     "servicesHeading": "Services",
@@ -197,9 +203,9 @@
     "mailtoSubject": "Projektanfrage von {name}",
     "stats": {
       "responseTime": "3h",
-      "responseTimeLabel": "Response Time",
+      "responseTimeLabel": "Antwortzeit",
       "projects": "15+",
-      "projectsLabel": "Projects Shipped"
+      "projectsLabel": "Projekte shipped"
     }
   },
   "footer": {

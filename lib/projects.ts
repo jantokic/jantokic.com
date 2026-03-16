@@ -17,6 +17,32 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: '12',
+    slug: 'codecouncil-multiplayer-ai',
+    techStack: ['TypeScript', 'Next.js', 'Claude Code', 'MCP', 'OpenRouter', 'Real-time Collaboration'],
+    image: '/projects/codecouncil/banner.png',
+    galleryImage: '/projects/codecouncil/banner.png',
+    images: [],
+    year: '2026',
+    links: {
+      github: 'https://github.com/jantokic/hivemind',
+      website: 'https://codecouncil.jantokic.com'
+    }
+  },
+  {
+    id: '11',
+    slug: 'chtype-clickhouse-toolkit',
+    techStack: ['TypeScript', 'ClickHouse', 'Node.js', 'Code Generation', 'Open Source'],
+    image: '/projects/chtype/banner.svg',
+    galleryImage: '/projects/chtype/banner.svg',
+    images: [],
+    year: '2026',
+    links: {
+      github: 'https://github.com/JanTokic/chtype',
+      website: 'https://chtype.jantokic.com'
+    }
+  },
+  {
     id: '0',
     slug: 'klarity-prediction-market',
     techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],

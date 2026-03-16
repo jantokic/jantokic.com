@@ -103,6 +103,16 @@
     "backToProjects": "← Projekte",
     "relatedProjects": "Weitere",
     "items": {
+      "codecouncil-multiplayer-ai": {
+        "title": "CodeCouncil - Multiplayer Claude Code",
+        "shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
+        "category": "AI & Developer Tools"
+      },
+      "chtype-clickhouse-toolkit": {
+        "title": "chtype - Type-Safe ClickHouse Toolkit",
+        "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
+        "category": "Open Source & Developer Tools"
+      },
       "klarity-prediction-market": {
         "title": "Klarity",
         "shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
@@ -214,6 +224,42 @@
     "language": "Sprache"
   },
   "projectDetails": {
+    "codecouncil-multiplayer-ai": {
+      "title": "CodeCouncil",
+      "shortDescription": "Claude Code, aber multiplayer. Gemeinsame AI-Coding-Sessions für Teams.",
+      "fullDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Mehrere Entwickler treten derselben Session in Echtzeit bei — keine isolierten Sessions mehr und kein Einfügen von Outputs in Slack. Sessions bleiben in der Cloud bestehen, sodass jeder dort weitermachen kann, wo ein Teammitglied aufgehört hat. Enthält einen Diskussionsmodus, in dem AI-Personas Architekturentscheidungen debattieren, und einen integrierten MCP-Server, der sich mit deinem gesamten Stack verbindet. Unterstützt 100+ Modelle über OpenRouter.",
+      "role": "Creator & Maintainer",
+      "duration": "2025 - Heute",
+      "category": "AI & Developer Tools",
+      "challenges": [
+        "Multiplayer-AI-Coding-Sessions in Echtzeit mit geteiltem Kontext",
+        "Persistente Cloud-Sessions, die Neustarts und Übergaben überleben",
+        "AI-gestützte Architekturdebatten mit automatischer Konvergenz"
+      ],
+      "outcomes": [
+        "Open Beta gestartet",
+        "100+ Modelle über OpenRouter unterstützt",
+        "MCP-Server-Integration für externe Tools"
+      ]
+    },
+    "chtype-clickhouse-toolkit": {
+      "title": "chtype",
+      "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
+      "fullDescription": "TypeScript-Toolkit, das dein ClickHouse-Schema inspiziert und vollständig typisierte Codegenerierung bietet. Enthält einen typsicheren Query Builder mit ClickHouse-spezifischen Funktionen (argMax, FINAL, PREWHERE), einen erweiterten Client als Wrapper für @clickhouse/client und ein CLI für Schema-Diffing. Kein Runtime-Overhead — verhindert SQL-Injection by Design und erkennt Spalten-Typos zur Compile-Zeit.",
+      "role": "Creator & Maintainer",
+      "duration": "2025 - Heute",
+      "category": "Open Source & Developer Tools",
+      "challenges": [
+        "Typsichere Codegen aus Live-ClickHouse-Schemas",
+        "ClickHouse-spezifischer Query Builder mit PREWHERE, argMax, FINAL",
+        "Schema-Diffing-CLI zur Erkennung von Datenbankänderungen"
+      ],
+      "outcomes": [
+        "Veröffentlicht auf npm als @jantokic/chtype",
+        "Kein Runtime-Overhead",
+        "SQL-Injection-Schutz by Design"
+      ]
+    },
     "klarity-prediction-market": {
       "title": "Klarity",
       "shortDescription": "Das Bloomberg Terminal für Prediction Markets.",

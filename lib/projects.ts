@@ -17,6 +17,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: '11',
+    slug: 'chtype-clickhouse-toolkit',
+    techStack: ['TypeScript', 'ClickHouse', 'Node.js', 'Code Generation', 'Open Source'],
+    image: '/projects/chtype/banner.svg',
+    galleryImage: '/projects/chtype/banner.svg',
+    images: [],
+    year: '2025',
+    links: {
+      github: 'https://github.com/JanTokic/chtype',
+      website: 'https://chtype.jantokic.com'
+    }
+  },
+  {
     id: '0',
     slug: 'klarity-prediction-market',
     techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],

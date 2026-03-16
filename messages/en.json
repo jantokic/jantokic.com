@@ -97,6 +97,11 @@
     "backToProjects": "Back to Projects",
     "relatedProjects": "Related Projects",
     "items": {
+      "chtype-clickhouse-toolkit": {
+        "title": "chtype - Type-Safe ClickHouse Toolkit",
+        "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
+        "category": "Open Source & Developer Tools"
+      },
       "klarity-prediction-market": {
         "title": "Klarity",
         "shortDescription": "The Bloomberg Terminal for prediction markets. In development.",
@@ -208,6 +213,24 @@
     "language": "Language"
   },
   "projectDetails": {
+    "chtype-clickhouse-toolkit": {
+      "title": "chtype",
+      "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
+      "fullDescription": "TypeScript toolkit that introspects your ClickHouse schema and generates fully typed code. Includes a type-safe query builder with ClickHouse-specific functions (argMax, FINAL, PREWHERE), an enhanced client wrapping @clickhouse/client, and a CLI for schema diffing. Zero runtime overhead — prevents SQL injection by design and catches column typos at compile time.",
+      "role": "Creator & Maintainer",
+      "duration": "2025 - Present",
+      "category": "Open Source & Developer Tools",
+      "challenges": [
+        "Type-safe codegen from live ClickHouse schemas",
+        "ClickHouse-specific query builder with PREWHERE, argMax, FINAL",
+        "Schema diffing CLI to detect database drift"
+      ],
+      "outcomes": [
+        "Published on npm as @jantokic/chtype",
+        "Zero runtime overhead",
+        "SQL injection prevention by design"
+      ]
+    },
     "klarity-prediction-market": {
       "title": "Klarity",
       "shortDescription": "The Bloomberg Terminal for prediction markets.",

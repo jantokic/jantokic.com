@@ -105,16 +105,6 @@
       "noResults": "No projects match the selected filter."
     },
     "items": {
-      "codecouncil-multiplayer-ai": {
-        "title": "CodeCouncil - Multiplayer Claude Code",
-        "shortDescription": "Shared AI coding sessions where your whole team sees the same context. Open Beta.",
-        "category": "AI & Developer Tools"
-      },
-      "chtype-clickhouse-toolkit": {
-        "title": "chtype - Type-Safe ClickHouse Toolkit",
-        "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
-        "category": "Open Source & Developer Tools"
-      },
       "klarity-prediction-market": {
         "title": "Klarity",
         "shortDescription": "The Bloomberg Terminal for prediction markets. In development.",
@@ -124,11 +114,6 @@
         "title": "Richard - AI Research Engine",
         "shortDescription": "AI agents that do 8 hours of research in 30 minutes.",
         "category": "AI & Research"
-      },
-      "synapse-knowledge-system": {
-        "title": "Synapse - AI Knowledge System",
-        "shortDescription": "Find the right expert in seconds. 2nd place @ TUM.AI x Anthropic Hackathon.",
-        "category": "AI & Enterprise"
       },
       "mira-trading-bot": {
         "title": "Mira - Solana Trading Bot",
@@ -140,6 +125,16 @@
         "shortDescription": "2,100 users. €1.2M/month traded. Led team of 6.",
         "category": "Fintech & Trading"
       },
+      "synapse-knowledge-system": {
+        "title": "Synapse - AI Knowledge System",
+        "shortDescription": "Find the right expert in seconds. 2nd place @ TUM.AI x Anthropic Hackathon.",
+        "category": "AI & Enterprise"
+      },
+      "dreamcook-community": {
+        "title": "DreamCook - E-Commerce Community Platform",
+        "shortDescription": "5,000+ members. Real-time drop alerts. Profitable for 2 years.",
+        "category": "E-Commerce & Community"
+      },
       "acidnode-validator": {
         "title": "Acid Node - Solana Validator Infrastructure",
         "shortDescription": "Solana validator infrastructure. 99.9% uptime. AWS automation.",
@@ -150,10 +145,15 @@
         "shortDescription": "Millisecond NFT sniping bot. Subscription product. Acquired.",
         "category": "Blockchain & NFT"
       },
-      "dreamcook-community": {
-        "title": "DreamCook - E-Commerce Community Platform",
-        "shortDescription": "5,000+ members. Real-time drop alerts. Profitable for 2 years.",
-        "category": "E-Commerce & Community"
+      "codecouncil-multiplayer-ai": {
+        "title": "CodeCouncil - Multiplayer Claude Code",
+        "shortDescription": "Shared AI coding sessions where your whole team sees the same context. Open Beta.",
+        "category": "AI & Developer Tools"
+      },
+      "chtype-clickhouse-toolkit": {
+        "title": "chtype - Type-Safe ClickHouse Toolkit",
+        "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
+        "category": "Open Source & Developer Tools"
       }
     }
   },

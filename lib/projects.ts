@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: '/projects/codecouncil/banner.png',
     galleryImage: '/projects/codecouncil/banner.png',
     images: [],
-    year: '2025',
+    year: '2026',
     links: {
       github: 'https://github.com/jantokic/hivemind',
       website: 'https://codecouncil.jantokic.com'
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     image: '/projects/chtype/banner.svg',
     galleryImage: '/projects/chtype/banner.svg',
     images: [],
-    year: '2025',
+    year: '2026',
     links: {
       github: 'https://github.com/JanTokic/chtype',
       website: 'https://chtype.jantokic.com'

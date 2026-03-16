@@ -102,6 +102,14 @@
     "viewProject": "Details",
     "backToProjects": "← Projekte",
     "relatedProjects": "Weitere",
+    "filters": {
+      "all": "Alle",
+      "sortBy": "Sortieren",
+      "relevance": "Relevanz",
+      "newest": "Neueste zuerst",
+      "oldest": "Älteste zuerst",
+      "noResults": "Keine Projekte für diesen Filter gefunden."
+    },
     "items": {
       "codecouncil-multiplayer-ai": {
         "title": "CodeCouncil - Multiplayer Claude Code",

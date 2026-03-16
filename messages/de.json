@@ -111,16 +111,6 @@
       "noResults": "Keine Projekte für diesen Filter gefunden."
     },
     "items": {
-      "codecouncil-multiplayer-ai": {
-        "title": "CodeCouncil - Multiplayer Claude Code",
-        "shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
-        "category": "AI & Developer Tools"
-      },
-      "chtype-clickhouse-toolkit": {
-        "title": "chtype - Type-Safe ClickHouse Toolkit",
-        "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
-        "category": "Open Source & Developer Tools"
-      },
       "klarity-prediction-market": {
         "title": "Klarity",
         "shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
@@ -130,11 +120,6 @@
         "title": "Richard",
         "shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",
         "category": "AI & Research"
-      },
-      "synapse-knowledge-system": {
-        "title": "Synapse",
-        "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-        "category": "AI & Enterprise"
       },
       "mira-trading-bot": {
         "title": "Mira",
@@ -146,6 +131,16 @@
         "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
         "category": "Fintech & Trading"
       },
+      "synapse-knowledge-system": {
+        "title": "Synapse",
+        "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
+        "category": "AI & Enterprise"
+      },
+      "dreamcook-community": {
+        "title": "DreamCook",
+        "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
+        "category": "E-Commerce & Community"
+      },
       "acidnode-validator": {
         "title": "Acid Node",
         "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
@@ -156,10 +151,15 @@
         "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
         "category": "Blockchain & NFT"
       },
-      "dreamcook-community": {
-        "title": "DreamCook",
-        "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
-        "category": "E-Commerce & Community"
+      "codecouncil-multiplayer-ai": {
+        "title": "CodeCouncil - Multiplayer Claude Code",
+        "shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
+        "category": "AI & Developer Tools"
+      },
+      "chtype-clickhouse-toolkit": {
+        "title": "chtype - Type-Safe ClickHouse Toolkit",
+        "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
+        "category": "Open Source & Developer Tools"
       }
     }
   },

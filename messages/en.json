@@ -97,6 +97,11 @@
     "backToProjects": "Back to Projects",
     "relatedProjects": "Related Projects",
     "items": {
+      "codecouncil-multiplayer-ai": {
+        "title": "CodeCouncil - Multiplayer Claude Code",
+        "shortDescription": "Shared AI coding sessions where your whole team sees the same context. Open Beta.",
+        "category": "AI & Developer Tools"
+      },
       "chtype-clickhouse-toolkit": {
         "title": "chtype - Type-Safe ClickHouse Toolkit",
         "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
@@ -213,6 +218,24 @@
     "language": "Language"
   },
   "projectDetails": {
+    "codecouncil-multiplayer-ai": {
+      "title": "CodeCouncil",
+      "shortDescription": "Claude Code, but multiplayer. Shared AI coding sessions for teams.",
+      "fullDescription": "Shared AI coding sessions where your whole team sees the same context. Multiple developers join the same session in real-time — no more isolated sessions or pasting outputs into Slack. Sessions persist in the cloud so anyone can pick up where a teammate left off. Includes Discussion Mode where AI personas debate architecture decisions, and a built-in MCP server that connects to your entire stack. Supports 100+ models via OpenRouter.",
+      "role": "Creator & Maintainer",
+      "duration": "2025 - Present",
+      "category": "AI & Developer Tools",
+      "challenges": [
+        "Real-time multiplayer AI coding sessions with shared context",
+        "Persistent cloud sessions that survive restarts and handoffs",
+        "AI-powered architecture debates with auto-convergence"
+      ],
+      "outcomes": [
+        "Open Beta launched",
+        "100+ models supported via OpenRouter",
+        "MCP server integration for external tools"
+      ]
+    },
     "chtype-clickhouse-toolkit": {
       "title": "chtype",
       "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",

@@ -103,6 +103,11 @@
     "backToProjects": "← Projekte",
     "relatedProjects": "Weitere",
     "items": {
+      "codecouncil-multiplayer-ai": {
+        "title": "CodeCouncil - Multiplayer Claude Code",
+        "shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
+        "category": "AI & Developer Tools"
+      },
       "chtype-clickhouse-toolkit": {
         "title": "chtype - Type-Safe ClickHouse Toolkit",
         "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
@@ -219,6 +224,24 @@
     "language": "Sprache"
   },
   "projectDetails": {
+    "codecouncil-multiplayer-ai": {
+      "title": "CodeCouncil",
+      "shortDescription": "Claude Code, aber multiplayer. Gemeinsame AI-Coding-Sessions für Teams.",
+      "fullDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Mehrere Entwickler treten derselben Session in Echtzeit bei — keine isolierten Sessions mehr und kein Einfügen von Outputs in Slack. Sessions bleiben in der Cloud bestehen, sodass jeder dort weitermachen kann, wo ein Teammitglied aufgehört hat. Enthält einen Diskussionsmodus, in dem AI-Personas Architekturentscheidungen debattieren, und einen integrierten MCP-Server, der sich mit deinem gesamten Stack verbindet. Unterstützt 100+ Modelle über OpenRouter.",
+      "role": "Creator & Maintainer",
+      "duration": "2025 - Heute",
+      "category": "AI & Developer Tools",
+      "challenges": [
+        "Multiplayer-AI-Coding-Sessions in Echtzeit mit geteiltem Kontext",
+        "Persistente Cloud-Sessions, die Neustarts und Übergaben überleben",
+        "AI-gestützte Architekturdebatten mit automatischer Konvergenz"
+      ],
+      "outcomes": [
+        "Open Beta gestartet",
+        "100+ Modelle über OpenRouter unterstützt",
+        "MCP-Server-Integration für externe Tools"
+      ]
+    },
     "chtype-clickhouse-toolkit": {
       "title": "chtype",
       "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",

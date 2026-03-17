@@ -1,15 +1,16 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { Link } from '@/routing';
-import { ArrowUpRight, Linkedin, Sun, Moon } from 'lucide-react';
 import BrandIcon from '@/components/BrandIcon';
-import { ForwardedRef, forwardRef, useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { socialLinks } from '@/content/social';
+import { Link } from '@/routing';
+import { ArrowUpRight, Linkedin, Moon, Sun } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { type ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
-const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTMLElement>) => {
+// biome-ignore lint/complexity/noBannedTypes: empty props for forwardRef
+const ConnectSection = forwardRef<HTMLElement, {}>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
@@ -19,11 +20,7 @@ const ConnectSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTM
 	}, []);
 
 	return (
-		<section
-			id="connect"
-			ref={ref}
-			className="min-h-screen py-16 sm:py-20 opacity-0 flex flex-col"
-		>
+		<section id="connect" ref={ref} className="min-h-screen py-16 sm:py-20 opacity-0 flex flex-col">
 			{/* Main content - centered */}
 			<div className="flex-1 flex items-center">
 				<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16 w-full">

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useCallback, useState } from 'react';
 
 export type SortOption = 'relevance' | 'newest' | 'oldest';
 export type CategoryFilter = string | null;
@@ -31,10 +31,13 @@ export default function ProjectFilterBar({
 }: ProjectFilterBarProps) {
 	const [sortOpen, setSortOpen] = useState(false);
 
-	const handleSortSelect = useCallback((option: SortOption) => {
-		onSortChange(option);
-		setSortOpen(false);
-	}, [onSortChange]);
+	const handleSortSelect = useCallback(
+		(option: SortOption) => {
+			onSortChange(option);
+			setSortOpen(false);
+		},
+		[onSortChange],
+	);
 
 	const sortLabel = sortBy === 'relevance' ? labels.relevance : sortBy === 'newest' ? labels.newest : labels.oldest;
 

@@ -1,444 +1,305 @@
 {
-  "nav": {
-    "gallery": "Galerie",
-    "intro": "Über mich",
-    "work": "Erfahrung",
-    "projects": "Projekte",
-    "connect": "Kontakt",
-    "scrollToSection": "Zu {section} scrollen"
-  },
-  "gallery": {
-    "tagline1": "Ich denke",
-    "tagline2": "also bin ich",
-    "instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
-    "autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
-    "scrollDown": "Nach unten scrollen",
-    "loading": "Galerie wird geladen...",
-    "webglFallback": "WebGL wird nicht unterstützt. Bildliste wird angezeigt:"
-  },
-  "maintenance": {
-    "loading": "Wird geladen...",
-    "title": "Wartungsarbeiten",
-    "description": "Diese Seite ist vorübergehend nicht verfügbar.",
-    "tooManyAttempts": "Zu viele Versuche",
-    "retryIn": "Bitte in {time} erneut versuchen",
-    "pinPlaceholder": "PIN eingeben",
-    "incorrectPin": "Falsche PIN ({remaining} Versuche übrig)",
-    "enter": "Bestätigen"
-  },
-  "intro": {
-    "name": "Jan Tokic",
-    "title": "Software Engineer & Consultant",
-    "bio": "Ich baue Systeme, wo Downtime direkt Geld kostet. Von 5-Mann-Startups bis zu Konzernen mit Milliarden Umsatz. Offen für ausgewählte Freelance- und Consulting-Projekte.",
-    "capabilitiesHeading": "Wie ich helfe",
-    "capabilities": [
-      "Backend & Realtime APIs",
-      "Cloud, DevOps & Reliability",
-      "Trading, Fintech & Web3",
-      "AI Engineering & agentische Systeme"
-    ],
-    "currently": "Aktuell bei",
-    "studying": "Ausbildung",
-    "location": "München",
-    "currentRoles": [
-      {
-        "company": "Klarity",
-        "role": "Founding Engineer"
-      },
-      {
-        "company": "Vendure",
-        "role": "Software Engineer"
-      }
-    ],
-    "degree": "B.Sc. Wirtschaftsinformatik",
-    "university": "TU München",
-    "viewCv": "Lebenslauf ansehen"
-  },
-  "work": {
-    "heading": "Erfahrung",
-    "klarity": {
-      "role": "Founding Engineer",
-      "company": "Klarity",
-      "location": "Delaware",
-      "period": "2025 - Heute",
-      "description": "Bloomberg Terminal für Prediction Markets.",
-      "projectLink": "/projects/klarity-prediction-market",
-      "projectLinkText": "Details →"
-    },
-    "vendure": {
-      "role": "Software Engineer",
-      "company": "Vendure",
-      "location": "Wien",
-      "period": "2024 - Heute",
-      "description": "Open-Source Headless Commerce (8k GitHub Stars). Order Processing 45% schneller. Millionen Orders/Monat. 7 Repos → 1 Monorepo. Läuft bei IBM, Breitling, QVC.",
-      "projectLink": "/projects/vendure-ecommerce",
-      "projectLinkText": "Details →"
-    },
-    "mira": {
-      "role": "Founding Engineer",
-      "company": "Mira Trading",
-      "location": "London",
-      "description": "$230K Profit in 5 Monaten. 8.000+ automatisierte Trades/Monat. Tokens bis $200M+ Market Cap.",
-      "projectLink": "/projects/mira-trading-bot",
-      "projectLinkText": "Details →"
-    },
-    "copile": {
-      "role": "Founding Engineer",
-      "company": "Copile",
-      "location": "Wien",
-      "description": "2.100 User. €1,2M Volume/Monat. 70% Retention. Tools gebaut, Team geleitet.",
-      "projectLink": "/projects/copile-trading-platform",
-      "projectLinkText": "Details →"
-    },
-    "ibm": {
-      "role": "Software Engineering Praktikant",
-      "company": "IBM iX",
-      "location": "Wien",
-      "description": "Storefront für 85.000 Produkte. Promotions 40% schneller live."
-    }
-  },
-  "projects": {
-    "heading": "Projekte",
-    "viewProject": "Details",
-    "backToProjects": "← Projekte",
-    "relatedProjects": "Weitere",
-    "filters": {
-      "all": "Alle",
-      "sortBy": "Sortieren",
-      "relevance": "Relevanz",
-      "newest": "Neueste zuerst",
-      "oldest": "Älteste zuerst",
-      "noResults": "Keine Projekte für diesen Filter gefunden."
-    },
-    "items": {
-      "klarity-prediction-market": {
-        "title": "Klarity",
-        "shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
-        "category": "Fintech"
-      },
-      "richard-ai-research": {
-        "title": "Richard",
-        "shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",
-        "category": "AI & Research"
-      },
-      "mira-trading-bot": {
-        "title": "Mira",
-        "shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
-        "category": "Blockchain & Trading"
-      },
-      "copile-trading-platform": {
-        "title": "Copile",
-        "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
-        "category": "Fintech & Trading"
-      },
-      "synapse-knowledge-system": {
-        "title": "Synapse",
-        "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-        "category": "AI & Enterprise"
-      },
-      "dreamcook-community": {
-        "title": "DreamCook",
-        "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
-        "category": "E-Commerce & Community"
-      },
-      "acidnode-validator": {
-        "title": "Acid Node",
-        "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
-        "category": "Blockchain & Infra"
-      },
-      "neura-nft-sniping": {
-        "title": "Neura",
-        "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
-        "category": "Blockchain & NFT"
-      },
-      "codecouncil-multiplayer-ai": {
-        "title": "CodeCouncil - Multiplayer Claude Code",
-        "shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
-        "category": "AI & Developer Tools"
-      },
-      "chtype-clickhouse-toolkit": {
-        "title": "chtype - Type-Safe ClickHouse Toolkit",
-        "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
-        "category": "Open Source & Developer Tools"
-      }
-    }
-  },
-  "projectPage": {
-    "notFoundTitle": "Nicht gefunden",
-    "portfolioSuffix": "Portfolio",
-    "backToProjects": "← Projekte",
-    "backToAllProjects": "← Alle Projekte",
-    "overview": "Überblick",
-    "challenges": "Herausforderungen",
-    "outcomes": "Ergebnisse",
-    "role": "Rolle",
-    "duration": "Zeitraum",
-    "techStack": "Stack",
-    "links": "Links",
-    "github": "GitHub",
-    "x": "X",
-    "website": "Website",
-    "websitePrivateNote": "(Privat)",
-    "demo": "Demo",
-    "youtube": "YouTube",
-    "moreProjects": "Weitere Projekte",
-    "comingSoon": "Details folgen."
-  },
-  "connect": {
-    "heading": "Let's Talk",
-    "description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
-    "contactForm": "Kontakt",
-    "email": "jan@jantokic.com",
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "x": "X"
-  },
-  "contact": {
-    "backToPortfolio": "← Zurück",
-    "heading": "Let's Work Together",
-    "description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
-    "email": "E-Mail",
-    "location": "Standort",
-    "locationValue": "München",
-    "social": "Social",
-    "servicesHeading": "Services",
-    "services": [
-      "High-Performance Backend",
-      "Blockchain & Trading Platforms",
-      "E-Commerce & Headless Commerce",
-      "Cloud, DevOps & Infra",
-      "Realtime APIs & WebSockets",
-      "Security & Secrets Management",
-      "Tech Leadership & Consulting"
-    ],
-    "formHeading": "Schreib mir",
-    "nameLabel": "Name",
-    "emailLabel": "E-Mail",
-    "messageLabel": "Projekt",
-    "messagePlaceholder": "Erzähl mir von deinem Projekt...",
-    "sendButton": "Senden",
-    "responseTime": "Antwort meist innerhalb 3h",
-    "mailtoSubject": "Projektanfrage von {name}",
-    "stats": {
-      "responseTime": "3h",
-      "responseTimeLabel": "Antwortzeit",
-      "projects": "15+",
-      "projectsLabel": "Projekte shipped"
-    }
-  },
-  "footer": {
-    "copyright": "© {year} Jan Tokic",
-    "toggleTheme": "Theme wechseln",
-    "language": "Sprache"
-  },
-  "projectDetails": {
-    "codecouncil-multiplayer-ai": {
-      "title": "CodeCouncil",
-      "shortDescription": "Claude Code, aber multiplayer. Gemeinsame AI-Coding-Sessions für Teams.",
-      "fullDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Mehrere Entwickler treten derselben Session in Echtzeit bei — keine isolierten Sessions mehr und kein Einfügen von Outputs in Slack. Sessions bleiben in der Cloud bestehen, sodass jeder dort weitermachen kann, wo ein Teammitglied aufgehört hat. Enthält einen Diskussionsmodus, in dem AI-Personas Architekturentscheidungen debattieren, und einen integrierten MCP-Server, der sich mit deinem gesamten Stack verbindet. Unterstützt 100+ Modelle über OpenRouter.",
-      "role": "Creator & Maintainer",
-      "duration": "2025 - Heute",
-      "category": "AI & Developer Tools",
-      "challenges": [
-        "Multiplayer-AI-Coding-Sessions in Echtzeit mit geteiltem Kontext",
-        "Persistente Cloud-Sessions, die Neustarts und Übergaben überleben",
-        "AI-gestützte Architekturdebatten mit automatischer Konvergenz"
-      ],
-      "outcomes": [
-        "Open Beta gestartet",
-        "100+ Modelle über OpenRouter unterstützt",
-        "MCP-Server-Integration für externe Tools"
-      ]
-    },
-    "chtype-clickhouse-toolkit": {
-      "title": "chtype",
-      "shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
-      "fullDescription": "TypeScript-Toolkit, das dein ClickHouse-Schema inspiziert und vollständig typisierte Codegenerierung bietet. Enthält einen typsicheren Query Builder mit ClickHouse-spezifischen Funktionen (argMax, FINAL, PREWHERE), einen erweiterten Client als Wrapper für @clickhouse/client und ein CLI für Schema-Diffing. Kein Runtime-Overhead — verhindert SQL-Injection by Design und erkennt Spalten-Typos zur Compile-Zeit.",
-      "role": "Creator & Maintainer",
-      "duration": "2025 - Heute",
-      "category": "Open Source & Developer Tools",
-      "challenges": [
-        "Typsichere Codegen aus Live-ClickHouse-Schemas",
-        "ClickHouse-spezifischer Query Builder mit PREWHERE, argMax, FINAL",
-        "Schema-Diffing-CLI zur Erkennung von Datenbankänderungen"
-      ],
-      "outcomes": [
-        "Veröffentlicht auf npm als @jantokic/chtype",
-        "Kein Runtime-Overhead",
-        "SQL-Injection-Schutz by Design"
-      ]
-    },
-    "klarity-prediction-market": {
-      "title": "Klarity",
-      "shortDescription": "Das Bloomberg Terminal für Prediction Markets.",
-      "fullDescription": "Bald verfügbar.",
-      "role": "Founding Engineer",
-      "duration": "Jan 2025 - Heute",
-      "category": "Fintech",
-      "challenges": [],
-      "outcomes": []
-    },
-    "richard-ai-research": {
-      "title": "Richard",
-      "shortDescription": "AI-Agenten erledigen 8h Research in 30 Minuten.",
-      "fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
-      "role": "Founding Engineer",
-      "duration": "Mär 2025 - Heute",
-      "category": "AI & Research",
-      "challenges": [
-        "Insights ohne Prompts",
-        "Lernt automatisch dazu",
-        "Confidence Scores für Vorhersagen"
-      ],
-      "outcomes": [
-        "8h → 30 Min",
-        "400+ Insights in 8 Wochen",
-        "Audit-ready"
-      ]
-    },
-    "mira-trading-bot": {
-      "title": "Mira",
-      "shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
-      "fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-Pipeline. Tokens bis $200M+ Market Cap gelauncht.",
-      "role": "Founding Engineer & Co-Founder",
-      "duration": "5 Monate",
-      "category": "Blockchain & Trading",
-      "challenges": [
-        "Schneller traden als alle anderen",
-        "Social Signals in Realtime parsen",
-        "99,5% Uptime mit 3-Mann-Team"
-      ],
-      "outcomes": [
-        "$230K Profit in 5 Monaten",
-        "8.000+ Trades/Monat",
-        "Tokens bis $200M+ Market Cap"
-      ]
-    },
-    "copile-trading-platform": {
-      "title": "Copile",
-      "shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
-      "fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
-      "role": "Founding Engineer & Co-Founder",
-      "duration": "18 Monate",
-      "category": "Fintech & Trading",
-      "challenges": [
-        "Ein Interface für 5 Exchanges",
-        "Institutional-Grade Tools",
-        "6er-Team geleitet"
-      ],
-      "outcomes": [
-        "2.100 User",
-        "€1,2M/Monat Volume",
-        "70% Retention"
-      ]
-    },
-    "vendure-ecommerce": {
-      "title": "Vendure",
-      "shortDescription": "Open-Source Headless Commerce. 8k GitHub Stars. Millionen Orders. 45% schneller.",
-      "fullDescription": "Core Contributor bei Vendure, einer Open-Source Headless Commerce Plattform (8k GitHub Stars), genutzt von IBM, Breitling, Swile und QVC. Enterprise E-Commerce-Infrastruktur mit Millionen Orders aufgebaut. 7 Legacy-Repos in ein Monorepo konsolidiert, Order Processing um 45% beschleunigt, Features mit den Gründern shipped.",
-      "role": "Software Engineer",
-      "duration": "Apr 2024 - Heute",
-      "category": "E-Commerce & Open Source",
-      "challenges": [
-        "7 Legacy-Repos → 1 sauberes Monorepo",
-        "Major Upgrades ohne Downtime",
-        "Enterprise-Grade Patterns in 8k-Star Codebase"
-      ],
-      "outcomes": [
-        "Millionen Orders/Jahr verarbeitet",
-        "45% schnelleres Order Processing",
-        "Läuft bei IBM, Breitling, QVC"
-      ]
-    },
-    "ibm-headless-commerce": {
-      "title": "IBM iX",
-      "shortDescription": "85.000 SKUs. 40% schnellere Promotions. Vue.js + Magento.",
-      "fullDescription": "Storefront für 85.000 Produkte mit Dynamic Promotions. Schnell und flexibel fürs Marketing.",
-      "role": "Software Engineering Praktikant",
-      "duration": "3 Monate",
-      "category": "E-Commerce",
-      "challenges": [
-        "85.000 Produkte, schnelle Loads",
-        "Marketing kann selbst ändern",
-        "Enterprise Magento Integration"
-      ],
-      "outcomes": [
-        "40% schnellere Promotions",
-        "Shipped to Production",
-        "Marketing unabhängig"
-      ]
-    },
-    "synapse-knowledge-system": {
-      "title": "Synapse",
-      "shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
-      "fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
-      "role": "Backend Engineer",
-      "duration": "36 Stunden",
-      "category": "AI & Enterprise",
-      "challenges": [
-        "Full Stack in 36h",
-        "Smart Ranking",
-        "Instant Semantic Search"
-      ],
-      "outcomes": [
-        "2. Platz",
-        "Jeden Experten instant finden",
-        "Production-ready in 36h"
-      ]
-    },
-    "dreamcook-community": {
-      "title": "DreamCook",
-      "shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
-      "fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
-      "role": "Full Stack Engineer",
-      "duration": "2 Jahre",
-      "category": "E-Commerce & Community",
-      "challenges": [
-        "Multi-Retailer Monitoring",
-        "Instant Drop-Alerts",
-        "Skaliert auf 5.000+ zahlende Member"
-      ],
-      "outcomes": [
-        "5.000+ Member",
-        "Schneller als die Konkurrenz",
-        "2 Jahre profitabel"
-      ]
-    },
-    "acidnode-validator": {
-      "title": "Acid Node",
-      "shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
-      "fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
-      "role": "Backend Engineer",
-      "duration": "5 Monate",
-      "category": "Blockchain & Infra",
-      "challenges": [
-        "High Availability",
-        "99,9% Uptime Target",
-        "One-Click Deploys"
-      ],
-      "outcomes": [
-        "Live auf Mainnet",
-        "Fully Automated",
-        "Zero Downtime"
-      ]
-    },
-    "neura-nft-sniping": {
-      "title": "Neura",
-      "shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
-      "fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
-      "role": "Software Engineer",
-      "duration": "6 Monate",
-      "category": "Blockchain & NFT",
-      "challenges": [
-        "Millisekunden-Timing",
-        "On-chain Transactions",
-        "Stabil unter Last"
-      ],
-      "outcomes": [
-        "Exit",
-        "Recurring Revenue",
-        "Schneller als alle anderen"
-      ]
-    }
-  }
+	"nav": {
+		"gallery": "Galerie",
+		"intro": "Über mich",
+		"work": "Erfahrung",
+		"projects": "Projekte",
+		"connect": "Kontakt",
+		"scrollToSection": "Zu {section} scrollen"
+	},
+	"gallery": {
+		"tagline1": "Ich denke",
+		"tagline2": "also bin ich",
+		"instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
+		"autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
+		"scrollDown": "Nach unten scrollen",
+		"loading": "Galerie wird geladen...",
+		"webglFallback": "WebGL wird nicht unterstützt. Bildliste wird angezeigt:"
+	},
+	"maintenance": {
+		"loading": "Wird geladen...",
+		"title": "Wartungsarbeiten",
+		"description": "Diese Seite ist vorübergehend nicht verfügbar.",
+		"tooManyAttempts": "Zu viele Versuche",
+		"retryIn": "Bitte in {time} erneut versuchen",
+		"pinPlaceholder": "PIN eingeben",
+		"incorrectPin": "Falsche PIN ({remaining} Versuche übrig)",
+		"enter": "Bestätigen"
+	},
+	"intro": {
+		"name": "Jan Tokic",
+		"title": "Software Engineer & Consultant",
+		"bio": "Ich baue Systeme, wo Downtime direkt Geld kostet. Von 5-Mann-Startups bis zu Konzernen mit Milliarden Umsatz. Offen für ausgewählte Freelance- und Consulting-Projekte.",
+		"capabilitiesHeading": "Wie ich helfe",
+		"capabilities": [
+			"Backend & Realtime APIs",
+			"Cloud, DevOps & Reliability",
+			"Trading, Fintech & Web3",
+			"AI Engineering & agentische Systeme"
+		],
+		"currently": "Aktuell bei",
+		"studying": "Ausbildung",
+		"location": "München",
+		"currentRoles": [
+			{ "company": "Klarity", "role": "Founding Engineer" },
+			{ "company": "Vendure", "role": "Software Engineer" }
+		],
+		"degree": "B.Sc. Wirtschaftsinformatik",
+		"university": "TU München",
+		"viewCv": "Lebenslauf ansehen"
+	},
+	"work": {
+		"heading": "Erfahrung",
+		"klarity": {
+			"role": "Founding Engineer",
+			"company": "Klarity",
+			"location": "Delaware",
+			"period": "2025 - Heute",
+			"description": "Bloomberg Terminal für Prediction Markets.",
+			"projectLink": "/projects/klarity-prediction-market",
+			"projectLinkText": "Details →"
+		},
+		"vendure": {
+			"role": "Software Engineer",
+			"company": "Vendure",
+			"location": "Wien",
+			"period": "2024 - Heute",
+			"description": "Open-Source Headless Commerce (8k GitHub Stars). Order Processing 45% schneller. Millionen Orders/Monat. 7 Repos → 1 Monorepo. Läuft bei IBM, Breitling, QVC.",
+			"projectLink": "/projects/vendure-ecommerce",
+			"projectLinkText": "Details →"
+		},
+		"mira": {
+			"role": "Founding Engineer",
+			"company": "Mira Trading",
+			"location": "London",
+			"description": "$230K Profit in 5 Monaten. 8.000+ automatisierte Trades/Monat. Tokens bis $200M+ Market Cap.",
+			"projectLink": "/projects/mira-trading-bot",
+			"projectLinkText": "Details →"
+		},
+		"copile": {
+			"role": "Founding Engineer",
+			"company": "Copile",
+			"location": "Wien",
+			"description": "2.100 User. €1,2M Volume/Monat. 70% Retention. Tools gebaut, Team geleitet.",
+			"projectLink": "/projects/copile-trading-platform",
+			"projectLinkText": "Details →"
+		},
+		"ibm": {
+			"role": "Software Engineering Praktikant",
+			"company": "IBM iX",
+			"location": "Wien",
+			"description": "Storefront für 85.000 Produkte. Promotions 40% schneller live."
+		}
+	},
+	"projects": {
+		"heading": "Projekte",
+		"viewProject": "Details",
+		"backToProjects": "← Projekte",
+		"relatedProjects": "Weitere",
+		"filters": {
+			"all": "Alle",
+			"sortBy": "Sortieren",
+			"relevance": "Relevanz",
+			"newest": "Neueste zuerst",
+			"oldest": "Älteste zuerst",
+			"noResults": "Keine Projekte für diesen Filter gefunden."
+		},
+		"data": {
+			"klarity-prediction-market": {
+				"title": "Klarity",
+				"shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
+				"fullDescription": "Bald verfügbar.",
+				"role": "Founding Engineer",
+				"duration": "Jan 2025 - Heute",
+				"challenges": [],
+				"outcomes": []
+			},
+			"richard-ai-research": {
+				"title": "Richard",
+				"shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",
+				"fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
+				"role": "Founding Engineer",
+				"duration": "Mär 2025 - Heute",
+				"challenges": ["Insights ohne Prompts", "Lernt automatisch dazu", "Confidence Scores für Vorhersagen"],
+				"outcomes": ["8h → 30 Min", "400+ Insights in 8 Wochen", "Audit-ready"]
+			},
+			"mira-trading-bot": {
+				"title": "Mira",
+				"shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
+				"fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-Pipeline. Tokens bis $200M+ Market Cap gelauncht.",
+				"role": "Founding Engineer & Co-Founder",
+				"duration": "5 Monate",
+				"challenges": [
+					"Schneller traden als alle anderen",
+					"Social Signals in Realtime parsen",
+					"99,5% Uptime mit 3-Mann-Team"
+				],
+				"outcomes": ["$230K Profit in 5 Monaten", "8.000+ Trades/Monat", "Tokens bis $200M+ Market Cap"]
+			},
+			"copile-trading-platform": {
+				"title": "Copile",
+				"shortDescription": "2.100 User. €1,2M/Monat Volume. 6er-Team geleitet.",
+				"fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
+				"role": "Founding Engineer & Co-Founder",
+				"duration": "18 Monate",
+				"challenges": ["Ein Interface für 5 Exchanges", "Institutional-Grade Tools", "6er-Team geleitet"],
+				"outcomes": ["2.100 User", "€1,2M/Monat Volume", "70% Retention"]
+			},
+			"vendure-ecommerce": {
+				"title": "Vendure",
+				"shortDescription": "Open-Source Headless Commerce. 8k GitHub Stars. Millionen Orders. 45% schneller.",
+				"fullDescription": "Core Contributor bei Vendure, einer Open-Source Headless Commerce Plattform (8k GitHub Stars), genutzt von IBM, Breitling, Swile und QVC. Enterprise E-Commerce-Infrastruktur mit Millionen Orders aufgebaut. 7 Legacy-Repos in ein Monorepo konsolidiert, Order Processing um 45% beschleunigt, Features mit den Gründern shipped.",
+				"role": "Software Engineer",
+				"duration": "Apr 2024 - Heute",
+				"challenges": [
+					"7 Legacy-Repos → 1 sauberes Monorepo",
+					"Major Upgrades ohne Downtime",
+					"Enterprise-Grade Patterns in 8k-Star Codebase"
+				],
+				"outcomes": [
+					"Millionen Orders/Jahr verarbeitet",
+					"45% schnelleres Order Processing",
+					"Läuft bei IBM, Breitling, QVC"
+				]
+			},
+			"synapse-knowledge-system": {
+				"title": "Synapse",
+				"shortDescription": "Den richtigen Experten in Sekunden finden. 2. Platz @ TUM.AI x Anthropic Hackathon.",
+				"fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
+				"role": "Backend Engineer",
+				"duration": "36 Stunden",
+				"challenges": ["Full Stack in 36h", "Smart Ranking", "Instant Semantic Search"],
+				"outcomes": ["2. Platz", "Jeden Experten instant finden", "Production-ready in 36h"]
+			},
+			"dreamcook-community": {
+				"title": "DreamCook",
+				"shortDescription": "5.000+ Member. Realtime Drop-Alerts. 2 Jahre profitabel.",
+				"fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
+				"role": "Full Stack Engineer",
+				"duration": "2 Jahre",
+				"challenges": ["Multi-Retailer Monitoring", "Instant Drop-Alerts", "Skaliert auf 5.000+ zahlende Member"],
+				"outcomes": ["5.000+ Member", "Schneller als die Konkurrenz", "2 Jahre profitabel"]
+			},
+			"acidnode-validator": {
+				"title": "Acid Node",
+				"shortDescription": "Solana Validator. 99,9% Uptime. AWS Automation.",
+				"fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
+				"role": "Backend Engineer",
+				"duration": "5 Monate",
+				"challenges": ["High Availability", "99,9% Uptime Target", "One-Click Deploys"],
+				"outcomes": ["Live auf Mainnet", "Fully Automated", "Zero Downtime"]
+			},
+			"neura-nft-sniping": {
+				"title": "Neura",
+				"shortDescription": "NFT-Sniping mit Millisekunden-Precision. Subscription. Exit.",
+				"fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
+				"role": "Software Engineer",
+				"duration": "6 Monate",
+				"challenges": ["Millisekunden-Timing", "On-chain Transactions", "Stabil unter Last"],
+				"outcomes": ["Exit", "Recurring Revenue", "Schneller als alle anderen"]
+			},
+			"codecouncil-multiplayer-ai": {
+				"title": "CodeCouncil - Multiplayer Claude Code",
+				"shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
+				"fullDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Mehrere Entwickler treten derselben Session in Echtzeit bei — keine isolierten Sessions mehr und kein Einfügen von Outputs in Slack. Sessions bleiben in der Cloud bestehen, sodass jeder dort weitermachen kann, wo ein Teammitglied aufgehört hat. Enthält einen Diskussionsmodus, in dem AI-Personas Architekturentscheidungen debattieren, und einen integrierten MCP-Server, der sich mit deinem gesamten Stack verbindet. Unterstützt 100+ Modelle über OpenRouter.",
+				"role": "Creator & Maintainer",
+				"duration": "2025 - Heute",
+				"challenges": [
+					"Multiplayer-AI-Coding-Sessions in Echtzeit mit geteiltem Kontext",
+					"Persistente Cloud-Sessions, die Neustarts und Übergaben überleben",
+					"AI-gestützte Architekturdebatten mit automatischer Konvergenz"
+				],
+				"outcomes": [
+					"Open Beta gestartet",
+					"100+ Modelle über OpenRouter unterstützt",
+					"MCP-Server-Integration für externe Tools"
+				]
+			},
+			"chtype-clickhouse-toolkit": {
+				"title": "chtype - Type-Safe ClickHouse Toolkit",
+				"shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
+				"fullDescription": "TypeScript-Toolkit, das dein ClickHouse-Schema inspiziert und vollständig typisierte Codegenerierung bietet. Enthält einen typsicheren Query Builder mit ClickHouse-spezifischen Funktionen (argMax, FINAL, PREWHERE), einen erweiterten Client als Wrapper für @clickhouse/client und ein CLI für Schema-Diffing. Kein Runtime-Overhead — verhindert SQL-Injection by Design und erkennt Spalten-Typos zur Compile-Zeit.",
+				"role": "Creator & Maintainer",
+				"duration": "2025 - Heute",
+				"challenges": [
+					"Typsichere Codegen aus Live-ClickHouse-Schemas",
+					"ClickHouse-spezifischer Query Builder mit PREWHERE, argMax, FINAL",
+					"Schema-Diffing-CLI zur Erkennung von Datenbankänderungen"
+				],
+				"outcomes": [
+					"Veröffentlicht auf npm als @jantokic/chtype",
+					"Kein Runtime-Overhead",
+					"SQL-Injection-Schutz by Design"
+				]
+			}
+		}
+	},
+	"projectPage": {
+		"notFoundTitle": "Nicht gefunden",
+		"portfolioSuffix": "Portfolio",
+		"backToProjects": "← Projekte",
+		"backToAllProjects": "← Alle Projekte",
+		"overview": "Überblick",
+		"challenges": "Herausforderungen",
+		"outcomes": "Ergebnisse",
+		"role": "Rolle",
+		"duration": "Zeitraum",
+		"techStack": "Stack",
+		"links": "Links",
+		"github": "GitHub",
+		"x": "X",
+		"website": "Website",
+		"websitePrivateNote": "(Privat)",
+		"demo": "Demo",
+		"youtube": "YouTube",
+		"moreProjects": "Weitere Projekte",
+		"comingSoon": "Details folgen."
+	},
+	"connect": {
+		"heading": "Let's Talk",
+		"description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
+		"contactForm": "Kontakt",
+		"email": "jan@jantokic.com",
+		"github": "GitHub",
+		"linkedin": "LinkedIn",
+		"x": "X"
+	},
+	"contact": {
+		"backToPortfolio": "← Zurück",
+		"heading": "Let's Work Together",
+		"description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
+		"email": "E-Mail",
+		"location": "Standort",
+		"locationValue": "München",
+		"social": "Social",
+		"servicesHeading": "Services",
+		"services": [
+			"High-Performance Backend",
+			"Blockchain & Trading Platforms",
+			"E-Commerce & Headless Commerce",
+			"Cloud, DevOps & Infra",
+			"Realtime APIs & WebSockets",
+			"Security & Secrets Management",
+			"Tech Leadership & Consulting"
+		],
+		"formHeading": "Schreib mir",
+		"nameLabel": "Name",
+		"emailLabel": "E-Mail",
+		"messageLabel": "Projekt",
+		"messagePlaceholder": "Erzähl mir von deinem Projekt...",
+		"sendButton": "Senden",
+		"responseTime": "Antwort meist innerhalb 3h",
+		"mailtoSubject": "Projektanfrage von {name}",
+		"stats": {
+			"responseTime": "3h",
+			"responseTimeLabel": "Antwortzeit",
+			"projects": "15+",
+			"projectsLabel": "Projekte shipped"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Jan Tokic",
+		"toggleTheme": "Theme wechseln",
+		"language": "Sprache"
+	}
 }

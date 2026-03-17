@@ -1,438 +1,305 @@
 {
-  "nav": {
-    "gallery": "Gallery",
-    "intro": "About",
-    "work": "Work",
-    "projects": "Projects",
-    "connect": "Connect",
-    "scrollToSection": "Scroll to {section}"
-  },
-  "gallery": {
-    "tagline1": "I think",
-    "tagline2": "therefore I am",
-    "instructions": "Click a project for details • Scroll or use arrow keys to navigate",
-    "autoplay": "Auto-play resumes after 3 seconds of inactivity",
-    "scrollDown": "Scroll to continue",
-    "loading": "Loading gallery...",
-    "webglFallback": "WebGL not supported. Showing image list:"
-  },
-  "maintenance": {
-    "loading": "Loading...",
-    "title": "Under maintenance",
-    "description": "This site is temporarily unavailable.",
-    "tooManyAttempts": "Too many attempts",
-    "retryIn": "Try again in {time}",
-    "pinPlaceholder": "Enter PIN",
-    "incorrectPin": "Incorrect PIN ({remaining} attempts left)",
-    "enter": "Enter"
-  },
-  "intro": {
-    "name": "Jan Tokic",
-    "title": "Software Engineer & Consultant",
-    "bio": "I build revenue-critical systems: trading, e-commerce, and cloud infrastructure. Co-founded three startups. I take on a small number of consulting projects.",
-    "capabilitiesHeading": "How I can help",
-    "capabilities": [
-      "Backend systems & real-time APIs",
-      "Cloud architecture, DevOps & reliability",
-      "Trading, fintech & Web3 platforms",
-      "AI engineering & agentic systems"
-    ],
-    "currently": "Currently at",
-    "studying": "Education",
-    "location": "Munich, Germany",
-    "currentRoles": [
-      { "company": "Klarity", "role": "Founding Engineer" },
-      { "company": "Vendure", "role": "Software Engineer" }
-    ],
-    "degree": "B.Sc. Information Systems",
-    "university": "Technical University of Munich",
-    "viewCv": "View CV"
-  },
-  "work": {
-    "heading": "Selected Work",
-    "klarity": {
-      "role": "Founding Engineer",
-      "company": "Klarity",
-      "location": "Delaware",
-      "period": "2025 - Present",
-      "description": "Building the Bloomberg Terminal for prediction markets.",
-      "projectLink": "/projects/klarity-prediction-market",
-      "projectLinkText": "View details →"
-    },
-    "vendure": {
-      "role": "Software Engineer",
-      "company": "Vendure",
-      "location": "Vienna",
-      "period": "2024 - Present",
-      "description": "Open-source headless commerce (8k GitHub stars). Cut order processing by 45%. Millions of orders/month. 7 repos → 1 monorepo. Used by IBM, Breitling, QVC.",
-      "projectLink": "/projects/vendure-ecommerce",
-      "projectLinkText": "View details →"
-    },
-    "mira": {
-      "role": "Founding Engineer",
-      "company": "Mira",
-      "location": "London",
-      "description": "$230K profit in 5 months. 8,000+ automated trades/month. Helped launch tokens to $200M+ market cap.",
-      "projectLink": "/projects/mira-trading-bot",
-      "projectLinkText": "View details →"
-    },
-    "copile": {
-      "role": "Founding Engineer",
-      "company": "Copile",
-      "location": "London",
-      "description": "2,100 users. €1.2M monthly volume. 70% retention. Built the trading tools, led the team.",
-      "projectLink": "/projects/copile-trading-platform",
-      "projectLinkText": "View details →"
-    },
-    "ibm": {
-      "role": "Software Engineering Intern",
-      "company": "IBM iX",
-      "location": "Vienna",
-      "description": "Built a storefront handling 85,000 products. Cut promotion launch time by 40%."
-    }
-  },
-  "projects": {
-    "heading": "Featured Projects",
-    "viewProject": "View Project",
-    "backToProjects": "Back to Projects",
-    "relatedProjects": "Related Projects",
-    "filters": {
-      "all": "All",
-      "sortBy": "Sort by",
-      "relevance": "Relevance",
-      "newest": "Newest first",
-      "oldest": "Oldest first",
-      "noResults": "No projects match the selected filter."
-    },
-    "items": {
-      "klarity-prediction-market": {
-        "title": "Klarity",
-        "shortDescription": "The Bloomberg Terminal for prediction markets. In development.",
-        "category": "Fintech"
-      },
-      "richard-ai-research": {
-        "title": "Richard - AI Research Engine",
-        "shortDescription": "AI agents that do 8 hours of research in 30 minutes.",
-        "category": "AI & Research"
-      },
-      "mira-trading-bot": {
-        "title": "Mira - Solana Trading Bot",
-        "shortDescription": "$230K profit in 5 months. Tokens launched to $200M+ market cap.",
-        "category": "Blockchain & Trading"
-      },
-      "copile-trading-platform": {
-        "title": "Copile - B2B Crypto Trading Platform",
-        "shortDescription": "2,100 users. €1.2M/month traded. Led team of 6.",
-        "category": "Fintech & Trading"
-      },
-      "synapse-knowledge-system": {
-        "title": "Synapse - AI Knowledge System",
-        "shortDescription": "Find the right expert in seconds. 2nd place @ TUM.AI x Anthropic Hackathon.",
-        "category": "AI & Enterprise"
-      },
-      "dreamcook-community": {
-        "title": "DreamCook - E-Commerce Community Platform",
-        "shortDescription": "5,000+ members. Real-time drop alerts. Profitable for 2 years.",
-        "category": "E-Commerce & Community"
-      },
-      "acidnode-validator": {
-        "title": "Acid Node - Solana Validator Infrastructure",
-        "shortDescription": "Solana validator infrastructure. 99.9% uptime. AWS automation.",
-        "category": "Blockchain & Infrastructure"
-      },
-      "neura-nft-sniping": {
-        "title": "Neura - Solana NFT Sniping Bot",
-        "shortDescription": "Millisecond NFT sniping bot. Subscription product. Acquired.",
-        "category": "Blockchain & NFT"
-      },
-      "codecouncil-multiplayer-ai": {
-        "title": "CodeCouncil - Multiplayer Claude Code",
-        "shortDescription": "Shared AI coding sessions where your whole team sees the same context. Open Beta.",
-        "category": "AI & Developer Tools"
-      },
-      "chtype-clickhouse-toolkit": {
-        "title": "chtype - Type-Safe ClickHouse Toolkit",
-        "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
-        "category": "Open Source & Developer Tools"
-      }
-    }
-  },
-  "projectPage": {
-    "notFoundTitle": "Project Not Found",
-    "portfolioSuffix": "Portfolio",
-    "backToProjects": "Back to Projects",
-    "backToAllProjects": "Back to all projects",
-    "overview": "Overview",
-    "challenges": "Challenges & Solutions",
-    "outcomes": "Results & Impact",
-    "role": "Role",
-    "duration": "Duration",
-    "techStack": "Tech Stack",
-    "links": "Links",
-    "github": "GitHub",
-    "x": "X",
-    "website": "Website",
-    "websitePrivateNote": "(Private - Internal Use Only)",
-    "demo": "Demo",
-    "youtube": "YouTube",
-    "moreProjects": "More Projects",
-    "comingSoon": "More details coming soon."
-  },
-  "connect": {
-    "heading": "Let's Connect",
-    "description": "Available for select freelance and consulting. Backend systems, trading platforms, and high-scale e-commerce.",
-    "contactForm": "Contact Form",
-    "email": "jan@jantokic.com",
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "x": "X"
-  },
-  "contact": {
-    "backToPortfolio": "← Back to Portfolio",
-    "heading": "Let's Work Together",
-    "description": "Available for select freelance and consulting. Backend systems, trading platforms, and high-scale e-commerce.",
-    "email": "Email",
-    "location": "Location",
-    "locationValue": "Munich, Germany",
-    "social": "Social",
-    "servicesHeading": "Services I Offer",
-    "services": [
-      "High-performance backend systems",
-      "Trading & blockchain platform development",
-      "E-commerce & headless commerce",
-      "Cloud architecture, DevOps & infrastructure",
-      "Real-time APIs & WebSocket integration",
-      "Security & secrets management",
-      "Tech leadership & consulting"
-    ],
-    "formHeading": "Send Me a Message",
-    "nameLabel": "Your Name",
-    "emailLabel": "Your Email",
-    "messageLabel": "Project Details",
-    "messagePlaceholder": "Tell me about your project, timeline, and budget...",
-    "sendButton": "Send Message",
-    "responseTime": "I usually respond within 3 hours",
-    "mailtoSubject": "Project Inquiry from {name}",
-    "stats": {
-      "responseTime": "3h",
-      "responseTimeLabel": "Response Time",
-      "projects": "15+",
-      "projectsLabel": "Projects Delivered"
-    }
-  },
-  "footer": {
-    "copyright": "© {year} Jan Tokic",
-    "toggleTheme": "Toggle theme",
-    "language": "Language"
-  },
-  "projectDetails": {
-    "codecouncil-multiplayer-ai": {
-      "title": "CodeCouncil",
-      "shortDescription": "Claude Code, but multiplayer. Shared AI coding sessions for teams.",
-      "fullDescription": "Shared AI coding sessions where your whole team sees the same context. Multiple developers join the same session in real-time — no more isolated sessions or pasting outputs into Slack. Sessions persist in the cloud so anyone can pick up where a teammate left off. Includes Discussion Mode where AI personas debate architecture decisions, and a built-in MCP server that connects to your entire stack. Supports 100+ models via OpenRouter.",
-      "role": "Creator & Maintainer",
-      "duration": "2025 - Present",
-      "category": "AI & Developer Tools",
-      "challenges": [
-        "Real-time multiplayer AI coding sessions with shared context",
-        "Persistent cloud sessions that survive restarts and handoffs",
-        "AI-powered architecture debates with auto-convergence"
-      ],
-      "outcomes": [
-        "Open Beta launched",
-        "100+ models supported via OpenRouter",
-        "MCP server integration for external tools"
-      ]
-    },
-    "chtype-clickhouse-toolkit": {
-      "title": "chtype",
-      "shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
-      "fullDescription": "TypeScript toolkit that introspects your ClickHouse schema and generates fully typed code. Includes a type-safe query builder with ClickHouse-specific functions (argMax, FINAL, PREWHERE), an enhanced client wrapping @clickhouse/client, and a CLI for schema diffing. Zero runtime overhead — prevents SQL injection by design and catches column typos at compile time.",
-      "role": "Creator & Maintainer",
-      "duration": "2025 - Present",
-      "category": "Open Source & Developer Tools",
-      "challenges": [
-        "Type-safe codegen from live ClickHouse schemas",
-        "ClickHouse-specific query builder with PREWHERE, argMax, FINAL",
-        "Schema diffing CLI to detect database drift"
-      ],
-      "outcomes": [
-        "Published on npm as @jantokic/chtype",
-        "Zero runtime overhead",
-        "SQL injection prevention by design"
-      ]
-    },
-    "klarity-prediction-market": {
-      "title": "Klarity",
-      "shortDescription": "The Bloomberg Terminal for prediction markets.",
-      "fullDescription": "Coming soon.",
-      "role": "Founding Engineer",
-      "duration": "Jan 2025 - Present",
-      "category": "Fintech",
-      "challenges": [],
-      "outcomes": []
-    },
-    "richard-ai-research": {
-      "title": "Richard",
-      "shortDescription": "AI agents that do 8 hours of research in 30 minutes.",
-      "fullDescription": "AI research system that finds insights before you ask. Tracks sources, spots patterns, drafts reports. Cuts 8 hours of manual research to 30 minutes.",
-      "role": "Founding Engineer",
-      "duration": "Mar 2025 - Present",
-      "category": "AI & Research",
-      "challenges": [
-        "Proactive insights without user prompts",
-        "Self-improving accuracy over time",
-        "Confidence-scored predictions"
-      ],
-      "outcomes": [
-        "8 hours → 30 minutes",
-        "400+ insights in 8 weeks",
-        "Audit-ready traceability"
-      ]
-    },
-    "mira-trading-bot": {
-      "title": "Mira",
-      "shortDescription": "$230K profit in 5 months. Tokens launched to $200M+ market cap.",
-      "fullDescription": "Solana trading bot that turns social signals into trades in under 300ms. Go backend, real-time data pipeline. Helped launch tokens to $200M+ market cap.",
-      "role": "Founding Engineer & Co-Founder",
-      "duration": "5 months",
-      "category": "Blockchain & Trading",
-      "challenges": [
-        "Execute before competitors",
-        "Parse social signals in real-time",
-        "99.5% uptime, 3-person team"
-      ],
-      "outcomes": [
-        "$230K profit in 5 months",
-        "8,000+ trades/month",
-        "Tokens to $200M+ market cap"
-      ]
-    },
-    "copile-trading-platform": {
-      "title": "Copile",
-      "shortDescription": "2,100 users. €1.2M/month traded. Led team of 6.",
-      "fullDescription": "Trading platform connecting 5 exchanges with one interface. Custom order types, real-time charts, institutional-grade API. 70% of users stuck around.",
-      "role": "Founding Engineer & Co-Founder",
-      "duration": "18 months",
-      "category": "Fintech & Trading",
-      "challenges": [
-        "One interface for 5 exchanges",
-        "Institutional-grade trading tools",
-        "Led team of 6"
-      ],
-      "outcomes": [
-        "2,100 users acquired",
-        "€1.2M/month traded",
-        "70% retention"
-      ]
-    },
-    "vendure-ecommerce": {
-      "title": "Vendure",
-      "shortDescription": "Open-source headless commerce. 8k GitHub stars. Millions of orders. 45% faster processing.",
-      "fullDescription": "Core contributor to Vendure, an open-source headless commerce platform (8k GitHub stars) trusted by IBM, Breitling, Swile, and QVC. Built enterprise e-commerce infrastructure processing millions of orders. Consolidated 7 legacy repos into one monorepo, cut order processing time by 45%, and shipped features with the founders.",
-      "role": "Software Engineer",
-      "duration": "Apr 2024 - Present",
-      "category": "E-Commerce & Open Source",
-      "challenges": [
-        "7 legacy repos → 1 clean monorepo",
-        "Major upgrades without downtime",
-        "Enterprise-grade patterns in 8k-star codebase"
-      ],
-      "outcomes": [
-        "Millions of orders/year processed",
-        "45% faster order processing",
-        "Used by IBM, Breitling, QVC"
-      ]
-    },
-    "ibm-headless-commerce": {
-      "title": "IBM iX",
-      "shortDescription": "85,000 SKUs. 40% faster promotions. Vue.js + Magento.",
-      "fullDescription": "E-commerce storefront handling 85,000 products with dynamic promotions. Built for speed and marketing flexibility.",
-      "role": "Software Engineering Intern",
-      "duration": "3 months",
-      "category": "E-Commerce",
-      "challenges": [
-        "85,000 products, fast page loads",
-        "Marketing team autonomy",
-        "Enterprise Magento integration"
-      ],
-      "outcomes": [
-        "40% faster promotions",
-        "Shipped to production",
-        "Marketing flexibility unlocked"
-      ]
-    },
-    "synapse-knowledge-system": {
-      "title": "Synapse",
-      "shortDescription": "Find the right expert in seconds. 2nd place @ TUM.AI x Anthropic Hackathon.",
-      "fullDescription": "Built in 36 hours at the TUM.AI x Anthropic Hackathon. Finds the right internal expert instantly using semantic search. 2nd place.",
-      "role": "Backend Engineer",
-      "duration": "36 hours",
-      "category": "AI & Enterprise",
-      "challenges": [
-        "Full stack in 36 hours",
-        "Smart ranking algorithm",
-        "Instant semantic search"
-      ],
-      "outcomes": [
-        "2nd place",
-        "Find any expert instantly",
-        "Production-ready in 36 hours"
-      ]
-    },
-    "dreamcook-community": {
-      "title": "DreamCook",
-      "shortDescription": "5,000+ members. Real-time drop alerts. Profitable for 2 years.",
-      "fullDescription": "Community platform with real-time drop alerts and inventory tracking. 5,000+ members paying for an edge. Profitable for 2 years.",
-      "role": "Full Stack Engineer",
-      "duration": "2 years",
-      "category": "E-Commerce & Community",
-      "challenges": [
-        "Multi-retailer monitoring",
-        "Instant drop alerts",
-        "Scaled to 5,000+ paying members"
-      ],
-      "outcomes": [
-        "5,000+ members",
-        "Faster alerts than competitors",
-        "Profitable for 2 years"
-      ]
-    },
-    "acidnode-validator": {
-      "title": "Acid Node",
-      "shortDescription": "Solana validator infrastructure. 99.9% uptime. AWS automation.",
-      "fullDescription": "Production Solana validator on AWS. Automated deployment, fault-tolerant design, optimized for throughput.",
-      "role": "Backend Engineer",
-      "duration": "5 months",
-      "category": "Blockchain & Infrastructure",
-      "challenges": [
-        "High-availability architecture",
-        "99.9% uptime target",
-        "One-click deployments"
-      ],
-      "outcomes": [
-        "Validator live on mainnet",
-        "Automated infrastructure",
-        "Zero unplanned downtime"
-      ]
-    },
-    "neura-nft-sniping": {
-      "title": "Neura",
-      "shortDescription": "Millisecond NFT sniping bot. Subscription product. Acquired.",
-      "fullDescription": "NFT sniping bot with millisecond precision. Subscription product that got acquired.",
-      "role": "Software Engineer",
-      "duration": "6 months",
-      "category": "Blockchain & NFT",
-      "challenges": [
-        "Millisecond timing precision",
-        "On-chain transaction handling",
-        "Stable under traffic spikes"
-      ],
-      "outcomes": [
-        "Acquired",
-        "Subscription revenue",
-        "Faster than the competition"
-      ]
-    }
-  }
+	"nav": {
+		"gallery": "Gallery",
+		"intro": "About",
+		"work": "Work",
+		"projects": "Projects",
+		"connect": "Connect",
+		"scrollToSection": "Scroll to {section}"
+	},
+	"gallery": {
+		"tagline1": "I think",
+		"tagline2": "therefore I am",
+		"instructions": "Click a project for details • Scroll or use arrow keys to navigate",
+		"autoplay": "Auto-play resumes after 3 seconds of inactivity",
+		"scrollDown": "Scroll to continue",
+		"loading": "Loading gallery...",
+		"webglFallback": "WebGL not supported. Showing image list:"
+	},
+	"maintenance": {
+		"loading": "Loading...",
+		"title": "Under maintenance",
+		"description": "This site is temporarily unavailable.",
+		"tooManyAttempts": "Too many attempts",
+		"retryIn": "Try again in {time}",
+		"pinPlaceholder": "Enter PIN",
+		"incorrectPin": "Incorrect PIN ({remaining} attempts left)",
+		"enter": "Enter"
+	},
+	"intro": {
+		"name": "Jan Tokic",
+		"title": "Software Engineer & Consultant",
+		"bio": "I build revenue-critical systems: trading, e-commerce, and cloud infrastructure. Co-founded three startups. I take on a small number of consulting projects.",
+		"capabilitiesHeading": "How I can help",
+		"capabilities": [
+			"Backend systems & real-time APIs",
+			"Cloud architecture, DevOps & reliability",
+			"Trading, fintech & Web3 platforms",
+			"AI engineering & agentic systems"
+		],
+		"currently": "Currently at",
+		"studying": "Education",
+		"location": "Munich, Germany",
+		"currentRoles": [
+			{ "company": "Klarity", "role": "Founding Engineer" },
+			{ "company": "Vendure", "role": "Software Engineer" }
+		],
+		"degree": "B.Sc. Information Systems",
+		"university": "Technical University of Munich",
+		"viewCv": "View CV"
+	},
+	"work": {
+		"heading": "Selected Work",
+		"klarity": {
+			"role": "Founding Engineer",
+			"company": "Klarity",
+			"location": "Delaware",
+			"period": "2025 - Present",
+			"description": "Building the Bloomberg Terminal for prediction markets.",
+			"projectLink": "/projects/klarity-prediction-market",
+			"projectLinkText": "View details →"
+		},
+		"vendure": {
+			"role": "Software Engineer",
+			"company": "Vendure",
+			"location": "Vienna",
+			"period": "2024 - Present",
+			"description": "Open-source headless commerce (8k GitHub stars). Cut order processing by 45%. Millions of orders/month. 7 repos → 1 monorepo. Used by IBM, Breitling, QVC.",
+			"projectLink": "/projects/vendure-ecommerce",
+			"projectLinkText": "View details →"
+		},
+		"mira": {
+			"role": "Founding Engineer",
+			"company": "Mira",
+			"location": "London",
+			"description": "$230K profit in 5 months. 8,000+ automated trades/month. Helped launch tokens to $200M+ market cap.",
+			"projectLink": "/projects/mira-trading-bot",
+			"projectLinkText": "View details →"
+		},
+		"copile": {
+			"role": "Founding Engineer",
+			"company": "Copile",
+			"location": "London",
+			"description": "2,100 users. €1.2M monthly volume. 70% retention. Built the trading tools, led the team.",
+			"projectLink": "/projects/copile-trading-platform",
+			"projectLinkText": "View details →"
+		},
+		"ibm": {
+			"role": "Software Engineering Intern",
+			"company": "IBM iX",
+			"location": "Vienna",
+			"description": "Built a storefront handling 85,000 products. Cut promotion launch time by 40%."
+		}
+	},
+	"projects": {
+		"heading": "Featured Projects",
+		"viewProject": "View Project",
+		"backToProjects": "Back to Projects",
+		"relatedProjects": "Related Projects",
+		"filters": {
+			"all": "All",
+			"sortBy": "Sort by",
+			"relevance": "Relevance",
+			"newest": "Newest first",
+			"oldest": "Oldest first",
+			"noResults": "No projects match the selected filter."
+		},
+		"data": {
+			"klarity-prediction-market": {
+				"title": "Klarity",
+				"shortDescription": "The Bloomberg Terminal for prediction markets. In development.",
+				"fullDescription": "Coming soon.",
+				"role": "Founding Engineer",
+				"duration": "Jan 2025 - Present",
+				"challenges": [],
+				"outcomes": []
+			},
+			"richard-ai-research": {
+				"title": "Richard - AI Research Engine",
+				"shortDescription": "AI agents that do 8 hours of research in 30 minutes.",
+				"fullDescription": "AI research system that finds insights before you ask. Tracks sources, spots patterns, drafts reports. Cuts 8 hours of manual research to 30 minutes.",
+				"role": "Founding Engineer",
+				"duration": "Mar 2025 - Present",
+				"challenges": [
+					"Proactive insights without user prompts",
+					"Self-improving accuracy over time",
+					"Confidence-scored predictions"
+				],
+				"outcomes": ["8 hours → 30 minutes", "400+ insights in 8 weeks", "Audit-ready traceability"]
+			},
+			"mira-trading-bot": {
+				"title": "Mira - Solana Trading Bot",
+				"shortDescription": "$230K profit in 5 months. Tokens launched to $200M+ market cap.",
+				"fullDescription": "Solana trading bot that turns social signals into trades in under 300ms. Go backend, real-time data pipeline. Helped launch tokens to $200M+ market cap.",
+				"role": "Founding Engineer & Co-Founder",
+				"duration": "5 months",
+				"challenges": [
+					"Execute before competitors",
+					"Parse social signals in real-time",
+					"99.5% uptime, 3-person team"
+				],
+				"outcomes": ["$230K profit in 5 months", "8,000+ trades/month", "Tokens to $200M+ market cap"]
+			},
+			"copile-trading-platform": {
+				"title": "Copile - B2B Crypto Trading Platform",
+				"shortDescription": "2,100 users. €1.2M/month traded. Led team of 6.",
+				"fullDescription": "Trading platform connecting 5 exchanges with one interface. Custom order types, real-time charts, institutional-grade API. 70% of users stuck around.",
+				"role": "Founding Engineer & Co-Founder",
+				"duration": "18 months",
+				"challenges": ["One interface for 5 exchanges", "Institutional-grade trading tools", "Led team of 6"],
+				"outcomes": ["2,100 users acquired", "€1.2M/month traded", "70% retention"]
+			},
+			"vendure-ecommerce": {
+				"title": "Vendure",
+				"shortDescription": "Open-source headless commerce. 8k GitHub stars. Millions of orders. 45% faster processing.",
+				"fullDescription": "Core contributor to Vendure, an open-source headless commerce platform (8k GitHub stars) trusted by IBM, Breitling, Swile, and QVC. Built enterprise e-commerce infrastructure processing millions of orders. Consolidated 7 legacy repos into one monorepo, cut order processing time by 45%, and shipped features with the founders.",
+				"role": "Software Engineer",
+				"duration": "Apr 2024 - Present",
+				"challenges": [
+					"7 legacy repos → 1 clean monorepo",
+					"Major upgrades without downtime",
+					"Enterprise-grade patterns in 8k-star codebase"
+				],
+				"outcomes": ["Millions of orders/year processed", "45% faster order processing", "Used by IBM, Breitling, QVC"]
+			},
+			"synapse-knowledge-system": {
+				"title": "Synapse - AI Knowledge System",
+				"shortDescription": "Find the right expert in seconds. 2nd place @ TUM.AI x Anthropic Hackathon.",
+				"fullDescription": "Built in 36 hours at the TUM.AI x Anthropic Hackathon. Finds the right internal expert instantly using semantic search. 2nd place.",
+				"role": "Backend Engineer",
+				"duration": "36 hours",
+				"challenges": ["Full stack in 36 hours", "Smart ranking algorithm", "Instant semantic search"],
+				"outcomes": ["2nd place", "Find any expert instantly", "Production-ready in 36 hours"]
+			},
+			"dreamcook-community": {
+				"title": "DreamCook - E-Commerce Community Platform",
+				"shortDescription": "5,000+ members. Real-time drop alerts. Profitable for 2 years.",
+				"fullDescription": "Community platform with real-time drop alerts and inventory tracking. 5,000+ members paying for an edge. Profitable for 2 years.",
+				"role": "Full Stack Engineer",
+				"duration": "2 years",
+				"challenges": ["Multi-retailer monitoring", "Instant drop alerts", "Scaled to 5,000+ paying members"],
+				"outcomes": ["5,000+ members", "Faster alerts than competitors", "Profitable for 2 years"]
+			},
+			"acidnode-validator": {
+				"title": "Acid Node - Solana Validator Infrastructure",
+				"shortDescription": "Solana validator infrastructure. 99.9% uptime. AWS automation.",
+				"fullDescription": "Production Solana validator on AWS. Automated deployment, fault-tolerant design, optimized for throughput.",
+				"role": "Backend Engineer",
+				"duration": "5 months",
+				"challenges": ["High-availability architecture", "99.9% uptime target", "One-click deployments"],
+				"outcomes": ["Validator live on mainnet", "Automated infrastructure", "Zero unplanned downtime"]
+			},
+			"neura-nft-sniping": {
+				"title": "Neura - Solana NFT Sniping Bot",
+				"shortDescription": "Millisecond NFT sniping bot. Subscription product. Acquired.",
+				"fullDescription": "NFT sniping bot with millisecond precision. Subscription product that got acquired.",
+				"role": "Software Engineer",
+				"duration": "6 months",
+				"challenges": ["Millisecond timing precision", "On-chain transaction handling", "Stable under traffic spikes"],
+				"outcomes": ["Acquired", "Subscription revenue", "Faster than the competition"]
+			},
+			"codecouncil-multiplayer-ai": {
+				"title": "CodeCouncil - Multiplayer Claude Code",
+				"shortDescription": "Shared AI coding sessions where your whole team sees the same context. Open Beta.",
+				"fullDescription": "Shared AI coding sessions where your whole team sees the same context. Multiple developers join the same session in real-time — no more isolated sessions or pasting outputs into Slack. Sessions persist in the cloud so anyone can pick up where a teammate left off. Includes Discussion Mode where AI personas debate architecture decisions, and a built-in MCP server that connects to your entire stack. Supports 100+ models via OpenRouter.",
+				"role": "Creator & Maintainer",
+				"duration": "2025 - Present",
+				"challenges": [
+					"Real-time multiplayer AI coding sessions with shared context",
+					"Persistent cloud sessions that survive restarts and handoffs",
+					"AI-powered architecture debates with auto-convergence"
+				],
+				"outcomes": [
+					"Open Beta launched",
+					"100+ models supported via OpenRouter",
+					"MCP server integration for external tools"
+				]
+			},
+			"chtype-clickhouse-toolkit": {
+				"title": "chtype - Type-Safe ClickHouse Toolkit",
+				"shortDescription": "Type-safe ClickHouse toolkit for TypeScript — schema codegen, query builder, and enhanced client.",
+				"fullDescription": "TypeScript toolkit that introspects your ClickHouse schema and generates fully typed code. Includes a type-safe query builder with ClickHouse-specific functions (argMax, FINAL, PREWHERE), an enhanced client wrapping @clickhouse/client, and a CLI for schema diffing. Zero runtime overhead — prevents SQL injection by design and catches column typos at compile time.",
+				"role": "Creator & Maintainer",
+				"duration": "2025 - Present",
+				"challenges": [
+					"Type-safe codegen from live ClickHouse schemas",
+					"ClickHouse-specific query builder with PREWHERE, argMax, FINAL",
+					"Schema diffing CLI to detect database drift"
+				],
+				"outcomes": [
+					"Published on npm as @jantokic/chtype",
+					"Zero runtime overhead",
+					"SQL injection prevention by design"
+				]
+			}
+		}
+	},
+	"projectPage": {
+		"notFoundTitle": "Project Not Found",
+		"portfolioSuffix": "Portfolio",
+		"backToProjects": "Back to Projects",
+		"backToAllProjects": "Back to all projects",
+		"overview": "Overview",
+		"challenges": "Challenges & Solutions",
+		"outcomes": "Results & Impact",
+		"role": "Role",
+		"duration": "Duration",
+		"techStack": "Tech Stack",
+		"links": "Links",
+		"github": "GitHub",
+		"x": "X",
+		"website": "Website",
+		"websitePrivateNote": "(Private - Internal Use Only)",
+		"demo": "Demo",
+		"youtube": "YouTube",
+		"moreProjects": "More Projects",
+		"comingSoon": "More details coming soon."
+	},
+	"connect": {
+		"heading": "Let's Connect",
+		"description": "Available for select freelance and consulting. Backend systems, trading platforms, and high-scale e-commerce.",
+		"contactForm": "Contact Form",
+		"email": "jan@jantokic.com",
+		"github": "GitHub",
+		"linkedin": "LinkedIn",
+		"x": "X"
+	},
+	"contact": {
+		"backToPortfolio": "← Back to Portfolio",
+		"heading": "Let's Work Together",
+		"description": "Available for select freelance and consulting. Backend systems, trading platforms, and high-scale e-commerce.",
+		"email": "Email",
+		"location": "Location",
+		"locationValue": "Munich, Germany",
+		"social": "Social",
+		"servicesHeading": "Services I Offer",
+		"services": [
+			"High-performance backend systems",
+			"Trading & blockchain platform development",
+			"E-commerce & headless commerce",
+			"Cloud architecture, DevOps & infrastructure",
+			"Real-time APIs & WebSocket integration",
+			"Security & secrets management",
+			"Tech leadership & consulting"
+		],
+		"formHeading": "Send Me a Message",
+		"nameLabel": "Your Name",
+		"emailLabel": "Your Email",
+		"messageLabel": "Project Details",
+		"messagePlaceholder": "Tell me about your project, timeline, and budget...",
+		"sendButton": "Send Message",
+		"responseTime": "I usually respond within 3 hours",
+		"mailtoSubject": "Project Inquiry from {name}",
+		"stats": {
+			"responseTime": "3h",
+			"responseTimeLabel": "Response Time",
+			"projects": "15+",
+			"projectsLabel": "Projects Delivered"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Jan Tokic",
+		"toggleTheme": "Toggle theme",
+		"language": "Language"
+	}
 }

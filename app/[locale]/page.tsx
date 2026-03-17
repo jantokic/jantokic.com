@@ -1,23 +1,23 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import { useEffect, useRef, useState } from 'react';
 
 // Dynamically import the 3D gallery to avoid blocking FCP (Three.js is ~2MB)
 const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
 	ssr: false,
 	loading: () => <GalleryLoading />,
 });
-import { projects } from '@/lib/projects';
-import { useRouter } from 'next/navigation';
-import { ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import AboutSection from '@/components/sections/AboutSection';
-import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
-import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
 import ConnectSection from '@/components/sections/ConnectSection';
+import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
+import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
+import { projects } from '@/content/projects';
 import { skills } from '@/content/skills';
 import { workData } from '@/content/work';
+import { ChevronDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 function GalleryLoading() {
 	const t = useTranslations();
@@ -39,29 +39,19 @@ export default function Home() {
 	const galleryRef = useRef<HTMLElement>(null);
 	const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
-	// Map projects to gallery images (excluding certain projects)
-	// Reorder so Richard appears first in the 3D gallery
-	const excludedSlugs = ['vendure-ecommerce'];
-	const filteredProjects = projects.filter((project) => !excludedSlugs.includes(project.slug));
+	// Gallery projects: exclude non-featured, sort by galleryOrder
+	const galleryProjects = projects
+		.filter((p) => p.featured !== false)
+		.sort((a, b) => (a.galleryOrder ?? 999) - (b.galleryOrder ?? 999));
 
-	// Move Synapse to where Richard is, and Richard to where Synapse was
-	// This swaps their positions so Richard appears where Synapse currently shows
-	const richardIndex = filteredProjects.findIndex(p => p.slug === 'richard-ai-research');
-	const synapseIndex = filteredProjects.findIndex(p => p.slug === 'synapse-knowledge-system');
-
-	if (richardIndex !== -1 && synapseIndex !== -1) {
-		[filteredProjects[richardIndex], filteredProjects[synapseIndex]] =
-		[filteredProjects[synapseIndex], filteredProjects[richardIndex]];
-	}
-
-	const projectImages = filteredProjects.map((project) => ({
+	const projectImages = galleryProjects.map((project) => ({
 		src: project.galleryImage,
-		alt: project.title,
+		alt: project.slug,
 	}));
 
 	// Handle project click - navigate to project detail page
 	const handleProjectClick = (imageIndex: number) => {
-		const project = filteredProjects[imageIndex];
+		const project = galleryProjects[imageIndex];
 		if (project) {
 			router.push(`/projects/${project.slug}`);
 		}
@@ -90,7 +80,7 @@ export default function Home() {
 					}
 				});
 			},
-			{ threshold: 0.5 }
+			{ threshold: 0.5 },
 		);
 
 		if (galleryRef.current) {
@@ -115,7 +105,7 @@ export default function Home() {
 					}
 				});
 			},
-			{ threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+			{ threshold: 0.1, rootMargin: '0px 0px -10% 0px' },
 		);
 
 		if (galleryRef.current) {
@@ -145,7 +135,7 @@ export default function Home() {
 
 			// Find section whose center is closest to viewport center
 			let closestSection = sectionIds[0];
-			let closestDistance = Infinity;
+			let closestDistance = Number.POSITIVE_INFINITY;
 
 			for (const id of sectionIds) {
 				const section = document.getElementById(id);
@@ -188,9 +178,7 @@ export default function Home() {
 							key={section}
 							onClick={() => scrollToSection(section)}
 							className={`h-3 w-3 rounded-full transition-all duration-300 ${
-								activeSection === section
-									? 'bg-foreground scale-150'
-									: 'bg-border hover:bg-muted-foreground'
+								activeSection === section ? 'bg-foreground scale-150' : 'bg-border hover:bg-muted-foreground'
 							}`}
 							aria-label={t('nav.scrollToSection', { section: t(`nav.${section}`) })}
 						/>
@@ -200,11 +188,7 @@ export default function Home() {
 
 			<main className="min-h-screen">
 				{/* 3D Gallery Section - Always Light Mode */}
-				<section
-					id="gallery"
-					ref={galleryRef}
-					className="relative h-screen bg-white"
-				>
+				<section id="gallery" ref={galleryRef} className="relative h-screen bg-white">
 					<InfiniteGallery
 						images={projectImages}
 						fallbackText={t('gallery.webglFallback')}

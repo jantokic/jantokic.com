@@ -1,8 +1,8 @@
+import MaintenanceGate from '@/components/MaintenanceGate';
+import { routing } from '@/routing';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing } from '@/routing';
-import MaintenanceGate from '@/components/MaintenanceGate';
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
@@ -10,7 +10,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
 	children,
-	params
+	params,
 }: {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;

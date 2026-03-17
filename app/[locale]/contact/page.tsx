@@ -1,13 +1,13 @@
 'use client';
 
-import { Mail, MapPin, Send, Linkedin, Sun, Moon } from 'lucide-react';
-import { Link } from '@/routing';
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-import { useTranslations } from 'next-intl';
 import BrandIcon from '@/components/BrandIcon';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { socialLinks } from '@/content/social';
+import { Link } from '@/routing';
+import { Linkedin, Mail, MapPin, Moon, Send, Sun } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function ContactPage() {
 	const t = useTranslations();
@@ -139,9 +139,7 @@ export default function ContactPage() {
 											required
 											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
 											value={formState.name}
-											onChange={(e) =>
-												setFormState({ ...formState, name: e.target.value })
-											}
+											onChange={(e) => setFormState({ ...formState, name: e.target.value })}
 										/>
 									</div>
 
@@ -158,9 +156,7 @@ export default function ContactPage() {
 											required
 											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
 											value={formState.email}
-											onChange={(e) =>
-												setFormState({ ...formState, email: e.target.value })
-											}
+											onChange={(e) => setFormState({ ...formState, email: e.target.value })}
 										/>
 									</div>
 
@@ -177,9 +173,7 @@ export default function ContactPage() {
 											rows={6}
 											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow resize-none text-foreground placeholder:text-muted-foreground"
 											value={formState.message}
-											onChange={(e) =>
-												setFormState({ ...formState, message: e.target.value })
-											}
+											onChange={(e) => setFormState({ ...formState, message: e.target.value })}
 											placeholder={t('contact.messagePlaceholder')}
 										/>
 									</div>

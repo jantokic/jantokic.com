@@ -46,7 +46,7 @@ export default function Home() {
 
 	const projectImages = galleryProjects.map((project) => ({
 		src: project.galleryImage,
-		alt: project.slug,
+		alt: t(`projects.data.${project.slug}.title`),
 	}));
 
 	// Handle project click - navigate to project detail page

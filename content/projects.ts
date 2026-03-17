@@ -7,6 +7,7 @@ export interface ProjectDef {
 	galleryImage: string;
 	images: string[];
 	featured?: boolean;
+	comingSoon?: boolean;
 	galleryOrder?: number;
 	links?: {
 		github?: string;
@@ -26,6 +27,7 @@ export const projects: ProjectDef[] = [
 		galleryImage: '/projects/klarity/gallery.webp',
 		images: [],
 		year: '2025',
+		comingSoon: true,
 		galleryOrder: 0,
 		links: {
 			website: 'https://klarity.io',

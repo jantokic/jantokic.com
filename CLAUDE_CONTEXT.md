@@ -27,7 +27,7 @@ This is a **professional portfolio website for Jan Tokic, a freelance backend de
 - **Fonts**: Geist Sans, Geist Mono, Instrument Serif
 - **Theme**: next-themes for dark/light mode switching
 - **i18n**: next-intl v4.3.12 for translations (English/German)
-- **Package Manager**: pnpm 10.0.0
+- **Package Manager**: Bun
 - **Analytics**: Vercel Analytics + Speed Insights
 
 ---
@@ -55,9 +55,13 @@ This is a **professional portfolio website for Jan Tokic, a freelance backend de
     ├── FeaturedProjectsSection.tsx  # Projects grid
     └── ConnectSection.tsx           # Contact and social links
 
+/content
+├── projects.ts                      # Project metadata (slug, category, techStack, images, year, links)
+├── skills.ts                        # Skills data
+├── social.ts                        # Social links data
+└── work.ts                          # Work experience data
+
 /lib
-├── projects.ts                      # Minimal project data (id, slug, techStack, duration, images, year, links)
-├── projects.ts.backup               # Original file with text content (backup)
 └── utils.ts                         # Utility functions
 
 /messages
@@ -75,7 +79,7 @@ This is a **professional portfolio website for Jan Tokic, a freelance backend de
 i18n.ts                              # i18n configuration
 routing.ts                           # next-intl routing configuration
 middleware.ts                        # Locale detection middleware
-package.json                         # Dependencies (pnpm)
+package.json                         # Dependencies (Bun)
 next.config.mjs                      # Next.js config with next-intl plugin
 postcss.config.mjs                   # PostCSS config
 tailwind.config.js                   # Tailwind CSS v3 config
@@ -189,7 +193,7 @@ tsconfig.json                        # TypeScript config
 - **Row 2 (Domain/Platform)**: Solana, DevOps, Databases, CMS, PIM
 - Note: Shorter words placed first to ensure proper 5-5 wrapping behavior
 
-### 7. **Project Data** (`lib/projects.ts`)
+### 7. **Project Data** (`content/projects.ts`)
 
 **9 Real Projects** (actual work from Jan's career):
 1. **Richard** - Autonomous AI Research Engine (Mar-Jun 2025)
@@ -294,13 +298,13 @@ tsconfig.json                        # TypeScript config
 - ✅ All sections use forwardRef for scroll animations and IntersectionObserver
 
 ### 12. Text Migration to JSON Translation Files (October 2025)
-- ✅ **MAJOR REFACTOR**: Moved all project text content from `lib/projects.ts` to translation files
+- ✅ **MAJOR REFACTOR**: Moved all project text content from `content/projects.ts` to translation files
 - ✅ Created `projectDetails` section in `messages/en.json` and `messages/de.json`
 - ✅ Each project includes: title, shortDescription, fullDescription, role, category, challenges[], outcomes[]
-- ✅ Updated `lib/projects.ts` to contain ONLY minimal data:
+- ✅ Updated `content/projects.ts` to contain ONLY minimal data:
   - id, slug, techStack, duration, image paths, year, links
   - NO text content - all text is in JSON files
-- ✅ Backup created at `lib/projects.ts.backup` with original data
+- ✅ Backup created at `content/projects.ts.backup` with original data
 - ✅ Updated `app/[locale]/projects/[slug]/page.tsx` to use `getTranslations()` from next-intl
 - ✅ All project text now properly internationalized and separated from code
 - ✅ Build successful with no TypeScript errors
@@ -419,7 +423,7 @@ tsconfig.json                        # TypeScript config
 - [ ] Optimize images to `.webp` format where needed
 
 ### Project Data
-- [x] Updated `lib/projects.ts` with all real project details
+- [x] Updated `content/projects.ts` with all real project details
 - [x] Verified all descriptions, tech stacks, and outcomes are accurate
 - [x] Added project links (GitHub, X, websites, demos, YouTube)
 
@@ -476,19 +480,19 @@ All translation keys follow this structure:
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Run development server
-pnpm dev
+bun dev
 
 # Build for production
-pnpm build
+bun run build
 
 # Start production server
-pnpm start
+bun start
 
 # Clean build
-rm -rf .next && pnpm dev
+rm -rf .next && bun dev
 ```
 
 ---

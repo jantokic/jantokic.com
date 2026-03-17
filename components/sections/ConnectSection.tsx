@@ -9,8 +9,7 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { type ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
-// biome-ignore lint/complexity/noBannedTypes: empty props for forwardRef
-const ConnectSection = forwardRef<HTMLElement, {}>((_props, ref: ForwardedRef<HTMLElement>) => {
+const ConnectSection = forwardRef<HTMLElement, Record<string, never>>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);

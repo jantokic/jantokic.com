@@ -43,8 +43,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 	const t = await getTranslations({ locale, namespace: 'projects' });
 	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
-	const fullDescription = t(`data.${slug}.fullDescription`);
-	const isComingSoon = !fullDescription || fullDescription === 'Coming soon.' || fullDescription === 'Bald verfügbar.';
+	const isComingSoon = project.comingSoon === true;
 
 	if (isComingSoon) {
 		return (
@@ -165,39 +164,43 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						</div>
 
 						{/* Challenges */}
-						<div>
-							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								{ui('challenges')}
-							</h2>
-							<ul className="space-y-4">
-								{(t.raw(`data.${slug}.challenges`) as string[]).map((challenge, index) => (
-									<li key={index} className="flex gap-3">
-										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-sm flex items-center justify-center font-mono font-semibold mt-0.5">
-											{index + 1}
-										</span>
-										<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
-											{challenge}
-										</span>
-									</li>
-								))}
-							</ul>
-						</div>
+						{((t.raw(`data.${slug}.challenges`) as string[]) ?? []).length > 0 && (
+							<div>
+								<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
+									{ui('challenges')}
+								</h2>
+								<ul className="space-y-4">
+									{(t.raw(`data.${slug}.challenges`) as string[]).map((challenge, index) => (
+										<li key={index} className="flex gap-3">
+											<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-sm flex items-center justify-center font-mono font-semibold mt-0.5">
+												{index + 1}
+											</span>
+											<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
+												{challenge}
+											</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
 
 						{/* Outcomes */}
-						<div>
-							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								{ui('outcomes')}
-							</h2>
-							<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-								{(t.raw(`data.${slug}.outcomes`) as string[]).map((outcome, index) => (
-									<div key={index} className="p-4 bg-muted rounded-lg border border-border">
-										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
-											{outcome}
-										</p>
-									</div>
-								))}
+						{((t.raw(`data.${slug}.outcomes`) as string[]) ?? []).length > 0 && (
+							<div>
+								<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
+									{ui('outcomes')}
+								</h2>
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+									{(t.raw(`data.${slug}.outcomes`) as string[]).map((outcome, index) => (
+										<div key={index} className="p-4 bg-muted rounded-lg border border-border">
+											<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
+												{outcome}
+											</p>
+										</div>
+									))}
+								</div>
 							</div>
-						</div>
+						)}
 					</div>
 
 					{/* Sidebar */}

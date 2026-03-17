@@ -488,8 +488,6 @@ function GalleryScene({
 			plane.x = spatialPositions[i]?.x ?? 0;
 			plane.y = spatialPositions[i]?.y ?? 0;
 
-			const _worldZ = plane.z - halfRange;
-
 			// Calculate opacity based on fade settings
 			const normalizedPosition = plane.z / totalRange; // 0 to 1
 			let opacity = 1;

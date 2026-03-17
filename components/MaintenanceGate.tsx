@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import { type ReactNode, useEffect, useState } from 'react';
 
 const MAINTENANCE_PIN = process.env.NEXT_PUBLIC_MAINTENANCE_PIN || '';
 const MAX_ATTEMPTS = 3;
@@ -31,7 +31,7 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 			// Check for existing lockout
 			const storedLockout = localStorage.getItem('pin_lockout');
 			if (storedLockout) {
-				const lockoutTime = parseInt(storedLockout, 10);
+				const lockoutTime = Number.parseInt(storedLockout, 10);
 				if (Date.now() < lockoutTime) {
 					setLockedUntil(lockoutTime);
 				} else {
@@ -43,7 +43,7 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 			// Restore attempt count
 			const storedAttempts = localStorage.getItem('pin_attempts');
 			if (storedAttempts) {
-				setAttempts(parseInt(storedAttempts, 10));
+				setAttempts(Number.parseInt(storedAttempts, 10));
 			}
 		}
 	}, []);
@@ -128,9 +128,7 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 						{isLockedOut ? (
 							<div className="flex flex-col items-center gap-4">
 								<p className="text-red-500 text-sm font-mono">{t('tooManyAttempts')}</p>
-								<p className="text-gray-500 text-sm font-mono">
-									{t('retryIn', { time: formatTime(remainingTime) })}
-								</p>
+								<p className="text-gray-500 text-sm font-mono">{t('retryIn', { time: formatTime(remainingTime) })}</p>
 							</div>
 						) : (
 							<form onSubmit={handlePinSubmit} className="flex flex-col items-center gap-4">

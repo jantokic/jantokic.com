@@ -23,7 +23,7 @@ Professional portfolio website showcasing backend engineering projects with an i
 - **Styling**: Tailwind CSS v3.4.18
 - **Language**: TypeScript
 - **Theme**: next-themes
-- **Package Manager**: pnpm 10.0.0
+- **Package Manager**: Bun
 - **Analytics**: Vercel Analytics
 
 ## Getting Started
@@ -31,22 +31,22 @@ Professional portfolio website showcasing backend engineering projects with an i
 ### Prerequisites
 
 - Node.js 18+
-- pnpm 10.0.0+
+- Bun
 
 ### Installation
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Run development server
-pnpm dev
+bun dev
 
 # Build for production
-pnpm build
+bun run build
 
 # Start production server
-pnpm start
+bun start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
@@ -63,8 +63,11 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 /components
 └── InfiniteGallery.tsx         # 3D gallery with scroll detection
 
-/lib
+/content
 ├── projects.ts                 # Project data
+└── ...
+
+/lib
 └── utils.ts                    # Utility functions
 
 /public
@@ -89,7 +92,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 To customize for your own use:
 
 1. **Personal Info**: Update contact details in `app/page.tsx`
-2. **Projects**: Modify project data in `lib/projects.ts`
+2. **Projects**: Modify project data in `content/projects.ts`
 3. **SEO**: Update metadata in `app/layout.tsx`
 4. **Images**: Replace placeholder images in `/public/projects/`
 5. **Profile Photo**: Replace `/placeholder-user.jpg`

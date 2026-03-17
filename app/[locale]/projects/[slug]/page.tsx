@@ -1,10 +1,10 @@
-import { notFound } from 'next/navigation';
-import { getProjectBySlug, projects } from '@/lib/projects';
+import BrandIcon from '@/components/BrandIcon';
+import { getProjectBySlug, projects } from '@/content/projects';
 import { Link } from '@/routing';
 import { ArrowLeft, ExternalLink, Video } from 'lucide-react';
-import Image from 'next/image';
-import BrandIcon from '@/components/BrandIcon';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
 	return projects.map((project) => ({
@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 		};
 	}
 
-	const t = await getTranslations({ locale, namespace: 'projectDetails' });
+	const t = await getTranslations({ locale, namespace: 'projects' });
 	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
 	return {
-		title: `${t(`${slug}.title`)} | ${ui('portfolioSuffix')}`,
-		description: t(`${slug}.shortDescription`),
+		title: `${t(`data.${slug}.title`)} | ${ui('portfolioSuffix')}`,
+		description: t(`data.${slug}.shortDescription`),
 	};
 }
 
@@ -40,13 +40,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 		notFound();
 	}
 
-	const t = await getTranslations({ locale, namespace: 'projectDetails' });
+	const t = await getTranslations({ locale, namespace: 'projects' });
 	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
-	// Minimal "coming soon" view for Klarity
-	const isSecret = slug === 'klarity-prediction-market';
+	const isComingSoon = project.comingSoon === true;
 
-	if (isSecret) {
+	if (isComingSoon) {
 		return (
 			<main className="min-h-screen bg-background">
 				{/* Header with back button */}
@@ -66,10 +65,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				<section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
 					<div className="max-w-7xl mx-auto">
 						<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground mb-6 leading-tight">
-							{t(`${slug}.title`)}
+							{t(`data.${slug}.title`)}
 						</h1>
 						<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed">
-							{t(`${slug}.shortDescription`)}
+							{t(`data.${slug}.shortDescription`)}
 						</p>
 					</div>
 				</section>
@@ -78,23 +77,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				<section className="px-4 sm:px-6 lg:px-8 mb-16">
 					<div className="max-w-7xl mx-auto">
 						<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
-							<Image
-								src={project.image}
-								alt={t(`${slug}.title`)}
-								fill
-								className="object-cover"
-								unoptimized
-							/>
+							<Image src={project.image} alt={t(`data.${slug}.title`)} fill className="object-cover" unoptimized />
 						</div>
 					</div>
 				</section>
 
-				{/* Secret message */}
+				{/* Coming soon message */}
 				<section className="px-4 sm:px-6 lg:px-8 mb-16">
 					<div className="max-w-7xl mx-auto text-center py-16">
-						<p className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold text-muted-foreground/50">
-							🤫
-						</p>
 						<p className="font-mono uppercase text-sm tracking-wider font-semibold text-muted-foreground/50 mt-4">
 							{ui('comingSoon')}
 						</p>
@@ -137,14 +127,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				<div className="max-w-7xl mx-auto">
 					<div className="mb-6">
 						<span className="inline-block px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider bg-muted text-muted-foreground rounded-full">
-							{t(`${slug}.category`)} • {project.year}
+							{project.category} • {project.year}
 						</span>
 					</div>
 					<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground mb-6 leading-tight">
-						{t(`${slug}.title`)}
+						{t(`data.${slug}.title`)}
 					</h1>
 					<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed">
-						{t(`${slug}.shortDescription`)}
+						{t(`data.${slug}.shortDescription`)}
 					</p>
 				</div>
 			</section>
@@ -153,13 +143,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 			<section className="px-4 sm:px-6 lg:px-8 mb-16">
 				<div className="max-w-7xl mx-auto">
 					<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
-						<Image
-							src={project.image}
-							alt={t(`${slug}.title`)}
-							fill
-							className="object-cover"
-							unoptimized
-						/>
+						<Image src={project.image} alt={t(`data.${slug}.title`)} fill className="object-cover" unoptimized />
 					</div>
 				</div>
 			</section>
@@ -175,47 +159,48 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								{ui('overview')}
 							</h2>
 							<p className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground leading-relaxed">
-								{t(`${slug}.fullDescription`)}
+								{t(`data.${slug}.fullDescription`)}
 							</p>
 						</div>
 
 						{/* Challenges */}
-						<div>
-							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								{ui('challenges')}
-							</h2>
-							<ul className="space-y-4">
-								{(t.raw(`${slug}.challenges`) as string[]).map((challenge, index) => (
-									<li key={index} className="flex gap-3">
-										<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-sm flex items-center justify-center font-mono font-semibold mt-0.5">
-											{index + 1}
-										</span>
-										<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
-											{challenge}
-										</span>
-									</li>
-								))}
-							</ul>
-						</div>
+						{((t.raw(`data.${slug}.challenges`) as string[]) ?? []).length > 0 && (
+							<div>
+								<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
+									{ui('challenges')}
+								</h2>
+								<ul className="space-y-4">
+									{(t.raw(`data.${slug}.challenges`) as string[]).map((challenge, index) => (
+										<li key={index} className="flex gap-3">
+											<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-sm flex items-center justify-center font-mono font-semibold mt-0.5">
+												{index + 1}
+											</span>
+											<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
+												{challenge}
+											</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
 
 						{/* Outcomes */}
-						<div>
-							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
-								{ui('outcomes')}
-							</h2>
-							<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-								{(t.raw(`${slug}.outcomes`) as string[]).map((outcome, index) => (
-									<div
-										key={index}
-										className="p-4 bg-muted rounded-lg border border-border"
-									>
-										<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
-											{outcome}
-										</p>
-									</div>
-								))}
+						{((t.raw(`data.${slug}.outcomes`) as string[]) ?? []).length > 0 && (
+							<div>
+								<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
+									{ui('outcomes')}
+								</h2>
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+									{(t.raw(`data.${slug}.outcomes`) as string[]).map((outcome, index) => (
+										<div key={index} className="p-4 bg-muted rounded-lg border border-border">
+											<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
+												{outcome}
+											</p>
+										</div>
+									))}
+								</div>
 							</div>
-						</div>
+						)}
 					</div>
 
 					{/* Sidebar */}
@@ -225,7 +210,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
 								{ui('role')}
 							</h3>
-							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{t(`${slug}.role`)}</p>
+							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">
+								{t(`data.${slug}.role`)}
+							</p>
 						</div>
 
 						{/* Duration */}
@@ -234,7 +221,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 								{ui('duration')}
 							</h3>
 							<p className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">
-								{t(`${slug}.duration`)}
+								{t(`data.${slug}.duration`)}
 							</p>
 						</div>
 
@@ -256,78 +243,87 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						</div>
 
 						{/* Links */}
-						{project.links && (project.links.github || project.links.x || project.links.website || project.links.demo || project.links.youtube) && (
-							<div>
-								<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-									{ui('links')}
-								</h3>
-								<div className="space-y-2">
-									{project.links.github && (
-										<a
-											href={project.links.github}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
-										>
-											<BrandIcon name="siGithub" size={14} className="text-foreground group-hover:text-muted-foreground" />
-											{ui('github')}
-											<ExternalLink className="w-3 h-3 ml-auto" />
-										</a>
-									)}
-									{project.links.x && (
-										<a
-											href={project.links.x}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
-										>
-											<BrandIcon name="siX" size={14} className="text-foreground group-hover:text-muted-foreground" />
-											{ui('x')}
-											<ExternalLink className="w-3 h-3 ml-auto" />
-										</a>
-									)}
-									{project.links.website && (
-										<a
-											href={project.links.website}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
-										>
-											<ExternalLink className="w-3.5 h-3.5" />
-											{ui('website')}{' '}
-											{project.slug === 'richard-ai-research' && (
-												<span className="text-[10px] opacity-60">{ui('websitePrivateNote')}</span>
-											)}
-											<ExternalLink className="w-3 h-3 ml-auto" />
-										</a>
-									)}
-									{project.links.demo && (
-										<a
-											href={project.links.demo}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
-										>
-											<ExternalLink className="w-3.5 h-3.5" />
-											{ui('demo')}
-											<ExternalLink className="w-3 h-3 ml-auto" />
-										</a>
-									)}
-									{project.links.youtube && (
-										<a
-											href={project.links.youtube}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
-										>
-											<Video className="w-3.5 h-3.5" />
-											{ui('youtube')}
-											<ExternalLink className="w-3 h-3 ml-auto" />
-										</a>
-									)}
+						{project.links &&
+							(project.links.github ||
+								project.links.x ||
+								project.links.website ||
+								project.links.demo ||
+								project.links.youtube) && (
+								<div>
+									<h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+										{ui('links')}
+									</h3>
+									<div className="space-y-2">
+										{project.links.github && (
+											<a
+												href={project.links.github}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+											>
+												<BrandIcon
+													name="siGithub"
+													size={14}
+													className="text-foreground group-hover:text-muted-foreground"
+												/>
+												{ui('github')}
+												<ExternalLink className="w-3 h-3 ml-auto" />
+											</a>
+										)}
+										{project.links.x && (
+											<a
+												href={project.links.x}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+											>
+												<BrandIcon name="siX" size={14} className="text-foreground group-hover:text-muted-foreground" />
+												{ui('x')}
+												<ExternalLink className="w-3 h-3 ml-auto" />
+											</a>
+										)}
+										{project.links.website && (
+											<a
+												href={project.links.website}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+											>
+												<ExternalLink className="w-3.5 h-3.5" />
+												{ui('website')}{' '}
+												{project.slug === 'richard-ai-research' && (
+													<span className="text-[10px] opacity-60">{ui('websitePrivateNote')}</span>
+												)}
+												<ExternalLink className="w-3 h-3 ml-auto" />
+											</a>
+										)}
+										{project.links.demo && (
+											<a
+												href={project.links.demo}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+											>
+												<ExternalLink className="w-3.5 h-3.5" />
+												{ui('demo')}
+												<ExternalLink className="w-3 h-3 ml-auto" />
+											</a>
+										)}
+										{project.links.youtube && (
+											<a
+												href={project.links.youtube}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-foreground hover:text-muted-foreground transition-colors group"
+											>
+												<Video className="w-3.5 h-3.5" />
+												{ui('youtube')}
+												<ExternalLink className="w-3 h-3 ml-auto" />
+											</a>
+										)}
+									</div>
 								</div>
-							</div>
-						)}
+							)}
 					</div>
 				</div>
 			</section>
@@ -343,25 +339,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							.filter((p) => p.slug !== project.slug)
 							.slice(0, 3)
 							.map((relatedProject) => (
-								<Link
-									key={relatedProject.slug}
-									href={`/projects/${relatedProject.slug}`}
-									className="group"
-								>
+								<Link key={relatedProject.slug} href={`/projects/${relatedProject.slug}`} className="group">
 									<div className="relative w-full h-[200px] rounded-lg overflow-hidden bg-border mb-3">
 										<Image
 											src={relatedProject.image}
-											alt={t(`${relatedProject.slug}.title`)}
+											alt={t(`data.${relatedProject.slug}.title`)}
 											fill
 											className="object-cover group-hover:scale-105 transition-transform duration-300"
 											unoptimized
 										/>
 									</div>
 									<h3 className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground group-hover:text-muted-foreground transition-colors">
-										{t(`${relatedProject.slug}.title`)}
+										{t(`data.${relatedProject.slug}.title`)}
 									</h3>
 									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mt-1">
-										{t(`${relatedProject.slug}.category`)}
+										{relatedProject.category}
 									</p>
 								</Link>
 							))}

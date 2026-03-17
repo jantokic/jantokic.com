@@ -1,9 +1,9 @@
 'use client';
 
-import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/routing';
 import { routing } from '@/routing';
 import { Globe } from 'lucide-react';
+import { useLocale } from 'next-intl';
 
 export default function LanguageSwitcher() {
 	const locale = useLocale();
@@ -23,9 +23,7 @@ export default function LanguageSwitcher() {
 						key={loc}
 						onClick={() => switchLocale(loc)}
 						className={`font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${
-							locale === loc
-								? 'text-foreground'
-								: 'text-muted-foreground hover:text-foreground'
+							locale === loc ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
 						}`}
 					>
 						{loc.toUpperCase()}

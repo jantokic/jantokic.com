@@ -1,9 +1,9 @@
 'use client';
 
-import type React from 'react';
-import { useRef, useMemo, useCallback, useState, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import type React from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 type ImageItem = string | { src: string; alt?: string };
@@ -195,7 +195,7 @@ function ImagePlane({
 	}, [material, texture]);
 
 	useEffect(() => {
-		if (material && material.uniforms) {
+		if (material?.uniforms) {
 			material.uniforms.isHovered.value = isHovered ? 1.0 : 0.0;
 		}
 	}, [material, isHovered]);
@@ -209,7 +209,7 @@ function ImagePlane({
 			onPointerEnter={() => setIsHovered(true)}
 			onPointerLeave={() => setIsHovered(false)}
 			onClick={onClick}
-			style={{ cursor: onClick ? 'pointer' : 'default' } as any}
+			{...({ style: { cursor: onClick ? 'pointer' : 'default' } } as any)}
 		>
 			<planeGeometry args={[1, 1, 32, 32]} />
 		</mesh>
@@ -255,21 +255,15 @@ function GalleryScene({
 
 	// Normalize images to objects
 	const normalizedImages = useMemo(
-		() =>
-			images.map((img) =>
-				typeof img === 'string' ? { src: img, alt: '' } : img
-			),
-		[images]
+		() => images.map((img) => (typeof img === 'string' ? { src: img, alt: '' } : img)),
+		[images],
 	);
 
 	// Load textures
 	const textures = useTexture(normalizedImages.map((img) => img.src));
 
 	// Create materials pool
-	const materials = useMemo(
-		() => Array.from({ length: visibleCount }, () => createClothMaterial()),
-		[visibleCount]
-	);
+	const materials = useMemo(() => Array.from({ length: visibleCount }, () => createClothMaterial()), [visibleCount]);
 
 	const spatialPositions = useMemo(() => {
 		const positions: { x: number; y: number }[] = [];
@@ -284,11 +278,8 @@ function GalleryScene({
 			const horizontalRadius = (i % 3) * 1.2; // Vary the distance from center
 			const verticalRadius = ((i + 1) % 4) * 0.8; // Different pattern for vertical
 
-			const x =
-				(Math.sin(horizontalAngle) * horizontalRadius * maxHorizontalOffset) /
-				3;
-			const y =
-				(Math.cos(verticalAngle) * verticalRadius * maxVerticalOffset) / 4;
+			const x = (Math.sin(horizontalAngle) * horizontalRadius * maxHorizontalOffset) / 3;
+			const y = (Math.cos(verticalAngle) * verticalRadius * maxVerticalOffset) / 4;
 
 			positions.push({ x, y });
 		}
@@ -307,16 +298,13 @@ function GalleryScene({
 			imageIndex: totalImages > 0 ? i % totalImages : 0,
 			x: spatialPositions[i]?.x ?? 0, // Use spatial positions for x
 			y: spatialPositions[i]?.y ?? 0, // Use spatial positions for y
-		}))
+		})),
 	);
 
 	useEffect(() => {
 		planesData.current = Array.from({ length: visibleCount }, (_, i) => ({
 			index: i,
-			z:
-				visibleCount > 0
-					? ((depthRange / Math.max(visibleCount, 1)) * i) % depthRange
-					: 0,
+			z: visibleCount > 0 ? ((depthRange / Math.max(visibleCount, 1)) * i) % depthRange : 0,
 			imageIndex: totalImages > 0 ? i % totalImages : 0,
 			x: spatialPositions[i]?.x ?? 0,
 			y: spatialPositions[i]?.y ?? 0,
@@ -327,7 +315,7 @@ function GalleryScene({
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
 			// Calculate scroll threshold: one complete pass through all images
-			const scrollThreshold = (normalizedImages.length * 3.5); // Halved again for faster completion
+			const scrollThreshold = normalizedImages.length * 3.5; // Halved again for faster completion
 
 			if (!isComplete && totalScrollDistance.current < scrollThreshold) {
 				event.preventDefault();
@@ -348,7 +336,7 @@ function GalleryScene({
 			}
 			// If complete, allow natural page scrolling (don't preventDefault)
 		},
-		[speed, isComplete, normalizedImages.length, onScrollComplete]
+		[speed, isComplete, normalizedImages.length, onScrollComplete],
 	);
 
 	// Handle keyboard input
@@ -366,19 +354,22 @@ function GalleryScene({
 				lastInteraction.current = Date.now();
 			}
 		},
-		[speed, isComplete]
+		[speed, isComplete],
 	);
 
 	// Handle touch start
-	const handleTouchStart = useCallback((event: TouchEvent) => {
-		if (isComplete) return;
-		const touch = event.touches[0];
-		touchStartY.current = touch.clientY;
-		lastTouchY.current = touch.clientY;
-		touchStartTime.current = Date.now();
-		setAutoPlay(false);
-		lastInteraction.current = Date.now();
-	}, [isComplete]);
+	const handleTouchStart = useCallback(
+		(event: TouchEvent) => {
+			if (isComplete) return;
+			const touch = event.touches[0];
+			touchStartY.current = touch.clientY;
+			lastTouchY.current = touch.clientY;
+			touchStartTime.current = Date.now();
+			setAutoPlay(false);
+			lastInteraction.current = Date.now();
+		},
+		[isComplete],
+	);
 
 	// Handle touch move
 	const handleTouchMove = useCallback(
@@ -410,7 +401,7 @@ function GalleryScene({
 				}
 			}
 		},
-		[speed, isComplete, normalizedImages.length, onScrollComplete]
+		[speed, isComplete, normalizedImages.length, onScrollComplete],
 	);
 
 	// Handle touch end
@@ -460,15 +451,14 @@ function GalleryScene({
 		// Update time uniform for all materials
 		const time = state.clock.getElapsedTime();
 		materials.forEach((material) => {
-			if (material && material.uniforms) {
+			if (material?.uniforms) {
 				material.uniforms.time.value = time;
 				material.uniforms.scrollForce.value = scrollVelocity;
 			}
 		});
 
 		// Update plane positions
-		const imageAdvance =
-			totalImages > 0 ? visibleCount % totalImages || totalImages : 0;
+		const imageAdvance = totalImages > 0 ? visibleCount % totalImages || totalImages : 0;
 		const totalRange = depthRange;
 		const halfRange = totalRange / 2;
 
@@ -486,8 +476,7 @@ function GalleryScene({
 			}
 
 			if (wrapsForward > 0 && imageAdvance > 0 && totalImages > 0) {
-				plane.imageIndex =
-					(plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
+				plane.imageIndex = (plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
 			}
 
 			if (wrapsBackward > 0 && imageAdvance > 0 && totalImages > 0) {
@@ -499,32 +488,22 @@ function GalleryScene({
 			plane.x = spatialPositions[i]?.x ?? 0;
 			plane.y = spatialPositions[i]?.y ?? 0;
 
-			const worldZ = plane.z - halfRange;
-
 			// Calculate opacity based on fade settings
 			const normalizedPosition = plane.z / totalRange; // 0 to 1
 			let opacity = 1;
 
-			if (
-				normalizedPosition >= fadeSettings.fadeIn.start &&
-				normalizedPosition <= fadeSettings.fadeIn.end
-			) {
+			if (normalizedPosition >= fadeSettings.fadeIn.start && normalizedPosition <= fadeSettings.fadeIn.end) {
 				// Fade in: opacity goes from 0 to 1 within the fade in range
 				const fadeInProgress =
-					(normalizedPosition - fadeSettings.fadeIn.start) /
-					(fadeSettings.fadeIn.end - fadeSettings.fadeIn.start);
+					(normalizedPosition - fadeSettings.fadeIn.start) / (fadeSettings.fadeIn.end - fadeSettings.fadeIn.start);
 				opacity = fadeInProgress;
 			} else if (normalizedPosition < fadeSettings.fadeIn.start) {
 				// Before fade in starts: fully transparent
 				opacity = 0;
-			} else if (
-				normalizedPosition >= fadeSettings.fadeOut.start &&
-				normalizedPosition <= fadeSettings.fadeOut.end
-			) {
+			} else if (normalizedPosition >= fadeSettings.fadeOut.start && normalizedPosition <= fadeSettings.fadeOut.end) {
 				// Fade out: opacity goes from 1 to 0 within the fade out range
 				const fadeOutProgress =
-					(normalizedPosition - fadeSettings.fadeOut.start) /
-					(fadeSettings.fadeOut.end - fadeSettings.fadeOut.start);
+					(normalizedPosition - fadeSettings.fadeOut.start) / (fadeSettings.fadeOut.end - fadeSettings.fadeOut.start);
 				opacity = 1 - fadeOutProgress;
 			} else if (normalizedPosition > fadeSettings.fadeOut.end) {
 				// After fade out ends: fully transparent
@@ -537,26 +516,18 @@ function GalleryScene({
 			// Calculate blur based on blur settings
 			let blur = 0;
 
-			if (
-				normalizedPosition >= blurSettings.blurIn.start &&
-				normalizedPosition <= blurSettings.blurIn.end
-			) {
+			if (normalizedPosition >= blurSettings.blurIn.start && normalizedPosition <= blurSettings.blurIn.end) {
 				// Blur in: blur goes from maxBlur to 0 within the blur in range
 				const blurInProgress =
-					(normalizedPosition - blurSettings.blurIn.start) /
-					(blurSettings.blurIn.end - blurSettings.blurIn.start);
+					(normalizedPosition - blurSettings.blurIn.start) / (blurSettings.blurIn.end - blurSettings.blurIn.start);
 				blur = blurSettings.maxBlur * (1 - blurInProgress);
 			} else if (normalizedPosition < blurSettings.blurIn.start) {
 				// Before blur in starts: full blur
 				blur = blurSettings.maxBlur;
-			} else if (
-				normalizedPosition >= blurSettings.blurOut.start &&
-				normalizedPosition <= blurSettings.blurOut.end
-			) {
+			} else if (normalizedPosition >= blurSettings.blurOut.start && normalizedPosition <= blurSettings.blurOut.end) {
 				// Blur out: blur goes from 0 to maxBlur within the blur out range
 				const blurOutProgress =
-					(normalizedPosition - blurSettings.blurOut.start) /
-					(blurSettings.blurOut.end - blurSettings.blurOut.start);
+					(normalizedPosition - blurSettings.blurOut.start) / (blurSettings.blurOut.end - blurSettings.blurOut.start);
 				blur = blurSettings.maxBlur * blurOutProgress;
 			} else if (normalizedPosition > blurSettings.blurOut.end) {
 				// After blur out ends: full blur
@@ -568,7 +539,7 @@ function GalleryScene({
 
 			// Update material uniforms
 			const material = materials[i];
-			if (material && material.uniforms) {
+			if (material?.uniforms) {
 				material.uniforms.opacity.value = opacity;
 				material.uniforms.blurAmount.value = blur;
 			}
@@ -588,11 +559,9 @@ function GalleryScene({
 				const worldZ = plane.z - depthRange / 2;
 
 				// Calculate scale to maintain aspect ratio
-				const aspect = texture.image
-					? texture.image.width / texture.image.height
-					: 1;
-				const scale: [number, number, number] =
-					aspect > 1 ? [2 * aspect, 2, 1] : [2, 2 / aspect, 1];
+				const img = texture.image as { width: number; height: number } | undefined;
+				const aspect = img ? img.width / img.height : 1;
+				const scale: [number, number, number] = aspect > 1 ? [2 * aspect, 2, 1] : [2, 2 / aspect, 1];
 
 				return (
 					<ImagePlane
@@ -612,11 +581,8 @@ function GalleryScene({
 // Fallback component for when WebGL is not available
 function FallbackGallery({ images, fallbackText }: { images: ImageItem[]; fallbackText: string }) {
 	const normalizedImages = useMemo(
-		() =>
-			images.map((img) =>
-				typeof img === 'string' ? { src: img, alt: '' } : img
-			),
-		[images]
+		() => images.map((img) => (typeof img === 'string' ? { src: img, alt: '' } : img)),
+		[images],
 	);
 
 	return (
@@ -624,12 +590,7 @@ function FallbackGallery({ images, fallbackText }: { images: ImageItem[]; fallba
 			<p className="text-gray-600 mb-4">{fallbackText}</p>
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
 				{normalizedImages.map((img, i) => (
-					<img
-						key={i}
-						src={img.src || '/placeholder.svg'}
-						alt={img.alt}
-						className="w-full h-32 object-cover rounded"
-					/>
+					<img key={i} src={img.src || '/placeholder.svg'} alt={img.alt} className="w-full h-32 object-cover rounded" />
 				))}
 			</div>
 		</div>
@@ -660,12 +621,11 @@ export default function InfiniteGallery({
 		// Check WebGL support
 		try {
 			const canvas = document.createElement('canvas');
-			const gl =
-				canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+			const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 			if (!gl) {
 				setWebglSupported(false);
 			}
-		} catch (e) {
+		} catch (_e) {
 			setWebglSupported(false);
 		}
 	}, []);
@@ -680,10 +640,7 @@ export default function InfiniteGallery({
 
 	return (
 		<div className={className} style={style}>
-			<Canvas
-				camera={{ position: [0, 0, 0], fov: 55 }}
-				gl={{ antialias: true, alpha: true }}
-			>
+			<Canvas camera={{ position: [0, 0, 0], fov: 55 }} gl={{ antialias: true, alpha: true }}>
 				<GalleryScene
 					images={images}
 					fadeSettings={fadeSettings}

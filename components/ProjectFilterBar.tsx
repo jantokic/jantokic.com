@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
 
 export type SortOption = 'relevance' | 'newest' | 'oldest';
 export type CategoryFilter = string | null;
@@ -31,19 +31,35 @@ export default function ProjectFilterBar({
 }: ProjectFilterBarProps) {
 	const [sortOpen, setSortOpen] = useState(false);
 
-	const handleSortSelect = useCallback((option: SortOption) => {
-		onSortChange(option);
-		setSortOpen(false);
-	}, [onSortChange]);
+	const handleSortSelect = useCallback(
+		(option: SortOption) => {
+			onSortChange(option);
+			setSortOpen(false);
+		},
+		[onSortChange],
+	);
+
+	// Close dropdown on Escape key
+	useEffect(() => {
+		if (!sortOpen) return;
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				setSortOpen(false);
+			}
+		};
+		document.addEventListener('keydown', handleKeyDown);
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	}, [sortOpen]);
 
 	const sortLabel = sortBy === 'relevance' ? labels.relevance : sortBy === 'newest' ? labels.newest : labels.oldest;
 
 	return (
 		<div className="flex flex-col gap-4 mb-8 sm:mb-10">
 			{/* Category pills */}
-			<div className="flex flex-wrap gap-2">
+			<div className="flex flex-wrap gap-2" role="group">
 				<button
 					onClick={() => onCategoryChange(null)}
+					aria-pressed={activeCategory === null}
 					className={`font-mono uppercase text-xs tracking-wider font-semibold px-3 py-1.5 rounded-md border transition-all duration-200 ${
 						activeCategory === null
 							? 'bg-foreground text-background border-foreground'
@@ -56,6 +72,7 @@ export default function ProjectFilterBar({
 					<button
 						key={cat}
 						onClick={() => onCategoryChange(activeCategory === cat ? null : cat)}
+						aria-pressed={activeCategory === cat}
 						className={`font-mono uppercase text-xs tracking-wider font-semibold px-3 py-1.5 rounded-md border transition-all duration-200 ${
 							activeCategory === cat
 								? 'bg-foreground text-background border-foreground'
@@ -75,6 +92,8 @@ export default function ProjectFilterBar({
 				<div className="relative">
 					<button
 						onClick={() => setSortOpen(!sortOpen)}
+						aria-expanded={sortOpen}
+						aria-haspopup="listbox"
 						className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground flex items-center gap-1 px-2 py-1 rounded-md border border-border/50 hover:border-border transition-all duration-200"
 					>
 						{sortLabel}
@@ -83,10 +102,12 @@ export default function ProjectFilterBar({
 					{sortOpen && (
 						<>
 							<div className="fixed inset-0 z-40" onClick={() => setSortOpen(false)} />
-							<div className="absolute top-full left-0 mt-1 z-50 bg-background border border-border rounded-md shadow-lg min-w-[140px]">
+							<div className="absolute top-full left-0 mt-1 z-50 bg-background border border-border rounded-md shadow-lg min-w-[140px]" role="listbox">
 								{(['relevance', 'newest', 'oldest'] as SortOption[]).map((option) => (
 									<button
 										key={option}
+										role="option"
+										aria-selected={sortBy === option}
 										onClick={() => handleSortSelect(option)}
 										className={`w-full text-left font-mono uppercase text-xs tracking-wider font-semibold px-3 py-2 transition-colors ${
 											sortBy === option

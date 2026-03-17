@@ -1,49 +1,33 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import ProjectFilterBar, { type SortOption, type CategoryFilter } from '@/components/ProjectFilterBar';
+import { CATEGORY_GROUPS, projects } from '@/content/projects';
 import { Link } from '@/routing';
 import { ArrowUpRight } from 'lucide-react';
-import { projects as allProjects } from '@/lib/projects';
-import { ForwardedRef, forwardRef, useState, useMemo } from 'react';
-import ProjectFilterBar, { SortOption, CategoryFilter } from '@/components/ProjectFilterBar';
+import { useTranslations } from 'next-intl';
+import { type ForwardedRef, forwardRef, useMemo, useState } from 'react';
 
-const CATEGORY_GROUPS: Record<string, string[]> = {
-	'AI': ['AI & Developer Tools', 'AI & Research', 'AI & Enterprise'],
-	'Blockchain': ['Blockchain & Trading', 'Blockchain & Infrastructure', 'Blockchain & NFT'],
-	'Fintech': ['Fintech', 'Fintech & Trading'],
-	'E-Commerce': ['E-Commerce & Community', 'E-Commerce & Open Source', 'E-Commerce'],
-	'Developer Tools': ['Open Source & Developer Tools', 'AI & Developer Tools'],
-};
-
-const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: ForwardedRef<HTMLElement>) => {
+const FeaturedProjectsSection = forwardRef<HTMLElement, Record<string, never>>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
 	const [activeCategory, setActiveCategory] = useState<CategoryFilter>(null);
 	const [sortBy, setSortBy] = useState<SortOption>('relevance');
 
-	const projectItems = useMemo(() => {
-		return Object.entries(t.raw('projects.items') as Record<string, any>).map(([slug, data]) => {
-			const project = allProjects.find(p => p.slug === slug);
-			return project ? { slug, data, project } : null;
-		}).filter(Boolean) as { slug: string; data: any; project: typeof allProjects[0] }[];
-	}, [t]);
-
 	const filteredAndSorted = useMemo(() => {
-		let result = [...projectItems];
+		let result = [...projects];
 
 		if (activeCategory) {
 			const matchingCategories = CATEGORY_GROUPS[activeCategory] || [];
-			result = result.filter(({ data }) => matchingCategories.includes(data.category));
+			result = result.filter((p) => matchingCategories.includes(p.category));
 		}
 
 		if (sortBy === 'newest') {
-			result.sort((a, b) => parseInt(b.project.year) - parseInt(a.project.year));
+			result.sort((a, b) => Number.parseInt(b.year) - Number.parseInt(a.year));
 		} else if (sortBy === 'oldest') {
-			result.sort((a, b) => parseInt(a.project.year) - parseInt(b.project.year));
+			result.sort((a, b) => Number.parseInt(a.year) - Number.parseInt(b.year));
 		}
-		// 'relevance' keeps the original order
 
 		return result;
-	}, [projectItems, activeCategory, sortBy]);
+	}, [activeCategory, sortBy]);
 
 	const filterLabels = {
 		all: t('projects.filters.all'),
@@ -54,11 +38,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 	};
 
 	return (
-		<section
-			id="projects"
-			ref={ref}
-			className="py-16 sm:py-20 opacity-0"
-		>
+		<section id="projects" ref={ref} className="py-16 sm:py-20 opacity-0">
 			<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 				<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
 					{t('projects.heading')}
@@ -74,10 +54,10 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 				/>
 
 				<div className="grid gap-6 sm:grid-cols-2">
-					{filteredAndSorted.map(({ slug, data: projectData, project }, index) => (
+					{filteredAndSorted.map((project, index) => (
 						<Link
-							key={slug}
-							href={`/projects/${slug}`}
+							key={project.slug}
+							href={`/projects/${project.slug}`}
 							className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg active:scale-[0.98] transition-all duration-300 flex flex-col opacity-0 animate-fade-in-up"
 							style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
 						>
@@ -85,7 +65,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 							<div className="aspect-video w-full overflow-hidden bg-muted">
 								<img
 									src={project.image}
-									alt={projectData.title}
+									alt={t(`projects.data.${project.slug}.title`)}
 									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 								/>
 							</div>
@@ -93,15 +73,15 @@ const FeaturedProjectsSection = forwardRef<HTMLElement, {}>((props, ref: Forward
 							{/* Project Content */}
 							<div className="p-6 flex flex-col flex-grow">
 								<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-3">
-									{projectData.category} • {project.year}
+									{project.category} • {project.year}
 								</div>
 
 								<h3 className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-foreground group-hover:text-foreground transition-colors mb-3">
-									{projectData.title}
+									{t(`projects.data.${project.slug}.title`)}
 								</h3>
 
 								<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3 mb-4">
-									{projectData.shortDescription}
+									{t(`projects.data.${project.slug}.shortDescription`)}
 								</p>
 
 								<div className="flex items-center gap-2 font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all mt-auto">

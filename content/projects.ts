@@ -89,9 +89,9 @@ export const projects: ProjectDef[] = [
 			'GraphQL',
 			'Open Source',
 		],
-		image: '/projects/vendure/banner.webp',
-		galleryImage: '/projects/vendure/gallery.webp',
-		images: ['/projects/vendure/banner.webp'],
+		image: '/projects/vendure/banner.png',
+		galleryImage: '/projects/vendure/gallery.png',
+		images: ['/projects/vendure/banner.png'],
 		year: '2024',
 		featured: false,
 		links: {

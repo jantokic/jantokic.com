@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { type ForwardedRef, forwardRef, useMemo, useState } from 'react';
 
-const FeaturedProjectsSection = forwardRef<HTMLElement, Record<string, never>>((_props, ref: ForwardedRef<HTMLElement>) => {
+const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
 	const [activeCategory, setActiveCategory] = useState<CategoryFilter>(null);
 	const [sortBy, setSortBy] = useState<SortOption>('relevance');

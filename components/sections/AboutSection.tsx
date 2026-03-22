@@ -74,7 +74,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 					{/* Sidebar */}
 					<div className="lg:col-span-2 space-y-5">
 						{/* Profile Photo */}
-						<div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-border/50">
+						<div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-border/50 hover:border-border transition-colors duration-300">
 							<img
 								src="/headshot-user.webp"
 								alt="Jan Tokic"

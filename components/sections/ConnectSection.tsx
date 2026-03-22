@@ -1,13 +1,13 @@
 'use client';
 
-import BrandIcon from '@/components/BrandIcon';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { socialLinks } from '@/content/social';
-import { Link } from '@/routing';
 import { ArrowUpRight, Linkedin, Moon, Sun } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { type ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import BrandIcon from '@/components/BrandIcon';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { socialLinks } from '@/content/social';
+import { Link } from '@/routing';
 
 const ConnectSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
@@ -59,7 +59,7 @@ const ConnectSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLEl
 									href={link.url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="border border-border/50 rounded-lg p-4 hover:border-border active:scale-[0.98] transition-all group"
+									className="border border-border/50 rounded-xl p-4 hover:border-border hover:shadow-md active:scale-[0.98] transition-all duration-300 group"
 								>
 									<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-2 flex items-center gap-2">
 										{link.icon === 'linkedin' ? (

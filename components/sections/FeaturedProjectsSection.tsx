@@ -1,11 +1,11 @@
 'use client';
 
-import ProjectFilterBar, { type SortOption, type CategoryFilter } from '@/components/ProjectFilterBar';
-import { CATEGORY_GROUPS, projects } from '@/content/projects';
-import { Link } from '@/routing';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { type ForwardedRef, forwardRef, useMemo, useState } from 'react';
+import ProjectFilterBar, { type CategoryFilter, type SortOption } from '@/components/ProjectFilterBar';
+import { CATEGORY_GROUPS, projects } from '@/content/projects';
+import { Link } from '@/routing';
 
 const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
@@ -58,7 +58,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 						<Link
 							key={project.slug}
 							href={`/projects/${project.slug}`}
-							className="group border border-border/50 rounded-lg overflow-hidden hover:border-border hover:shadow-lg active:scale-[0.98] transition-all duration-300 flex flex-col opacity-0 animate-fade-in-up"
+							className="group border border-border/50 rounded-xl overflow-hidden hover:border-border hover:shadow-xl active:scale-[0.98] transition-all duration-300 flex flex-col opacity-0 animate-fade-in-up"
 							style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
 						>
 							{/* Project Image */}
@@ -66,7 +66,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 								<img
 									src={project.image}
 									alt={t(`projects.data.${project.slug}.title`)}
-									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
 								/>
 							</div>
 

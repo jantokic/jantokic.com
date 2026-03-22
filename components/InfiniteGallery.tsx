@@ -237,7 +237,8 @@ function GalleryScene({
 	const [autoPlay, setAutoPlay] = useState(true);
 	const lastInteraction = useRef(Date.now());
 	const [isComplete, setIsComplete] = useState(false);
-	const totalScrollDistance = useRef(0);
+	// Track image wraps instead of raw scroll distance for device-independent completion
+	const totalImageWraps = useRef(0);
 
 	// Touch handling state
 	const touchStartY = useRef<number | null>(null);
@@ -248,7 +249,7 @@ function GalleryScene({
 	useEffect(() => {
 		if (resetGallery) {
 			setIsComplete(false);
-			totalScrollDistance.current = 0;
+			totalImageWraps.current = 0;
 			setAutoPlay(true);
 		}
 	}, [resetGallery]);
@@ -314,29 +315,20 @@ function GalleryScene({
 	// Handle scroll input
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
-			// Calculate scroll threshold: one complete pass through all images
-			const scrollThreshold = normalizedImages.length * 3.5; // Halved again for faster completion
-
-			if (!isComplete && totalScrollDistance.current < scrollThreshold) {
+			if (!isComplete) {
 				event.preventDefault();
-				const delta = event.deltaY * 0.01 * speed;
+				// Normalize deltaY across devices: deltaMode 1 = lines (~40px), 2 = pages (~800px)
+				let deltaY = event.deltaY;
+				if (event.deltaMode === 1) deltaY *= 40;
+				else if (event.deltaMode === 2) deltaY *= 800;
+				const delta = deltaY * 0.01 * speed;
 				setScrollVelocity((prev) => prev + delta);
-				totalScrollDistance.current += Math.abs(delta);
 				setAutoPlay(false);
 				lastInteraction.current = Date.now();
-
-				// Check if we've reached the threshold
-				if (totalScrollDistance.current >= scrollThreshold) {
-					setIsComplete(true);
-					setAutoPlay(false);
-					if (onScrollComplete) {
-						onScrollComplete();
-					}
-				}
 			}
 			// If complete, allow natural page scrolling (don't preventDefault)
 		},
-		[speed, isComplete, normalizedImages.length, onScrollComplete],
+		[speed, isComplete],
 	);
 
 	// Handle keyboard input
@@ -376,9 +368,6 @@ function GalleryScene({
 		(event: TouchEvent) => {
 			if (isComplete || touchStartY.current === null) return;
 
-			const scrollThreshold = normalizedImages.length * 3.5;
-			if (totalScrollDistance.current >= scrollThreshold) return;
-
 			event.preventDefault();
 			const touch = event.touches[0];
 			const currentY = touch.clientY;
@@ -387,21 +376,11 @@ function GalleryScene({
 			// Convert touch delta to scroll velocity (similar sensitivity to wheel)
 			const delta = deltaY * 0.03 * speed;
 			setScrollVelocity((prev) => prev + delta);
-			totalScrollDistance.current += Math.abs(delta);
 
 			lastTouchY.current = currentY;
 			lastInteraction.current = Date.now();
-
-			// Check completion
-			if (totalScrollDistance.current >= scrollThreshold) {
-				setIsComplete(true);
-				setAutoPlay(false);
-				if (onScrollComplete) {
-					onScrollComplete();
-				}
-			}
 		},
-		[speed, isComplete, normalizedImages.length, onScrollComplete],
+		[speed, isComplete],
 	);
 
 	// Handle touch end
@@ -461,6 +440,8 @@ function GalleryScene({
 		const imageAdvance = totalImages > 0 ? visibleCount % totalImages || totalImages : 0;
 		const totalRange = depthRange;
 		const halfRange = totalRange / 2;
+		// Wrap threshold: user sees each image ~2 times across all visible planes
+		const wrapThreshold = totalImages * 2;
 
 		planesData.current.forEach((plane, i) => {
 			let newZ = plane.z + scrollVelocity * delta * 10;
@@ -477,11 +458,23 @@ function GalleryScene({
 
 			if (wrapsForward > 0 && imageAdvance > 0 && totalImages > 0) {
 				plane.imageIndex = (plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
+				// Count wraps for device-independent completion tracking
+				totalImageWraps.current += wrapsForward;
 			}
 
 			if (wrapsBackward > 0 && imageAdvance > 0 && totalImages > 0) {
 				const step = plane.imageIndex - wrapsBackward * imageAdvance;
 				plane.imageIndex = ((step % totalImages) + totalImages) % totalImages;
+				totalImageWraps.current += wrapsBackward;
+			}
+
+			// Check completion based on actual image wraps
+			if (!isComplete && totalImageWraps.current >= wrapThreshold) {
+				setIsComplete(true);
+				setAutoPlay(false);
+				if (onScrollComplete) {
+					onScrollComplete();
+				}
 			}
 
 			plane.z = ((newZ % totalRange) + totalRange) % totalRange;

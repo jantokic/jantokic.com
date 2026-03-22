@@ -1,13 +1,13 @@
 'use client';
 
-import BrandIcon from '@/components/BrandIcon';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { socialLinks } from '@/content/social';
-import { Link } from '@/routing';
 import { Linkedin, Mail, MapPin, Moon, Send, Sun } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import BrandIcon from '@/components/BrandIcon';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { socialLinks } from '@/content/social';
+import { Link } from '@/routing';
 
 export default function ContactPage() {
 	const t = useTranslations();
@@ -121,7 +121,7 @@ export default function ContactPage() {
 
 						{/* Right Column - Contact Form */}
 						<div className="lg:col-span-3">
-							<div className="bg-muted p-8 rounded-2xl border border-border">
+							<div className="bg-muted p-8 rounded-2xl border border-border shadow-sm">
 								<h2 className="font-mono uppercase text-sm font-semibold text-foreground mb-6 tracking-wider">
 									{t('contact.formHeading')}
 								</h2>
@@ -194,13 +194,13 @@ export default function ContactPage() {
 
 							{/* Quick Stats */}
 							<div className="mt-8 grid grid-cols-2 gap-4">
-								<div className="bg-background p-4 rounded-xl border border-border text-center">
+								<div className="bg-background p-4 rounded-xl border border-border text-center hover:shadow-md transition-shadow duration-300">
 									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.responseTime')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
 										{t('contact.stats.responseTimeLabel')}
 									</div>
 								</div>
-								<div className="bg-background p-4 rounded-xl border border-border text-center">
+								<div className="bg-background p-4 rounded-xl border border-border text-center hover:shadow-md transition-shadow duration-300">
 									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.projects')}</div>
 									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
 										{t('contact.stats.projectsLabel')}

@@ -8,6 +8,10 @@ const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
 	ssr: false,
 	loading: () => <GalleryLoading />,
 });
+
+import { ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import AboutSection from '@/components/sections/AboutSection';
 import ConnectSection from '@/components/sections/ConnectSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
@@ -15,16 +19,13 @@ import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import { projects } from '@/content/projects';
 import { skills } from '@/content/skills';
 import { workData } from '@/content/work';
-import { ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
 
 function GalleryLoading() {
 	const t = useTranslations();
 
 	return (
-		<div className="h-screen w-full bg-white flex items-center justify-center">
-			<div className="animate-pulse text-gray-400 font-mono text-sm">{t('gallery.loading')}</div>
+		<div className="h-screen w-full bg-background flex items-center justify-center">
+			<div className="animate-pulse text-muted-foreground font-mono text-sm">{t('gallery.loading')}</div>
 		</div>
 	);
 }
@@ -177,8 +178,10 @@ export default function Home() {
 						<button
 							key={section}
 							onClick={() => scrollToSection(section)}
-							className={`h-3 w-3 rounded-full transition-all duration-300 ${
-								activeSection === section ? 'bg-foreground scale-150' : 'bg-border hover:bg-muted-foreground'
+							className={`rounded-full transition-all duration-300 ${
+								activeSection === section
+									? 'h-3 w-3 bg-foreground scale-125'
+									: 'h-2.5 w-2.5 bg-border hover:bg-muted-foreground hover:scale-110'
 							}`}
 							aria-label={t('nav.scrollToSection', { section: t(`nav.${section}`) })}
 						/>

@@ -440,8 +440,8 @@ function GalleryScene({
 		const imageAdvance = totalImages > 0 ? visibleCount % totalImages || totalImages : 0;
 		const totalRange = depthRange;
 		const halfRange = totalRange / 2;
-		// Wrap threshold: user sees each image ~2 times across all visible planes
-		const wrapThreshold = totalImages * 2;
+		// Wrap threshold: single pass through all images
+		const wrapThreshold = totalImages;
 
 		planesData.current.forEach((plane, i) => {
 			let newZ = plane.z + scrollVelocity * delta * 10;

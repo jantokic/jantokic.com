@@ -41,8 +41,8 @@
 		"studying": "Education",
 		"location": "Munich, Germany",
 		"currentRoles": [
-			{ "company": "Klarity", "role": "Founding Engineer" },
-			{ "company": "Vendure", "role": "Software Engineer" }
+			{ "company": "Starc", "role": "Founding AI Engineer" },
+			{ "company": "Klarity", "role": "Founding Engineer" }
 		],
 		"degree": "B.Sc. Information Systems",
 		"university": "Technical University of Munich",
@@ -50,6 +50,13 @@
 	},
 	"work": {
 		"heading": "Selected Work",
+		"starc": {
+			"role": "Founding AI Engineer",
+			"company": "Starc",
+			"location": "Berlin",
+			"period": "2026 - Present",
+			"description": "Social investing app for Gen Z. AI-powered proactive insights and personalized market intelligence."
+		},
 		"klarity": {
 			"role": "Founding Engineer",
 			"company": "Klarity",
@@ -63,7 +70,7 @@
 			"role": "Software Engineer",
 			"company": "Vendure",
 			"location": "Vienna",
-			"period": "2024 - Present",
+			"period": "2024 - 2026",
 			"description": "Open-source headless commerce (8k GitHub stars). Cut order processing by 45%. Millions of orders/month. 7 repos → 1 monorepo. Used by IBM, Breitling, QVC.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "View details →"
@@ -154,7 +161,7 @@
 				"shortDescription": "Open-source headless commerce. 8k GitHub stars. Millions of orders. 45% faster processing.",
 				"fullDescription": "Core contributor to Vendure, an open-source headless commerce platform (8k GitHub stars) trusted by IBM, Breitling, Swile, and QVC. Built enterprise e-commerce infrastructure processing millions of orders. Consolidated 7 legacy repos into one monorepo, cut order processing time by 45%, and shipped features with the founders.",
 				"role": "Software Engineer",
-				"duration": "Apr 2024 - Present",
+				"duration": "Apr 2024 - Mar 2026",
 				"challenges": [
 					"7 legacy repos → 1 clean monorepo",
 					"Major upgrades without downtime",

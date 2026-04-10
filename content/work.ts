@@ -6,12 +6,17 @@ export interface WorkEntry {
 
 export const workData: WorkEntry[] = [
 	{
+		year: '2026 - Present',
+		key: 'starc',
+		techStack: ['Go', 'TypeScript', 'GCP', 'Cloudflare', 'RAG', 'Python', 'AI/DevOps'],
+	},
+	{
 		year: '2025 - Present',
 		key: 'klarity',
 		techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
 	},
 	{
-		year: '2024 - Present',
+		year: '2024 - 2026',
 		key: 'vendure',
 		techStack: ['TypeScript', 'Nest.js', 'Next.js', 'PostgreSQL', 'GraphQL', 'Docker Swarm'],
 	},

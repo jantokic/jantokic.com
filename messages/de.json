@@ -41,7 +41,7 @@
 		"studying": "Ausbildung",
 		"location": "München",
 		"currentRoles": [
-			{ "company": "Starc", "role": "Founding AI Engineer" },
+			{ "company": "starc.", "role": "Founding AI Engineer" },
 			{ "company": "Klarity", "role": "Founding Engineer" }
 		],
 		"degree": "B.Sc. Wirtschaftsinformatik",
@@ -52,7 +52,7 @@
 		"heading": "Erfahrung",
 		"starc": {
 			"role": "Founding AI Engineer",
-			"company": "Starc",
+			"company": "starc.",
 			"location": "Berlin",
 			"period": "2026 - Heute",
 			"description": "Social-Investing-App für Gen Z. KI-gestützte proaktive Insights und personalisierte Marktintelligenz."

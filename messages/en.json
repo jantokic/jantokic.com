@@ -41,7 +41,7 @@
 		"studying": "Education",
 		"location": "Munich, Germany",
 		"currentRoles": [
-			{ "company": "Starc", "role": "Founding AI Engineer" },
+			{ "company": "starc.", "role": "Founding AI Engineer" },
 			{ "company": "Klarity", "role": "Founding Engineer" }
 		],
 		"degree": "B.Sc. Information Systems",
@@ -52,7 +52,7 @@
 		"heading": "Selected Work",
 		"starc": {
 			"role": "Founding AI Engineer",
-			"company": "Starc",
+			"company": "starc.",
 			"location": "Berlin",
 			"period": "2026 - Present",
 			"description": "Social investing app for Gen Z. AI-powered proactive insights and personalized market intelligence."

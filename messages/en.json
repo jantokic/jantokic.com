@@ -40,10 +40,7 @@
 		"currently": "Currently at",
 		"studying": "Education",
 		"location": "Munich, Germany",
-		"currentRoles": [
-			{ "company": "starc.", "role": "Founding AI Engineer" },
-			{ "company": "Klarity", "role": "Founding Engineer" }
-		],
+		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer" }],
 		"degree": "B.Sc. Information Systems",
 		"university": "Technical University of Munich",
 		"viewCv": "View CV"
@@ -55,15 +52,8 @@
 			"company": "starc.",
 			"location": "Berlin",
 			"period": "2026 - Present",
-			"description": "Social investing app for Gen Z. AI-powered proactive insights and personalized market intelligence."
-		},
-		"klarity": {
-			"role": "Founding Engineer",
-			"company": "Klarity",
-			"location": "Delaware",
-			"period": "2025 - Present",
-			"description": "Building the Bloomberg Terminal for prediction markets.",
-			"projectLink": "/projects/klarity-prediction-market",
+			"description": "AI-native investing platform for the next generation. Leading the entire AI side: proactive insights, market context, personalized guidance.",
+			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "View details →"
 		},
 		"vendure": {
@@ -112,6 +102,15 @@
 			"noResults": "No projects match the selected filter."
 		},
 		"data": {
+			"starc-investing-platform": {
+				"title": "starc.",
+				"shortDescription": "AI-native investing platform. Investing, finally understood.",
+				"fullDescription": "AI-native investing platform by NextGen Wealth Labs (Berlin) that gives new investors context, not commands: proactive insights that explain portfolio moves and market events in personal context — before you ask. I own the entire AI side, from architecture and agentic pipelines to LLM infrastructure.",
+				"role": "Founding AI Engineer",
+				"duration": "Apr 2026 - Present",
+				"challenges": [],
+				"outcomes": []
+			},
 			"klarity-prediction-market": {
 				"title": "Klarity",
 				"shortDescription": "The Bloomberg Terminal for prediction markets. In development.",

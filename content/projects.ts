@@ -20,6 +20,18 @@ export interface ProjectDef {
 
 export const projects: ProjectDef[] = [
 	{
+		slug: 'starc-investing-platform',
+		category: 'AI & Fintech',
+		techStack: ['Go', 'TypeScript', 'Python', 'GCP', 'Cloudflare', 'RAG'],
+		image: '/projects/starc/banner.png',
+		galleryImage: '/projects/starc/banner.png',
+		images: [],
+		year: '2026',
+		links: {
+			website: 'https://starcinvest.com',
+		},
+	},
+	{
 		slug: 'klarity-prediction-market',
 		category: 'Fintech',
 		techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
@@ -206,9 +218,9 @@ export const projects: ProjectDef[] = [
 ];
 
 export const CATEGORY_GROUPS: Record<string, string[]> = {
-	AI: ['AI & Developer Tools', 'AI & Research', 'AI & Enterprise'],
+	AI: ['AI & Developer Tools', 'AI & Research', 'AI & Enterprise', 'AI & Fintech'],
 	Blockchain: ['Blockchain & Trading', 'Blockchain & Infrastructure', 'Blockchain & NFT'],
-	Fintech: ['Fintech', 'Fintech & Trading'],
+	Fintech: ['Fintech', 'Fintech & Trading', 'AI & Fintech'],
 	'E-Commerce': ['E-Commerce & Community', 'E-Commerce & Open Source', 'E-Commerce'],
 	'Developer Tools': ['Open Source & Developer Tools', 'AI & Developer Tools'],
 };

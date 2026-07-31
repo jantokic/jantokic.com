@@ -40,10 +40,7 @@
 		"currently": "Aktuell bei",
 		"studying": "Ausbildung",
 		"location": "München",
-		"currentRoles": [
-			{ "company": "starc.", "role": "Founding AI Engineer" },
-			{ "company": "Klarity", "role": "Founding Engineer" }
-		],
+		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer" }],
 		"degree": "B.Sc. Wirtschaftsinformatik",
 		"university": "TU München",
 		"viewCv": "Lebenslauf ansehen"
@@ -55,15 +52,8 @@
 			"company": "starc.",
 			"location": "Berlin",
 			"period": "2026 - Heute",
-			"description": "Social-Investing-App für Gen Z. KI-gestützte proaktive Insights und personalisierte Marktintelligenz."
-		},
-		"klarity": {
-			"role": "Founding Engineer",
-			"company": "Klarity",
-			"location": "Delaware",
-			"period": "2025 - Heute",
-			"description": "Bloomberg Terminal für Prediction Markets.",
-			"projectLink": "/projects/klarity-prediction-market",
+			"description": "KI-native Investing-Plattform für die nächste Generation. Verantwortlich für die gesamte KI: proaktive Insights, Marktkontext, personalisierte Guidance.",
+			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "Details →"
 		},
 		"vendure": {
@@ -112,6 +102,15 @@
 			"noResults": "Keine Projekte für diesen Filter gefunden."
 		},
 		"data": {
+			"starc-investing-platform": {
+				"title": "starc.",
+				"shortDescription": "KI-native Investing-Plattform. Investieren, endlich verstanden.",
+				"fullDescription": "KI-native Investing-Plattform von NextGen Wealth Labs (Berlin), die neuen Investoren Kontext statt Kommandos gibt: proaktive Insights, die Portfolio-Bewegungen und Marktereignisse im persönlichen Kontext erklären — bevor man fragt. Ich verantworte die gesamte KI-Seite, von Architektur über agentische Pipelines bis zur LLM-Infrastruktur.",
+				"role": "Founding AI Engineer",
+				"duration": "Apr 2026 - Heute",
+				"challenges": [],
+				"outcomes": []
+			},
 			"klarity-prediction-market": {
 				"title": "Klarity",
 				"shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",

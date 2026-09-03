@@ -52,8 +52,8 @@
 			"role": "Founding AI Engineer",
 			"company": "starc.",
 			"location": "Berlin",
-			"period": "2026 - Heute",
-			"description": "KI-native Investing-Plattform für die nächste Generation. Verantwortlich für die gesamte KI: proaktive Insights, Marktkontext, personalisierte Guidance.",
+			"period": "Apr - Sep 2026",
+			"description": "KI-native Investing-Plattform für die nächste Generation. Verantwortete die gesamte KI: proaktive Insights, Marktkontext, personalisierte Guidance.",
 			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "Details →"
 		},
@@ -106,9 +106,9 @@
 			"starc-investing-platform": {
 				"title": "starc.",
 				"shortDescription": "KI-native Investing-Plattform. Investieren, endlich verstanden.",
-				"fullDescription": "KI-native Investing-Plattform von NextGen Wealth Labs (Berlin), die neuen Investoren Kontext statt Kommandos gibt: proaktive Insights, die Portfolio-Bewegungen und Marktereignisse im persönlichen Kontext erklären — bevor man fragt. Ich verantworte die gesamte KI-Seite, von Architektur über agentische Pipelines bis zur LLM-Infrastruktur.",
+				"fullDescription": "KI-native Investing-Plattform von NextGen Wealth Labs (Berlin), die neuen Investoren Kontext statt Kommandos gibt: proaktive Insights, die Portfolio-Bewegungen und Marktereignisse im persönlichen Kontext erklären — bevor man fragt. Ich verantwortete die gesamte KI-Seite, von Architektur über agentische Pipelines bis zur LLM-Infrastruktur.",
 				"role": "Founding AI Engineer",
-				"duration": "Apr 2026 - Heute",
+				"duration": "Apr 2026 - Sep 2026",
 				"challenges": [],
 				"outcomes": []
 			},

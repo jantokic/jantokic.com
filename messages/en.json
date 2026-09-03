@@ -52,8 +52,8 @@
 			"role": "Founding AI Engineer",
 			"company": "starc.",
 			"location": "Berlin",
-			"period": "2026 - Present",
-			"description": "AI-native investing platform for the next generation. Leading the entire AI side: proactive insights, market context, personalized guidance.",
+			"period": "Apr - Sep 2026",
+			"description": "AI-native investing platform for the next generation. Led the entire AI side: proactive insights, market context, personalized guidance.",
 			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "View details →"
 		},
@@ -106,9 +106,9 @@
 			"starc-investing-platform": {
 				"title": "starc.",
 				"shortDescription": "AI-native investing platform. Investing, finally understood.",
-				"fullDescription": "AI-native investing platform by NextGen Wealth Labs (Berlin) that gives new investors context, not commands: proactive insights that explain portfolio moves and market events in personal context — before you ask. I own the entire AI side, from architecture and agentic pipelines to LLM infrastructure.",
+				"fullDescription": "AI-native investing platform by NextGen Wealth Labs (Berlin) that gives new investors context, not commands: proactive insights that explain portfolio moves and market events in personal context — before you ask. I owned the entire AI side, from architecture and agentic pipelines to LLM infrastructure.",
 				"role": "Founding AI Engineer",
-				"duration": "Apr 2026 - Present",
+				"duration": "Apr 2026 - Sep 2026",
 				"challenges": [],
 				"outcomes": []
 			},

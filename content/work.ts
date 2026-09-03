@@ -8,7 +8,7 @@ export interface WorkEntry {
 
 export const workData: WorkEntry[] = [
 	{
-		year: '2026 - Present',
+		year: 'Apr - Sep 2026',
 		key: 'starc',
 		techStack: ['Go', 'TypeScript', 'GCP', 'Cloudflare', 'RAG', 'Python', 'AI/DevOps'],
 	},

@@ -1,17 +1,19 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[margin=0.55in,top=0.35in,bottom=0.35in]{geometry}
+\usepackage[margin=0.42in,top=0.28in,bottom=0.28in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{array}
 
+\linespread{0.96}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
 % Section formatting
 \titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{4pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
 % Tight lists
 \setlist[itemize]{leftmargin=14pt, itemsep=0pt, parsep=0pt, topsep=1pt}
@@ -26,86 +28,102 @@
 
 % Header
 \begin{center}
-  {\LARGE\bfseries Jan Tokic} \\[3pt]
-  M\"unchen, Deutschland \enspace$\vert$\enspace jan.tokic@proton.me
+  {\LARGE\bfseries Jan Tokic} \\[2pt]
+  M\"unchen, Deutschland \enspace$\vert$\enspace Deutsch \& Englisch (C2) \enspace$\vert$\enspace Sofort verf\"ugbar \\[1pt]
+  \href{mailto:jan@jantokic.com}{jan@jantokic.com} \enspace$\vert$\enspace \href{https://jantokic.com}{jantokic.com} \enspace$\vert$\enspace \href{https://github.com/jantokic}{github.com/jantokic} \enspace$\vert$\enspace \href{https://linkedin.com/in/jan-tokic}{linkedin.com/in/jan-tokic}
 \end{center}
 
-\vspace{-2pt}
+\vspace{-4pt}
 
 % Profil
 \section{Profil}
-Founding Engineer mit Fokus auf umsatzkritische Systeme in Fintech, KI und E-Commerce. Mitgr\"under von Unternehmen mit \$230K+ Gewinn und 50k+ Nutzern. Aktuell Founding AI Engineer bei starc., verantwortlich f\"ur die gesamte KI einer KI-nativen Investing-Plattform.
+KI- und Full-Stack-Produktentwickler in M\"unchen. Vier Jahre Erfahrung mit umsatzkritischen Systemen: zuletzt verantwortlich f\"ur die gesamte KI einer KI-nativen Investing-Plattform --- agentische Pipelines, RAG \"uber Live-Marktdaten und LLM-Infrastruktur von null bis Produktion --- davor zwei Jahre Skalierung einer Open-Source-Commerce-Plattform auf 10M+ Bestellungen pro Monat. Drei Unternehmen neben der Festanstellung mitgegr\"undet, eines mit \$230K Gewinn in f\"unf Monaten.
 
 % Berufserfahrung
 \section{Berufserfahrung}
 
-\entry{Founding AI Engineer}{starc.}{Berlin (Hybrid)}{Apr 2026 --- Heute}
+\entry{Founding AI Engineer}{starc.}{Berlin (Hybrid)}{Apr 2026 --- Sep 2026}
 \begin{itemize}
-  \item Verantwortlich f\"ur die gesamte KI einer KI-nativen Investing-Plattform (NextGen Wealth Labs) --- Architektur, agentische Pipelines und LLM-Infrastruktur von null bis Produktion
-  \item Proaktive Insight-Engines, die Portfolio-Bewegungen und Marktereignisse im pers\"onlichen Kontext erkl\"aren --- bevor der Nutzer fragt
-  \item RAG- und Personalisierungssysteme \"uber Live-Marktdaten; Closed Alpha an erste Nutzer ausgeliefert
+  \item Verantwortlich f\"ur die gesamte KI einer KI-nativen Investing-Plattform --- Architektur, agentische Pipelines und LLM-Infrastruktur von null bis Produktion
+  \item RAG- und Personalisierungssysteme \"uber Live-Marktdaten entwickelt; Closed Alpha an erste Nutzer ausgeliefert
+  \item Proaktive Insight-Engines, die Portfolio-Bewegungen und Marktereignisse im pers\"onlichen Kontext jedes Nutzers aufbereiten
+  \item Evaluations-Harness f\"ur Agenten-Outputs gebaut --- Regressionstests \"uber Prompt- und Modell\"anderungen, Fehleranalyse auf Trace-Ebene
 \end{itemize}
+{\small\textit{Go, TypeScript, Python, GCP, Cloudflare, RAG, Agent-Frameworks, Evals}}
 
-\vspace{6pt}
+\vspace{3pt}
 \entry{Software Engineer}{Vendure}{Wien}{Apr 2024 --- M\"ar 2026}
 \begin{itemize}
+  \item Core-Contributor von Vendure (vendure.io), einem Open-Source-Headless-Commerce-Framework mit 8.000+ GitHub-Sternen, genutzt von IBM, Breitling, Swile und QVC
   \item Auftragsverarbeitungssystem f\"ur 10M+ Bestellungen/Monat konzipiert ({\raise.17ex\hbox{$\scriptstyle\sim$}}130M EUR Jahresumsatz)
   \item Performance um 45\% gesteigert durch asynchrone Job-Queues, DB-Sharding und Caching; Latenz um 60\% reduziert
   \item 4-Monats-Projekt in 1,5 Monaten abgeschlossen --- Nx-Monorepo, Docker Swarm, 40+ Tickets solo
-  \item Core-Contributor der Open-Source Headless-Commerce-Plattform, genutzt von IBM, Breitling, Swile und QVC
 \end{itemize}
+{\small\textit{TypeScript, NestJS, Next.js, PostgreSQL, GraphQL, Docker Swarm, Nx}}
 
-\vspace{6pt}
-\entry{Founding Engineer \& Mitgr\"under}{Mira}{London}{Nov 2024 --- Aug 2025}
+\vspace{3pt}
+{\small\textit{Zuvor:} Software Engineering Intern, \textit{IBM iX}, Wien (2022)}
+
+% Unternehmerische Taetigkeit
+\section{Unternehmerische T\"atigkeit}
+\vspace{-1pt}
+{\small\textit{Unternehmen, die ich neben der Festanstellung mitgegr\"undet und betrieben habe.}}
+\vspace{3pt}
+
+\entry{Mitgr\"under \& Engineer}{Mira}{London}{Nov 2024 --- Aug 2025}
 \begin{itemize}
-  \item Solana-Trading-Bot in Go mitgegr\"undet, \$230K Gewinn in 5 Monaten
-  \item Echtzeit-Signalprozessor entwickelt: 8.000+ Trades/Monat, 92\% Erfolgsrate, sub-300ms Ausf\"uhrung
-  \item Remote-Team von 3 Ingenieuren geleitet mit 99,5\% Uptime
-  \item Token-Launch-Pipeline automatisiert --- neue Coins in unter 300ms deployed, schnellste im Solana-\"Okosystem
-  \item Token-Launches mit \$200M+ Gesamtmarktkapitalisierung unterst\"utzt
+  \item Solana-Trading-Bot in Go mitgegr\"undet, \$230K Gewinn in f\"unf Monaten
+  \item Echtzeit-Signalprozessor: 8.000+ Trades/Monat, 92\% Erfolgsrate, sub-300ms Ausf\"uhrung
+  \item Remote-Team von 3 Entwicklern geleitet, 99,5\% Uptime
+  \item Token-Launch-Pipeline automatisiert, Deployment in unter 300ms
 \end{itemize}
 
-\vspace{6pt}
-\entry{Founding Engineer \& Mitgr\"under}{Copile}{London}{Sept 2022 --- M\"ar 2024}
+\vspace{3pt}
+\entry{Mitgr\"under \& Engineer}{Copile}{London}{Sept 2022 --- M\"ar 2024}
 \begin{itemize}
   \item B2B-Krypto-Handelsplattform auf 2.100 Nutzer und 1,2M EUR monatliches Volumen skaliert
   \item Cross-funktionales Team von 6 Personen geleitet (4 Entwickler, 2 Designer)
 \end{itemize}
 
+\vspace{3pt}
+\entry{Mitgr\"under}{Klarity}{}{2025 --- Heute}
+\begin{itemize}
+  \item Analyseplattform f\"ur Prediction Markets: Streaming-Pipeline mit 180M+ On-Chain-Datens\"atzen in ClickHouse, Wallet-Clustering und plattform\"ubergreifende Arbitrage \"uber Polymarket und Kalshi
+\end{itemize}
+
+% Projekte
+\section{Ausgew\"ahlte Projekte}
+\textbf{Synapse} {\small(2025)} ---
+Semantische Suchplattform, die sofort die richtige interne Expertise findet. Full Stack in 36 Stunden. 2. Platz, TUM.AI \texttimes{} Anthropic Hackathon
+
+\vspace{2pt}
+\textbf{Richard} {\small(2025)} ---
+KI-Recherchesystem: verfolgt Quellen, erkennt Muster, erstellt Berichte. Reduziert 8h manuelle Recherche auf 30 Min. 400+ Erkenntnisse in 8 Wochen
+
+\vspace{2pt}
+\textbf{chtype} {\small(2026)} ---
+Typsicheres ClickHouse-Toolkit f\"ur TypeScript: Schema-Codegen, Query Builder, erweiterter Client. Open Source
+
+% Kenntnisse
+\section{Kenntnisse}
+{\small
+\begin{tabular}{@{}>{\bfseries}p{2.6cm}@{\hspace{8pt}}p{\dimexpr\linewidth-2.6cm-8pt\relax}@{}}
+KI \& LLM & RAG, Agent-Frameworks, Evals, LLM-Orchestrierung, Prompt- \& Context-Engineering, MCP \\
+Sprachen & TypeScript, Python, Go \\
+Web & Next.js, React, NestJS, GraphQL \\
+Daten & PostgreSQL, ClickHouse \\
+Infrastruktur & GCP, AWS, Docker, Kubernetes, Cloudflare \\
+\end{tabular}
+}
+
 % Ausbildung
 \section{Ausbildung}
 
 \textbf{B.Sc.\ Wirtschaftsinformatik}, \textit{Technische Universit\"at M\"unchen} \hfill M\"unchen \\
-{\small Okt 2024 --- Heute \enspace$\vert$\enspace Notenschnitt: 2,0} \\
-{\small Schwerpunkte: KI-basierte Systeme, Blockchain, algorithmischer Handel und quantitative Analyse}
-
-\vspace{4pt}
-\textbf{Matura Informatik}, \textit{H\"ohere Technische Lehranstalt} \hfill Wels \\
-{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Mit ausgezeichnetem Erfolg abgeschlossen (Klassenbester)}
-
-% Kenntnisse
-\section{Kenntnisse}
-Java \enspace$\cdot$\enspace TypeScript \enspace$\cdot$\enspace Python \enspace$\cdot$\enspace Go \enspace$\cdot$\enspace Docker \enspace$\cdot$\enspace Blockchain/Web3 \enspace$\cdot$\enspace Kubernetes \enspace$\cdot$\enspace GCP \& AWS \enspace$\cdot$\enspace KI/LLM-Integration \enspace$\cdot$\enspace F\"uhrung
-
-% Projekte
-\section{Projekte}
-\textbf{Klarity} {\small(2025 --- Heute)} ---
-Prediction-Market-Analyseplattform: Streaming-Pipeline mit 180M+ On-Chain-Daten\-s\"atzen in ClickHouse; Wallet-Clustering und plattform\"ubergreifende Arbitrage-Erkennung (Polymarket, Kalshi)
+{\small Okt 2024 --- Heute \enspace$\vert$\enspace Schwerpunkte: KI-basierte Systeme, algorithmischer Handel, quantitative Analyse}
 
 \vspace{2pt}
-\textbf{Synapse} {\small(2025)} ---
-Semantische Suchplattform zur sofortigen Experten-Zuordnung. Full Stack in 36 Stunden beim TUM.AI x Anthropic Hackathon entwickelt. 2. Platz
-
-\vspace{2pt}
-\textbf{Richard} {\small(2025)} ---
-KI-Recherchesystem, das proaktiv Erkenntnisse liefert. Verfolgt Quellen, erkennt Muster, erstellt Berichte. Reduziert 8h manuelle Recherche auf 30 Min. 400+ Erkenntnisse in 8 Wochen
-
-\vspace{2pt}
-\textbf{Neura} {\small(2022)} ---
-Solana-NFT-Sniping-Bot mit Millisekunden-Pr\"azision und On-Chain-Transaktionsverarbeitung. Abo-Produkt. Akquiriert
-
-\vspace{2pt}
-\textbf{DreamCook} {\small(2020 --- 2022)} ---
-Community-Plattform mit Echtzeit-Drop-Alerts und Multi-Retailer-Tracking. 5.000+ zahlende Mitglieder. 2 Jahre profitabel
+\textbf{Matura Informatik}, \textit{HTL Wels} \hfill Wels \\
+{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Mit ausgezeichnetem Erfolg abgeschlossen (Jahrgangsbester)}
 
 \end{document}

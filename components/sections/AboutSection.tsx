@@ -87,16 +87,23 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 								{t('intro.currently')}
 							</div>
 							<div className="space-y-2">
-								{(t.raw('intro.currentRoles') as { company: string; role: string }[]).map((item, index) => (
-									<div key={index}>
-										<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
-											{item.company}
+								{(t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[]).map(
+									(item, index) => (
+										<div key={index}>
+											<div className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
+												{item.company}
+											</div>
+											<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
+												{item.role}
+											</div>
+											{item.period && (
+												<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground/70">
+													{item.period}
+												</div>
+											)}
 										</div>
-										<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
-											{item.role}
-										</div>
-									</div>
-								))}
+									),
+								)}
 							</div>
 						</div>
 

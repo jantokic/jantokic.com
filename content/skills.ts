@@ -1,1 +1,13 @@
-export const skills = ['TypeScript', 'Java', 'Python', 'Go', 'Next.js', 'Solana', 'DevOps', 'Databases', 'CMS', 'PIM'];
+export const skills = [
+	'RAG',
+	'Agents',
+	'Evals',
+	'LLM Infra',
+	'MCP',
+	'TypeScript',
+	'Python',
+	'Go',
+	'Next.js',
+	'ClickHouse',
+	'GCP',
+];

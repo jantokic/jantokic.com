@@ -7,9 +7,9 @@ import { Geist_Mono, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 
 export const metadata: Metadata = {
-	title: 'Jan Tokic - Software Engineer',
+	title: 'Jan Tokic - AI & Software Engineer',
 	description:
-		'Software Engineer from Austria, based in Munich. Building fast, reliable systems from trading automation to large-scale web platforms.',
+		'AI and full-stack product engineer in Munich. Agentic pipelines, RAG and LLM infrastructure from zero to production, plus two years scaling open-source commerce to 10M+ orders a month. Open to full-time roles, available immediately.',
 	icons: {
 		icon: '/favicon.ico',
 	},

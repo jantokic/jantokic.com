@@ -8,6 +8,7 @@ interface WorkItem {
 	key: string;
 	year: string;
 	techStack: string[];
+	venture?: boolean;
 }
 
 interface SelectedWorkSectionProps {
@@ -51,6 +52,11 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 										<div className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground">
 											{t(`work.${job.key}.location`)}
 										</div>
+										{job.venture && (
+											<div className="font-mono uppercase text-[10px] tracking-wider font-semibold text-muted-foreground/70 mt-1">
+												{t('work.ventureLabel')}
+											</div>
+										)}
 									</div>
 
 									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">

@@ -2,6 +2,8 @@ export interface WorkEntry {
 	year: string;
 	key: string;
 	techStack: string[];
+	/** Co-founded and run alongside full-time employment */
+	venture?: boolean;
 }
 
 export const workData: WorkEntry[] = [
@@ -19,11 +21,13 @@ export const workData: WorkEntry[] = [
 		year: '2024 - 2025',
 		key: 'mira',
 		techStack: ['Go', 'Solana', 'GCP', 'WebSockets', 'Observability'],
+		venture: true,
 	},
 	{
 		year: '2022-2024',
 		key: 'copile',
 		techStack: ['Python', 'Node.js', 'NoSQL', 'GCP'],
+		venture: true,
 	},
 	{
 		year: '2022',

@@ -28,25 +28,26 @@
 	},
 	"intro": {
 		"name": "Jan Tokic",
-		"title": "Software Engineer & Consultant",
-		"bio": "Ich baue Systeme, wo Downtime direkt Geld kostet. Von 5-Mann-Startups bis zu Konzernen mit Milliarden Umsatz. Offen für ausgewählte Freelance- und Consulting-Projekte.",
-		"capabilitiesHeading": "Wie ich helfe",
+		"title": "AI & Software Engineer",
+		"bio": "Ich baue KI-Systeme und die Infrastruktur darunter — agentische Pipelines, RAG über Live-Daten, LLM-Infrastruktur von null bis Produktion. Davor zwei Jahre Open-Source-Commerce auf 10M+ Bestellungen im Monat skaliert. Drei Unternehmen neben der Festanstellung mitgegründet.",
+		"capabilitiesHeading": "Was ich mache",
 		"capabilities": [
+			"AI Engineering & agentische Systeme",
 			"Backend & Realtime APIs",
 			"Cloud, DevOps & Reliability",
-			"Trading, Fintech & Web3",
-			"AI Engineering & agentische Systeme"
+			"Trading, Fintech & Web3"
 		],
-		"currently": "Aktuell bei",
+		"currently": "Zuletzt",
 		"studying": "Ausbildung",
 		"location": "München",
-		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer" }],
+		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer", "period": "Apr – Sep 2026" }],
 		"degree": "B.Sc. Wirtschaftsinformatik",
 		"university": "TU München",
 		"viewCv": "Lebenslauf ansehen"
 	},
 	"work": {
 		"heading": "Erfahrung",
+		"ventureLabel": "Mitgegründet neben der Festanstellung",
 		"starc": {
 			"role": "Founding AI Engineer",
 			"company": "starc.",
@@ -66,7 +67,7 @@
 			"projectLinkText": "Details →"
 		},
 		"mira": {
-			"role": "Founding Engineer",
+			"role": "Mitgründer & Engineer",
 			"company": "Mira Trading",
 			"location": "London",
 			"description": "$230K Profit in 5 Monaten. 8.000+ automatisierte Trades/Monat. Tokens bis $200M+ Market Cap.",
@@ -74,7 +75,7 @@
 			"projectLinkText": "Details →"
 		},
 		"copile": {
-			"role": "Founding Engineer",
+			"role": "Mitgründer & Engineer",
 			"company": "Copile",
 			"location": "Wien",
 			"description": "2.100 User. €1,2M Volume/Monat. 70% Retention. Tools gebaut, Team geleitet.",
@@ -204,23 +205,6 @@
 				"challenges": ["Millisekunden-Timing", "On-chain Transactions", "Stabil unter Last"],
 				"outcomes": ["Exit", "Recurring Revenue", "Schneller als alle anderen"]
 			},
-			"codecouncil-multiplayer-ai": {
-				"title": "CodeCouncil - Multiplayer Claude Code",
-				"shortDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Open Beta.",
-				"fullDescription": "Gemeinsame AI-Coding-Sessions, in denen dein ganzes Team denselben Kontext sieht. Mehrere Entwickler treten derselben Session in Echtzeit bei — keine isolierten Sessions mehr und kein Einfügen von Outputs in Slack. Sessions bleiben in der Cloud bestehen, sodass jeder dort weitermachen kann, wo ein Teammitglied aufgehört hat. Enthält einen Diskussionsmodus, in dem AI-Personas Architekturentscheidungen debattieren, und einen integrierten MCP-Server, der sich mit deinem gesamten Stack verbindet. Unterstützt 100+ Modelle über OpenRouter.",
-				"role": "Creator & Maintainer",
-				"duration": "2025 - Heute",
-				"challenges": [
-					"Multiplayer-AI-Coding-Sessions in Echtzeit mit geteiltem Kontext",
-					"Persistente Cloud-Sessions, die Neustarts und Übergaben überleben",
-					"AI-gestützte Architekturdebatten mit automatischer Konvergenz"
-				],
-				"outcomes": [
-					"Open Beta gestartet",
-					"100+ Modelle über OpenRouter unterstützt",
-					"MCP-Server-Integration für externe Tools"
-				]
-			},
 			"chtype-clickhouse-toolkit": {
 				"title": "chtype - Type-Safe ClickHouse Toolkit",
 				"shortDescription": "Type-safe ClickHouse Toolkit für TypeScript — Schema-Codegen, Query Builder und erweiterter Client.",
@@ -263,7 +247,7 @@
 	},
 	"connect": {
 		"heading": "Let's Talk",
-		"description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
+		"description": "Offen für Festanstellungen im Bereich AI & Product Engineering in München. Sofort verfügbar.",
 		"contactForm": "Kontakt",
 		"email": "jan@jantokic.com",
 		"github": "GitHub",
@@ -273,29 +257,27 @@
 	"contact": {
 		"backToPortfolio": "← Zurück",
 		"heading": "Let's Work Together",
-		"description": "Offen für Freelance und Consulting. Backend, Trading-Plattformen, High-Scale E-Commerce.",
+		"description": "Offen für Festanstellungen im Bereich AI & Product Engineering in München. Sofort verfügbar.",
 		"email": "E-Mail",
 		"location": "Standort",
 		"locationValue": "München",
 		"social": "Social",
-		"servicesHeading": "Services",
+		"servicesHeading": "Wonach ich suche",
 		"services": [
-			"High-Performance Backend",
-			"Blockchain & Trading Platforms",
-			"E-Commerce & Headless Commerce",
-			"Cloud, DevOps & Infra",
-			"Realtime APIs & WebSockets",
-			"Security & Secrets Management",
-			"Tech Leadership & Consulting"
+			"Festanstellung: AI oder Product Engineering",
+			"München, hybrid oder remote",
+			"Agents, RAG, Evals & LLM-Infrastruktur",
+			"Produktteams mit echten Nutzern",
+			"Sofort verfügbar"
 		],
 		"formHeading": "Schreib mir",
 		"nameLabel": "Name",
 		"emailLabel": "E-Mail",
-		"messageLabel": "Projekt",
-		"messagePlaceholder": "Erzähl mir von deinem Projekt...",
+		"messageLabel": "Nachricht",
+		"messagePlaceholder": "Erzähl mir von der Rolle, dem Team und dem Produkt...",
 		"sendButton": "Senden",
 		"responseTime": "Antwort meist innerhalb 3h",
-		"mailtoSubject": "Projektanfrage von {name}",
+		"mailtoSubject": "Nachricht von {name}",
 		"stats": {
 			"responseTime": "3h",
 			"responseTimeLabel": "Antwortzeit",

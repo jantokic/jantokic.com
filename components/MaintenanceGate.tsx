@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { type ReactNode, useEffect, useState } from 'react';
 
 const MAINTENANCE_PIN = process.env.NEXT_PUBLIC_MAINTENANCE_PIN || '';
+const IS_UNDER_CONSTRUCTION = process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true';
 const MAX_ATTEMPTS = 3;
 const LOCKOUT_DURATION = 5 * 60 * 1000; // 5 minutes in ms
 
@@ -12,8 +13,18 @@ interface MaintenanceGateProps {
 }
 
 export default function MaintenanceGate({ children }: MaintenanceGateProps) {
+	// When the site is live there is no gate: render children straight through so the
+	// page is server-rendered. Anything that does not run JS (crawlers, link previews,
+	// ATS parsers) would otherwise only ever see the client-only loading shell below.
+	if (!IS_UNDER_CONSTRUCTION) {
+		return <>{children}</>;
+	}
+
+	return <ConstructionGate>{children}</ConstructionGate>;
+}
+
+function ConstructionGate({ children }: MaintenanceGateProps) {
 	const t = useTranslations('maintenance');
-	const isUnderConstruction = process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true';
 	const [pinInput, setPinInput] = useState('');
 	const [isUnlocked, setIsUnlocked] = useState(false);
 	const [pinError, setPinError] = useState(false);
@@ -115,8 +126,8 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
 		);
 	}
 
-	// Show under construction page with PIN if enabled and not unlocked
-	if (isUnderConstruction && !isUnlocked) {
+	// Show under construction page with PIN until unlocked
+	if (!isUnlocked) {
 		return (
 			<main className="min-h-screen bg-white">
 				<section className="relative h-screen bg-white flex items-center justify-center">

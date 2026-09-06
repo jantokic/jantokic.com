@@ -100,15 +100,18 @@ export default function VerticalCarousel({ items, className = '' }: { items: Car
 		return (
 			<div className={`flex flex-col gap-6 justify-center h-full px-8 ${className}`}>
 				{items.slice(0, 3).map((item) => (
-					<Card key={item.href} item={item} />
+					<Card key={item.href} item={item} focusable />
 				))}
 			</div>
 		);
 	}
 
+	// Decorative: the same projects are listed accessibly in the Featured Projects section, and the
+	// faded cards would otherwise register as low-contrast text.
 	return (
 		<div
 			ref={containerRef}
+			aria-hidden="true"
 			className={`relative h-full overflow-hidden [perspective:1400px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_14%,black_86%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_14%,black_86%,transparent_100%)] ${className}`}
 		>
 			{items.map((item, index) => (
@@ -127,10 +130,11 @@ export default function VerticalCarousel({ items, className = '' }: { items: Car
 	);
 }
 
-function Card({ item }: { item: CarouselItem }) {
+function Card({ item, focusable = false }: { item: CarouselItem; focusable?: boolean }) {
 	return (
 		<Link
 			href={item.href}
+			tabIndex={focusable ? undefined : -1}
 			className="group block rounded-2xl overflow-hidden border border-border/60 bg-card shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] hover:border-border transition-colors"
 		>
 			<div className="relative aspect-video w-full bg-muted">

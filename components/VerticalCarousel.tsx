@@ -18,6 +18,8 @@ const PITCH = 304;
 const SPEED = 24;
 /** How much the column moves per px of page scroll. */
 const SCROLL_COUPLING = 0.5;
+/** Normalised distance from the centre within which a card is "focused": full opacity, caption shown. */
+const FOCUS_ZONE = 0.35;
 
 /**
  * Cards stream upward through a masked column. Each card's scale, opacity, tilt and depth follow its
@@ -60,13 +62,18 @@ export default function VerticalCarousel({ items, className = '' }: { items: Car
 				const distance = Math.max(-1.5, Math.min(1.5, (cardCentre - centre) / (height / 2)));
 				const magnitude = Math.abs(distance);
 				const scale = 1 - 0.16 * magnitude;
-				const opacity = Math.max(0, 1 - 0.75 * magnitude);
+				// Full opacity around the centre, then fade towards the edges.
+				const focused = magnitude < FOCUS_ZONE;
+				const opacity = focused ? 1 : Math.max(0, 1 - (0.9 * (magnitude - FOCUS_ZONE)) / (1.5 - FOCUS_ZONE));
 				const tilt = -distance * 9;
 				const depth = -magnitude * 140;
 
 				card.style.transform = `translate3d(-50%, ${y}px, ${depth}px) rotateX(${tilt}deg) scale(${scale})`;
 				card.style.opacity = String(opacity);
 				card.style.zIndex = String(Math.round(100 - magnitude * 50));
+				// Only the centred card carries its caption; the others pass by as plain images.
+				const caption = card.querySelector<HTMLElement>('[data-caption]');
+				if (caption) caption.style.visibility = focused ? 'visible' : 'hidden';
 			});
 		};
 
@@ -140,11 +147,11 @@ function Card({ item, focusable = false }: { item: CarouselItem; focusable?: boo
 			<div className="relative aspect-video w-full bg-muted">
 				<Image src={item.src} alt={item.alt} fill sizes="420px" className="object-cover" />
 			</div>
-			<div className="flex items-baseline justify-between gap-4 px-4 py-3">
+			<div data-caption className="flex items-baseline justify-between gap-4 px-4 py-3">
 				<span className="font-mono uppercase text-[11px] tracking-wider font-semibold text-foreground truncate">
 					{item.title}
 				</span>
-				<span className="font-mono uppercase text-[10px] tracking-wider text-muted-foreground shrink-0">
+				<span className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground shrink-0">
 					{item.category}
 				</span>
 			</div>

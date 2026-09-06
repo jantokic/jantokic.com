@@ -18,6 +18,8 @@ const PITCH = 268;
 const SPEED = 24;
 /** How much the column moves per px of page scroll. */
 const SCROLL_COUPLING = 0.5;
+/** How much the column moves per px of wheel input while the pointer is over it. */
+const WHEEL_GAIN = 0.9;
 /** Normalised distance from the centre within which a card is "focused": full opacity, caption shown. */
 const FOCUS_ZONE = 0.35;
 
@@ -83,6 +85,16 @@ export default function VerticalCarousel({ items, className = '' }: { items: Car
 			lastScrollY.current = scrollY;
 		};
 
+		// Wheel over the column scrolls the column, not the page. Trackpads bring their own inertia,
+		// so the mapping is direct; drift resumes as soon as the pointer leaves.
+		const onWheel = (event: WheelEvent) => {
+			event.preventDefault();
+			const unit = event.deltaMode === 1 ? 40 : event.deltaMode === 2 ? 800 : 1;
+			offset.current += event.deltaY * unit * WHEEL_GAIN;
+		};
+		const container = containerRef.current;
+		container?.addEventListener('wheel', onWheel, { passive: false });
+
 		const tick = (now: number) => {
 			const dt = Math.min(0.05, (now - last) / 1000);
 			last = now;
@@ -100,6 +112,7 @@ export default function VerticalCarousel({ items, className = '' }: { items: Car
 		return () => {
 			cancelAnimationFrame(frame);
 			window.removeEventListener('scroll', onScroll);
+			container?.removeEventListener('wheel', onWheel);
 		};
 	}, [items, loop, count]);
 

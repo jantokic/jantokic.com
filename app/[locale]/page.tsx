@@ -9,7 +9,6 @@ import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSecti
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import VerticalCarousel, { type CarouselItem } from '@/components/VerticalCarousel';
 import { projects } from '@/content/projects';
-import { skills } from '@/content/skills';
 import { socialLinks } from '@/content/social';
 import { workData } from '@/content/work';
 
@@ -18,6 +17,17 @@ const SECTIONS = ['intro', 'work', 'projects', 'connect'] as const;
 function Hero({ locale }: { locale: string }) {
 	const t = useTranslations();
 	const github = socialLinks.find((link) => link.platform === 'GitHub')?.url ?? 'https://github.com/jantokic';
+	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
+
+	const facts: { label: string; value: string; detail?: string }[] = [
+		...roles.map((role) => ({
+			label: t('intro.currently'),
+			value: role.company,
+			detail: [role.role, role.period].filter(Boolean).join(' · '),
+		})),
+		{ label: t('intro.studying'), value: t('intro.university'), detail: t('intro.degree') },
+		{ label: t('hero.locationLabel'), value: t('intro.location') },
+	];
 
 	const cta =
 		'inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors';
@@ -74,49 +84,17 @@ function Hero({ locale }: { locale: string }) {
 						<ArrowUpRight className="w-3.5 h-3.5" />
 					</a>
 				</div>
-			</div>
-		</div>
-	);
-}
 
-/** Roomy strip under the first screen: the four facts a recruiter scans for, plus the skills. */
-function FactsBand() {
-	const t = useTranslations();
-	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
-
-	const facts: { label: string; value: string; detail?: string }[] = [
-		...roles.map((role) => ({
-			label: t('intro.currently'),
-			value: role.company,
-			detail: [role.role, role.period].filter(Boolean).join(' · '),
-		})),
-		{ label: t('intro.studying'), value: t('intro.university'), detail: t('intro.degree') },
-		{ label: t('hero.awardLabel'), value: t('hero.award') },
-		{ label: t('hero.locationLabel'), value: t('intro.location'), detail: t('hero.availability') },
-	];
-
-	return (
-		<div className="border-t border-border/50">
-			<div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-24 py-10 lg:py-12 space-y-8">
-				<dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+				{/* The three facts a recruiter scans for */}
+				<dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-4 pt-8 border-t border-border/50">
 					{facts.map((fact) => (
-						<div key={fact.label + fact.value} className="space-y-1.5">
-							<dt className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground">{fact.label}</dt>
-							<dd className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">{fact.value}</dd>
-							{fact.detail && <dd className="text-sm text-muted-foreground">{fact.detail}</dd>}
+						<div key={fact.label + fact.value} className="space-y-1">
+							<dt className="font-mono uppercase text-[10px] tracking-wider text-muted-foreground">{fact.label}</dt>
+							<dd className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{fact.value}</dd>
+							{fact.detail && <dd className="text-[13px] leading-snug text-muted-foreground">{fact.detail}</dd>}
 						</div>
 					))}
 				</dl>
-				<ul className="flex flex-wrap gap-2">
-					{skills.map((skill) => (
-						<li
-							key={skill}
-							className="px-3 py-1.5 font-mono uppercase text-[11px] tracking-wider font-semibold border border-border/60 rounded-full text-muted-foreground"
-						>
-							{skill}
-						</li>
-					))}
-				</ul>
 			</div>
 		</div>
 	);
@@ -238,7 +216,6 @@ export default function Home() {
 							<VerticalCarousel items={carouselItems} className="absolute inset-0" />
 						</div>
 					</div>
-					<FactsBand />
 				</section>
 
 				{/* Selected Work Section */}

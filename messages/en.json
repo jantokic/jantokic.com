@@ -293,9 +293,6 @@
 			"email": "Email me"
 		},
 		"story": "Most recently at starc., where I designed, built and owned the entire AI side of an investing app now live on the App Store. Before that, two years at Vendure, the open-source commerce platform, building enterprise B2B systems for its largest customers.",
-		"awardLabel": "Hackathon",
-		"award": "2nd place, TUM.AI × Anthropic",
-		"locationLabel": "Based in",
-		"availability": "Open to roles from Oct 2026"
+		"locationLabel": "Based in"
 	}
 }

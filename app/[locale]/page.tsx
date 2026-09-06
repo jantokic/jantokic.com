@@ -32,7 +32,7 @@ const SECTION_LABEL_KEY: Record<(typeof SECTIONS)[number], string> = {
 };
 
 function GalleryLoading() {
-	return <div className="absolute inset-0 bg-white" aria-hidden="true" />;
+	return <div className="absolute inset-0 bg-background" aria-hidden="true" />;
 }
 
 /**
@@ -40,7 +40,16 @@ function GalleryLoading() {
  * recruiter looks for, skills and the ways to reach me. `overGallery` fixes the colours to the
  * always-white gallery backdrop; otherwise the theme tokens apply.
  */
-function HeroContent({ overGallery, locale }: { overGallery: boolean; locale: string }) {
+function HeroContent({
+	overGallery,
+	locale,
+	column = false,
+}: {
+	overGallery: boolean;
+	locale: string;
+	/** Rendered inside the left column of a split layout instead of a full-width row. */
+	column?: boolean;
+}) {
 	const t = useTranslations();
 	const github = socialLinks.find((link) => link.platform === 'GitHub')?.url ?? 'https://github.com/jantokic';
 	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
@@ -71,7 +80,9 @@ function HeroContent({ overGallery, locale }: { overGallery: boolean; locale: st
 	];
 
 	return (
-		<div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 w-full">
+		<div
+			className={column ? 'w-full px-6 sm:px-8 lg:pl-20 lg:pr-10' : 'max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 w-full'}
+		>
 			<div className="max-w-2xl space-y-6 lg:space-y-7">
 				<p className={`font-mono uppercase text-[11px] sm:text-xs tracking-[0.2em] font-semibold ${muted}`}>
 					{t('hero.eyebrow')}
@@ -326,35 +337,43 @@ export default function Home() {
 
 			<main className="min-h-screen">
 				{use3d ? (
-					/* 3D Gallery Hero - Always Light Mode */
-					<section id="gallery" ref={galleryRef} className="relative min-h-screen bg-white flex items-center py-20">
-						<InfiniteGallery
-							images={projectImages}
-							fallbackText={t('gallery.webglFallback')}
-							speed={1.2}
-							zSpacing={3}
-							visibleCount={12}
-							falloff={{ near: 0.8, far: 14 }}
-							className="absolute inset-0 h-full w-full overflow-hidden"
-							onImageClick={handleProjectClick}
-							onScrollComplete={handleScrollComplete}
-							resetGallery={resetGallery}
-						/>
-						{/* Soft white wash on the left keeps the copy legible while images fly behind it */}
-						<div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.78)_38%,rgba(255,255,255,0)_64%)]" />
-						<div className="relative z-10 w-full pointer-events-none">
-							<HeroContent overGallery locale={locale} />
-						</div>
+					/* Split hero: copy on the left, 3D gallery in its own panel on the right */
+					<section id="gallery" ref={galleryRef} className="relative min-h-screen bg-background">
+						<div className="grid min-h-screen lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
+							<div className="flex items-center py-20">
+								<HeroContent overGallery={false} locale={locale} column />
+							</div>
 
-						<div className="text-center absolute bottom-6 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none mix-blend-exclusion text-white">
-							{!galleryComplete ? (
-								<p className="opacity-70">{t('gallery.instructions')}</p>
-							) : (
-								<div className="flex flex-col items-center gap-2 animate-pulse">
-									<p className="text-sm">{t('gallery.scrollDown')}</p>
-									<ChevronDown className="w-6 h-6" />
+							<div className="relative min-h-screen overflow-hidden">
+								<InfiniteGallery
+									images={projectImages}
+									fallbackText={t('gallery.webglFallback')}
+									speed={1.2}
+									zSpacing={3}
+									visibleCount={12}
+									falloff={{ near: 0.8, far: 14 }}
+									horizontalSpread={0.35}
+									verticalSpread={1.2}
+									className="absolute inset-0 h-full w-full"
+									onImageClick={handleProjectClick}
+									onScrollComplete={handleScrollComplete}
+									resetGallery={resetGallery}
+								/>
+								{/* Soft edges so planes fade out instead of being cut off at the panel border */}
+								<div className="absolute inset-y-0 left-0 w-24 pointer-events-none bg-gradient-to-r from-background to-transparent" />
+								<div className="absolute inset-x-0 top-0 h-16 pointer-events-none bg-gradient-to-b from-background to-transparent" />
+								<div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none bg-gradient-to-t from-background to-transparent" />
+								<div className="text-center absolute bottom-6 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none text-muted-foreground">
+									{!galleryComplete ? (
+										<p className="opacity-80">{t('gallery.instructions')}</p>
+									) : (
+										<div className="flex flex-col items-center gap-2 animate-pulse">
+											<p className="text-sm">{t('gallery.scrollDown')}</p>
+											<ChevronDown className="w-6 h-6" />
+										</div>
+									)}
 								</div>
-							)}
+							</div>
 						</div>
 					</section>
 				) : (

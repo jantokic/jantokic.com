@@ -47,6 +47,10 @@ interface InfiniteGalleryProps {
 	visibleCount?: number;
 	/** Near/far distances for opacity/blur easing (default: { near: 0.5, far: 12 }) */
 	falloff?: { near: number; far: number };
+	/** Multiplier for how far planes spread sideways (default: 1). Lower it for narrow containers. */
+	horizontalSpread?: number;
+	/** Multiplier for how far planes spread vertically (default: 1). */
+	verticalSpread?: number;
 	/** Fade in/out settings with ranges based on depth range percentage (default: { fadeIn: { start: 0.05, end: 0.15 }, fadeOut: { start: 0.85, end: 0.95 } }) */
 	fadeSettings?: FadeSettings;
 	/** Blur in/out settings with ranges based on depth range percentage (default: { blurIn: { start: 0.0, end: 0.1 }, blurOut: { start: 0.9, end: 1.0 }, maxBlur: 3.0 }) */
@@ -237,6 +241,8 @@ function GalleryScene({
 		blurOut: { start: 0.9, end: 1.0 },
 		maxBlur: 3.0,
 	},
+	horizontalSpread = 1,
+	verticalSpread = 1,
 	onImageClick,
 	onScrollComplete,
 	resetGallery,
@@ -279,8 +285,8 @@ function GalleryScene({
 
 	const spatialPositions = useMemo(() => {
 		const positions: { x: number; y: number }[] = [];
-		const maxHorizontalOffset = MAX_HORIZONTAL_OFFSET;
-		const maxVerticalOffset = MAX_VERTICAL_OFFSET;
+		const maxHorizontalOffset = MAX_HORIZONTAL_OFFSET * horizontalSpread;
+		const maxVerticalOffset = MAX_VERTICAL_OFFSET * verticalSpread;
 
 		for (let i = 0; i < visibleCount; i++) {
 			// Create varied distribution patterns for both axes
@@ -297,7 +303,7 @@ function GalleryScene({
 		}
 
 		return positions;
-	}, [visibleCount]);
+	}, [visibleCount, horizontalSpread, verticalSpread]);
 
 	const totalImages = normalizedImages.length;
 	const depthRange = DEFAULT_DEPTH_RANGE;
@@ -615,8 +621,8 @@ function FallbackGallery({ images, fallbackText }: { images: ImageItem[]; fallba
 	);
 
 	return (
-		<div className="flex flex-col items-center justify-center h-full bg-white p-4">
-			<p className="font-mono uppercase text-[11px] tracking-wider text-neutral-500 mb-4">{fallbackText}</p>
+		<div className="flex flex-col items-center justify-center h-full bg-background p-4">
+			<p className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground mb-4">{fallbackText}</p>
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
 				{normalizedImages.map((img, i) => (
 					<div key={i} className="relative w-full h-32 rounded overflow-hidden">
@@ -642,6 +648,8 @@ export default function InfiniteGallery({
 		blurOut: { start: 0.4, end: 0.43 },
 		maxBlur: 8.0,
 	},
+	horizontalSpread,
+	verticalSpread,
 	onImageClick,
 	onScrollComplete,
 	resetGallery,
@@ -688,6 +696,8 @@ export default function InfiniteGallery({
 					images={images}
 					fadeSettings={fadeSettings}
 					blurSettings={blurSettings}
+					horizontalSpread={horizontalSpread}
+					verticalSpread={verticalSpread}
 					onImageClick={onImageClick}
 					onScrollComplete={onScrollComplete}
 					resetGallery={resetGallery}

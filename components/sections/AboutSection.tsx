@@ -14,7 +14,7 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 	const locale = useLocale();
 
 	return (
-		<section id="intro" ref={ref} className="min-h-screen py-16 sm:py-20 opacity-0 flex items-center">
+		<section id="intro" ref={ref} className="min-h-screen py-16 sm:py-20 flex items-center">
 			<div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-16">
 				<div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
 					{/* Main Content */}

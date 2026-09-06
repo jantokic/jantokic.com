@@ -19,7 +19,7 @@ const ConnectSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLEl
 	}, []);
 
 	return (
-		<section id="connect" ref={ref} className="min-h-screen py-16 sm:py-20 opacity-0 flex flex-col">
+		<section id="connect" ref={ref} className="min-h-screen py-16 sm:py-20 flex flex-col">
 			{/* Main content - centered */}
 			<div className="flex-1 flex items-center">
 				<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16 w-full">

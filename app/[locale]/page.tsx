@@ -171,30 +171,34 @@ export default function Home() {
 		};
 	}, [galleryComplete, use3d]);
 
-	// IntersectionObserver for section animations (fade-in on enter)
+	// Fade sections in as they enter the viewport. Sections render visible by default so crawlers,
+	// screenshots and no-JS visitors see the content; only sections still below the fold get hidden
+	// here, and only after JS has confirmed it can reveal them again.
 	useEffect(() => {
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('animate-fade-in-up');
 						entry.target.classList.remove('opacity-0');
+						observer.unobserve(entry.target);
 					}
 				});
 			},
 			{ threshold: 0.1, rootMargin: '0px 0px -10% 0px' },
 		);
 
-		const sections = sectionsRef.current.filter((section): section is HTMLElement => section !== null);
+		const sections = sectionsRef.current.filter(
+			(section): section is HTMLElement => section !== null && section.getBoundingClientRect().top > window.innerHeight,
+		);
 		for (const section of sections) {
+			section.classList.add('opacity-0');
 			observer.observe(section);
 		}
 
-		return () => {
-			for (const section of sections) {
-				observer.unobserve(section);
-			}
-		};
+		return () => observer.disconnect();
 	}, []);
 
 	// Scroll-based active section tracking (works reliably across all viewports)

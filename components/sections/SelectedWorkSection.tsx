@@ -20,7 +20,7 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 		const t = useTranslations();
 
 		return (
-			<section id="work" ref={ref} className="py-16 sm:py-20 opacity-0">
+			<section id="work" ref={ref} className="py-16 sm:py-20">
 				<div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
 					<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold mb-12 sm:mb-16 text-foreground">
 						{t('work.heading')}

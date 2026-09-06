@@ -1,6 +1,6 @@
 'use client';
 
-import { Linkedin, Mail, MapPin, Moon, Send, Sun } from 'lucide-react';
+import { ArrowUpRight, Check, Copy, Linkedin, Mail, MapPin, Moon, Sun } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -11,23 +11,24 @@ import { Link } from '@/routing';
 
 export default function ContactPage() {
 	const t = useTranslations();
-	const [formState, setFormState] = useState({
-		name: '',
-		email: '',
-		message: '',
-	});
 	const [mounted, setMounted] = useState(false);
+	const [copied, setCopied] = useState(false);
 	const { resolvedTheme, setTheme } = useTheme();
+	const email = t('connect.email');
+	const linkedin = socialLinks.find((link) => link.platform === 'LinkedIn');
 
 	useEffect(() => {
 		setMounted(true);
 	}, []);
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		// For now, just open mailto - you can integrate with a backend later
-		const mailtoLink = `mailto:${t('connect.email')}?subject=${encodeURIComponent(t('contact.mailtoSubject', { name: formState.name }))}&body=${encodeURIComponent(formState.message)}`;
-		window.location.href = mailtoLink;
+	const copyEmail = async () => {
+		try {
+			await navigator.clipboard.writeText(email);
+			setCopied(true);
+			setTimeout(() => setCopied(false), 2000);
+		} catch {
+			// Clipboard unavailable (insecure context, permissions): the mailto link still works.
+		}
 	};
 
 	return (
@@ -53,39 +54,37 @@ export default function ContactPage() {
 							<h1 className="font-mono uppercase text-2xl font-semibold text-foreground mb-4 tracking-wider">
 								{t('contact.heading')}
 							</h1>
-							<p className="font-mono text-sm text-muted-foreground mb-8 leading-relaxed opacity-70">
-								{t('contact.description')}
-							</p>
+							<p className="text-[15px] text-muted-foreground mb-8 leading-relaxed">{t('contact.description')}</p>
 
 							{/* Contact Details */}
 							<div className="space-y-6 mb-12">
 								<div>
-									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
+									<h2 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
 										{t('contact.email')}
-									</h3>
+									</h2>
 									<a
-										href={`mailto:${t('connect.email')}`}
-										className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+										href={`mailto:${email}`}
+										className="text-[15px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
 									>
 										<Mail className="w-4 h-4" />
-										{t('connect.email')}
+										{email}
 									</a>
 								</div>
 
 								<div>
-									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
+									<h2 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
 										{t('contact.location')}
-									</h3>
-									<p className="font-mono text-sm text-muted-foreground flex items-center gap-2 opacity-80">
+									</h2>
+									<p className="text-[15px] text-muted-foreground flex items-center gap-2">
 										<MapPin className="w-4 h-4" />
 										{t('contact.locationValue')}
 									</p>
 								</div>
 
 								<div>
-									<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
+									<h2 className="font-mono uppercase text-xs font-semibold text-foreground mb-3 tracking-wider">
 										{t('contact.social')}
-									</h3>
+									</h2>
 									<div className="flex flex-wrap gap-4">
 										{socialLinks.map((link) => (
 											<a
@@ -93,7 +92,8 @@ export default function ContactPage() {
 												href={link.url}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="font-mono text-sm text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
+												aria-label={link.platform}
+												className="text-muted-foreground hover:text-foreground active:scale-[0.95] transition-all flex items-center gap-2"
 											>
 												{link.icon === 'linkedin' ? (
 													<Linkedin className="w-4 h-4" />
@@ -106,90 +106,67 @@ export default function ContactPage() {
 								</div>
 							</div>
 
-							{/* Services */}
+							{/* What I'm looking for */}
 							<div>
-								<h3 className="font-mono uppercase text-xs font-semibold text-foreground mb-4 tracking-wider">
+								<h2 className="font-mono uppercase text-xs font-semibold text-foreground mb-4 tracking-wider">
 									{t('contact.servicesHeading')}
-								</h3>
-								<ul className="space-y-2 font-mono text-xs text-muted-foreground opacity-80">
-									{(t.raw('contact.services') as string[]).map((service, index) => (
-										<li key={index}>• {service}</li>
+								</h2>
+								<ul className="space-y-2 text-[15px] text-muted-foreground">
+									{(t.raw('contact.services') as string[]).map((service) => (
+										<li key={service}>• {service}</li>
 									))}
 								</ul>
 							</div>
 						</div>
 
-						{/* Right Column - Contact Form */}
+						{/* Right Column - Direct email */}
 						<div className="lg:col-span-3">
-							<div className="bg-muted p-8 rounded-2xl border border-border shadow-sm">
-								<h2 className="font-mono uppercase text-sm font-semibold text-foreground mb-6 tracking-wider">
-									{t('contact.formHeading')}
+							<div className="bg-muted p-8 sm:p-10 rounded-2xl border border-border">
+								<h2 className="font-mono uppercase text-sm font-semibold text-foreground mb-3 tracking-wider">
+									{t('contact.emailHeading')}
 								</h2>
-								<form onSubmit={handleSubmit} className="space-y-6">
-									<div>
-										<label
-											htmlFor="name"
-											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
-										>
-											{t('contact.nameLabel')}
-										</label>
-										<input
-											type="text"
-											id="name"
-											required
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
-											value={formState.name}
-											onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-										/>
-									</div>
+								<p className="text-[15px] text-muted-foreground leading-relaxed mb-8 max-w-prose">
+									{t('contact.emailIntro')}
+								</p>
 
-									<div>
-										<label
-											htmlFor="email"
-											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
-										>
-											{t('contact.emailLabel')}
-										</label>
-										<input
-											type="email"
-											id="email"
-											required
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow text-foreground"
-											value={formState.email}
-											onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-										/>
-									</div>
+								<a
+									href={`mailto:${email}`}
+									className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground break-all hover:text-muted-foreground transition-colors"
+								>
+									{email}
+								</a>
 
-									<div>
-										<label
-											htmlFor="message"
-											className="block font-mono uppercase text-xs font-semibold text-muted-foreground mb-2 tracking-wider"
-										>
-											{t('contact.messageLabel')}
-										</label>
-										<textarea
-											id="message"
-											required
-											rows={6}
-											className="w-full px-4 py-3 font-mono text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground/50 focus:shadow-[0_0_0_3px_hsl(var(--foreground)/0.1)] transition-shadow resize-none text-foreground placeholder:text-muted-foreground"
-											value={formState.message}
-											onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-											placeholder={t('contact.messagePlaceholder')}
-										/>
-									</div>
-
-									<button
-										type="submit"
-										className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:opacity-90 active:scale-[0.98] transition-all"
+								<div className="flex flex-wrap gap-3 mt-8">
+									<a
+										href={`mailto:${email}`}
+										className="inline-flex items-center gap-2 px-5 py-3 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:opacity-90 active:scale-[0.98] transition-all"
 									>
-										<Send className="w-4 h-4" />
-										{t('contact.sendButton')}
+										<Mail className="w-4 h-4" />
+										{t('contact.emailCta')}
+									</a>
+									<button
+										type="button"
+										onClick={copyEmail}
+										className="inline-flex items-center gap-2 px-5 py-3 border border-border bg-background text-foreground font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:border-foreground active:scale-[0.98] transition-all"
+									>
+										{copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+										{copied ? t('contact.copied') : t('contact.copyEmail')}
 									</button>
+									{linkedin && (
+										<a
+											href={linkedin.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="inline-flex items-center gap-2 px-5 py-3 border border-border bg-background text-foreground font-mono text-xs font-semibold uppercase tracking-wider rounded-lg hover:border-foreground active:scale-[0.98] transition-all"
+										>
+											<Linkedin className="w-4 h-4" />
+											{t('contact.orLinkedIn')}
+											<ArrowUpRight className="w-3.5 h-3.5" />
+										</a>
+									)}
+								</div>
 
-									<p className="font-mono text-xs text-muted-foreground text-center opacity-70">
-										{t('contact.responseTime')}
-									</p>
-								</form>
+								<p className="text-xs text-muted-foreground mt-8">{t('contact.responseTime')}</p>
 							</div>
 						</div>
 					</div>
@@ -204,10 +181,8 @@ export default function ContactPage() {
 					</p>
 
 					<div className="flex items-center gap-4">
-						{/* Language Switcher */}
 						{mounted && <LanguageSwitcher />}
 
-						{/* Theme Toggle Button */}
 						{mounted && (
 							<button
 								type="button"

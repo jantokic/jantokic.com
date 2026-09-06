@@ -10,12 +10,12 @@ export const workData: WorkEntry[] = [
 	{
 		year: 'Apr - Sep 2026',
 		key: 'starc',
-		techStack: ['Go', 'TypeScript', 'GCP', 'Cloudflare', 'RAG', 'Python', 'AI/DevOps'],
+		techStack: ['TypeScript', 'Python', 'Go', 'Anthropic', 'Gemini / Vertex AI', 'GCP', 'Cloudflare', 'RAG', 'Evals'],
 	},
 	{
 		year: '2024 - 2026',
 		key: 'vendure',
-		techStack: ['TypeScript', 'Nest.js', 'Next.js', 'PostgreSQL', 'GraphQL', 'Docker Swarm'],
+		techStack: ['TypeScript', 'NestJS', 'Next.js', 'PostgreSQL', 'GraphQL', 'Pimcore', 'Docker Swarm'],
 	},
 	{
 		year: '2024 - 2025',

@@ -9,7 +9,7 @@ import './globals.css';
 export const metadata: Metadata = {
 	title: 'Jan Tokic - AI & Software Engineer',
 	description:
-		'AI and full-stack product engineer in Munich. Agentic pipelines, RAG and LLM infrastructure from zero to production, plus two years scaling open-source commerce to 10M+ orders a month. Open to full-time roles, available immediately.',
+		'AI engineer in Munich. First engineering hire at starc., where I built the entire AI side of an investing app now live on the App Store; two years at Vendure building enterprise B2B commerce. Open to full-time roles from October 2026.',
 	icons: {
 		icon: '/favicon.ico',
 	},

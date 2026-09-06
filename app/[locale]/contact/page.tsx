@@ -191,22 +191,6 @@ export default function ContactPage() {
 									</p>
 								</form>
 							</div>
-
-							{/* Quick Stats */}
-							<div className="mt-8 grid grid-cols-2 gap-4">
-								<div className="bg-background p-4 rounded-xl border border-border text-center hover:shadow-md transition-shadow duration-300">
-									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.responseTime')}</div>
-									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										{t('contact.stats.responseTimeLabel')}
-									</div>
-								</div>
-								<div className="bg-background p-4 rounded-xl border border-border text-center hover:shadow-md transition-shadow duration-300">
-									<div className="font-mono text-2xl font-bold text-foreground">{t('contact.stats.projects')}</div>
-									<div className="font-mono text-xs text-muted-foreground opacity-70 mt-1">
-										{t('contact.stats.projectsLabel')}
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>

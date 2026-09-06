@@ -8,8 +8,8 @@
 		"scrollToSection": "Scroll to {section}"
 	},
 	"gallery": {
-		"tagline1": "I think",
-		"tagline2": "therefore I am",
+		"tagline1": "I build AI systems",
+		"tagline2": "and the infrastructure under them",
 		"instructions": "Click a project for details • Scroll or use arrow keys to navigate",
 		"autoplay": "Auto-play resumes after 3 seconds of inactivity",
 		"scrollDown": "Scroll to continue",
@@ -29,18 +29,24 @@
 	"intro": {
 		"name": "Jan Tokic",
 		"title": "AI & Software Engineer",
-		"bio": "I build AI systems and the infrastructure under them — agentic pipelines, RAG over live data, LLM infrastructure from zero to production. Before that, two years scaling open-source commerce to 10M+ orders a month. Co-founded three companies alongside full-time work.",
+		"bio": "I build AI products end to end, and the infrastructure under them. Most recently at starc., where I designed, built and owned the entire AI side of an investing app now live on the App Store with 500+ active users. Before that, two years at Vendure, the open-source commerce platform, building enterprise B2B systems for its largest customers.",
 		"capabilitiesHeading": "What I do",
 		"capabilities": [
-			"AI engineering & agentic systems",
-			"Backend systems & real-time APIs",
-			"Cloud architecture, DevOps & reliability",
-			"Trading, fintech & Web3 platforms"
+			"AI engineering: agents, retrieval, evals",
+			"Backend systems & real-time data pipelines",
+			"Cloud infrastructure & DevOps: GCP, Cloudflare, Docker",
+			"Product engineering from zero to shipped"
 		],
 		"currently": "Most recently",
 		"studying": "Education",
 		"location": "Munich, Germany",
-		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer", "period": "Apr – Sep 2026" }],
+		"currentRoles": [
+			{
+				"company": "starc.",
+				"role": "Founding AI Engineer",
+				"period": "Apr – Sep 2026"
+			}
+		],
 		"degree": "B.Sc. Information Systems",
 		"university": "Technical University of Munich",
 		"viewCv": "View CV"
@@ -53,7 +59,7 @@
 			"company": "starc.",
 			"location": "Berlin",
 			"period": "Apr - Sep 2026",
-			"description": "AI-native investing platform for the next generation. Led the entire AI side: proactive insights, market context, personalized guidance.",
+			"description": "First engineering hire. Designed, built and owned the entire AI side: a market-moments engine over price data and news for 2,000+ assets, RAG over live market data, and the eval harness. Live on the App Store with 500+ active users and 10,000+ insights generated.",
 			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "View details →"
 		},
@@ -62,7 +68,7 @@
 			"company": "Vendure",
 			"location": "Vienna",
 			"period": "2024 - 2026",
-			"description": "Open-source headless commerce (8k GitHub stars). Cut order processing by 45%. Millions of orders/month. 7 repos → 1 monorepo. Used by IBM, Breitling, QVC.",
+			"description": "Open-source commerce platform (8k GitHub stars), formerly ALPIN11 / Elevantiq. Built enterprise B2B systems on Vendure for Flowtech, Feddersen and Stocker: multi-tenant white-label shops and a rules-based chimney configurator. Plugins and features for the core, dashboard and enterprise suite.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "View details →"
 		},
@@ -70,7 +76,7 @@
 			"role": "Co-founder & Engineer",
 			"company": "Mira",
 			"location": "London",
-			"description": "$230K profit in 5 months. 8,000+ automated trades/month. Helped launch tokens to $200M+ market cap.",
+			"description": "Solana trading bot in Go. Real-time signal pipeline, 8,000+ automated trades/month at sub-300ms execution, 99.5% uptime. Led a remote team of 3.",
 			"projectLink": "/projects/mira-trading-bot",
 			"projectLinkText": "View details →"
 		},
@@ -85,7 +91,7 @@
 		"ibm": {
 			"role": "Software Engineering Intern",
 			"company": "IBM iX",
-			"location": "Vienna",
+			"location": "Austria",
 			"description": "Built a storefront handling 85,000 products. Cut promotion launch time by 40%."
 		}
 	},
@@ -105,12 +111,20 @@
 		"data": {
 			"starc-investing-platform": {
 				"title": "starc.",
-				"shortDescription": "AI-native investing platform. Investing, finally understood.",
-				"fullDescription": "AI-native investing platform by NextGen Wealth Labs (Berlin) that gives new investors context, not commands: proactive insights that explain portfolio moves and market events in personal context — before you ask. I owned the entire AI side, from architecture and agentic pipelines to LLM infrastructure.",
+				"shortDescription": "AI-native investing app. First engineering hire, owned the entire AI side. Live on the App Store.",
+				"fullDescription": "AI-native investing app by NextGen Wealth Labs (Berlin) that gives new investors context, not commands. I joined as the first engineering hire and designed, built and owned the entire AI side: a market-moments engine that scans price data and news, detects significant moves and attributes a cause at macro, sector and asset level across 2,000+ assets; RAG and personalisation over live market data so every explanation is grounded in the user's own portfolio; and the evaluation harness that regression-tests agent output across prompt and model changes. Anthropic and Gemini models via Vertex AI, served on GCP and Cloudflare. I also carried a large share of product and DevOps work.",
 				"role": "Founding AI Engineer",
 				"duration": "Apr 2026 - Sep 2026",
-				"challenges": [],
-				"outcomes": []
+				"challenges": [
+					"Detect market moments across 2,000+ assets and attribute a cause at macro, sector and asset level",
+					"Ground every explanation in the user's live portfolio and market data",
+					"Regression-test non-deterministic agent output across prompt and model changes"
+				],
+				"outcomes": [
+					"Live on the App Store with 500+ active users",
+					"10,000+ insights generated",
+					"Entire AI side designed and shipped by one engineer in six months"
+				]
 			},
 			"klarity-prediction-market": {
 				"title": "Klarity",
@@ -125,8 +139,8 @@
 				"title": "Richard - AI Research Engine",
 				"shortDescription": "AI agents that do 8 hours of research in 30 minutes.",
 				"fullDescription": "AI research system that finds insights before you ask. Tracks sources, spots patterns, drafts reports. Cuts 8 hours of manual research to 30 minutes.",
-				"role": "Founding Engineer",
-				"duration": "Mar 2025 - Present",
+				"role": "Engineer",
+				"duration": "2025",
 				"challenges": [
 					"Proactive insights without user prompts",
 					"Self-improving accuracy over time",
@@ -136,8 +150,8 @@
 			},
 			"mira-trading-bot": {
 				"title": "Mira - Solana Trading Bot",
-				"shortDescription": "$230K profit in 5 months. Tokens launched to $200M+ market cap.",
-				"fullDescription": "Solana trading bot that turns social signals into trades in under 300ms. Go backend, real-time data pipeline. Helped launch tokens to $200M+ market cap.",
+				"shortDescription": "Solana trading bot in Go. 8,000+ trades/month at sub-300ms. 99.5% uptime.",
+				"fullDescription": "Solana trading bot that turns social signals into trades in under 300ms. Go backend, real-time WebSocket data pipeline, automated deployment pipeline and monitoring dashboards. Ran for ten months with a remote team of three.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "5 months",
 				"challenges": [
@@ -145,7 +159,7 @@
 					"Parse social signals in real-time",
 					"99.5% uptime, 3-person team"
 				],
-				"outcomes": ["$230K profit in 5 months", "8,000+ trades/month", "Tokens to $200M+ market cap"]
+				"outcomes": ["8,000+ automated trades/month", "Sub-300ms signal-to-execution", "99.5% uptime with a team of 3"]
 			},
 			"copile-trading-platform": {
 				"title": "Copile - B2B Crypto Trading Platform",
@@ -158,16 +172,20 @@
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
-				"shortDescription": "Open-source headless commerce. 8k GitHub stars. Millions of orders. 45% faster processing.",
-				"fullDescription": "Core contributor to Vendure, an open-source headless commerce platform (8k GitHub stars) trusted by IBM, Breitling, Swile, and QVC. Built enterprise e-commerce infrastructure processing millions of orders. Consolidated 7 legacy repos into one monorepo, cut order processing time by 45%, and shipped features with the founders.",
+				"shortDescription": "Open-source commerce platform (8k GitHub stars). Enterprise B2B systems for Flowtech, Feddersen and Stocker.",
+				"fullDescription": "Software engineer at Vendure from April 2024 to March 2026, joining through ALPIN11 / Elevantiq, the agency that owned and later merged into Vendure GmbH, on a team of about seven. Built enterprise B2B commerce on Vendure for its largest customers: multi-tenant white-label shops for Flowtech Fluidpower (UK hydraulics distributor, migrated off a legacy enterprise platform) and the Feddersen Group (8+ tenants), and a rules-based chimney configurator for Stocker Kaminsysteme, built solo in about five months: hundreds of sizing rules over thousands of parts synced from Pimcore, generating orders directly in Vendure. For Stocker I also consolidated the legacy codebases into one monorepo, upgraded every dependency and moved hosting to Docker Swarm. Contributed plugins, dashboard features and fixes to the Vendure core and enterprise suite alongside the founders.",
 				"role": "Software Engineer",
 				"duration": "Apr 2024 - Mar 2026",
 				"challenges": [
-					"7 legacy repos → 1 clean monorepo",
-					"Major upgrades without downtime",
-					"Enterprise-grade patterns in 8k-star codebase"
+					"Multi-tenant, white-label B2B shops with tenant-specific catalogues and pricing",
+					"Configurator: hundreds of sizing rules over thousands of Pimcore parts, orders straight into Vendure",
+					"Legacy codebases into one monorepo, dependency upgrades and Docker Swarm hosting without downtime"
 				],
-				"outcomes": ["Millions of orders/year processed", "45% faster order processing", "Used by IBM, Breitling, QVC"]
+				"outcomes": [
+					"Flowtech off its legacy platform, total cost of ownership halved (Vendure case study)",
+					"Stocker configurator shipped solo in about five months",
+					"Plugins and features merged into Vendure core, dashboard and enterprise suite"
+				]
 			},
 			"synapse-knowledge-system": {
 				"title": "Synapse - AI Knowledge System",
@@ -247,7 +265,7 @@
 	},
 	"connect": {
 		"heading": "Let's Connect",
-		"description": "Open to full-time AI and product engineering roles in Munich. Available immediately.",
+		"description": "Open to full-time AI engineering roles from October 2026. Munich, remote (EU), or relocation to San Francisco / New York.",
 		"contactForm": "Contact Form",
 		"email": "jan@jantokic.com",
 		"github": "GitHub",
@@ -256,19 +274,19 @@
 	},
 	"contact": {
 		"backToPortfolio": "← Back to Portfolio",
-		"heading": "Let's Work Together",
-		"description": "Open to full-time AI and product engineering roles in Munich. Available immediately.",
+		"heading": "Let's Talk",
+		"description": "Open to full-time AI engineering roles from October 2026. Munich, remote (EU), or relocation to San Francisco / New York.",
 		"email": "Email",
 		"location": "Location",
 		"locationValue": "Munich, Germany",
 		"social": "Social",
 		"servicesHeading": "What I'm looking for",
 		"services": [
-			"Full-time AI or product engineering roles",
-			"Munich-based, hybrid or remote",
+			"Full-time AI engineering roles",
+			"Munich, remote (EU), or relocation to SF / NYC",
 			"Agents, RAG, evals & LLM infrastructure",
 			"Product teams shipping to real users",
-			"Available immediately"
+			"Available from October 2026"
 		],
 		"formHeading": "Send Me a Message",
 		"nameLabel": "Your Name",
@@ -276,14 +294,8 @@
 		"messageLabel": "Your Message",
 		"messagePlaceholder": "Tell me about the role, the team, and what you're building...",
 		"sendButton": "Send Message",
-		"responseTime": "I usually respond within 3 hours",
-		"mailtoSubject": "Message from {name}",
-		"stats": {
-			"responseTime": "3h",
-			"responseTimeLabel": "Response Time",
-			"projects": "15+",
-			"projectsLabel": "Projects Delivered"
-		}
+		"responseTime": "I usually respond within a day",
+		"mailtoSubject": "Message from {name}"
 	},
 	"footer": {
 		"copyright": "© {year} Jan Tokic",

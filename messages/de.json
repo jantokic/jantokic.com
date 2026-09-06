@@ -8,8 +8,8 @@
 		"scrollToSection": "Zu {section} scrollen"
 	},
 	"gallery": {
-		"tagline1": "Ich denke",
-		"tagline2": "also bin ich",
+		"tagline1": "Ich baue KI-Systeme",
+		"tagline2": "und die Infrastruktur darunter",
 		"instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
 		"autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
 		"scrollDown": "Nach unten scrollen",
@@ -29,18 +29,24 @@
 	"intro": {
 		"name": "Jan Tokic",
 		"title": "AI & Software Engineer",
-		"bio": "Ich baue KI-Systeme und die Infrastruktur darunter — agentische Pipelines, RAG über Live-Daten, LLM-Infrastruktur von null bis Produktion. Davor zwei Jahre Open-Source-Commerce auf 10M+ Bestellungen im Monat skaliert. Drei Unternehmen neben der Festanstellung mitgegründet.",
+		"bio": "Ich baue KI-Produkte end-to-end, samt der Infrastruktur darunter. Zuletzt bei starc., wo ich die gesamte KI-Seite einer Investing-App konzipiert, gebaut und verantwortet habe — heute mit 500+ aktiven Nutzern im App Store live. Davor zwei Jahre bei Vendure, der Open-Source-Commerce-Plattform, Enterprise-B2B-Systeme für die größten Kunden.",
 		"capabilitiesHeading": "Was ich mache",
 		"capabilities": [
-			"AI Engineering & agentische Systeme",
-			"Backend & Realtime APIs",
-			"Cloud, DevOps & Reliability",
-			"Trading, Fintech & Web3"
+			"AI Engineering: Agents, Retrieval, Evals",
+			"Backend-Systeme & Realtime-Datenpipelines",
+			"Cloud-Infrastruktur & DevOps: GCP, Cloudflare, Docker",
+			"Product Engineering von null bis Launch"
 		],
 		"currently": "Zuletzt",
 		"studying": "Ausbildung",
 		"location": "München",
-		"currentRoles": [{ "company": "starc.", "role": "Founding AI Engineer", "period": "Apr – Sep 2026" }],
+		"currentRoles": [
+			{
+				"company": "starc.",
+				"role": "Founding AI Engineer",
+				"period": "Apr – Sep 2026"
+			}
+		],
 		"degree": "B.Sc. Wirtschaftsinformatik",
 		"university": "TU München",
 		"viewCv": "Lebenslauf ansehen"
@@ -53,7 +59,7 @@
 			"company": "starc.",
 			"location": "Berlin",
 			"period": "Apr - Sep 2026",
-			"description": "KI-native Investing-Plattform für die nächste Generation. Verantwortete die gesamte KI: proaktive Insights, Marktkontext, personalisierte Guidance.",
+			"description": "Erster Engineering-Hire. Gesamte KI-Seite konzipiert, gebaut und verantwortet: Market-Moments-Engine über Kursdaten und News für 2.000+ Assets, RAG über Live-Marktdaten, Eval-Harness. Live im App Store mit 500+ aktiven Nutzern und 10.000+ generierten Insights.",
 			"projectLink": "/projects/starc-investing-platform",
 			"projectLinkText": "Details →"
 		},
@@ -62,22 +68,22 @@
 			"company": "Vendure",
 			"location": "Wien",
 			"period": "2024 - 2026",
-			"description": "Open-Source Headless Commerce (8k GitHub Stars). Order Processing 45% schneller. Millionen Orders/Monat. 7 Repos → 1 Monorepo. Läuft bei IBM, Breitling, QVC.",
+			"description": "Open-Source-Commerce-Plattform (8k GitHub Stars), vormals ALPIN11 / Elevantiq. Enterprise-B2B-Systeme auf Vendure für Flowtech, Feddersen und Stocker: Multi-Tenant-White-Label-Shops und ein regelbasierter Kamin-Konfigurator. Plugins und Features für Core, Dashboard und Enterprise Suite.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "Details →"
 		},
 		"mira": {
 			"role": "Mitgründer & Engineer",
-			"company": "Mira Trading",
+			"company": "Mira",
 			"location": "London",
-			"description": "$230K Profit in 5 Monaten. 8.000+ automatisierte Trades/Monat. Tokens bis $200M+ Market Cap.",
+			"description": "Solana-Trading-Bot in Go. Realtime-Signal-Pipeline, 8.000+ automatisierte Trades/Monat bei sub-300ms Ausführung, 99,5% Uptime. Remote-Team von 3 geleitet.",
 			"projectLink": "/projects/mira-trading-bot",
 			"projectLinkText": "Details →"
 		},
 		"copile": {
 			"role": "Mitgründer & Engineer",
 			"company": "Copile",
-			"location": "Wien",
+			"location": "London",
 			"description": "2.100 User. €1,2M Volume/Monat. 70% Retention. Tools gebaut, Team geleitet.",
 			"projectLink": "/projects/copile-trading-platform",
 			"projectLinkText": "Details →"
@@ -85,7 +91,7 @@
 		"ibm": {
 			"role": "Software Engineering Praktikant",
 			"company": "IBM iX",
-			"location": "Wien",
+			"location": "Österreich",
 			"description": "Storefront für 85.000 Produkte. Promotions 40% schneller live."
 		}
 	},
@@ -105,12 +111,20 @@
 		"data": {
 			"starc-investing-platform": {
 				"title": "starc.",
-				"shortDescription": "KI-native Investing-Plattform. Investieren, endlich verstanden.",
-				"fullDescription": "KI-native Investing-Plattform von NextGen Wealth Labs (Berlin), die neuen Investoren Kontext statt Kommandos gibt: proaktive Insights, die Portfolio-Bewegungen und Marktereignisse im persönlichen Kontext erklären — bevor man fragt. Ich verantwortete die gesamte KI-Seite, von Architektur über agentische Pipelines bis zur LLM-Infrastruktur.",
+				"shortDescription": "KI-native Investing-App. Erster Engineering-Hire, gesamte KI-Seite verantwortet. Live im App Store.",
+				"fullDescription": "KI-native Investing-App von NextGen Wealth Labs (Berlin), die neuen Investoren Kontext statt Kommandos gibt. Ich kam als erster Engineering-Hire und habe die gesamte KI-Seite konzipiert, gebaut und verantwortet: eine Market-Moments-Engine, die Kursdaten und News scannt, relevante Bewegungen erkennt und ihnen auf Makro-, Sektor- und Asset-Ebene eine Ursache zuordnet — für 2.000+ Assets; RAG und Personalisierung über Live-Marktdaten, damit jede Erklärung im eigenen Portfolio des Nutzers verankert ist; und das Evaluations-Harness, das Agenten-Output über Prompt- und Modelländerungen hinweg regressionstestet. Anthropic- und Gemini-Modelle über Vertex AI, betrieben auf GCP und Cloudflare. Dazu ein großer Anteil an Produkt- und DevOps-Arbeit.",
 				"role": "Founding AI Engineer",
 				"duration": "Apr 2026 - Sep 2026",
-				"challenges": [],
-				"outcomes": []
+				"challenges": [
+					"Market Moments über 2.000+ Assets erkennen und auf Makro-, Sektor- und Asset-Ebene begründen",
+					"Jede Erklärung im Live-Portfolio und in den Live-Marktdaten des Nutzers verankern",
+					"Nicht-deterministischen Agenten-Output über Prompt- und Modelländerungen regressionstesten"
+				],
+				"outcomes": [
+					"Live im App Store mit 500+ aktiven Nutzern",
+					"10.000+ generierte Insights",
+					"Gesamte KI-Seite von einem Engineer in sechs Monaten konzipiert und geliefert"
+				]
 			},
 			"klarity-prediction-market": {
 				"title": "Klarity",
@@ -125,15 +139,15 @@
 				"title": "Richard",
 				"shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",
 				"fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
-				"role": "Founding Engineer",
-				"duration": "Mär 2025 - Heute",
+				"role": "Engineer",
+				"duration": "2025",
 				"challenges": ["Insights ohne Prompts", "Lernt automatisch dazu", "Confidence Scores für Vorhersagen"],
 				"outcomes": ["8h → 30 Min", "400+ Insights in 8 Wochen", "Audit-ready"]
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
-				"shortDescription": "$230K Profit in 5 Monaten. Tokens bis $200M+ Market Cap.",
-				"fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-Pipeline. Tokens bis $200M+ Market Cap gelauncht.",
+				"shortDescription": "Solana-Trading-Bot in Go. 8.000+ Trades/Monat bei sub-300ms. 99,5% Uptime.",
+				"fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-WebSocket-Pipeline, automatisierte Deployment-Pipeline und Monitoring-Dashboards. Zehn Monate im Betrieb mit einem Remote-Team von drei.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "5 Monate",
 				"challenges": [
@@ -141,7 +155,11 @@
 					"Social Signals in Realtime parsen",
 					"99,5% Uptime mit 3-Mann-Team"
 				],
-				"outcomes": ["$230K Profit in 5 Monaten", "8.000+ Trades/Monat", "Tokens bis $200M+ Market Cap"]
+				"outcomes": [
+					"8.000+ automatisierte Trades/Monat",
+					"Sub-300ms von Signal bis Ausführung",
+					"99,5% Uptime mit 3-Mann-Team"
+				]
 			},
 			"copile-trading-platform": {
 				"title": "Copile",
@@ -154,19 +172,19 @@
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
-				"shortDescription": "Open-Source Headless Commerce. 8k GitHub Stars. Millionen Orders. 45% schneller.",
-				"fullDescription": "Core Contributor bei Vendure, einer Open-Source Headless Commerce Plattform (8k GitHub Stars), genutzt von IBM, Breitling, Swile und QVC. Enterprise E-Commerce-Infrastruktur mit Millionen Orders aufgebaut. 7 Legacy-Repos in ein Monorepo konsolidiert, Order Processing um 45% beschleunigt, Features mit den Gründern shipped.",
+				"shortDescription": "Open-Source-Commerce-Plattform (8k GitHub Stars). Enterprise-B2B-Systeme für Flowtech, Feddersen und Stocker.",
+				"fullDescription": "Software Engineer bei Vendure von April 2024 bis März 2026, eingestiegen über ALPIN11 / Elevantiq, die Agentur, die die Vendure GmbH besaß und später in Vendure aufging, in einem Team von rund sieben Personen. Enterprise-B2B-Commerce auf Vendure für die größten Kunden gebaut: Multi-Tenant-White-Label-Shops für Flowtech Fluidpower (britischer Hydraulik-Distributor, Migration weg von einer Legacy-Enterprise-Plattform) und die Feddersen-Gruppe (8+ Tenants) sowie ein regelbasierter Kamin-Konfigurator für Stocker Kaminsysteme, solo in rund fünf Monaten gebaut: hunderte Dimensionierungsregeln über tausende Teile aus Pimcore, mit Bestellungen direkt in Vendure. Für Stocker außerdem die Legacy-Codebasen in ein Monorepo konsolidiert, alle Dependencies aktualisiert und das Hosting auf Docker Swarm umgestellt. Plugins, Dashboard-Features und Fixes für Vendure Core und Enterprise Suite gemeinsam mit den Gründern.",
 				"role": "Software Engineer",
 				"duration": "Apr 2024 - Mär 2026",
 				"challenges": [
-					"7 Legacy-Repos → 1 sauberes Monorepo",
-					"Major Upgrades ohne Downtime",
-					"Enterprise-Grade Patterns in 8k-Star Codebase"
+					"Multi-Tenant-White-Label-B2B-Shops mit tenant-spezifischen Katalogen und Preisen",
+					"Konfigurator: hunderte Regeln über tausende Pimcore-Teile, Bestellungen direkt in Vendure",
+					"Legacy-Codebasen in ein Monorepo, Dependency-Upgrades und Docker-Swarm-Hosting ohne Downtime"
 				],
 				"outcomes": [
-					"Millionen Orders/Jahr verarbeitet",
-					"45% schnelleres Order Processing",
-					"Läuft bei IBM, Breitling, QVC"
+					"Flowtech weg von der Legacy-Plattform, Total Cost of Ownership halbiert (Vendure Case Study)",
+					"Stocker-Konfigurator solo in rund fünf Monaten geliefert",
+					"Plugins und Features in Vendure Core, Dashboard und Enterprise Suite gemergt"
 				]
 			},
 			"synapse-knowledge-system": {
@@ -247,7 +265,7 @@
 	},
 	"connect": {
 		"heading": "Let's Talk",
-		"description": "Offen für Festanstellungen im Bereich AI & Product Engineering in München. Sofort verfügbar.",
+		"description": "Offen für Festanstellungen im AI Engineering ab Oktober 2026. München, remote (EU) oder Umzug nach San Francisco / New York.",
 		"contactForm": "Kontakt",
 		"email": "jan@jantokic.com",
 		"github": "GitHub",
@@ -256,19 +274,19 @@
 	},
 	"contact": {
 		"backToPortfolio": "← Zurück",
-		"heading": "Let's Work Together",
-		"description": "Offen für Festanstellungen im Bereich AI & Product Engineering in München. Sofort verfügbar.",
+		"heading": "Let's Talk",
+		"description": "Offen für Festanstellungen im AI Engineering ab Oktober 2026. München, remote (EU) oder Umzug nach San Francisco / New York.",
 		"email": "E-Mail",
 		"location": "Standort",
 		"locationValue": "München",
 		"social": "Social",
 		"servicesHeading": "Wonach ich suche",
 		"services": [
-			"Festanstellung: AI oder Product Engineering",
-			"München, hybrid oder remote",
+			"Festanstellung im AI Engineering",
+			"München, remote (EU) oder Umzug nach SF / NYC",
 			"Agents, RAG, Evals & LLM-Infrastruktur",
 			"Produktteams mit echten Nutzern",
-			"Sofort verfügbar"
+			"Verfügbar ab Oktober 2026"
 		],
 		"formHeading": "Schreib mir",
 		"nameLabel": "Name",
@@ -276,14 +294,8 @@
 		"messageLabel": "Nachricht",
 		"messagePlaceholder": "Erzähl mir von der Rolle, dem Team und dem Produkt...",
 		"sendButton": "Senden",
-		"responseTime": "Antwort meist innerhalb 3h",
-		"mailtoSubject": "Nachricht von {name}",
-		"stats": {
-			"responseTime": "3h",
-			"responseTimeLabel": "Antwortzeit",
-			"projects": "15+",
-			"projectsLabel": "Projekte shipped"
-		}
+		"responseTime": "Antwort meist innerhalb eines Tages",
+		"mailtoSubject": "Nachricht von {name}"
 	},
 	"footer": {
 		"copyright": "© {year} Jan Tokic",

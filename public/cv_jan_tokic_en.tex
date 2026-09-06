@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[margin=0.45in,top=0.3in,bottom=0.3in]{geometry}
+\usepackage[margin=0.4in,top=0.25in,bottom=0.25in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -7,7 +7,7 @@
 \usepackage{lmodern}
 \usepackage{array}
 
-\linespread{0.96}
+\linespread{0.93}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
@@ -29,7 +29,7 @@
 % Header
 \begin{center}
   {\LARGE\bfseries Jan Tokic} \\[2pt]
-  Munich, Germany \enspace$\vert$\enspace German \& English (C2) \enspace$\vert$\enspace Available immediately \\[1pt]
+  Munich, Germany \enspace$\vert$\enspace German, English (C2), Croatian \enspace$\vert$\enspace Open to full-time roles from Oct 2026, remote or relocation welcome \\[1pt]
   \href{mailto:jan@jantokic.com}{jan@jantokic.com} \enspace$\vert$\enspace \href{https://jantokic.com}{jantokic.com} \enspace$\vert$\enspace \href{https://github.com/jantokic}{github.com/jantokic} \enspace$\vert$\enspace \href{https://linkedin.com/in/jan-tokic}{linkedin.com/in/jan-tokic}
 \end{center}
 
@@ -37,49 +37,47 @@
 
 % Profile
 \section{Profile}
-AI and full-stack product engineer in Munich. Four years shipping revenue-critical systems: most recently owned the entire AI side of an AI-native investing platform --- agentic pipelines, RAG over live market data, and LLM infrastructure from zero to production --- after two years scaling an open-source commerce platform to 10M+ orders per month. Co-founded three companies alongside full-time work, one netting \$230K profit in five months. German and English at C2.
+AI engineer (TypeScript, Python, Go). Most recently at starc., where I designed, built and owned the entire AI side of an AI-native investing app, now live on the App Store with 500+ active users. Two years at Vendure, the 8,000-star open-source commerce platform, building enterprise B2B systems for its largest customers. 2nd place, TUM.AI \texttimes{} Anthropic hackathon.
 
 % Experience
 \section{Professional Experience}
 
 \entry{Founding AI Engineer}{starc.}{Berlin (Hybrid)}{Apr 2026 --- Sep 2026}
 \begin{itemize}
-  \item Owned the entire AI side of an AI-native investing platform --- architecture, agentic pipelines and LLM infrastructure from zero to production
-  \item Built RAG and personalisation systems over live market data; shipped closed alpha to first users
-  \item Built proactive insight engines surfacing portfolio moves and market events in each user's personal context
-  \item Built the evaluation harness for agent outputs --- regression testing across prompt and model changes, trace-level failure analysis
+  \item First engineering hire; designed, built and owned the entire AI side of an AI-native investing app, from architecture to production, in six months
+  \item Market-moments engine: scans price data and news, detects significant moves and attributes a cause at macro, sector and asset level across 2,000+ assets
+  \item RAG and personalisation over live market data, grounding every explanation in the user's own portfolio; 10,000+ insights generated for 500+ active users
+  \item Evaluation harness for agent output: regression testing across prompt and model changes, trace-level failure analysis; plus a large share of product and DevOps work
 \end{itemize}
-{\small\textit{Go, TypeScript, Python, GCP, Cloudflare, RAG, agent frameworks, evals}}
+{\small\textit{TypeScript, Python, Go, Anthropic, Gemini (Vertex AI), GCP, Cloudflare, RAG, evals}}
 
 \vspace{3pt}
 \entry{Software Engineer}{Vendure}{Vienna}{Apr 2024 --- Mar 2026}
 \begin{itemize}
-  \item Core contributor to Vendure (vendure.io), an open-source headless commerce framework with 8,000+ GitHub stars, used by IBM, Breitling, Swile and QVC
-  \item Architected order-processing system handling 10M+ orders/month ({\raise.17ex\hbox{$\scriptstyle\sim$}}EUR\,130M annual revenue)
-  \item Boosted performance 45\% via async job queues, DB sharding, and caching; cut latency 60\%
-  \item Delivered 4-month project in 1.5 months --- Nx monorepo, Docker Swarm, 40+ tickets solo
+  \item Open-source commerce platform (vendure.io; 8,000+ GitHub stars; IBM, Breitling, QVC). Joined via ALPIN11 / Elevantiq, the agency that owned and later merged into Vendure GmbH, on a team of about seven
+  \item Built and shipped a rules-based chimney configurator for Stocker Kaminsysteme solo in about five months: hundreds of sizing rules over thousands of parts synced from Pimcore, orders created directly in Vendure
+  \item Multi-tenant, white-label B2B shops for Flowtech Fluidpower (migration off a legacy enterprise platform; total cost of ownership halved per Vendure's case study) and the Feddersen Group (8+ tenants)
+  \item Consolidated Stocker's legacy codebases into one monorepo, upgraded all dependencies and moved hosting to Docker Swarm; plugins, dashboard features and fixes for Vendure core and enterprise suite
 \end{itemize}
-{\small\textit{TypeScript, NestJS, Next.js, PostgreSQL, GraphQL, Docker Swarm, Nx}}
+{\small\textit{TypeScript, NestJS, Next.js, GraphQL, PostgreSQL, Pimcore, Docker Swarm, Nx}}
 
 \vspace{3pt}
-{\small\textit{Earlier:} Software Engineering Intern, \textit{IBM iX}, Vienna (2022)}
+{\small\textit{Earlier:} Software Engineering Intern, \textit{IBM iX} (2022)}
 
 % Ventures
 \section{Ventures}
 \vspace{-1pt}
-{\small\textit{Companies co-founded and operated alongside full-time employment.}}
+{\small\textit{Side ventures, co-founded and run alongside employment. Mira and Copile are wound down.}}
 \vspace{3pt}
 
-\entry{Co-founder \& Engineer}{Mira}{London}{Nov 2024 --- Aug 2025}
+\entry{Co-founder \& Engineer}{Mira}{London (Remote)}{Nov 2024 --- Aug 2025}
 \begin{itemize}
-  \item Co-founded a Solana trading bot in Go, netting \$230K profit in five months
-  \item Real-time signal processor: 8,000+ trades/month, 92\% success rate, sub-300ms execution
-  \item Led a remote team of 3 engineers at 99.5\% uptime
-  \item Automated token-launch pipeline deploying in under 300ms
+  \item Co-founded a Solana trading bot in Go: real-time signal processor executing 8,000+ trades/month at sub-300ms
+  \item 99.5\% uptime over ten months with monitoring dashboards; led a remote team of 3 engineers
 \end{itemize}
 
 \vspace{3pt}
-\entry{Co-founder \& Engineer}{Copile}{London}{Sept 2022 --- Mar 2024}
+\entry{Co-founder \& Engineer}{Copile}{London (Remote)}{Sept 2022 --- Mar 2024}
 \begin{itemize}
   \item Scaled a B2B crypto trading platform to 2,100 users and EUR\,1.2M monthly volume
   \item Led a cross-functional team of 6 (4 engineers, 2 designers)
@@ -102,16 +100,16 @@ AI research system: tracks sources, spots patterns, drafts reports. Cuts 8h of m
 
 \vspace{2pt}
 \textbf{chtype} {\small(2026)} ---
-Type-safe ClickHouse toolkit for TypeScript: schema codegen, query builder, enhanced client. Open source
+Type-safe ClickHouse toolkit for TypeScript, built for my own analytics platform: schema codegen, query builder, enhanced client. Open source, on npm
 
 % Skills
 \section{Skills}
 {\small
 \begin{tabular}{@{}>{\bfseries}p{2.6cm}@{\hspace{8pt}}p{\dimexpr\linewidth-2.6cm-8pt\relax}@{}}
-AI \& LLM & RAG, agent frameworks, evals, LLM orchestration, prompt \& context engineering, MCP \\
+AI \& LLM & RAG, agents, evals, LLM orchestration, prompt \& context engineering, MCP, Anthropic \& Gemini APIs \\
 Languages & TypeScript, Python, Go \\
 Web & Next.js, React, NestJS, GraphQL \\
-Data & PostgreSQL, ClickHouse \\
+Data & PostgreSQL, ClickHouse, Pimcore \\
 Infrastructure & GCP, AWS, Docker, Kubernetes, Cloudflare \\
 \end{tabular}
 }
@@ -120,10 +118,10 @@ Infrastructure & GCP, AWS, Docker, Kubernetes, Cloudflare \\
 \section{Education}
 
 \textbf{B.Sc.\ Information Systems}, \textit{Technical University of Munich} \hfill Munich \\
-{\small Oct 2024 --- Present \enspace$\vert$\enspace Focus: AI-driven systems, algorithmic trading, quantitative analysis}
+{\small Oct 2024 --- exp.\ Jun 2027, alongside full-time work \enspace$\vert$\enspace Focus: AI-driven systems, algorithmic trading, quantitative analysis}
 
 \vspace{3pt}
 \textbf{Matura in Computer Science}, \textit{HTL Wels (Higher Technical College)} \hfill Wels \\
-{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Passed with distinction (best in year)}
+{\small Sept 2018 --- Jun 2023 \enspace$\vert$\enspace Passed with distinction (best in year); diploma thesis nominated for the TGW Award}
 
 \end{document}

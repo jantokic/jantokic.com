@@ -2,10 +2,10 @@
 
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
-import AboutSection from '@/components/sections/AboutSection';
 import ConnectSection from '@/components/sections/ConnectSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
@@ -23,48 +23,114 @@ const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
 
 type GalleryMode = 'pending' | '3d' | 'static';
 
+const SECTIONS = ['gallery', 'work', 'projects', 'connect'] as const;
+const SECTION_LABEL_KEY: Record<(typeof SECTIONS)[number], string> = {
+	gallery: 'nav.intro',
+	work: 'nav.work',
+	projects: 'nav.projects',
+	connect: 'nav.connect',
+};
+
 function GalleryLoading() {
 	return <div className="absolute inset-0 bg-white" aria-hidden="true" />;
 }
 
-function HeroContent({ blend, locale }: { blend: boolean; locale: string }) {
+/**
+ * The first screen doubles as the "about": name, positioning, the short story, the facts a
+ * recruiter looks for, skills and the ways to reach me. `overGallery` fixes the colours to the
+ * always-white gallery backdrop; otherwise the theme tokens apply.
+ */
+function HeroContent({ overGallery, locale }: { overGallery: boolean; locale: string }) {
 	const t = useTranslations();
 	const github = socialLinks.find((link) => link.platform === 'GitHub')?.url ?? 'https://github.com/jantokic';
+	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
 
-	// `blend` = rendered over the always-white 3D gallery, so colours are fixed rather than themed.
-	const textClass = blend ? 'text-neutral-950' : 'text-foreground';
-	const mutedClass = blend ? 'text-neutral-600' : 'text-muted-foreground';
-	const ctaClass = blend
-		? 'border-neutral-300 text-neutral-950 hover:bg-neutral-950 hover:text-white'
-		: 'border-border text-foreground hover:bg-foreground hover:text-background';
+	const ink = overGallery ? 'text-neutral-950' : 'text-foreground';
+	const muted = overGallery ? 'text-neutral-600' : 'text-muted-foreground';
+	const faint = overGallery ? 'text-neutral-500' : 'text-muted-foreground/80';
+	const border = overGallery ? 'border-neutral-300' : 'border-border';
+	const ctaPrimary = overGallery
+		? 'border-neutral-950 bg-neutral-950 text-white hover:bg-neutral-800'
+		: 'border-foreground bg-foreground text-background hover:opacity-90';
+	const ctaSecondary = overGallery
+		? 'border-neutral-300 text-neutral-950 hover:border-neutral-950'
+		: 'border-border text-foreground hover:border-foreground';
+	const pill = overGallery
+		? 'border-neutral-300 text-neutral-600 bg-white/60'
+		: 'border-border/60 text-muted-foreground bg-background/60';
+
+	const facts: { label: string; value: string; detail?: string }[] = [
+		...roles.map((role) => ({
+			label: t('intro.currently'),
+			value: role.company,
+			detail: [role.role, role.period].filter(Boolean).join(' · '),
+		})),
+		{ label: t('intro.studying'), value: t('intro.university'), detail: t('intro.degree') },
+		{ label: t('hero.awardLabel'), value: t('hero.award') },
+		{ label: t('hero.locationLabel'), value: t('intro.location'), detail: t('hero.availability') },
+	];
 
 	return (
 		<div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 w-full">
-			<div className="max-w-2xl space-y-6">
-				<p className={`font-mono uppercase text-[11px] sm:text-xs tracking-[0.2em] font-semibold ${mutedClass}`}>
+			<div className="max-w-2xl space-y-6 lg:space-y-7">
+				<p className={`font-mono uppercase text-[11px] sm:text-xs tracking-[0.2em] font-semibold ${muted}`}>
 					{t('hero.eyebrow')}
 				</p>
-				<h1 className={`font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none ${textClass}`}>
-					{t('intro.name')}
-				</h1>
-				<p className={`text-lg sm:text-xl lg:text-2xl leading-snug max-w-xl ${textClass}`}>{t('hero.tagline')}</p>
-				<ul className="space-y-1.5">
-					{(t.raw('hero.proof') as string[]).map((item) => (
+
+				<div className="space-y-4">
+					<h1 className={`font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none ${ink}`}>
+						{t('intro.name')}
+					</h1>
+					<p className={`text-lg sm:text-xl lg:text-2xl leading-snug max-w-xl ${ink}`}>{t('hero.tagline')}</p>
+					<p className={`text-[15px] sm:text-base leading-relaxed max-w-xl ${muted}`}>{t('hero.story')}</p>
+				</div>
+
+				{/* Photo + facts */}
+				<div className="flex items-start gap-5">
+					<div className={`relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border ${border}`}>
+						<Image
+							src="/headshot-user.webp"
+							alt="Jan Tokic"
+							fill
+							unoptimized
+							priority
+							className="object-cover object-[center_20%]"
+						/>
+					</div>
+					<dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+						{facts.map((fact) => (
+							<div key={fact.label + fact.value} className="min-w-0">
+								<dt className={`font-mono uppercase text-[10px] tracking-wider font-semibold ${faint}`}>
+									{fact.label}
+								</dt>
+								<dd className={`font-mono uppercase text-xs tracking-wider font-semibold ${ink}`}>{fact.value}</dd>
+								{fact.detail && (
+									<dd className={`font-mono uppercase text-[10px] tracking-wider ${faint}`}>{fact.detail}</dd>
+								)}
+							</div>
+						))}
+					</dl>
+				</div>
+
+				{/* Skills */}
+				<ul className="flex flex-wrap gap-2">
+					{skills.map((skill) => (
 						<li
-							key={item}
-							className={`font-mono uppercase text-[11px] sm:text-xs tracking-wider font-semibold flex items-start gap-2 ${mutedClass}`}
+							key={skill}
+							className={`px-2.5 py-1 font-mono uppercase text-[11px] tracking-wider font-semibold border rounded-full ${pill}`}
 						>
-							<span aria-hidden="true">→</span>
-							<span>{item}</span>
+							{skill}
 						</li>
 					))}
 				</ul>
-				<div className="flex flex-wrap gap-3 pt-2 pointer-events-auto">
+
+				{/* CTAs */}
+				<div className="flex flex-wrap gap-3 pointer-events-auto">
 					<a
 						href={`/cv_jan_tokic_${locale}.pdf`}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaClass}`}
+						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaPrimary}`}
 					>
 						{t('hero.cta.cv')}
 						<ArrowUpRight className="w-3.5 h-3.5" />
@@ -73,14 +139,14 @@ function HeroContent({ blend, locale }: { blend: boolean; locale: string }) {
 						href={github}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaClass}`}
+						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaSecondary}`}
 					>
 						{t('hero.cta.github')}
 						<ArrowUpRight className="w-3.5 h-3.5" />
 					</a>
 					<a
 						href={`mailto:${t('connect.email')}`}
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaClass}`}
+						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaSecondary}`}
 					>
 						{t('hero.cta.email')}
 						<ArrowUpRight className="w-3.5 h-3.5" />
@@ -98,7 +164,7 @@ export default function Home() {
 	const [galleryMode, setGalleryMode] = useState<GalleryMode>('pending');
 	const [galleryComplete, setGalleryComplete] = useState(false);
 	const [resetGallery, setResetGallery] = useState(false);
-	const [activeSection, setActiveSection] = useState('gallery');
+	const [activeSection, setActiveSection] = useState<string>('gallery');
 
 	const galleryRef = useRef<HTMLElement>(null);
 	const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -131,14 +197,12 @@ export default function Home() {
 		}
 	};
 
-	// Handle gallery scroll completion
+	// Handle gallery scroll completion: hand the page over to the next section
 	const handleScrollComplete = () => {
 		setGalleryComplete(true);
 
-		// Auto-scroll to Intro section after a brief pause
 		setTimeout(() => {
-			const introSection = document.getElementById('intro');
-			introSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}, 200);
 	};
 
@@ -203,16 +267,14 @@ export default function Home() {
 
 	// Scroll-based active section tracking (works reliably across all viewports)
 	useEffect(() => {
-		const sectionIds = ['gallery', 'intro', 'work', 'projects', 'connect'];
-
 		const updateActiveSection = () => {
 			const viewportCenter = window.scrollY + window.innerHeight / 2;
 
 			// Find section whose center is closest to viewport center
-			let closestSection = sectionIds[0];
+			let closestSection: string = SECTIONS[0];
 			let closestDistance = Number.POSITIVE_INFINITY;
 
-			for (const id of sectionIds) {
+			for (const id of SECTIONS) {
 				const section = document.getElementById(id);
 				if (section) {
 					const sectionCenter = section.offsetTop + section.offsetHeight / 2;
@@ -235,11 +297,9 @@ export default function Home() {
 
 	const scrollToSection = (sectionId: string) => {
 		if (sectionId === 'gallery') {
-			// Scroll to top for gallery section
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		} else {
-			const section = document.getElementById(sectionId);
-			section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}
 	};
 
@@ -248,7 +308,7 @@ export default function Home() {
 			{/* Fixed Left Navigation - Desktop Only */}
 			<div className="hidden lg:block fixed left-8 top-1/2 -translate-y-1/2 z-50">
 				<nav className="flex flex-col gap-4">
-					{['gallery', 'intro', 'work', 'projects', 'connect'].map((section) => (
+					{SECTIONS.map((section) => (
 						<button
 							key={section}
 							type="button"
@@ -258,7 +318,7 @@ export default function Home() {
 									? 'h-3 w-3 bg-foreground scale-125'
 									: 'h-2.5 w-2.5 bg-border hover:bg-muted-foreground hover:scale-110'
 							}`}
-							aria-label={t('nav.scrollToSection', { section: t(`nav.${section}`) })}
+							aria-label={t('nav.scrollToSection', { section: t(SECTION_LABEL_KEY[section]) })}
 						/>
 					))}
 				</nav>
@@ -267,7 +327,7 @@ export default function Home() {
 			<main className="min-h-screen">
 				{use3d ? (
 					/* 3D Gallery Hero - Always Light Mode */
-					<section id="gallery" ref={galleryRef} className="relative h-screen bg-white">
+					<section id="gallery" ref={galleryRef} className="relative min-h-screen bg-white flex items-center py-20">
 						<InfiniteGallery
 							images={projectImages}
 							fallbackText={t('gallery.webglFallback')}
@@ -275,17 +335,18 @@ export default function Home() {
 							zSpacing={3}
 							visibleCount={12}
 							falloff={{ near: 0.8, far: 14 }}
-							className="h-screen w-full rounded-lg overflow-hidden"
+							className="absolute inset-0 h-full w-full overflow-hidden"
 							onImageClick={handleProjectClick}
 							onScrollComplete={handleScrollComplete}
 							resetGallery={resetGallery}
 						/>
 						{/* Soft white wash on the left keeps the copy legible while images fly behind it */}
-						<div className="absolute inset-0 pointer-events-none flex items-center bg-[linear-gradient(90deg,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.7)_32%,rgba(255,255,255,0)_58%)]">
-							<HeroContent blend locale={locale} />
+						<div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.78)_38%,rgba(255,255,255,0)_64%)]" />
+						<div className="relative z-10 w-full pointer-events-none">
+							<HeroContent overGallery locale={locale} />
 						</div>
 
-						<div className="text-center absolute bottom-8 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none mix-blend-exclusion text-white">
+						<div className="text-center absolute bottom-6 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none mix-blend-exclusion text-white">
 							{!galleryComplete ? (
 								<p className="opacity-70">{t('gallery.instructions')}</p>
 							) : (
@@ -299,25 +360,15 @@ export default function Home() {
 				) : (
 					/* Static Hero - phones, reduced motion, data saver, and before the client decides */
 					<section id="gallery" ref={galleryRef} className="relative min-h-[85vh] flex items-center py-24">
-						<HeroContent blend={false} locale={locale} />
+						<HeroContent overGallery={false} locale={locale} />
 					</section>
 				)}
-
-				{/* Intro Section */}
-				<AboutSection
-					ref={(el) => {
-						if (el) {
-							sectionsRef.current[0] = el;
-						}
-					}}
-					skills={skills}
-				/>
 
 				{/* Selected Work Section */}
 				<SelectedWorkSection
 					ref={(el) => {
 						if (el) {
-							sectionsRef.current[1] = el;
+							sectionsRef.current[0] = el;
 						}
 					}}
 					workData={workData}
@@ -327,7 +378,7 @@ export default function Home() {
 				<FeaturedProjectsSection
 					ref={(el) => {
 						if (el) {
-							sectionsRef.current[2] = el;
+							sectionsRef.current[1] = el;
 						}
 					}}
 				/>
@@ -336,7 +387,7 @@ export default function Home() {
 				<ConnectSection
 					ref={(el) => {
 						if (el) {
-							sectionsRef.current[3] = el;
+							sectionsRef.current[2] = el;
 						}
 					}}
 				/>

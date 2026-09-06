@@ -26,15 +26,7 @@
 	},
 	"intro": {
 		"name": "Jan Tokic",
-		"title": "AI & Software Engineer",
 		"bio": "Ich baue KI-Produkte end-to-end, samt der Infrastruktur darunter. Zuletzt bei starc., wo ich die gesamte KI-Seite einer Investing-App konzipiert, gebaut und verantwortet habe — heute live im App Store. Davor zwei Jahre bei Vendure, der Open-Source-Commerce-Plattform, Enterprise-B2B-Systeme für die größten Kunden.",
-		"capabilitiesHeading": "Was ich mache",
-		"capabilities": [
-			"AI Engineering: Agents, Retrieval, Evals",
-			"Backend-Systeme & Realtime-Datenpipelines",
-			"Cloud-Infrastruktur & DevOps: GCP, Cloudflare, Docker",
-			"Product Engineering von null bis Launch"
-		],
 		"currently": "Zuletzt",
 		"studying": "Ausbildung",
 		"location": "München",
@@ -303,15 +295,15 @@
 	"hero": {
 		"eyebrow": "AI Engineer · München",
 		"tagline": "Ich baue KI-Produkte end-to-end, samt der Infrastruktur darunter.",
-		"proof": [
-			"KI-Seite einer Investing-App von null bis in den App Store gebracht",
-			"2. Platz, TUM.AI × Anthropic Hackathon",
-			"TypeScript · Python · Go"
-		],
 		"cta": {
 			"cv": "Lebenslauf",
 			"github": "GitHub",
 			"email": "E-Mail"
-		}
+		},
+		"story": "Zuletzt bei starc., wo ich die gesamte KI-Seite einer Investing-App konzipiert, gebaut und verantwortet habe — heute live im App Store. Davor zwei Jahre bei Vendure, der Open-Source-Commerce-Plattform, Enterprise-B2B-Systeme für die größten Kunden.",
+		"awardLabel": "Hackathon",
+		"award": "2. Platz, TUM.AI × Anthropic",
+		"locationLabel": "Standort",
+		"availability": "Offen für Rollen ab Okt 2026"
 	}
 }

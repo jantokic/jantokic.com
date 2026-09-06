@@ -12,8 +12,8 @@ export interface CarouselItem {
 	href: string;
 }
 
-/** Distance between the tops of consecutive cards, in px. Card height is ~277px at 400px width. */
-const PITCH = 304;
+/** Distance between the tops of consecutive cards, in px. A 16:9 card is 236px tall at 420px width. */
+const PITCH = 268;
 /** Drift speed in px per second while nothing is hovered. */
 const SPEED = 24;
 /** How much the column moves per px of page scroll. */
@@ -142,18 +142,17 @@ function Card({ item, focusable = false }: { item: CarouselItem; focusable?: boo
 		<Link
 			href={item.href}
 			tabIndex={focusable ? undefined : -1}
-			className="group block rounded-2xl overflow-hidden border border-border/60 bg-card shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] hover:border-border transition-colors"
+			className="group relative block aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted shadow-[0_18px_50px_-24px_rgba(0,0,0,0.35)] hover:border-border transition-colors"
 		>
-			<div className="relative aspect-video w-full bg-muted">
-				<Image src={item.src} alt={item.alt} fill sizes="420px" className="object-cover" />
-			</div>
-			<div data-caption className="flex items-baseline justify-between gap-4 px-4 py-3">
-				<span className="font-mono uppercase text-[11px] tracking-wider font-semibold text-foreground truncate">
+			<Image src={item.src} alt={item.alt} fill sizes="420px" className="object-cover" />
+			<div
+				data-caption
+				className="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-4 px-4 pt-10 pb-3 bg-gradient-to-t from-black/80 via-black/45 to-transparent"
+			>
+				<span className="font-mono uppercase text-[11px] tracking-wider font-semibold text-white truncate">
 					{item.title}
 				</span>
-				<span className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground shrink-0">
-					{item.category}
-				</span>
+				<span className="font-mono uppercase text-[11px] tracking-wider text-white/85 shrink-0">{item.category}</span>
 			</div>
 		</Link>
 	);

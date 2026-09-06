@@ -9,6 +9,7 @@ import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSecti
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
 import VerticalCarousel, { type CarouselItem } from '@/components/VerticalCarousel';
 import { projects } from '@/content/projects';
+import { skills } from '@/content/skills';
 import { socialLinks } from '@/content/social';
 import { workData } from '@/content/work';
 
@@ -35,7 +36,7 @@ function Hero({ locale }: { locale: string }) {
 	return (
 		<div className="w-full px-6 sm:px-10 lg:pl-24 lg:pr-12">
 			<div className="max-w-xl space-y-8">
-				<div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border border-border">
+				<div className="relative w-32 h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border border-border">
 					<Image
 						src="/headshot-user.webp"
 						alt="Jan Tokic"
@@ -85,16 +86,30 @@ function Hero({ locale }: { locale: string }) {
 					</a>
 				</div>
 
-				{/* The three facts a recruiter scans for */}
-				<dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-4 pt-8 border-t border-border/50">
-					{facts.map((fact) => (
-						<div key={fact.label + fact.value} className="space-y-1">
-							<dt className="font-mono uppercase text-[10px] tracking-wider text-muted-foreground">{fact.label}</dt>
-							<dd className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground">{fact.value}</dd>
-							{fact.detail && <dd className="text-[13px] leading-snug text-muted-foreground">{fact.detail}</dd>}
-						</div>
-					))}
-				</dl>
+				{/* The three facts a recruiter scans for, then the skills */}
+				<div className="space-y-6 pt-8 border-t border-border/50">
+					<dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-5">
+						{facts.map((fact) => (
+							<div key={fact.label + fact.value} className="space-y-1.5">
+								<dt className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground">{fact.label}</dt>
+								<dd className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">
+									{fact.value}
+								</dd>
+								{fact.detail && <dd className="text-sm leading-snug text-muted-foreground">{fact.detail}</dd>}
+							</div>
+						))}
+					</dl>
+					<ul className="flex flex-wrap gap-2">
+						{skills.map((skill) => (
+							<li
+								key={skill}
+								className="px-3 py-1.5 font-mono uppercase text-[11px] tracking-wider font-semibold border border-border/60 rounded-full text-muted-foreground"
+							>
+								{skill}
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 		</div>
 	);
@@ -209,7 +224,7 @@ export default function Home() {
 				{/* First screen: about on the left, project carousel on the right, facts band below */}
 				<section id="intro" className="relative bg-background">
 					<div className="grid min-h-screen lg:grid-cols-[minmax(0,13fr)_minmax(0,11fr)]">
-						<div className="flex items-center py-16 lg:py-20">
+						<div className="flex items-center py-14 lg:py-14">
 							<Hero locale={locale} />
 						</div>
 						<div className="relative hidden lg:block min-h-screen">

@@ -35,7 +35,7 @@ function Hero({ locale }: { locale: string }) {
 
 	return (
 		<div className="w-full px-6 sm:px-10 lg:pl-24 lg:pr-12">
-			<div className="max-w-xl space-y-8">
+			<div className="max-w-xl space-y-7">
 				<div className="relative w-32 h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden border border-border">
 					<Image
 						src="/headshot-user.webp"
@@ -87,7 +87,7 @@ function Hero({ locale }: { locale: string }) {
 				</div>
 
 				{/* The three facts a recruiter scans for, then the skills */}
-				<div className="space-y-6 pt-8 border-t border-border/50">
+				<div className="space-y-5 pt-7 border-t border-border/50">
 					<dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-5">
 						{facts.map((fact) => (
 							<div key={fact.label + fact.value} className="space-y-1.5">
@@ -224,7 +224,7 @@ export default function Home() {
 				{/* First screen: about on the left, project carousel on the right, facts band below */}
 				<section id="intro" className="relative bg-background">
 					<div className="grid min-h-screen lg:grid-cols-[minmax(0,13fr)_minmax(0,11fr)]">
-						<div className="flex items-center py-14 lg:py-14">
+						<div className="flex items-center py-12 lg:py-10">
 							<Hero locale={locale} />
 						</div>
 						<div className="relative hidden lg:block min-h-screen">

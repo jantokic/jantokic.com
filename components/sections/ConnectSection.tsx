@@ -11,7 +11,7 @@ import { Link } from '@/routing';
 
 const ConnectSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLElement>) => {
 	const t = useTranslations();
-	const { theme, setTheme } = useTheme();
+	const { resolvedTheme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -91,12 +91,13 @@ const ConnectSection = forwardRef<HTMLElement>((_props, ref: ForwardedRef<HTMLEl
 
 						{mounted && (
 							<button
-								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+								type="button"
+								onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
 								className="p-2 rounded-lg hover:bg-muted active:scale-[0.95] transition-all"
 								aria-label={t('footer.toggleTheme')}
 							>
 								<span className="block transition-transform duration-300 hover:rotate-12">
-									{theme === 'dark' ? (
+									{resolvedTheme === 'dark' ? (
 										<Sun className="w-5 h-5 text-foreground" />
 									) : (
 										<Moon className="w-5 h-5 text-foreground" />

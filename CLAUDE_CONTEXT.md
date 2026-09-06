@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a **professional portfolio website for Jan Tokic, a freelance backend developer based in Munich, Germany**. It's built using a V0 photography gallery template that has been transformed into a stunning project showcase with 3D flying animations.
+This is a **professional portfolio website for Jan Tokic, an AI engineer based in Munich, Germany, positioned for full-time AI engineering roles**. It's built using a V0 photography gallery template that has been transformed into a stunning project showcase with 3D flying animations.
 
 **Live Site**: https://jantokic.com (deployed on Vercel)
 
@@ -18,10 +18,10 @@ This is a **professional portfolio website for Jan Tokic, a freelance backend de
 
 ## Tech Stack
 
-- **Framework**: Next.js 15.2.4 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **UI Library**: React 19
 - **3D Graphics**: Three.js + React Three Fiber + React Three Drei
-- **Styling**: Tailwind CSS v3.4.18
+- **Styling**: Tailwind CSS v4
 - **Language**: TypeScript
 - **Icons**: Lucide React + simple-icons (for brand icons)
 - **Fonts**: Geist Sans, Geist Mono, Instrument Serif
@@ -519,8 +519,8 @@ rm -rf .next && bun dev
 - **Monospace typography** - Technical, professional, consistent throughout
 - **Progressive enhancement** - 3D gallery first, then traditional sections
 - **Backend-focused** - Emphasizes systems, architecture, scalability
-- **Germany/Austria-based freelancer** - Professional, European context
-- **Bilingual** - Serves both English and German-speaking clients
+- **Munich-based AI engineer** - Professional, European context
+- **Bilingual** - English and German-speaking hiring managers
 - **Gallery exception** - 3D gallery remains white for optimal text visibility
 - **Future-proof icons** - Using simple-icons where possible for longevity
 

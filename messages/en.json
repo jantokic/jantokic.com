@@ -8,8 +8,6 @@
 		"scrollToSection": "Scroll to {section}"
 	},
 	"gallery": {
-		"tagline1": "I build AI systems",
-		"tagline2": "and the infrastructure under them",
 		"instructions": "Click a project for details • Scroll or use arrow keys to navigate",
 		"autoplay": "Auto-play resumes after 3 seconds of inactivity",
 		"scrollDown": "Scroll to continue",
@@ -240,7 +238,8 @@
 					"SQL injection prevention by design"
 				]
 			}
-		}
+		},
+		"archiveHeading": "Earlier work"
 	},
 	"projectPage": {
 		"notFoundTitle": "Project Not Found",
@@ -301,5 +300,19 @@
 		"copyright": "© {year} Jan Tokic",
 		"toggleTheme": "Toggle theme",
 		"language": "Language"
+	},
+	"hero": {
+		"eyebrow": "AI Engineer · Munich",
+		"tagline": "I build AI products end to end, and the infrastructure under them.",
+		"proof": [
+			"Shipped the AI side of an investing app, zero to App Store",
+			"2nd place, TUM.AI × Anthropic Hackathon",
+			"TypeScript · Python · Go"
+		],
+		"cta": {
+			"cv": "View CV",
+			"github": "GitHub",
+			"email": "Email me"
+		}
 	}
 }

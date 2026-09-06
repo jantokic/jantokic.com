@@ -59,7 +59,7 @@ const SelectedWorkSection = forwardRef<HTMLElement, SelectedWorkSectionProps>(
 										)}
 									</div>
 
-									<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
+									<p className="text-[15px] leading-relaxed text-muted-foreground">
 										{t(`work.${job.key}.description`)}
 									</p>
 

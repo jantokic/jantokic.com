@@ -2,6 +2,7 @@
 
 import { useTexture } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
+import Image from 'next/image';
 import type React from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
@@ -201,6 +202,7 @@ function ImagePlane({
 	}, [material, isHovered]);
 
 	return (
+		// biome-ignore lint/a11y/noStaticElementInteractions: three.js mesh inside a WebGL canvas, not a DOM element
 		<mesh
 			ref={meshRef}
 			position={position}
@@ -233,7 +235,8 @@ function GalleryScene({
 	onScrollComplete,
 	resetGallery,
 }: Omit<InfiniteGalleryProps, 'className' | 'style' | 'fallbackText'>) {
-	const [scrollVelocity, setScrollVelocity] = useState(0);
+	// Velocity lives in a ref: it changes every frame and must not trigger React re-renders.
+	const scrollVelocity = useRef(0);
 	const [autoPlay, setAutoPlay] = useState(true);
 	const lastInteraction = useRef(Date.now());
 	const [isComplete, setIsComplete] = useState(false);
@@ -310,7 +313,7 @@ function GalleryScene({
 			x: spatialPositions[i]?.x ?? 0,
 			y: spatialPositions[i]?.y ?? 0,
 		}));
-	}, [depthRange, spatialPositions, totalImages, visibleCount]);
+	}, [spatialPositions, totalImages, visibleCount]);
 
 	// Handle scroll input
 	const handleWheel = useCallback(
@@ -322,7 +325,7 @@ function GalleryScene({
 				if (event.deltaMode === 1) deltaY *= 40;
 				else if (event.deltaMode === 2) deltaY *= 800;
 				const delta = deltaY * 0.01 * speed;
-				setScrollVelocity((prev) => prev + delta);
+				scrollVelocity.current += delta;
 				setAutoPlay(false);
 				lastInteraction.current = Date.now();
 			}
@@ -337,11 +340,11 @@ function GalleryScene({
 			if (isComplete) return; // Don't handle keys if gallery is complete
 
 			if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-				setScrollVelocity((prev) => prev - 2 * speed);
+				scrollVelocity.current -= 2 * speed;
 				setAutoPlay(false);
 				lastInteraction.current = Date.now();
 			} else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-				setScrollVelocity((prev) => prev + 2 * speed);
+				scrollVelocity.current += 2 * speed;
 				setAutoPlay(false);
 				lastInteraction.current = Date.now();
 			}
@@ -375,7 +378,7 @@ function GalleryScene({
 
 			// Convert touch delta to scroll velocity (similar sensitivity to wheel)
 			const delta = deltaY * 0.03 * speed;
-			setScrollVelocity((prev) => prev + delta);
+			scrollVelocity.current += delta;
 
 			lastTouchY.current = currentY;
 			lastInteraction.current = Date.now();
@@ -421,30 +424,31 @@ function GalleryScene({
 	useFrame((state, delta) => {
 		// Apply auto-play
 		if (autoPlay) {
-			setScrollVelocity((prev) => prev + 0.3 * delta);
+			scrollVelocity.current += 0.3 * delta;
 		}
 
 		// Damping
-		setScrollVelocity((prev) => prev * 0.95);
+		scrollVelocity.current *= 0.95;
+		const velocity = scrollVelocity.current;
 
 		// Update time uniform for all materials
 		const time = state.clock.getElapsedTime();
 		materials.forEach((material) => {
 			if (material?.uniforms) {
 				material.uniforms.time.value = time;
-				material.uniforms.scrollForce.value = scrollVelocity;
+				material.uniforms.scrollForce.value = velocity;
 			}
 		});
 
 		// Update plane positions
 		const imageAdvance = totalImages > 0 ? visibleCount % totalImages || totalImages : 0;
 		const totalRange = depthRange;
-		const halfRange = totalRange / 2;
-		// Wrap threshold: single pass through all images
-		const wrapThreshold = totalImages;
+		// Wrap threshold: release the page after roughly a third of the images have flown past,
+		// so the gallery reads as an intro rather than a scroll trap.
+		const wrapThreshold = Math.max(3, Math.ceil(totalImages / 3));
 
 		planesData.current.forEach((plane, i) => {
-			let newZ = plane.z + scrollVelocity * delta * 10;
+			let newZ = plane.z + velocity * delta * 10;
 			let wrapsForward = 0;
 			let wrapsBackward = 0;
 
@@ -579,11 +583,13 @@ function FallbackGallery({ images, fallbackText }: { images: ImageItem[]; fallba
 	);
 
 	return (
-		<div className="flex flex-col items-center justify-center h-full bg-gray-100 p-4">
-			<p className="text-gray-600 mb-4">{fallbackText}</p>
+		<div className="flex flex-col items-center justify-center h-full bg-white p-4">
+			<p className="font-mono uppercase text-[11px] tracking-wider text-neutral-500 mb-4">{fallbackText}</p>
 			<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
 				{normalizedImages.map((img, i) => (
-					<img key={i} src={img.src || '/placeholder.svg'} alt={img.alt} className="w-full h-32 object-cover rounded" />
+					<div key={i} className="relative w-full h-32 rounded overflow-hidden">
+						<Image src={img.src} alt={img.alt ?? ''} fill sizes="33vw" className="object-cover" />
+					</div>
 				))}
 			</div>
 		</div>
@@ -609,6 +615,9 @@ export default function InfiniteGallery({
 	resetGallery,
 }: InfiniteGalleryProps) {
 	const [webglSupported, setWebglSupported] = useState(true);
+	// Set when the browser drops the WebGL context (GPU reset, tab throttling, locked-down machines).
+	// Without this the hero would stay a blank white canvas.
+	const [contextLost, setContextLost] = useState(false);
 
 	useEffect(() => {
 		// Check WebGL support
@@ -623,7 +632,7 @@ export default function InfiniteGallery({
 		}
 	}, []);
 
-	if (!webglSupported) {
+	if (!webglSupported || contextLost) {
 		return (
 			<div className={className} style={style}>
 				<FallbackGallery images={images} fallbackText={fallbackText} />
@@ -633,7 +642,16 @@ export default function InfiniteGallery({
 
 	return (
 		<div className={className} style={style}>
-			<Canvas camera={{ position: [0, 0, 0], fov: 55 }} gl={{ antialias: true, alpha: true }}>
+			<Canvas
+				camera={{ position: [0, 0, 0], fov: 55 }}
+				gl={{ antialias: true, alpha: true }}
+				onCreated={({ gl }) => {
+					gl.domElement.addEventListener('webglcontextlost', (event) => {
+						event.preventDefault();
+						setContextLost(true);
+					});
+				}}
+			>
 				<GalleryScene
 					images={images}
 					fadeSettings={fadeSettings}

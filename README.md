@@ -4,7 +4,7 @@
 
 ## Overview
 
-Professional portfolio website showcasing backend engineering projects with an immersive 3D gallery experience. Built with Next.js 15, Three.js, and React Three Fiber.
+Personal site for an AI engineer, showcasing AI, backend and infrastructure projects with an immersive 3D gallery experience. Built with Next.js 16, Three.js, and React Three Fiber.
 
 ## Features
 
@@ -17,10 +17,10 @@ Professional portfolio website showcasing backend engineering projects with an i
 
 ## Tech Stack
 
-- **Framework**: Next.js 15.2.4 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **UI Library**: React 19
 - **3D Graphics**: Three.js + React Three Fiber + React Three Drei
-- **Styling**: Tailwind CSS v3.4.18
+- **Styling**: Tailwind CSS v4
 - **Language**: TypeScript
 - **Theme**: next-themes
 - **Package Manager**: Bun

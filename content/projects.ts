@@ -6,8 +6,11 @@ export interface ProjectDef {
 	image: string;
 	galleryImage: string;
 	images: string[];
+	/** Exclude from the 3D gallery (large or unsuitable banner). */
 	featured?: boolean;
 	comingSoon?: boolean;
+	/** Show in the compact "Earlier work" list instead of the card grid. */
+	archive?: boolean;
 	galleryOrder?: number;
 	links?: {
 		github?: string;
@@ -49,9 +52,9 @@ export const projects: ProjectDef[] = [
 			'Nx Monorepo',
 			'Open Source',
 		],
-		image: '/projects/vendure/banner.png',
-		galleryImage: '/projects/vendure/banner.png',
-		images: ['/projects/vendure/banner.png'],
+		image: '/projects/vendure/banner.webp',
+		galleryImage: '/projects/vendure/banner.webp',
+		images: ['/projects/vendure/banner.webp'],
 		year: '2024',
 		featured: false,
 		links: {
@@ -107,6 +110,7 @@ export const projects: ProjectDef[] = [
 		images: [],
 		year: '2025',
 		comingSoon: true,
+		archive: true,
 		galleryOrder: 3,
 		links: {
 			website: 'https://klarity.io',
@@ -120,6 +124,7 @@ export const projects: ProjectDef[] = [
 		galleryImage: '/projects/richard/gallery.webp',
 		images: ['/projects/richard/logo.webp'],
 		year: '2025',
+		archive: true,
 		galleryOrder: 4,
 	},
 	{
@@ -158,6 +163,7 @@ export const projects: ProjectDef[] = [
 		galleryImage: '/projects/neura/gallery.webp',
 		images: ['/projects/neura/logo.webp'],
 		year: '2022',
+		archive: true,
 		galleryOrder: 7,
 		links: {
 			x: 'https://x.com/txNeura',
@@ -179,6 +185,7 @@ export const projects: ProjectDef[] = [
 		galleryImage: '/projects/acidnode/gallery.webp',
 		images: ['/projects/acidnode/logo.webp', '/projects/acidnode/view1.webp'],
 		year: '2022',
+		archive: true,
 		galleryOrder: 8,
 	},
 	{
@@ -196,6 +203,7 @@ export const projects: ProjectDef[] = [
 		galleryImage: '/projects/dreamcook/gallery.webp',
 		images: ['/projects/dreamcook/logo.webp'],
 		year: '2020',
+		archive: true,
 		galleryOrder: 9,
 		links: {
 			x: 'https://x.com/DreamCook',

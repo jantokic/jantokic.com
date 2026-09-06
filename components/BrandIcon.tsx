@@ -1,15 +1,17 @@
-import * as simpleIcons from 'simple-icons';
+import { siGithub, siX } from 'simple-icons';
+
+const ICONS = { siGithub, siX } as const;
+
+export type BrandIconName = keyof typeof ICONS;
 
 interface BrandIconProps {
-	name: keyof typeof simpleIcons;
+	name: BrandIconName;
 	className?: string;
 	size?: number;
 }
 
 export default function BrandIcon({ name, className = '', size = 24 }: BrandIconProps) {
-	const icon = simpleIcons[name];
-
-	if (!icon) return null;
+	const icon = ICONS[name];
 
 	return (
 		<svg

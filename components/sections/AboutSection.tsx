@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { type ForwardedRef, forwardRef } from 'react';
 
@@ -25,16 +26,16 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 							<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground">
 								{t('intro.title')}
 							</p>
-							<p className="font-mono uppercase text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-2xl tracking-wider font-semibold">
+							<p className="text-[15px] sm:text-base leading-relaxed text-muted-foreground max-w-2xl">
 								{t('intro.bio')}
 							</p>
 						</div>
 
 						{/* Capabilities */}
 						<div className="space-y-3 lg:pt-3">
-							<h3 className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-foreground">
+							<h2 className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-foreground">
 								{t('intro.capabilitiesHeading')}
-							</h3>
+							</h2>
 							<ul className="space-y-2.5">
 								{(t.raw('intro.capabilities') as string[]).map((capability: string, index: number) => (
 									<li
@@ -74,11 +75,13 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 					{/* Sidebar */}
 					<div className="lg:col-span-2 space-y-5">
 						{/* Profile Photo */}
-						<div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-border/50 hover:border-border transition-colors duration-300">
-							<img
+						<div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-border/50 hover:border-border transition-colors duration-300">
+							<Image
 								src="/headshot-user.webp"
 								alt="Jan Tokic"
-								className="w-full h-full object-cover object-[center_20%]"
+								fill
+								sizes="(min-width: 1024px) 256px, 192px"
+								className="object-cover object-[center_20%]"
 							/>
 						</div>
 

@@ -8,8 +8,6 @@
 		"scrollToSection": "Zu {section} scrollen"
 	},
 	"gallery": {
-		"tagline1": "Ich baue KI-Systeme",
-		"tagline2": "und die Infrastruktur darunter",
 		"instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
 		"autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
 		"scrollDown": "Nach unten scrollen",
@@ -240,7 +238,8 @@
 					"SQL-Injection-Schutz by Design"
 				]
 			}
-		}
+		},
+		"archiveHeading": "Frühere Arbeiten"
 	},
 	"projectPage": {
 		"notFoundTitle": "Nicht gefunden",
@@ -301,5 +300,19 @@
 		"copyright": "© {year} Jan Tokic",
 		"toggleTheme": "Theme wechseln",
 		"language": "Sprache"
+	},
+	"hero": {
+		"eyebrow": "AI Engineer · München",
+		"tagline": "Ich baue KI-Produkte end-to-end, samt der Infrastruktur darunter.",
+		"proof": [
+			"KI-Seite einer Investing-App von null bis in den App Store gebracht",
+			"2. Platz, TUM.AI × Anthropic Hackathon",
+			"TypeScript · Python · Go"
+		],
+		"cta": {
+			"cv": "Lebenslauf",
+			"github": "GitHub",
+			"email": "E-Mail"
+		}
 	}
 }

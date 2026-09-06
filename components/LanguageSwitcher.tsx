@@ -1,9 +1,8 @@
 'use client';
 
-import { usePathname, useRouter } from '@/routing';
-import { routing } from '@/routing';
 import { Globe } from 'lucide-react';
 import { useLocale } from 'next-intl';
+import { routing, usePathname, useRouter } from '@/routing';
 
 export default function LanguageSwitcher() {
 	const locale = useLocale();
@@ -21,6 +20,7 @@ export default function LanguageSwitcher() {
 				{routing.locales.map((loc) => (
 					<button
 						key={loc}
+						type="button"
 						onClick={() => switchLocale(loc)}
 						className={`font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${
 							locale === loc ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'

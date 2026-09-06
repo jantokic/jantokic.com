@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { type ForwardedRef, forwardRef, useMemo, useState } from 'react';
 import ProjectFilterBar, { type CategoryFilter, type SortOption } from '@/components/ProjectFilterBar';
@@ -12,8 +13,11 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 	const [activeCategory, setActiveCategory] = useState<CategoryFilter>(null);
 	const [sortBy, setSortBy] = useState<SortOption>('relevance');
 
+	const featured = useMemo(() => projects.filter((p) => !p.archive), []);
+	const archived = useMemo(() => projects.filter((p) => p.archive), []);
+
 	const filteredAndSorted = useMemo(() => {
-		let result = [...projects];
+		let result = [...featured];
 
 		if (activeCategory) {
 			const matchingCategories = CATEGORY_GROUPS[activeCategory] || [];
@@ -21,13 +25,13 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 		}
 
 		if (sortBy === 'newest') {
-			result.sort((a, b) => Number.parseInt(b.year) - Number.parseInt(a.year));
+			result.sort((a, b) => Number.parseInt(b.year, 10) - Number.parseInt(a.year, 10));
 		} else if (sortBy === 'oldest') {
-			result.sort((a, b) => Number.parseInt(a.year) - Number.parseInt(b.year));
+			result.sort((a, b) => Number.parseInt(a.year, 10) - Number.parseInt(b.year, 10));
 		}
 
 		return result;
-	}, [activeCategory, sortBy]);
+	}, [featured, activeCategory, sortBy]);
 
 	const filterLabels = {
 		all: t('projects.filters.all'),
@@ -62,11 +66,13 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 							style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
 						>
 							{/* Project Image */}
-							<div className="aspect-video w-full overflow-hidden bg-muted">
-								<img
+							<div className="relative aspect-video w-full overflow-hidden bg-muted">
+								<Image
 									src={project.image}
 									alt={t(`projects.data.${project.slug}.title`)}
-									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+									fill
+									sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
+									className="object-cover group-hover:scale-105 transition-transform duration-500"
 								/>
 							</div>
 
@@ -80,7 +86,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 									{t(`projects.data.${project.slug}.title`)}
 								</h3>
 
-								<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed line-clamp-3 mb-4">
+								<p className="text-[15px] leading-relaxed text-muted-foreground line-clamp-3 mb-4">
 									{t(`projects.data.${project.slug}.shortDescription`)}
 								</p>
 
@@ -94,9 +100,36 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 				</div>
 
 				{filteredAndSorted.length === 0 && (
-					<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground text-center py-12">
-						{t('projects.filters.noResults')}
-					</p>
+					<p className="text-[15px] text-muted-foreground text-center py-12">{t('projects.filters.noResults')}</p>
+				)}
+
+				{/* Archive: earlier or smaller projects, one line each */}
+				{archived.length > 0 && (
+					<div className="mt-16">
+						<h3 className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground mb-4">
+							{t('projects.archiveHeading')}
+						</h3>
+						<ul className="divide-y divide-border/50 border-t border-b border-border/50">
+							{archived.map((project) => (
+								<li key={project.slug}>
+									<Link
+										href={`/projects/${project.slug}`}
+										className="group grid gap-1 sm:grid-cols-12 sm:gap-6 py-4 -mx-3 px-3 rounded-lg hover:bg-muted/50 transition-colors"
+									>
+										<span className="sm:col-span-4 font-mono uppercase text-xs tracking-wider font-semibold text-foreground">
+											{t(`projects.data.${project.slug}.title`)}
+										</span>
+										<span className="sm:col-span-6 text-sm text-muted-foreground line-clamp-1">
+											{t(`projects.data.${project.slug}.shortDescription`)}
+										</span>
+										<span className="sm:col-span-2 sm:text-right font-mono uppercase text-[11px] tracking-wider text-muted-foreground/70">
+											{project.year}
+										</span>
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 				)}
 			</div>
 		</section>

@@ -26,9 +26,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 	const t = await getTranslations({ locale, namespace: 'projects' });
 	const ui = await getTranslations({ locale, namespace: 'projectPage' });
 
+	const title = `${t(`data.${slug}.title`)} | ${ui('portfolioSuffix')}`;
+	const description = t(`data.${slug}.shortDescription`);
+	const path = `/projects/${slug}`;
+
 	return {
-		title: `${t(`data.${slug}.title`)} | ${ui('portfolioSuffix')}`,
-		description: t(`data.${slug}.shortDescription`),
+		title,
+		description,
+		alternates: {
+			canonical: `/${locale}${path}`,
+			languages: { en: `/en${path}`, de: `/de${path}` },
+		},
+		openGraph: { title, description, images: [project.image] },
 	};
 }
 
@@ -71,7 +80,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							{t(`data.${slug}.title`)}
 						</h1>
 						<p
-							className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed opacity-0 animate-fade-in-up"
+							className="text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed opacity-0 animate-fade-in-up"
 							style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
 						>
 							{t(`data.${slug}.shortDescription`)}
@@ -86,7 +95,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				>
 					<div className="max-w-7xl mx-auto">
 						<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-muted">
-							<Image src={project.image} alt={t(`data.${slug}.title`)} fill className="object-cover" unoptimized />
+							<Image
+								src={project.image}
+								alt={t(`data.${slug}.title`)}
+								fill
+								priority
+								sizes="(min-width: 1280px) 1216px, 100vw"
+								className="object-cover"
+							/>
 						</div>
 					</div>
 				</section>
@@ -149,7 +165,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 						{t(`data.${slug}.title`)}
 					</h1>
 					<p
-						className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground max-w-3xl leading-relaxed opacity-0 animate-fade-in-up"
+						className="text-base sm:text-lg text-muted-foreground max-w-3xl leading-relaxed opacity-0 animate-fade-in-up"
 						style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
 					>
 						{t(`data.${slug}.shortDescription`)}
@@ -182,7 +198,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 							<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-4">
 								{ui('overview')}
 							</h2>
-							<p className="font-mono uppercase text-xs sm:text-sm tracking-wider font-semibold text-muted-foreground leading-relaxed">
+							<p className="text-[15px] sm:text-base text-muted-foreground leading-relaxed max-w-prose">
 								{t(`data.${slug}.fullDescription`)}
 							</p>
 						</div>
@@ -199,9 +215,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											<span className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground text-background text-xs inline-flex items-center justify-center font-mono font-semibold mt-0.5 leading-none">
 												{index + 1}
 											</span>
-											<span className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed pt-[3px]">
-												{challenge}
-											</span>
+											<span className="text-[15px] text-muted-foreground leading-relaxed pt-[2px]">{challenge}</span>
 										</li>
 									))}
 								</ul>
@@ -220,9 +234,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											key={index}
 											className="p-5 bg-muted rounded-xl border border-border hover:border-border/80 transition-colors"
 										>
-											<p className="font-mono uppercase text-xs tracking-wider font-semibold text-muted-foreground leading-relaxed">
-												{outcome}
-											</p>
+											<p className="text-[15px] text-foreground leading-relaxed">{outcome}</p>
 										</div>
 									))}
 								</div>
@@ -378,8 +390,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 											src={relatedProject.image}
 											alt={t(`data.${relatedProject.slug}.title`)}
 											fill
+											sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
 											className="object-cover group-hover:scale-105 transition-transform duration-500"
-											unoptimized
 										/>
 									</div>
 									<h3 className="font-mono uppercase text-xs tracking-wider font-semibold text-foreground group-hover:text-muted-foreground transition-colors">

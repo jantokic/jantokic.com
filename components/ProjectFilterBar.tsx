@@ -56,8 +56,9 @@ export default function ProjectFilterBar({
 	return (
 		<div className="flex flex-col gap-4 mb-8 sm:mb-10">
 			{/* Category pills */}
-			<div className="flex flex-wrap gap-2" role="group">
+			<div className="flex flex-wrap gap-2">
 				<button
+					type="button"
 					onClick={() => onCategoryChange(null)}
 					aria-pressed={activeCategory === null}
 					className={`font-mono uppercase text-xs tracking-wider font-semibold px-3 py-1.5 rounded-md border transition-all duration-200 ${
@@ -71,6 +72,7 @@ export default function ProjectFilterBar({
 				{categories.map((cat) => (
 					<button
 						key={cat}
+						type="button"
 						onClick={() => onCategoryChange(activeCategory === cat ? null : cat)}
 						aria-pressed={activeCategory === cat}
 						className={`font-mono uppercase text-xs tracking-wider font-semibold px-3 py-1.5 rounded-md border transition-all duration-200 ${
@@ -91,6 +93,7 @@ export default function ProjectFilterBar({
 				</span>
 				<div className="relative">
 					<button
+						type="button"
 						onClick={() => setSortOpen(!sortOpen)}
 						aria-expanded={sortOpen}
 						aria-haspopup="listbox"
@@ -101,11 +104,20 @@ export default function ProjectFilterBar({
 					</button>
 					{sortOpen && (
 						<>
-							<div className="fixed inset-0 z-40" onClick={() => setSortOpen(false)} />
-							<div className="absolute top-full left-0 mt-1 z-50 bg-background border border-border rounded-md shadow-lg min-w-[140px]" role="listbox">
+							<button
+								type="button"
+								aria-label="Close"
+								className="fixed inset-0 z-40 cursor-default"
+								onClick={() => setSortOpen(false)}
+							/>
+							<div
+								className="absolute top-full left-0 mt-1 z-50 bg-background border border-border rounded-md shadow-lg min-w-[140px]"
+								role="listbox"
+							>
 								{(['relevance', 'newest', 'oldest'] as SortOption[]).map((option) => (
 									<button
 										key={option}
+										type="button"
 										role="option"
 										aria-selected={sortBy === option}
 										onClick={() => handleSortSelect(option)}

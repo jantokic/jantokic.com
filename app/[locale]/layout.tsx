@@ -1,8 +1,8 @@
-import MaintenanceGate from '@/components/MaintenanceGate';
-import { routing } from '@/routing';
+import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import MaintenanceGate from '@/components/MaintenanceGate';
+import { routing } from '@/routing';
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));

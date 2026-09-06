@@ -19,23 +19,16 @@ const AboutSection = forwardRef<HTMLElement, AboutSectionProps>(({ skills }, ref
 				<div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
 					{/* Main Content */}
 					<div className="lg:col-span-3 space-y-4">
-						<h1 className="font-mono uppercase text-3xl sm:text-4xl lg:text-5xl tracking-wider font-semibold text-foreground">
-							{t('intro.name')}
-						</h1>
-						<div className="space-y-3">
-							<p className="font-mono uppercase text-sm sm:text-base tracking-wider font-semibold text-muted-foreground">
-								{t('intro.title')}
-							</p>
-							<p className="text-[15px] sm:text-base leading-relaxed text-muted-foreground max-w-2xl">
-								{t('intro.bio')}
-							</p>
-						</div>
+						<h2 className="font-mono uppercase text-2xl sm:text-3xl tracking-wider font-semibold text-foreground">
+							{t('nav.intro')}
+						</h2>
+						<p className="text-[15px] sm:text-base leading-relaxed text-muted-foreground max-w-2xl">{t('intro.bio')}</p>
 
 						{/* Capabilities */}
 						<div className="space-y-3 lg:pt-3">
-							<h2 className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-foreground">
+							<h3 className="font-mono uppercase text-base sm:text-lg tracking-wider font-semibold text-foreground">
 								{t('intro.capabilitiesHeading')}
-							</h2>
+							</h3>
 							<ul className="space-y-2.5">
 								{(t.raw('intro.capabilities') as string[]).map((capability: string, index: number) => (
 									<li

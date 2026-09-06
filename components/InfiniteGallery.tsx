@@ -179,12 +179,15 @@ function ImagePlane({
 	scale,
 	material,
 	onClick,
+	onMount,
 }: {
 	texture: THREE.Texture;
 	position: [number, number, number];
 	scale: [number, number, number];
 	material: THREE.ShaderMaterial;
 	onClick?: () => void;
+	/** Hands the mesh to the scene so it can be moved imperatively every frame. */
+	onMount?: (mesh: THREE.Mesh | null) => void;
 }) {
 	const meshRef = useRef<THREE.Mesh>(null);
 	const [isHovered, setIsHovered] = useState(false);
@@ -204,7 +207,10 @@ function ImagePlane({
 	return (
 		// biome-ignore lint/a11y/noStaticElementInteractions: three.js mesh inside a WebGL canvas, not a DOM element
 		<mesh
-			ref={meshRef}
+			ref={(mesh) => {
+				meshRef.current = mesh;
+				onMount?.(mesh);
+			}}
 			position={position}
 			scale={scale}
 			material={material}
@@ -236,7 +242,9 @@ function GalleryScene({
 	resetGallery,
 }: Omit<InfiniteGalleryProps, 'className' | 'style' | 'fallbackText'>) {
 	// Velocity lives in a ref: it changes every frame and must not trigger React re-renders.
+	// Plane positions and texture swaps are applied straight to the meshes in useFrame.
 	const scrollVelocity = useRef(0);
+	const meshRefs = useRef<(THREE.Mesh | null)[]>([]);
 	const [autoPlay, setAutoPlay] = useState(true);
 	const lastInteraction = useRef(Date.now());
 	const [isComplete, setIsComplete] = useState(false);
@@ -451,6 +459,7 @@ function GalleryScene({
 			let newZ = plane.z + velocity * delta * 10;
 			let wrapsForward = 0;
 			let wrapsBackward = 0;
+			const previousImageIndex = plane.imageIndex;
 
 			if (newZ >= totalRange) {
 				wrapsForward = Math.floor(newZ / totalRange);
@@ -462,18 +471,21 @@ function GalleryScene({
 
 			if (wrapsForward > 0 && imageAdvance > 0 && totalImages > 0) {
 				plane.imageIndex = (plane.imageIndex + wrapsForward * imageAdvance) % totalImages;
-				// Count wraps for device-independent completion tracking
-				totalImageWraps.current += wrapsForward;
 			}
 
 			if (wrapsBackward > 0 && imageAdvance > 0 && totalImages > 0) {
 				const step = plane.imageIndex - wrapsBackward * imageAdvance;
 				plane.imageIndex = ((step % totalImages) + totalImages) % totalImages;
-				totalImageWraps.current += wrapsBackward;
+			}
+
+			// Only wraps the visitor caused count towards completion; auto-play must never
+			// scroll the page on its own.
+			if (!autoPlay) {
+				totalImageWraps.current += wrapsForward + wrapsBackward;
 			}
 
 			// Check completion based on actual image wraps
-			if (!isComplete && totalImageWraps.current >= wrapThreshold) {
+			if (!isComplete && !autoPlay && totalImageWraps.current >= wrapThreshold) {
 				setIsComplete(true);
 				setAutoPlay(false);
 				if (onScrollComplete) {
@@ -484,6 +496,23 @@ function GalleryScene({
 			plane.z = ((newZ % totalRange) + totalRange) % totalRange;
 			plane.x = spatialPositions[i]?.x ?? 0;
 			plane.y = spatialPositions[i]?.y ?? 0;
+
+			// Apply position (and a new image after a wrap) directly to the mesh.
+			const mesh = meshRefs.current[i];
+			if (mesh) {
+				mesh.position.set(plane.x, plane.y, plane.z - depthRange / 2);
+				if (plane.imageIndex !== previousImageIndex) {
+					const nextTexture = textures[plane.imageIndex];
+					const nextMaterial = materials[i];
+					if (nextTexture && nextMaterial?.uniforms) {
+						nextMaterial.uniforms.map.value = nextTexture;
+						const img = nextTexture.image as { width: number; height: number } | undefined;
+						const aspect = img ? img.width / img.height : 1;
+						if (aspect > 1) mesh.scale.set(2 * aspect, 2, 1);
+						else mesh.scale.set(2, 2 / aspect, 1);
+					}
+				}
+			}
 
 			// Calculate opacity based on fade settings
 			const normalizedPosition = plane.z / totalRange; // 0 to 1
@@ -568,6 +597,9 @@ function GalleryScene({
 						scale={scale}
 						material={material}
 						onClick={onImageClick ? () => onImageClick(plane.imageIndex) : undefined}
+						onMount={(mesh) => {
+							meshRefs.current[i] = mesh;
+						}}
 					/>
 				);
 			})}

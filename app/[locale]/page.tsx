@@ -281,7 +281,7 @@ export default function Home() {
 							resetGallery={resetGallery}
 						/>
 						{/* Soft white wash on the left keeps the copy legible while images fly behind it */}
-						<div className="absolute inset-0 pointer-events-none flex items-center bg-[linear-gradient(90deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.8)_40%,rgba(255,255,255,0)_68%)]">
+						<div className="absolute inset-0 pointer-events-none flex items-center bg-[linear-gradient(90deg,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.7)_32%,rgba(255,255,255,0)_58%)]">
 							<HeroContent blend locale={locale} />
 						</div>
 

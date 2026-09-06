@@ -1,18 +1,10 @@
 {
 	"nav": {
-		"gallery": "Galerie",
 		"intro": "Über mich",
 		"work": "Erfahrung",
 		"projects": "Projekte",
 		"connect": "Kontakt",
 		"scrollToSection": "Zu {section} scrollen"
-	},
-	"gallery": {
-		"instructions": "Auf ein Projekt klicken für Details • Scrollen oder Pfeiltasten zur Navigation",
-		"autoplay": "Auto-Play startet nach 3 Sekunden Inaktivität",
-		"scrollDown": "Nach unten scrollen",
-		"loading": "Galerie wird geladen...",
-		"webglFallback": "WebGL wird nicht unterstützt. Bildliste wird angezeigt:"
 	},
 	"maintenance": {
 		"loading": "Wird geladen...",

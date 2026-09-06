@@ -1,72 +1,88 @@
 'use client';
 
-import { ArrowUpRight, ChevronDown } from 'lucide-react';
-import dynamic from 'next/dynamic';
+import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import ConnectSection from '@/components/sections/ConnectSection';
 import FeaturedProjectsSection from '@/components/sections/FeaturedProjectsSection';
 import SelectedWorkSection from '@/components/sections/SelectedWorkSection';
+import VerticalCarousel, { type CarouselItem } from '@/components/VerticalCarousel';
 import { projects } from '@/content/projects';
 import { skills } from '@/content/skills';
 import { socialLinks } from '@/content/social';
 import { workData } from '@/content/work';
 
-// The 3D gallery pulls in Three.js (~2 MB). It is only rendered on large screens without
-// reduced-motion or data-saver preferences, so phones never download it.
-const InfiniteGallery = dynamic(() => import('@/components/InfiniteGallery'), {
-	ssr: false,
-	loading: () => <GalleryLoading />,
-});
+const SECTIONS = ['intro', 'work', 'projects', 'connect'] as const;
 
-type GalleryMode = 'pending' | '3d' | 'static';
-
-const SECTIONS = ['gallery', 'work', 'projects', 'connect'] as const;
-const SECTION_LABEL_KEY: Record<(typeof SECTIONS)[number], string> = {
-	gallery: 'nav.intro',
-	work: 'nav.work',
-	projects: 'nav.projects',
-	connect: 'nav.connect',
-};
-
-function GalleryLoading() {
-	return <div className="absolute inset-0 bg-background" aria-hidden="true" />;
-}
-
-/**
- * The first screen doubles as the "about": name, positioning, the short story, the facts a
- * recruiter looks for, skills and the ways to reach me. `overGallery` fixes the colours to the
- * always-white gallery backdrop; otherwise the theme tokens apply.
- */
-function HeroContent({
-	overGallery,
-	locale,
-	column = false,
-}: {
-	overGallery: boolean;
-	locale: string;
-	/** Rendered inside the left column of a split layout instead of a full-width row. */
-	column?: boolean;
-}) {
+function Hero({ locale }: { locale: string }) {
 	const t = useTranslations();
 	const github = socialLinks.find((link) => link.platform === 'GitHub')?.url ?? 'https://github.com/jantokic';
-	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
 
-	const ink = overGallery ? 'text-neutral-950' : 'text-foreground';
-	const muted = overGallery ? 'text-neutral-600' : 'text-muted-foreground';
-	const faint = overGallery ? 'text-neutral-500' : 'text-muted-foreground/80';
-	const border = overGallery ? 'border-neutral-300' : 'border-border';
-	const ctaPrimary = overGallery
-		? 'border-neutral-950 bg-neutral-950 text-white hover:bg-neutral-800'
-		: 'border-foreground bg-foreground text-background hover:opacity-90';
-	const ctaSecondary = overGallery
-		? 'border-neutral-300 text-neutral-950 hover:border-neutral-950'
-		: 'border-border text-foreground hover:border-foreground';
-	const pill = overGallery
-		? 'border-neutral-300 text-neutral-600 bg-white/60'
-		: 'border-border/60 text-muted-foreground bg-background/60';
+	const cta =
+		'inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors';
+
+	return (
+		<div className="w-full px-6 sm:px-10 lg:pl-24 lg:pr-12">
+			<div className="max-w-xl space-y-8">
+				<div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border border-border">
+					<Image
+						src="/headshot-user.webp"
+						alt="Jan Tokic"
+						fill
+						unoptimized
+						priority
+						className="object-cover object-[center_20%]"
+					/>
+				</div>
+
+				<div className="space-y-5">
+					<p className="font-mono uppercase text-[11px] sm:text-xs tracking-[0.2em] font-semibold text-muted-foreground">
+						{t('hero.eyebrow')}
+					</p>
+					<h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-foreground">
+						{t('intro.name')}
+					</h1>
+					<p className="text-xl sm:text-2xl leading-snug text-foreground">{t('hero.tagline')}</p>
+					<p className="text-base sm:text-lg leading-relaxed text-muted-foreground">{t('hero.story')}</p>
+				</div>
+
+				<div className="flex flex-wrap gap-3">
+					<a
+						href={`/cv_jan_tokic_${locale}.pdf`}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`${cta} border-foreground bg-foreground text-background hover:opacity-90`}
+					>
+						{t('hero.cta.cv')}
+						<ArrowUpRight className="w-3.5 h-3.5" />
+					</a>
+					<a
+						href={github}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`${cta} border-border text-foreground hover:border-foreground`}
+					>
+						{t('hero.cta.github')}
+						<ArrowUpRight className="w-3.5 h-3.5" />
+					</a>
+					<a
+						href={`mailto:${t('connect.email')}`}
+						className={`${cta} border-border text-foreground hover:border-foreground`}
+					>
+						{t('hero.cta.email')}
+						<ArrowUpRight className="w-3.5 h-3.5" />
+					</a>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+/** Roomy strip under the first screen: the four facts a recruiter scans for, plus the skills. */
+function FactsBand() {
+	const t = useTranslations();
+	const roles = t.raw('intro.currentRoles') as { company: string; role: string; period?: string }[];
 
 	const facts: { label: string; value: string; detail?: string }[] = [
 		...roles.map((role) => ({
@@ -80,171 +96,48 @@ function HeroContent({
 	];
 
 	return (
-		<div
-			className={column ? 'w-full px-6 sm:px-8 lg:pl-20 lg:pr-10' : 'max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 w-full'}
-		>
-			<div className="max-w-2xl space-y-6 lg:space-y-7">
-				<p className={`font-mono uppercase text-[11px] sm:text-xs tracking-[0.2em] font-semibold ${muted}`}>
-					{t('hero.eyebrow')}
-				</p>
-
-				<div className="space-y-4">
-					<h1 className={`font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none ${ink}`}>
-						{t('intro.name')}
-					</h1>
-					<p className={`text-lg sm:text-xl lg:text-2xl leading-snug max-w-xl ${ink}`}>{t('hero.tagline')}</p>
-					<p className={`text-[15px] sm:text-base leading-relaxed max-w-xl ${muted}`}>{t('hero.story')}</p>
-				</div>
-
-				{/* Photo + facts */}
-				<div className="flex items-start gap-5">
-					<div className={`relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border ${border}`}>
-						<Image
-							src="/headshot-user.webp"
-							alt="Jan Tokic"
-							fill
-							unoptimized
-							priority
-							className="object-cover object-[center_20%]"
-						/>
-					</div>
-					<dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-						{facts.map((fact) => (
-							<div key={fact.label + fact.value} className="min-w-0">
-								<dt className={`font-mono uppercase text-[10px] tracking-wider font-semibold ${faint}`}>
-									{fact.label}
-								</dt>
-								<dd className={`font-mono uppercase text-xs tracking-wider font-semibold ${ink}`}>{fact.value}</dd>
-								{fact.detail && (
-									<dd className={`font-mono uppercase text-[10px] tracking-wider ${faint}`}>{fact.detail}</dd>
-								)}
-							</div>
-						))}
-					</dl>
-				</div>
-
-				{/* Skills */}
+		<div className="border-t border-border/50">
+			<div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-24 py-10 lg:py-12 space-y-8">
+				<dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+					{facts.map((fact) => (
+						<div key={fact.label + fact.value} className="space-y-1.5">
+							<dt className="font-mono uppercase text-[11px] tracking-wider text-muted-foreground">{fact.label}</dt>
+							<dd className="font-mono uppercase text-sm tracking-wider font-semibold text-foreground">{fact.value}</dd>
+							{fact.detail && <dd className="text-sm text-muted-foreground">{fact.detail}</dd>}
+						</div>
+					))}
+				</dl>
 				<ul className="flex flex-wrap gap-2">
 					{skills.map((skill) => (
 						<li
 							key={skill}
-							className={`px-2.5 py-1 font-mono uppercase text-[11px] tracking-wider font-semibold border rounded-full ${pill}`}
+							className="px-3 py-1.5 font-mono uppercase text-[11px] tracking-wider font-semibold border border-border/60 rounded-full text-muted-foreground"
 						>
 							{skill}
 						</li>
 					))}
 				</ul>
-
-				{/* CTAs */}
-				<div className="flex flex-wrap gap-3 pointer-events-auto">
-					<a
-						href={`/cv_jan_tokic_${locale}.pdf`}
-						target="_blank"
-						rel="noopener noreferrer"
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaPrimary}`}
-					>
-						{t('hero.cta.cv')}
-						<ArrowUpRight className="w-3.5 h-3.5" />
-					</a>
-					<a
-						href={github}
-						target="_blank"
-						rel="noopener noreferrer"
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaSecondary}`}
-					>
-						{t('hero.cta.github')}
-						<ArrowUpRight className="w-3.5 h-3.5" />
-					</a>
-					<a
-						href={`mailto:${t('connect.email')}`}
-						className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border font-mono uppercase text-xs tracking-wider font-semibold transition-colors ${ctaSecondary}`}
-					>
-						{t('hero.cta.email')}
-						<ArrowUpRight className="w-3.5 h-3.5" />
-					</a>
-				</div>
 			</div>
 		</div>
 	);
 }
 
 export default function Home() {
-	const router = useRouter();
 	const t = useTranslations();
 	const locale = useLocale();
-	const [galleryMode, setGalleryMode] = useState<GalleryMode>('pending');
-	const [galleryComplete, setGalleryComplete] = useState(false);
-	const [resetGallery, setResetGallery] = useState(false);
-	const [activeSection, setActiveSection] = useState<string>('gallery');
-
-	const galleryRef = useRef<HTMLElement>(null);
+	const [activeSection, setActiveSection] = useState<string>('intro');
 	const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
-	// Decide once on the client whether the 3D gallery is worth loading.
-	useEffect(() => {
-		const largeScreen = window.matchMedia('(min-width: 1024px)').matches;
-		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
-		setGalleryMode(largeScreen && !reducedMotion && !saveData ? '3d' : 'static');
-	}, []);
-
-	const use3d = galleryMode === '3d';
-
-	// Gallery projects: exclude non-featured, sort by galleryOrder
-	const galleryProjects = projects
-		.filter((p) => p.featured !== false)
-		.sort((a, b) => (a.galleryOrder ?? 999) - (b.galleryOrder ?? 999));
-
-	const projectImages = galleryProjects.map((project) => ({
-		src: project.galleryImage,
-		alt: t(`projects.data.${project.slug}.title`),
-	}));
-
-	// Handle project click - navigate to project detail page
-	const handleProjectClick = (imageIndex: number) => {
-		const project = galleryProjects[imageIndex];
-		if (project) {
-			router.push(`/projects/${project.slug}`);
-		}
-	};
-
-	// Handle gallery scroll completion: hand the page over to the next section
-	const handleScrollComplete = () => {
-		setGalleryComplete(true);
-
-		setTimeout(() => {
-			document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		}, 200);
-	};
-
-	// IntersectionObserver for gallery reset (3D mode only)
-	useEffect(() => {
-		if (!use3d) return;
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting && galleryComplete) {
-						setGalleryComplete(false);
-						setResetGallery(true);
-						setTimeout(() => setResetGallery(false), 100);
-					}
-				});
-			},
-			{ threshold: 0.5 },
-		);
-
-		const gallery = galleryRef.current;
-		if (gallery) {
-			observer.observe(gallery);
-		}
-
-		return () => {
-			if (gallery) {
-				observer.unobserve(gallery);
-			}
-		};
-	}, [galleryComplete, use3d]);
+	const carouselItems: CarouselItem[] = projects
+		.filter((project) => !project.archive && project.featured !== false)
+		.sort((a, b) => (a.galleryOrder ?? 999) - (b.galleryOrder ?? 999))
+		.map((project) => ({
+			src: project.image,
+			alt: t(`projects.data.${project.slug}.title`),
+			title: t(`projects.data.${project.slug}.title`),
+			category: project.category,
+			href: `/projects/${project.slug}`,
+		}));
 
 	// Fade sections in as they enter the viewport. Sections render visible by default so crawlers,
 	// screenshots and no-JS visitors see the content; only sections still below the fold get hidden
@@ -281,7 +174,6 @@ export default function Home() {
 		const updateActiveSection = () => {
 			const viewportCenter = window.scrollY + window.innerHeight / 2;
 
-			// Find section whose center is closest to viewport center
 			let closestSection: string = SECTIONS[0];
 			let closestDistance = Number.POSITIVE_INFINITY;
 
@@ -307,7 +199,7 @@ export default function Home() {
 	}, []);
 
 	const scrollToSection = (sectionId: string) => {
-		if (sectionId === 'gallery') {
+		if (sectionId === 'intro') {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		} else {
 			document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -329,59 +221,25 @@ export default function Home() {
 									? 'h-3 w-3 bg-foreground scale-125'
 									: 'h-2.5 w-2.5 bg-border hover:bg-muted-foreground hover:scale-110'
 							}`}
-							aria-label={t('nav.scrollToSection', { section: t(SECTION_LABEL_KEY[section]) })}
+							aria-label={t('nav.scrollToSection', { section: t(`nav.${section}`) })}
 						/>
 					))}
 				</nav>
 			</div>
 
 			<main className="min-h-screen">
-				{use3d ? (
-					/* Split hero: copy on the left, 3D gallery in its own panel on the right */
-					<section id="gallery" ref={galleryRef} className="relative min-h-screen bg-background">
-						<div className="grid min-h-screen lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
-							<div className="flex items-center py-20">
-								<HeroContent overGallery={false} locale={locale} column />
-							</div>
-
-							<div className="relative min-h-screen overflow-hidden">
-								<InfiniteGallery
-									images={projectImages}
-									fallbackText={t('gallery.webglFallback')}
-									speed={1.2}
-									zSpacing={3}
-									visibleCount={12}
-									falloff={{ near: 0.8, far: 14 }}
-									horizontalSpread={0.35}
-									verticalSpread={1.2}
-									className="absolute inset-0 h-full w-full"
-									onImageClick={handleProjectClick}
-									onScrollComplete={handleScrollComplete}
-									resetGallery={resetGallery}
-								/>
-								{/* Soft edges so planes fade out instead of being cut off at the panel border */}
-								<div className="absolute inset-y-0 left-0 w-24 pointer-events-none bg-gradient-to-r from-background to-transparent" />
-								<div className="absolute inset-x-0 top-0 h-16 pointer-events-none bg-gradient-to-b from-background to-transparent" />
-								<div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none bg-gradient-to-t from-background to-transparent" />
-								<div className="text-center absolute bottom-6 left-0 right-0 font-mono uppercase text-[11px] font-semibold pointer-events-none text-muted-foreground">
-									{!galleryComplete ? (
-										<p className="opacity-80">{t('gallery.instructions')}</p>
-									) : (
-										<div className="flex flex-col items-center gap-2 animate-pulse">
-											<p className="text-sm">{t('gallery.scrollDown')}</p>
-											<ChevronDown className="w-6 h-6" />
-										</div>
-									)}
-								</div>
-							</div>
+				{/* First screen: about on the left, project carousel on the right, facts band below */}
+				<section id="intro" className="relative bg-background">
+					<div className="grid min-h-screen lg:grid-cols-[minmax(0,13fr)_minmax(0,11fr)]">
+						<div className="flex items-center py-16 lg:py-20">
+							<Hero locale={locale} />
 						</div>
-					</section>
-				) : (
-					/* Static Hero - phones, reduced motion, data saver, and before the client decides */
-					<section id="gallery" ref={galleryRef} className="relative min-h-[85vh] flex items-center py-24">
-						<HeroContent overGallery={false} locale={locale} />
-					</section>
-				)}
+						<div className="relative hidden lg:block min-h-screen">
+							<VerticalCarousel items={carouselItems} className="absolute inset-0" />
+						</div>
+					</div>
+					<FactsBand />
+				</section>
 
 				{/* Selected Work Section */}
 				<SelectedWorkSection

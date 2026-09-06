@@ -13,9 +13,6 @@
 		"validate": "bun scripts/validate-projects.ts"
 	},
 	"dependencies": {
-		"@react-three/drei": "^10.7.8",
-		"@react-three/fiber": "^9.7.0",
-		"@react-three/postprocessing": "^3.1.1",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/speed-insights": "^2.0.0",
 		"class-variance-authority": "^0.7.1",
@@ -28,8 +25,7 @@
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"simple-icons": "^16.30.0",
-		"tailwind-merge": "^3.6.0",
-		"three": "^0.183.2"
+		"tailwind-merge": "^3.6.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.6",
@@ -37,7 +33,6 @@
 		"@types/node": "^25.9.5",
 		"@types/react": "^19.2.18",
 		"@types/react-dom": "^19.2.7",
-		"@types/three": "^0.183.1",
 		"postcss": "^8.5.28",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^5.9.3"

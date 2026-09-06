@@ -1,18 +1,10 @@
 {
 	"nav": {
-		"gallery": "Gallery",
 		"intro": "About",
 		"work": "Work",
 		"projects": "Projects",
 		"connect": "Connect",
 		"scrollToSection": "Scroll to {section}"
-	},
-	"gallery": {
-		"instructions": "Click a project for details • Scroll or use arrow keys to navigate",
-		"autoplay": "Auto-play resumes after 3 seconds of inactivity",
-		"scrollDown": "Scroll to continue",
-		"loading": "Loading gallery...",
-		"webglFallback": "WebGL not supported. Showing image list:"
 	},
 	"maintenance": {
 		"loading": "Loading...",

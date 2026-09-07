@@ -97,27 +97,6 @@ export const projects: ProjectDef[] = [
 		},
 	},
 	{
-		slug: 'implyra',
-		category: 'Fintech & Data',
-		techStack: [
-			'TypeScript',
-			'Fastify',
-			'ClickHouse',
-			'GCP Cloud Run',
-			'Pub/Sub',
-			'WebSocket / SSE',
-			'Hetzner',
-			'Grafana',
-		],
-		image: '/projects/implyra/banner.webp',
-		images: [],
-		year: '2025',
-		galleryOrder: 3,
-		links: {
-			website: 'https://implyra.com',
-		},
-	},
-	{
 		slug: 'richard-ai-research',
 		category: 'AI & Research',
 		techStack: ['TypeScript', 'Next.js', 'LangChain', 'Supabase', 'RAG', 'Tool Calling'],
@@ -209,7 +188,7 @@ export const projects: ProjectDef[] = [
 export const CATEGORY_GROUPS: Record<string, string[]> = {
 	AI: ['AI & Research', 'AI & Enterprise', 'AI & Fintech'],
 	Blockchain: ['Blockchain & Trading', 'Blockchain & Infrastructure', 'Blockchain & NFT'],
-	Fintech: ['Fintech', 'Fintech & Data', 'Fintech & Trading', 'AI & Fintech'],
+	Fintech: ['Fintech', 'Fintech & Trading', 'AI & Fintech'],
 	'E-Commerce': ['E-Commerce & Community', 'E-Commerce & Open Source', 'E-Commerce'],
 	'Developer Tools': ['Open Source & Developer Tools'],
 };

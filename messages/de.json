@@ -108,23 +108,6 @@
 					"Gesamte KI-Seite von einem Engineer in sechs Monaten konzipiert und geliefert"
 				]
 			},
-			"implyra": {
-				"title": "Implyra",
-				"shortDescription": "Market Intelligence für Prediction Markets. Echtzeit-Pipeline in ClickHouse, Wallet-Intelligence, Cross-Venue-Signale.",
-				"fullDescription": "Market-Intelligence-Plattform für Prediction Markets, vormals Klarity. Ich habe die gesamte Daten- und Backend-Seite gebaut: eine Ingestion-Schicht, die On-Chain-Positionsupdates und Live-Trade-Streams von Polymarket und Kalshi (Webhooks, WebSocket, Pub/Sub) in einen selbst gehosteten ClickHouse-Cluster schreibt, inzwischen über 180M Datensätze; geplante Sync-Jobs für Märkte, Preise, Holder und Trader-Statistiken; Wallet-Klassifikation und -Clustering (Whales, Smart Money, Insider); Cross-Venue-Divergenz-Signale; einen Echtzeit-SSE-Trade-Stream mit angereicherten Wallet-Daten; und die REST- und Enterprise-APIs hinter implyra.com. Läuft auf GCP Cloud Run mit ClickHouse auf Hetzner sowie Prometheus und Grafana für Observability. chtype, mein Open-Source-ClickHouse-Toolkit, ist aus dieser Codebasis entstanden.",
-				"role": "Mitgründer & Engineer",
-				"duration": "Jan 2025 - Heute",
-				"challenges": [
-					"On-Chain-Positionsupdates und Live-Trades von zwei Venues ohne verlorene oder doppelte Events in ClickHouse ingesten",
-					"Wallets über 180M+ Datensätze schnell genug klassifizieren und clustern, um sie zur Anfragezeit auszuliefern",
-					"Divergenzen zwischen Polymarket und Kalshi zur selben Frage in Echtzeit erkennen"
-				],
-				"outcomes": [
-					"Live auf implyra.com mit kostenlosem Analytics-Workspace und Enterprise-API",
-					"180M+ On-Chain-Datensätze in einem selbst gehosteten ClickHouse-Cluster",
-					"chtype, mein Open-Source-ClickHouse-Toolkit, daraus ausgegründet"
-				]
-			},
 			"richard-ai-research": {
 				"title": "Richard",
 				"shortDescription": "AI-Agenten erledigen 8h Research in 30 Min.",

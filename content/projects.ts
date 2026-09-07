@@ -97,17 +97,24 @@ export const projects: ProjectDef[] = [
 		},
 	},
 	{
-		slug: 'klarity-prediction-market',
-		category: 'Fintech',
-		techStack: ['TypeScript', 'Hono', 'Clickhouse', 'Kafka', 'GCP', 'Vector Search'],
-		image: '/projects/klarity/banner.webp',
+		slug: 'implyra',
+		category: 'Fintech & Data',
+		techStack: [
+			'TypeScript',
+			'Fastify',
+			'ClickHouse',
+			'GCP Cloud Run',
+			'Pub/Sub',
+			'WebSocket / SSE',
+			'Hetzner',
+			'Grafana',
+		],
+		image: '/projects/implyra/banner.webp',
 		images: [],
 		year: '2025',
-		comingSoon: true,
-		archive: true,
 		galleryOrder: 3,
 		links: {
-			website: 'https://klarity.io',
+			website: 'https://implyra.com',
 		},
 	},
 	{
@@ -202,7 +209,7 @@ export const projects: ProjectDef[] = [
 export const CATEGORY_GROUPS: Record<string, string[]> = {
 	AI: ['AI & Research', 'AI & Enterprise', 'AI & Fintech'],
 	Blockchain: ['Blockchain & Trading', 'Blockchain & Infrastructure', 'Blockchain & NFT'],
-	Fintech: ['Fintech', 'Fintech & Trading', 'AI & Fintech'],
+	Fintech: ['Fintech', 'Fintech & Data', 'Fintech & Trading', 'AI & Fintech'],
 	'E-Commerce': ['E-Commerce & Community', 'E-Commerce & Open Source', 'E-Commerce'],
 	'Developer Tools': ['Open Source & Developer Tools'],
 };

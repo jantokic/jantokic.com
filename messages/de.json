@@ -108,14 +108,22 @@
 					"Gesamte KI-Seite von einem Engineer in sechs Monaten konzipiert und geliefert"
 				]
 			},
-			"klarity-prediction-market": {
-				"title": "Klarity",
-				"shortDescription": "Bloomberg Terminal für Prediction Markets. In Development.",
-				"fullDescription": "Bald verfügbar.",
-				"role": "Founding Engineer",
+			"implyra": {
+				"title": "Implyra",
+				"shortDescription": "Market Intelligence für Prediction Markets. Echtzeit-Pipeline in ClickHouse, Wallet-Intelligence, Cross-Venue-Signale.",
+				"fullDescription": "Market-Intelligence-Plattform für Prediction Markets, vormals Klarity. Ich habe die gesamte Daten- und Backend-Seite gebaut: eine Ingestion-Schicht, die On-Chain-Positionsupdates und Live-Trade-Streams von Polymarket und Kalshi (Webhooks, WebSocket, Pub/Sub) in einen selbst gehosteten ClickHouse-Cluster schreibt, inzwischen über 180M Datensätze; geplante Sync-Jobs für Märkte, Preise, Holder und Trader-Statistiken; Wallet-Klassifikation und -Clustering (Whales, Smart Money, Insider); Cross-Venue-Divergenz-Signale; einen Echtzeit-SSE-Trade-Stream mit angereicherten Wallet-Daten; und die REST- und Enterprise-APIs hinter implyra.com. Läuft auf GCP Cloud Run mit ClickHouse auf Hetzner sowie Prometheus und Grafana für Observability. chtype, mein Open-Source-ClickHouse-Toolkit, ist aus dieser Codebasis entstanden.",
+				"role": "Mitgründer & Engineer",
 				"duration": "Jan 2025 - Heute",
-				"challenges": [],
-				"outcomes": []
+				"challenges": [
+					"On-Chain-Positionsupdates und Live-Trades von zwei Venues ohne verlorene oder doppelte Events in ClickHouse ingesten",
+					"Wallets über 180M+ Datensätze schnell genug klassifizieren und clustern, um sie zur Anfragezeit auszuliefern",
+					"Divergenzen zwischen Polymarket und Kalshi zur selben Frage in Echtzeit erkennen"
+				],
+				"outcomes": [
+					"Live auf implyra.com mit kostenlosem Analytics-Workspace und Enterprise-API",
+					"180M+ On-Chain-Datensätze in einem selbst gehosteten ClickHouse-Cluster",
+					"chtype, mein Open-Source-ClickHouse-Toolkit, daraus ausgegründet"
+				]
 			},
 			"richard-ai-research": {
 				"title": "Richard",
@@ -123,8 +131,16 @@
 				"fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
 				"role": "Engineer",
 				"duration": "2025",
-				"challenges": ["Insights ohne Prompts", "Lernt automatisch dazu", "Confidence Scores für Vorhersagen"],
-				"outcomes": ["8h → 30 Min", "400+ Insights in 8 Wochen", "Audit-ready"]
+				"challenges": [
+					"Insights ohne Prompts",
+					"Lernt automatisch dazu",
+					"Confidence Scores für Vorhersagen"
+				],
+				"outcomes": [
+					"8h → 30 Min",
+					"400+ Insights in 8 Wochen",
+					"Audit-ready"
+				]
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
@@ -149,8 +165,16 @@
 				"fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "18 Monate",
-				"challenges": ["Ein Interface für 5 Exchanges", "Institutional-Grade Tools", "6er-Team geleitet"],
-				"outcomes": ["2.100 User", "€1,2M/Monat Volume", "70% Retention"]
+				"challenges": [
+					"Ein Interface für 5 Exchanges",
+					"Institutional-Grade Tools",
+					"6er-Team geleitet"
+				],
+				"outcomes": [
+					"2.100 User",
+					"€1,2M/Monat Volume",
+					"70% Retention"
+				]
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
@@ -175,8 +199,16 @@
 				"fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
 				"role": "Backend Engineer",
 				"duration": "36 Stunden",
-				"challenges": ["Full Stack in 36h", "Smart Ranking", "Instant Semantic Search"],
-				"outcomes": ["2. Platz", "Jeden Experten instant finden", "Production-ready in 36h"]
+				"challenges": [
+					"Full Stack in 36h",
+					"Smart Ranking",
+					"Instant Semantic Search"
+				],
+				"outcomes": [
+					"2. Platz",
+					"Jeden Experten instant finden",
+					"Production-ready in 36h"
+				]
 			},
 			"dreamcook-community": {
 				"title": "DreamCook",
@@ -184,8 +216,16 @@
 				"fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
 				"role": "Full Stack Engineer",
 				"duration": "2 Jahre",
-				"challenges": ["Multi-Retailer Monitoring", "Instant Drop-Alerts", "Skaliert auf 5.000+ zahlende Member"],
-				"outcomes": ["5.000+ Member", "Schneller als die Konkurrenz", "2 Jahre profitabel"]
+				"challenges": [
+					"Multi-Retailer Monitoring",
+					"Instant Drop-Alerts",
+					"Skaliert auf 5.000+ zahlende Member"
+				],
+				"outcomes": [
+					"5.000+ Member",
+					"Schneller als die Konkurrenz",
+					"2 Jahre profitabel"
+				]
 			},
 			"acidnode-validator": {
 				"title": "Acid Node",
@@ -193,8 +233,16 @@
 				"fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
 				"role": "Backend Engineer",
 				"duration": "5 Monate",
-				"challenges": ["High Availability", "99,9% Uptime Target", "One-Click Deploys"],
-				"outcomes": ["Live auf Mainnet", "Fully Automated", "Zero Downtime"]
+				"challenges": [
+					"High Availability",
+					"99,9% Uptime Target",
+					"One-Click Deploys"
+				],
+				"outcomes": [
+					"Live auf Mainnet",
+					"Fully Automated",
+					"Zero Downtime"
+				]
 			},
 			"neura-nft-sniping": {
 				"title": "Neura",
@@ -202,8 +250,16 @@
 				"fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
 				"role": "Software Engineer",
 				"duration": "6 Monate",
-				"challenges": ["Millisekunden-Timing", "On-chain Transactions", "Stabil unter Last"],
-				"outcomes": ["Exit", "Recurring Revenue", "Schneller als alle anderen"]
+				"challenges": [
+					"Millisekunden-Timing",
+					"On-chain Transactions",
+					"Stabil unter Last"
+				],
+				"outcomes": [
+					"Exit",
+					"Recurring Revenue",
+					"Schneller als alle anderen"
+				]
 			},
 			"chtype-clickhouse-toolkit": {
 				"title": "chtype - Type-Safe ClickHouse Toolkit",

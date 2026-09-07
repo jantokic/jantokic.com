@@ -119,7 +119,7 @@ const FeaturedProjectsSection = forwardRef<HTMLElement>((_props, ref: ForwardedR
 										<span className="sm:col-span-4 font-mono uppercase text-xs tracking-wider font-semibold text-foreground">
 											{t(`projects.data.${project.slug}.title`)}
 										</span>
-										<span className="sm:col-span-6 text-sm text-muted-foreground line-clamp-1">
+										<span className="sm:col-span-6 text-sm text-muted-foreground">
 											{t(`projects.data.${project.slug}.shortDescription`)}
 										</span>
 										<span className="sm:col-span-2 sm:text-right font-mono uppercase text-[11px] tracking-wider text-muted-foreground/70">

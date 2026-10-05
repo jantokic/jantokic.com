@@ -131,16 +131,8 @@
 				"fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
 				"role": "Engineer",
 				"duration": "2025",
-				"challenges": [
-					"Insights ohne Prompts",
-					"Lernt automatisch dazu",
-					"Confidence Scores für Vorhersagen"
-				],
-				"outcomes": [
-					"8h → 30 Min",
-					"400+ Insights in 8 Wochen",
-					"Audit-ready"
-				]
+				"challenges": ["Insights ohne Prompts", "Lernt automatisch dazu", "Confidence Scores für Vorhersagen"],
+				"outcomes": ["8h → 30 Min", "400+ Insights in 8 Wochen", "Audit-ready"]
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
@@ -165,16 +157,8 @@
 				"fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "18 Monate",
-				"challenges": [
-					"Ein Interface für 5 Exchanges",
-					"Institutional-Grade Tools",
-					"6er-Team geleitet"
-				],
-				"outcomes": [
-					"2.100 User",
-					"€1,2M/Monat Volume",
-					"70% Retention"
-				]
+				"challenges": ["Ein Interface für 5 Exchanges", "Institutional-Grade Tools", "6er-Team geleitet"],
+				"outcomes": ["2.100 User", "€1,2M/Monat Volume", "70% Retention"]
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
@@ -199,16 +183,8 @@
 				"fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
 				"role": "Backend Engineer",
 				"duration": "36 Stunden",
-				"challenges": [
-					"Full Stack in 36h",
-					"Smart Ranking",
-					"Instant Semantic Search"
-				],
-				"outcomes": [
-					"2. Platz",
-					"Jeden Experten instant finden",
-					"Production-ready in 36h"
-				]
+				"challenges": ["Full Stack in 36h", "Smart Ranking", "Instant Semantic Search"],
+				"outcomes": ["2. Platz", "Jeden Experten instant finden", "Production-ready in 36h"]
 			},
 			"dreamcook-community": {
 				"title": "DreamCook",
@@ -216,16 +192,8 @@
 				"fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
 				"role": "Full Stack Engineer",
 				"duration": "2 Jahre",
-				"challenges": [
-					"Multi-Retailer Monitoring",
-					"Instant Drop-Alerts",
-					"Skaliert auf 5.000+ zahlende Member"
-				],
-				"outcomes": [
-					"5.000+ Member",
-					"Schneller als die Konkurrenz",
-					"2 Jahre profitabel"
-				]
+				"challenges": ["Multi-Retailer Monitoring", "Instant Drop-Alerts", "Skaliert auf 5.000+ zahlende Member"],
+				"outcomes": ["5.000+ Member", "Schneller als die Konkurrenz", "2 Jahre profitabel"]
 			},
 			"acidnode-validator": {
 				"title": "Acid Node",
@@ -233,16 +201,8 @@
 				"fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
 				"role": "Backend Engineer",
 				"duration": "5 Monate",
-				"challenges": [
-					"High Availability",
-					"99,9% Uptime Target",
-					"One-Click Deploys"
-				],
-				"outcomes": [
-					"Live auf Mainnet",
-					"Fully Automated",
-					"Zero Downtime"
-				]
+				"challenges": ["High Availability", "99,9% Uptime Target", "One-Click Deploys"],
+				"outcomes": ["Live auf Mainnet", "Fully Automated", "Zero Downtime"]
 			},
 			"neura-nft-sniping": {
 				"title": "Neura",
@@ -250,16 +210,8 @@
 				"fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
 				"role": "Software Engineer",
 				"duration": "6 Monate",
-				"challenges": [
-					"Millisekunden-Timing",
-					"On-chain Transactions",
-					"Stabil unter Last"
-				],
-				"outcomes": [
-					"Exit",
-					"Recurring Revenue",
-					"Schneller als alle anderen"
-				]
+				"challenges": ["Millisekunden-Timing", "On-chain Transactions", "Stabil unter Last"],
+				"outcomes": ["Exit", "Recurring Revenue", "Schneller als alle anderen"]
 			},
 			"chtype-clickhouse-toolkit": {
 				"title": "chtype - Type-Safe ClickHouse Toolkit",

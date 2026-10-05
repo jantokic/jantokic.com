@@ -50,7 +50,7 @@
 			"company": "Vendure",
 			"location": "Vienna",
 			"period": "2024 - 2026",
-			"description": "Open-source commerce platform (8k GitHub stars), formerly ALPIN11 / Elevantiq. Built enterprise B2B systems on Vendure for Flowtech, Feddersen and Stocker: multi-tenant white-label shops and a rules-based chimney configurator. Plugins and features for the core, dashboard and enterprise suite.",
+			"description": "Open-source commerce platform (8k GitHub stars). Built enterprise B2B systems on Vendure for Flowtech, Feddersen and Stocker: multi-tenant white-label shops and a rules-based chimney configurator. Plugins and features for the core, dashboard and enterprise suite.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "View details →"
 		},
@@ -136,7 +136,11 @@
 					"Self-improving accuracy over time",
 					"Confidence-scored predictions"
 				],
-				"outcomes": ["8 hours → 30 minutes", "400+ insights in 8 weeks", "Audit-ready traceability"]
+				"outcomes": [
+					"8 hours → 30 minutes",
+					"400+ insights in 8 weeks",
+					"Audit-ready traceability"
+				]
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
@@ -161,13 +165,21 @@
 				"fullDescription": "Trading platform connecting 5 exchanges with one interface. Custom order types, real-time charts, institutional-grade API. 70% of users stuck around.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "18 months",
-				"challenges": ["One interface for 5 exchanges", "Institutional-grade trading tools", "Led team of 6"],
-				"outcomes": ["2,100 users acquired", "€1.2M/month traded", "70% retention"]
+				"challenges": [
+					"One interface for 5 exchanges",
+					"Institutional-grade trading tools",
+					"Led team of 6"
+				],
+				"outcomes": [
+					"2,100 users acquired",
+					"€1.2M/month traded",
+					"70% retention"
+				]
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
 				"shortDescription": "Open-source commerce platform (8k GitHub stars). Enterprise B2B systems for Flowtech, Feddersen and Stocker.",
-				"fullDescription": "Software engineer at Vendure from April 2024 to March 2026, joining through ALPIN11 / Elevantiq, the agency that owned and later merged into Vendure GmbH, on a team of about seven. Built enterprise B2B commerce on Vendure for its largest customers: multi-tenant white-label shops for Flowtech Fluidpower (UK hydraulics distributor, migrated off a legacy enterprise platform) and the Feddersen Group (8+ tenants), and a rules-based chimney configurator for Stocker Kaminsysteme, built solo in about five months: hundreds of sizing rules over thousands of parts synced from Pimcore, generating orders directly in Vendure. For Stocker I also consolidated the legacy codebases into one monorepo, upgraded every dependency and moved hosting to Docker Swarm. Contributed plugins, dashboard features and fixes to the Vendure core and enterprise suite alongside the founders.",
+				"fullDescription": "Software engineer at Vendure from April 2024 to March 2026, on a team of about seven. Built enterprise B2B commerce on Vendure for its largest customers: multi-tenant white-label shops for Flowtech Fluidpower (UK hydraulics distributor, migrated off a legacy enterprise platform) and the Feddersen Group (8+ tenants), and a rules-based chimney configurator for Stocker Kaminsysteme, built solo in about five months: hundreds of sizing rules over thousands of parts synced from Pimcore, generating orders directly in Vendure. For Stocker I also consolidated the legacy codebases into one monorepo, upgraded every dependency and moved hosting to Docker Swarm. Contributed plugins, dashboard features and fixes to the Vendure core and enterprise suite alongside the founders.",
 				"role": "Software Engineer",
 				"duration": "Apr 2024 - Mar 2026",
 				"challenges": [
@@ -187,8 +199,16 @@
 				"fullDescription": "Built in 36 hours at the TUM.AI x Anthropic Hackathon. Finds the right internal expert instantly using semantic search. 2nd place.",
 				"role": "Backend Engineer",
 				"duration": "36 hours",
-				"challenges": ["Full stack in 36 hours", "Smart ranking algorithm", "Instant semantic search"],
-				"outcomes": ["2nd place", "Find any expert instantly", "Production-ready in 36 hours"]
+				"challenges": [
+					"Full stack in 36 hours",
+					"Smart ranking algorithm",
+					"Instant semantic search"
+				],
+				"outcomes": [
+					"2nd place",
+					"Find any expert instantly",
+					"Production-ready in 36 hours"
+				]
 			},
 			"dreamcook-community": {
 				"title": "DreamCook - E-Commerce Community Platform",
@@ -196,8 +216,16 @@
 				"fullDescription": "Community platform with real-time drop alerts and inventory tracking. 5,000+ members paying for an edge. Profitable for 2 years.",
 				"role": "Full Stack Engineer",
 				"duration": "2 years",
-				"challenges": ["Multi-retailer monitoring", "Instant drop alerts", "Scaled to 5,000+ paying members"],
-				"outcomes": ["5,000+ members", "Faster alerts than competitors", "Profitable for 2 years"]
+				"challenges": [
+					"Multi-retailer monitoring",
+					"Instant drop alerts",
+					"Scaled to 5,000+ paying members"
+				],
+				"outcomes": [
+					"5,000+ members",
+					"Faster alerts than competitors",
+					"Profitable for 2 years"
+				]
 			},
 			"acidnode-validator": {
 				"title": "Acid Node - Solana Validator Infrastructure",
@@ -205,8 +233,16 @@
 				"fullDescription": "Production Solana validator on AWS. Automated deployment, fault-tolerant design, optimized for throughput.",
 				"role": "Backend Engineer",
 				"duration": "5 months",
-				"challenges": ["High-availability architecture", "99.9% uptime target", "One-click deployments"],
-				"outcomes": ["Validator live on mainnet", "Automated infrastructure", "Zero unplanned downtime"]
+				"challenges": [
+					"High-availability architecture",
+					"99.9% uptime target",
+					"One-click deployments"
+				],
+				"outcomes": [
+					"Validator live on mainnet",
+					"Automated infrastructure",
+					"Zero unplanned downtime"
+				]
 			},
 			"neura-nft-sniping": {
 				"title": "Neura - Solana NFT Sniping Bot",
@@ -214,8 +250,16 @@
 				"fullDescription": "NFT sniping bot with millisecond precision. Subscription product that got acquired.",
 				"role": "Software Engineer",
 				"duration": "6 months",
-				"challenges": ["Millisecond timing precision", "On-chain transaction handling", "Stable under traffic spikes"],
-				"outcomes": ["Acquired", "Subscription revenue", "Faster than the competition"]
+				"challenges": [
+					"Millisecond timing precision",
+					"On-chain transaction handling",
+					"Stable under traffic spikes"
+				],
+				"outcomes": [
+					"Acquired",
+					"Subscription revenue",
+					"Faster than the competition"
+				]
 			},
 			"chtype-clickhouse-toolkit": {
 				"title": "chtype - Type-Safe ClickHouse Toolkit",

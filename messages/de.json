@@ -50,7 +50,7 @@
 			"company": "Vendure",
 			"location": "Wien",
 			"period": "2024 - 2026",
-			"description": "Open-Source-Commerce-Plattform (8k GitHub Stars), vormals ALPIN11 / Elevantiq. Enterprise-B2B-Systeme auf Vendure für Flowtech, Feddersen und Stocker: Multi-Tenant-White-Label-Shops und ein regelbasierter Kamin-Konfigurator. Plugins und Features für Core, Dashboard und Enterprise Suite.",
+			"description": "Open-Source-Commerce-Plattform (8k GitHub Stars). Enterprise-B2B-Systeme auf Vendure für Flowtech, Feddersen und Stocker: Multi-Tenant-White-Label-Shops und ein regelbasierter Kamin-Konfigurator. Plugins und Features für Core, Dashboard und Enterprise Suite.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "Details →"
 		},
@@ -131,8 +131,16 @@
 				"fullDescription": "AI-System, das Insights liefert, bevor du fragst. Trackt Quellen, erkennt Muster, schreibt Reports. 8 Stunden Recherche in 30 Minuten.",
 				"role": "Engineer",
 				"duration": "2025",
-				"challenges": ["Insights ohne Prompts", "Lernt automatisch dazu", "Confidence Scores für Vorhersagen"],
-				"outcomes": ["8h → 30 Min", "400+ Insights in 8 Wochen", "Audit-ready"]
+				"challenges": [
+					"Insights ohne Prompts",
+					"Lernt automatisch dazu",
+					"Confidence Scores für Vorhersagen"
+				],
+				"outcomes": [
+					"8h → 30 Min",
+					"400+ Insights in 8 Wochen",
+					"Audit-ready"
+				]
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
@@ -157,13 +165,21 @@
 				"fullDescription": "Trading-Plattform für 5 Exchanges in einem Interface. Custom Order Types, Realtime-Charts, API für Institutionals. 70% der User blieben.",
 				"role": "Founding Engineer & Co-Founder",
 				"duration": "18 Monate",
-				"challenges": ["Ein Interface für 5 Exchanges", "Institutional-Grade Tools", "6er-Team geleitet"],
-				"outcomes": ["2.100 User", "€1,2M/Monat Volume", "70% Retention"]
+				"challenges": [
+					"Ein Interface für 5 Exchanges",
+					"Institutional-Grade Tools",
+					"6er-Team geleitet"
+				],
+				"outcomes": [
+					"2.100 User",
+					"€1,2M/Monat Volume",
+					"70% Retention"
+				]
 			},
 			"vendure-ecommerce": {
 				"title": "Vendure",
 				"shortDescription": "Open-Source-Commerce-Plattform (8k GitHub Stars). Enterprise-B2B-Systeme für Flowtech, Feddersen und Stocker.",
-				"fullDescription": "Software Engineer bei Vendure von April 2024 bis März 2026, eingestiegen über ALPIN11 / Elevantiq, die Agentur, die die Vendure GmbH besaß und später in Vendure aufging, in einem Team von rund sieben Personen. Enterprise-B2B-Commerce auf Vendure für die größten Kunden gebaut: Multi-Tenant-White-Label-Shops für Flowtech Fluidpower (britischer Hydraulik-Distributor, Migration weg von einer Legacy-Enterprise-Plattform) und die Feddersen-Gruppe (8+ Tenants) sowie ein regelbasierter Kamin-Konfigurator für Stocker Kaminsysteme, solo in rund fünf Monaten gebaut: hunderte Dimensionierungsregeln über tausende Teile aus Pimcore, mit Bestellungen direkt in Vendure. Für Stocker außerdem die Legacy-Codebasen in ein Monorepo konsolidiert, alle Dependencies aktualisiert und das Hosting auf Docker Swarm umgestellt. Plugins, Dashboard-Features und Fixes für Vendure Core und Enterprise Suite gemeinsam mit den Gründern.",
+				"fullDescription": "Software Engineer bei Vendure von April 2024 bis März 2026, in einem Team von rund sieben Personen. Enterprise-B2B-Commerce auf Vendure für die größten Kunden gebaut: Multi-Tenant-White-Label-Shops für Flowtech Fluidpower (britischer Hydraulik-Distributor, Migration weg von einer Legacy-Enterprise-Plattform) und die Feddersen-Gruppe (8+ Tenants) sowie ein regelbasierter Kamin-Konfigurator für Stocker Kaminsysteme, solo in rund fünf Monaten gebaut: hunderte Dimensionierungsregeln über tausende Teile aus Pimcore, mit Bestellungen direkt in Vendure. Für Stocker außerdem die Legacy-Codebasen in ein Monorepo konsolidiert, alle Dependencies aktualisiert und das Hosting auf Docker Swarm umgestellt. Plugins, Dashboard-Features und Fixes für Vendure Core und Enterprise Suite gemeinsam mit den Gründern.",
 				"role": "Software Engineer",
 				"duration": "Apr 2024 - Mär 2026",
 				"challenges": [
@@ -183,8 +199,16 @@
 				"fullDescription": "In 36h beim TUM.AI x Anthropic Hackathon gebaut. Findet den richtigen internen Experten instant per Semantic Search. 2. Platz.",
 				"role": "Backend Engineer",
 				"duration": "36 Stunden",
-				"challenges": ["Full Stack in 36h", "Smart Ranking", "Instant Semantic Search"],
-				"outcomes": ["2. Platz", "Jeden Experten instant finden", "Production-ready in 36h"]
+				"challenges": [
+					"Full Stack in 36h",
+					"Smart Ranking",
+					"Instant Semantic Search"
+				],
+				"outcomes": [
+					"2. Platz",
+					"Jeden Experten instant finden",
+					"Production-ready in 36h"
+				]
 			},
 			"dreamcook-community": {
 				"title": "DreamCook",
@@ -192,8 +216,16 @@
 				"fullDescription": "Community mit Realtime Drop-Alerts und Stock Tracking. 5.000+ zahlende Member. 2 Jahre profitabel.",
 				"role": "Full Stack Engineer",
 				"duration": "2 Jahre",
-				"challenges": ["Multi-Retailer Monitoring", "Instant Drop-Alerts", "Skaliert auf 5.000+ zahlende Member"],
-				"outcomes": ["5.000+ Member", "Schneller als die Konkurrenz", "2 Jahre profitabel"]
+				"challenges": [
+					"Multi-Retailer Monitoring",
+					"Instant Drop-Alerts",
+					"Skaliert auf 5.000+ zahlende Member"
+				],
+				"outcomes": [
+					"5.000+ Member",
+					"Schneller als die Konkurrenz",
+					"2 Jahre profitabel"
+				]
 			},
 			"acidnode-validator": {
 				"title": "Acid Node",
@@ -201,8 +233,16 @@
 				"fullDescription": "Production Solana Validator auf AWS. Automated Deployment, Fault-Tolerant, optimiert für Throughput.",
 				"role": "Backend Engineer",
 				"duration": "5 Monate",
-				"challenges": ["High Availability", "99,9% Uptime Target", "One-Click Deploys"],
-				"outcomes": ["Live auf Mainnet", "Fully Automated", "Zero Downtime"]
+				"challenges": [
+					"High Availability",
+					"99,9% Uptime Target",
+					"One-Click Deploys"
+				],
+				"outcomes": [
+					"Live auf Mainnet",
+					"Fully Automated",
+					"Zero Downtime"
+				]
 			},
 			"neura-nft-sniping": {
 				"title": "Neura",
@@ -210,8 +250,16 @@
 				"fullDescription": "NFT-Sniping-Bot mit Millisekunden-Precision. Subscription-Produkt mit Exit.",
 				"role": "Software Engineer",
 				"duration": "6 Monate",
-				"challenges": ["Millisekunden-Timing", "On-chain Transactions", "Stabil unter Last"],
-				"outcomes": ["Exit", "Recurring Revenue", "Schneller als alle anderen"]
+				"challenges": [
+					"Millisekunden-Timing",
+					"On-chain Transactions",
+					"Stabil unter Last"
+				],
+				"outcomes": [
+					"Exit",
+					"Recurring Revenue",
+					"Schneller als alle anderen"
+				]
 			},
 			"chtype-clickhouse-toolkit": {
 				"title": "chtype - Type-Safe ClickHouse Toolkit",

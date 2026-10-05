@@ -58,7 +58,7 @@
 			"role": "Co-founder & Engineer",
 			"company": "Mira",
 			"location": "London",
-			"description": "Solana trading bot in Go. Real-time signal pipeline, 8,000+ automated trades/month at sub-300ms execution, 99.5% uptime. Led a remote team of 3.",
+			"description": "Solana token-launch engine in Go. Real-time X monitoring, a fast LLM (Cerebras) for token name and artwork, and same-block launch and buy via bundled transactions. Fastest in its niche. Led a remote team of 3.",
 			"projectLink": "/projects/mira-trading-bot",
 			"projectLinkText": "View details →"
 		},
@@ -139,17 +139,21 @@
 				"outcomes": ["8 hours → 30 minutes", "400+ insights in 8 weeks", "Audit-ready traceability"]
 			},
 			"mira-trading-bot": {
-				"title": "Mira - Solana Trading Bot",
-				"shortDescription": "Solana trading bot in Go. 8,000+ trades/month at sub-300ms. 99.5% uptime.",
-				"fullDescription": "Solana trading bot that turns social signals into trades in under 300ms. Go backend, real-time WebSocket data pipeline, automated deployment pipeline and monitoring dashboards. Ran for ten months with a remote team of three.",
+				"title": "Mira",
+				"shortDescription": "Solana token-launch engine in Go. X post to live token in the same block.",
+				"fullDescription": "Token-launch engine on Solana. It watched X in real time, used a fast LLM on Cerebras to turn a post into a token name and artwork, then launched the token and bought into it in the same block through bundled transactions. Speed was the whole game: we were the fastest launcher in the niche. Go backend, real-time X ingestion, LLM inference on Cerebras, a remote team of three.",
 				"role": "Founding Engineer & Co-Founder",
-				"duration": "5 months",
+				"duration": "10 months",
 				"challenges": [
-					"Execute before competitors",
-					"Parse social signals in real-time",
-					"99.5% uptime, 3-person team"
+					"Go from an X post to a live token before anyone else",
+					"Generate a fitting name and artwork in milliseconds, not seconds",
+					"Land the launch and the first buy in the same block"
 				],
-				"outcomes": ["8,000+ automated trades/month", "Sub-300ms signal-to-execution", "99.5% uptime with a team of 3"]
+				"outcomes": [
+					"Fastest launcher in its niche",
+					"Post to on-chain token in a single block",
+					"Built and run by a remote team of 3"
+				]
 			},
 			"copile-trading-platform": {
 				"title": "Copile - B2B Crypto Trading Platform",

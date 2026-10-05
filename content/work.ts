@@ -20,7 +20,7 @@ export const workData: WorkEntry[] = [
 	{
 		year: '2024 - 2025',
 		key: 'mira',
-		techStack: ['Go', 'Solana', 'GCP', 'WebSockets', 'Observability'],
+		techStack: ['Go', 'Solana', 'Cerebras', 'LLMs', 'X API'],
 		venture: true,
 	},
 	{

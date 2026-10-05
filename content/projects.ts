@@ -129,8 +129,8 @@ export const projects: ProjectDef[] = [
 	},
 	{
 		slug: 'mira-trading-bot',
-		category: 'Blockchain & Trading',
-		techStack: ['Go', 'Solana', 'WebSocket', 'Real-time APIs', 'Docker', 'Monitoring Dashboards'],
+		category: 'AI & Crypto',
+		techStack: ['Go', 'Solana', 'Cerebras', 'LLMs', 'X API', 'Bundled transactions'],
 		image: '/projects/mira/banner.webp',
 		images: ['/projects/mira/logo.webp'],
 		year: '2024',

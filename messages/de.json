@@ -58,7 +58,7 @@
 			"role": "Mitgründer & Engineer",
 			"company": "Mira",
 			"location": "London",
-			"description": "Solana-Trading-Bot in Go. Realtime-Signal-Pipeline, 8.000+ automatisierte Trades/Monat bei sub-300ms Ausführung, 99,5% Uptime. Remote-Team von 3 geleitet.",
+			"description": "Token-Launch-Engine für Solana in Go. Echtzeit-Monitoring von X, ein schnelles LLM (Cerebras) für Tokenname und -bild, Launch und Kauf im selben Block über gebündelte Transaktionen. Schnellster in der Nische. Remote-Team von 3 geleitet.",
 			"projectLink": "/projects/mira-trading-bot",
 			"projectLinkText": "Details →"
 		},
@@ -136,19 +136,19 @@
 			},
 			"mira-trading-bot": {
 				"title": "Mira",
-				"shortDescription": "Solana-Trading-Bot in Go. 8.000+ Trades/Monat bei sub-300ms. 99,5% Uptime.",
-				"fullDescription": "Solana-Bot, der Social Signals in unter 300ms zu Trades macht. Go-Backend, Realtime-WebSocket-Pipeline, automatisierte Deployment-Pipeline und Monitoring-Dashboards. Zehn Monate im Betrieb mit einem Remote-Team von drei.",
+				"shortDescription": "Token-Launch-Engine für Solana in Go. Vom X-Post zum Token im selben Block.",
+				"fullDescription": "Token-Launch-Engine auf Solana. Sie beobachtete X in Echtzeit, machte mit einem schnellen LLM auf Cerebras aus einem Post Tokenname und Artwork, startete den Token und kaufte im selben Block über gebündelte Transaktionen ein. Geschwindigkeit war alles: Wir waren der schnellste Launcher in der Nische. Go-Backend, Echtzeit-Ingestion von X, LLM-Inferenz auf Cerebras, ein Remote-Team von drei.",
 				"role": "Founding Engineer & Co-Founder",
-				"duration": "5 Monate",
+				"duration": "10 Monate",
 				"challenges": [
-					"Schneller traden als alle anderen",
-					"Social Signals in Realtime parsen",
-					"99,5% Uptime mit 3-Mann-Team"
+					"Schneller als alle anderen vom X-Post zum Live-Token",
+					"Passenden Namen und Artwork in Millisekunden statt Sekunden generieren",
+					"Launch und ersten Kauf im selben Block landen"
 				],
 				"outcomes": [
-					"8.000+ automatisierte Trades/Monat",
-					"Sub-300ms von Signal bis Ausführung",
-					"99,5% Uptime mit 3-Mann-Team"
+					"Schnellster Launcher in der Nische",
+					"Vom Post zum On-Chain-Token in einem Block",
+					"Gebaut und betrieben von einem Remote-Team von 3"
 				]
 			},
 			"copile-trading-platform": {

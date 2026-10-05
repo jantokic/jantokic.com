@@ -78,6 +78,12 @@ export default async function LocaleLayout({
 						<MaintenanceGate>{children}</MaintenanceGate>
 					</NextIntlClientProvider>
 				</ThemeProvider>
+				{/* Cloudflare Web Analytics: cookieless, no consent banner needed */}
+				<script
+					defer
+					src="https://static.cloudflareinsights.com/beacon.min.js"
+					data-cf-beacon='{"token": "ada3bd6b6771461586be1d075d752033"}'
+				/>
 			</body>
 		</html>
 	);

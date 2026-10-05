@@ -50,7 +50,7 @@
 			"company": "Vendure",
 			"location": "Vienna",
 			"period": "2024 - 2026",
-			"description": "Open-source commerce platform (8k GitHub stars). Built enterprise B2B systems on Vendure for Flowtech, Feddersen and Stocker: multi-tenant white-label shops and a rules-based chimney configurator. Plugins and features for the core, dashboard and enterprise suite.",
+			"description": "Open-source commerce platform (8k GitHub stars). Built enterprise B2B systems on Vendure for Flowtech, Feddersen and Stocker, industrial distributors with hundreds of millions in annual revenue and tens of thousands of orders through the platforms: multi-tenant white-label shops and a rules-based chimney configurator. Plugins and features for the core, dashboard and enterprise suite.",
 			"projectLink": "/projects/vendure-ecommerce",
 			"projectLinkText": "View details →"
 		},

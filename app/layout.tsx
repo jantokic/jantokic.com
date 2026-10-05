@@ -1,5 +1,3 @@
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
 import { Geist_Mono, Instrument_Serif } from 'next/font/google';
@@ -56,8 +54,6 @@ export default async function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
 				</ThemeProvider>
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);

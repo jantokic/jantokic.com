@@ -35,3 +35,8 @@ next-env.d.ts
 # IDE
 .specstory/
 .cursorindexingignore
+
+# cloudflare
+.open-next
+.wrangler
+.dev.vars*

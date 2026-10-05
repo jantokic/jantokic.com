@@ -1,4 +1,7 @@
 import type { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
+
 import { projects } from '@/content/projects';
 import { routing } from '@/routing';
 

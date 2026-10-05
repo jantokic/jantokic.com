@@ -1,13 +1,12 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "jantokic-com",
-	"main": ".open-next/worker.js",
 	"compatibility_date": "2026-10-05",
-	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	// Static export only: no Worker script runs, assets are served straight from the edge.
 	"assets": {
-		"directory": ".open-next/assets",
-		"binding": "ASSETS"
+		"directory": "./out",
+		"html_handling": "auto-trailing-slash",
+		"not_found_handling": "404-page"
 	},
-	"services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "jantokic-com" }],
 	"observability": { "enabled": true }
 }

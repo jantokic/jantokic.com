@@ -1,7 +1,7 @@
 import { ArrowLeft, ExternalLink, Video } from 'lucide-react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import BrandIcon from '@/components/BrandIcon';
 import { getProjectBySlug, projects } from '@/content/projects';
 import { Link } from '@/routing';
@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
 	const { slug, locale } = await params;
+	setRequestLocale(locale);
 	const project = getProjectBySlug(slug);
 
 	if (!project) {

@@ -7,7 +7,7 @@ Personal site of Jan Tokic, AI engineer in Munich. Live at [jantokic.com](https:
 - Next.js 16 (App Router, Turbopack), React 19, TypeScript
 - Tailwind CSS 4, next-themes (light/dark), next-intl (English and German)
 - Project data in `content/`, copy in `messages/`, CVs as LaTeX in `public/` (compiled with tectonic)
-- Biome for lint and format, Bun, GitHub Actions CI, deployed on Vercel
+- Biome for lint and format, Bun, GitHub Actions CI; static export deployed to Cloudflare Workers (Workers Builds on push to main)
 
 ## Develop
 

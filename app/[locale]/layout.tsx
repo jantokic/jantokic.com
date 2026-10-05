@@ -6,7 +6,7 @@ import '../globals.css';
 
 const TITLE = 'Jan Tokic - AI & Software Engineer';
 const DESCRIPTION =
-	'AI engineer in Munich. I build AI products end to end, and the infrastructure under them. Most recently the AI side of an investing app at starc., before that two years at Vendure. Open to full-time roles from October 2026.';
+	'AI engineer in Munich. I build AI products end to end, and the infrastructure under them. Most recently the AI side of an investing app at starc., before that two years at Vendure. Open to full-time AI engineering roles.';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://www.jantokic.com'),

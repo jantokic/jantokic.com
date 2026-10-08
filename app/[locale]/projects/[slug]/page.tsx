@@ -374,6 +374,36 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 				</div>
 			</section>
 
+			{/* Screens */}
+			{project.images.filter((src) => src !== project.image).length > 0 && (
+				<section className="px-4 sm:px-6 lg:px-8 mb-16">
+					<div className="max-w-7xl mx-auto">
+						<h2 className="font-mono uppercase text-lg sm:text-xl tracking-wider font-semibold text-foreground mb-6">
+							{ui('screens')}
+						</h2>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+							{project.images
+								.filter((src) => src !== project.image)
+								.map((src) => (
+									<div
+										key={src}
+										className="relative aspect-[16/9] rounded-xl overflow-hidden border border-border bg-muted"
+									>
+										<Image
+											src={src}
+											alt={t(`data.${slug}.title`)}
+											fill
+											sizes="(min-width: 768px) 50vw, 100vw"
+											className="object-cover object-top"
+											unoptimized
+										/>
+									</div>
+								))}
+						</div>
+					</div>
+				</section>
+			)}
+
 			{/* Navigation to other projects */}
 			<section className="px-4 sm:px-6 lg:px-8 py-16 bg-muted">
 				<div className="max-w-7xl mx-auto">

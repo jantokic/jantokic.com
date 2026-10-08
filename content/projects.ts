@@ -110,7 +110,12 @@ export const projects: ProjectDef[] = [
 			'Grafana',
 		],
 		image: '/projects/implyra/banner.webp',
-		images: [],
+		images: [
+			'/projects/implyra/traders.webp',
+			'/projects/implyra/discover.webp',
+			'/projects/implyra/signals.webp',
+			'/projects/implyra/api.webp',
+		],
 		year: '2025',
 		galleryOrder: 3,
 		links: {

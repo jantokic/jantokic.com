@@ -256,7 +256,8 @@
 		"demo": "Demo",
 		"youtube": "YouTube",
 		"moreProjects": "More Projects",
-		"comingSoon": "More details coming soon."
+		"comingSoon": "More details coming soon.",
+		"screens": "Screens"
 	},
 	"connect": {
 		"heading": "Let's Connect",
